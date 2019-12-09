@@ -2,10 +2,21 @@
 		
 		<!-- Slide -->
 		<section id="main-slider" data-background="http://placehold.it/1920x1136" class="parallax-window">
+
 			<div class="section-slogan">
 				<img src="assets/img/logo.png" alt="">
-				<h2>Surprise Your Plate</h2>
+				<h2>สั่งอาหารเดลิเวอรี่ใน นครปฐม</h2>
 				<h3>Fine Food + Drinks</h3>
+				<div class="container">
+					<div class="row">
+						<form class="form-inline" action="post">
+							<div class="form-group">
+								<input type="text" class="form-control form-control-lg" id="InputSearchName"/>
+							</div>
+							<button type="submit" class="btn theme-btn btn-lg btn-slide">ค้นหาร้านอาหาร</button>
+						</form>
+					</div>
+				</div>
 			</div>
 			<span class="scoll-down">Scroll Down</span>
 		</section>

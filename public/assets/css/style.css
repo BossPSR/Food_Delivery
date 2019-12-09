@@ -438,6 +438,26 @@ a:hover {
   background: rgba(0, 0, 0, 0.95) !important;
 }
 
+.is-sticky > .container > .row > ul > li > a.active{
+  color:#fff;
+}
+
+.is-sticky .navbar .nav a:hover:before{
+  color:#fff;
+}
+
+.is-sticky > .container > .row > ul > li > a:hover:after{
+  color:#fff;
+}
+
+.is-sticky > .container > .row > ul > li > a.active:before{
+  background-color:#fff;
+}
+
+.is-sticky > .container > .row > ul > li > a.active:after{
+  background-color:#fff;
+}
+
 .grid-sizer {
   width: 33.33%;
 }
@@ -493,7 +513,7 @@ a:hover {
 
 .nav-top {
   height: 50px;
-  background-color: #000;
+  background-color: #fe58a4;
 }
 .nav-top ul li {
   color: #fff;
@@ -504,7 +524,7 @@ a:hover {
   line-height: 50px;
 }
 .nav-top ul li i {
-  color: #cf9b67;
+  color: #fff;
   margin-right: 10px;
   font-size: 14px;
 }
@@ -521,7 +541,7 @@ a:hover {
   transition-duration: 0.3s;
 }
 .nav-top ul li a:hover {
-  color: #cf9b67;
+  color: #000;
 }
 .nav-top ul li.social-bloc {
   float: right;
@@ -533,7 +553,7 @@ a:hover {
 }
 .nav-top ul li.social-bloc a i {
   font-size: 17px;
-  color: #5a5a5a;
+  color: #fff;
   margin-right: 0;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -545,12 +565,12 @@ a:hover {
   transition-duration: 0.3s;
 }
 .nav-top ul li.social-bloc a:hover i {
-  color: #cf9b67;
+  color: #000;
 }
 
 .navbar {
   height: 80px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255);
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -588,7 +608,7 @@ a:hover {
   transition-duration: 0.4s;
 }
 .navbar .nav a {
-  color: #fff;
+  color: #fe58a4;
   padding: 0;
   margin-left: 33px;
   -moz-transition-property: all;
@@ -604,7 +624,7 @@ a:hover {
   overflow: hidden;
 }
 .navbar .nav a:hover {
-  color: #cf9b67;
+  color: #000;
   background: none;
 }
 .navbar .nav a:hover:before {
@@ -617,7 +637,7 @@ a:hover {
   opacity: 1;
 }
 .navbar .nav a.active {
-  color: #cf9b67;
+  color: #000;
 }
 .navbar .nav a.active:before {
   display: block;
@@ -635,7 +655,7 @@ a:hover {
   bottom: 20px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #000;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -648,7 +668,7 @@ a:hover {
   bottom: 22px;
   width: 0;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #000;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;

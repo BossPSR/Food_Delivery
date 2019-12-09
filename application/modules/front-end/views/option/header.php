@@ -24,6 +24,7 @@
 	<!-- Custom CSS Files -->
 	<link rel="stylesheet" href="public/assets/css/style.css" />
 	<link rel="stylesheet" href="public/assets/css/responsive.css" />
+	<link rel="stylesheet" href="public/assets/css/newstyle.css" />
 	<!-- Custom CSS Files -->
 
 	<!--[if lt IE 9]>
@@ -69,10 +70,7 @@
 			<div class="navbar" role="navigation">
 				<div class="container">
 					<div class="row">
-						<h1 class="sr-only">Food Lover</h1>
-				        <a href="index.html" title="FoodLover" class="logo">
-							<img src="assets/img/logo.png" alt="" width="170">
-						</a>
+						
 						<button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="menu-mobile visible-xs">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
