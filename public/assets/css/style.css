@@ -1279,8 +1279,7 @@ a:hover {
 [9. Section Testimonials / #testimonials]
 --------------------------------------------------------------------*/
 #testimonials {
-  background-size: cover;
-  position: relative;
+  background-color: #6b6b6b;
 }
 #testimonials .section-suptitle {
   position: relative;
@@ -1297,7 +1296,7 @@ a:hover {
   z-index: 0;
 }
 #testimonials .section-title.sep-type-2::before {
-  background: #000;
+  background: #6b6b6b;
 }
 
 .testimonial-list {
@@ -1358,7 +1357,7 @@ a:hover {
   text-align: center;
   font-style: 14px;
   font-weight: bold;
-  color: #cf9b67;
+  color: #fe58a4;
 }
 .testimonial-list li > div:after {
   width: 0;
@@ -1587,7 +1586,7 @@ a:hover {
   display: block;
   text-align: center;
   margin-bottom: 10px;
-  color: #cf9b67;
+  color: #fe58a4;
 }
 .team-carousel li > div > div h3 {
   text-align: center;
@@ -1609,7 +1608,7 @@ a:hover {
   left: 50%;
   margin-left: -10px;
   content: "●";
-  color: #cf9b67;
+  color: #fe58a4;
   background: #fafafa;
   line-height: 6px;
   font-size: 12px;
@@ -1627,7 +1626,7 @@ a:hover {
   margin-left: -39px;
   z-index: 0;
   bottom: 1px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
 }
 .team-carousel li > div > div div {
   text-align: center;
@@ -1649,7 +1648,7 @@ a:hover {
   transition-duration: 0.3s;
 }
 .team-carousel li > div > div div a:hover i {
-  color: #cf9b67;
+  color: #fe58a4;
 }
 
 /*------------------------------------------------------------------
@@ -1859,7 +1858,7 @@ a:hover {
 .ctc-item .tel {
   font-size: 30px;
   font-weight: 600;
-  color: #cf9b67;
+  color: #fe58a4;
   line-height: 30px;
   margin-bottom: 20px;
   text-align: center;
@@ -1886,7 +1885,7 @@ a:hover {
   color: #6b6b6b;
 }
 .ctc-item .widget a:hover {
-  color: #cf9b67;
+  color: #fe58a4;
 }
 .ctc-item .widget:last-child {
   margin-bottom: 0;
@@ -1896,7 +1895,7 @@ a:hover {
 [15. Section Newsletter / #newsletter]
 --------------------------------------------------------------------*/
 #newsletter {
-  background: #cf9b67;
+  background: #fe58a4;
 }
 #newsletter h3 {
   font-size: 36px;
@@ -1959,7 +1958,7 @@ a:hover {
   display: block;
   width: 100%;
   text-align: center;
-  color: #cf9a67;
+  color: #fe58a4;
   
   letter-spacing: 1px;
   font-size: 14px;
@@ -3312,7 +3311,7 @@ a:hover {
 .bloc-cms a {
   text-transform: uppercase;
   
-  color: #cf9b67;
+  color: #fe58a4;
   position: relative;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -3332,7 +3331,7 @@ a:hover {
   margin-top: -3px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -3348,7 +3347,7 @@ a:hover {
   margin-left: 18px;
   margin-top: -1px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transition-property: all;
@@ -3375,7 +3374,7 @@ a:hover {
   margin-bottom: 17px;
 }
 .open-hours p span {
-  color: #cf9b67;
+  color: #fe58a4;
   text-transform: uppercase;
 }
 
@@ -3389,7 +3388,7 @@ a:hover {
 .item-tweet > i {
   float: left;
   width: 10%;
-  color: #cf9b67;
+  color: #fe58a4;
   font-size: 18px;
   margin-top: 2px;
 }
@@ -3414,10 +3413,10 @@ a:hover {
   transition-duration: 0.3s;
 }
 .item-tweet > div p a:hover {
-  color: #cf9b67;
+  color: #fe58a4;
 }
 .item-tweet > div span {
-  color: #cf9b67;
+  color: #fe58a4;
 }
 
 .instagram a {
@@ -3442,7 +3441,7 @@ a:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(207, 155, 103, 0.85);
+  background: rgba(254, 88, 164, 0.85);
   z-index: 2;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -3488,7 +3487,7 @@ a:hover {
   display: block;
   font-size: 22px;
   line-height: 22px;
-  color: #fff;
+  color: #fe58a4;
   
   position: relative;
   padding-bottom: 30px;
@@ -3502,7 +3501,7 @@ a:hover {
   bottom: -1px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -3514,7 +3513,7 @@ a:hover {
   bottom: 1px;
   width: 29px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
 }
 
 .footer-copyright {
@@ -3534,7 +3533,7 @@ a:hover {
   display: block;
   width: 60px;
   height: 60px;
-  background: #cf9b67;
+  background: #fe58a4;
   text-indent: -200px;
   overflow: hidden;
   -moz-border-radius: 60px;
@@ -3585,5 +3584,5 @@ a:hover {
   background: #fff;
 }
 .footer-copyright a:hover:after, .footer-copyright a:hover:before {
-  background: #cf9b67;
+  background: #fe58a4;
 }

@@ -127,8 +127,8 @@
     left: 50%;
     margin-left: -10px;
     content: "●";
-    color: #fe58a4;
-    background: #fff;
+    color: #fff;
+    background: #fe58a4;
     line-height: 6px;
     font-size: 12px;
     -moz-border-radius: 0;
@@ -140,15 +140,15 @@
     text-align: left;
 }
 .promotionMonth:after{
+    content: "";
+    position: absolute;
     width: 78px;
     height: 2px;
     left: 50%;
     margin-left: -39px;
     z-index: 0;
-    content: "";
-    position: absolute;
     bottom: 1px;
-    background-color: #fe58a4;
+    background-color: #fff;
 }
 
 
@@ -156,24 +156,6 @@
     padding-left: 15px;
 }
 
-.promotionMonth:before{
-  content: "";
-  position: absolute;
-  left: 15px;
-  bottom: -1px;
-  width: 6px;
-  height: 6px;
-  background-color: #fff;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-}
-.promotionMonth:after{
-  content: "";
-  position: absolute;
-  left: 28px;
-  bottom: 1px;
-  width: 29px;
-  height: 2px;
-  background-color: #fff;
+.black-font{
+    color:#000;
 }

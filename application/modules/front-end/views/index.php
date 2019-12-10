@@ -215,7 +215,7 @@
 						<h2 class="promotionMonth text-center">
 							โปรโมชั่นของเดือนนี้
 						</h2>
-						<span class="section-suptitle promotionMonth-2">
+						<span class="section-suptitle promotionMonth-2 text-center form-group">
 							Month of December
 						</span>
 						<ul class="event-carousel">
@@ -393,12 +393,12 @@
 		<!-- End Section Teams -->
 
 		<!-- Section Testimonials -->
-		<section id="testimonials" class="padd-100 parallax-window" data-background="http://placehold.it/1902x1000">
-			<span class="section-suptitle text-center">
+		<section id="testimonials" class="padd-100 parallax-window">
+			<span class="section-suptitle text-center black-font ">
 				Food Lover
 			</span>
-			<h2 class="section-title white-font sep-type-2 text-center">
-				customer feedback
+			<h2 class="section-title sep-type-2 text-center black-font">
+				ความคิดเห็นจากลูกค้า
 			</h2>
 			<div class="container">
 				<div class="row">
@@ -466,124 +466,6 @@
 		</section>
 		<!-- End Section Testimonials -->
 		
-		
-
-		
-
-		<!-- Section Vision -->
-		<section id="vision" data-background="http://placehold.it/1902x800" class="parallax-window padd-100">
-			<h2 class="sr-only">Vision</h2>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<div class="vision-item">
-							<span class="count">291</span>
-							<p>Best Dishes</p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="vision-item">
-							<span class="count">710</span>
-							<p>Awwards Won</p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="vision-item">
-							<span class="count">163</span>
-							<p>Our Chefs</p>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="vision-item last-item">
-							<span class="count">212</span>
-							<p>Daily Customers</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Section Vision -->
-
-		<!-- Section From The Menu -->
-		<section id="from-menu" class="padd-100">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="f-menu-list">
-							<div class="f-menu-item">
-								<div class="item-left">
-									<img src="http://placehold.it/470x550" alt="">
-								</div>
-								<div class="item-right">
-									<span class="section-suptitle">Food Lover</span>
-									<h3 class="section-title">
-										Offer Dishes
-									</h3>
-									<span class="price">Only $25 <samp>$45</samp></span>
-									<h4>Chicken and Cashews</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscinit. Vestibulum vel sum ullamcorper, suscipit eros quis, pellentesqsapien. Sed ventis nisl a auris laoreet, at tincidunt lectus volutpat. Etiam semper ligula sollicitudi ante vehicula pellentesqsapien.
-									</p>
-									<a href="">About More</a>
-								</div>
-							</div>
-							<div class="f-menu-item">
-								<div class="item-left">
-									<img src="http://placehold.it/470x550" alt="">
-								</div>
-								<div class="item-right">
-									<span class="section-suptitle">Food Lover</span>
-									<h3 class="section-title">
-										Offer Dishes
-									</h3>
-									<span class="price">Only $30 <samp>$60</samp></span>
-									<h4>Dishes and Wings</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscinit. Vestibulum vel sum ullamcorper, suscipit eros quis, pellentesqsapien. Sed ventis nisl a auris laoreet, at tincidunt lectus volutpat. Etiam semper ligula sollicitudi ante vehicula pellentesqsapien.
-									</p>
-									<a href="">About More</a>
-								</div>
-							</div>
-							<div class="f-menu-item">
-								<div class="item-left">
-									<img src="http://placehold.it/470x550" alt="">
-								</div>
-								<div class="item-right">
-									<span class="section-suptitle">Food Lover</span>
-									<h3 class="section-title">
-										Offer Crepes
-									</h3>
-									<span class="price">Only $10 <samp>$20</samp></span>
-									<h4>Crepes and Crape</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscinit. Vestibulum vel sum ullamcorper, suscipit eros quis, pellentesqsapien. Sed ventis nisl a auris laoreet, at tincidunt lectus volutpat. Etiam semper ligula sollicitudi ante vehicula pellentesqsapien.
-									</p>
-									<a href="">About More</a>
-								</div>
-							</div>
-							<div class="f-menu-item">
-								<div class="item-left">
-									<img src="http://placehold.it/470x550" alt="">
-								</div>
-								<div class="item-right">
-									<span class="section-suptitle">Food Lover</span>
-									<h3 class="section-title">
-										Offer Dishes
-									</h3>
-									<span class="price">Only $25 <samp>$50</samp></span>
-									<h4>Chicken and Dishes</h4>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscinit. Vestibulum vel sum ullamcorper, suscipit eros quis, pellentesqsapien. Sed ventis nisl a auris laoreet, at tincidunt lectus volutpat. Etiam semper ligula sollicitudi ante vehicula pellentesqsapien.
-									</p>
-									<a href="">About More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Section End From The Menu -->
 
 		<!-- Section Contact -->
 		<section id="contact">
