@@ -37,7 +37,7 @@
     bottom: -3px;
     padding-left: 6px;
     text-align: left;
-    background-color:#000 ;
+    background-color:#6b6b6b ;
 }
 .title_stepFood:after{
     width: 78px;
@@ -52,7 +52,7 @@
 }
 
 .stepFood{
-    background-color: black;
+    background-color:#6b6b6b;
 }
 
 .step{
@@ -158,4 +158,16 @@
 
 .black-font{
     color:#000;
+}
+
+.imgPromotion{
+    height: 210px;
+}
+
+.foodGood_img{
+    height: 268px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

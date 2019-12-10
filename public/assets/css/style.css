@@ -690,7 +690,7 @@ a:hover {
 [4. Main Slide / #main-slider]
 --------------------------------------------------------------------*/
 #main-slider {
-  background: url(../../assets/img/demo/slides/01.jpg) no-repeat;
+  background: url(../../assets/img/food-wallpapers-3.jpg) no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
@@ -1175,9 +1175,10 @@ a:hover {
   display: block;
   position: relative;
   overflow: hidden;
+  height: 250px;
 }
 .restaurant-list a img {
-  width: 100%;
+  max-width: 100%;
   position: relative;
   z-index: 0;
   -moz-transition-property: all;
@@ -1292,7 +1293,7 @@ a:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
+  /* background: rgba(0, 0, 0, 0.85); */
   z-index: 0;
 }
 #testimonials .section-title.sep-type-2::before {
@@ -1308,7 +1309,7 @@ a:hover {
   float: left;
   margin: 0 15px;
 }
-.testimonial-list li > div {
+.testimonial-list li > .comment_Detail {
   background: #fff;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -1317,7 +1318,7 @@ a:hover {
   margin-bottom: 32px;
   position: relative;
 }
-.testimonial-list li > div p {
+.testimonial-list li > .comment_Detail p {
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
@@ -1326,7 +1327,7 @@ a:hover {
   position: relative;
   margin-bottom: 22px;
 }
-.testimonial-list li > div p:before {
+.testimonial-list li > .comment_Detail p:before {
   content: "“";
   font-size: 58px;
   left: 50%;
@@ -1337,7 +1338,7 @@ a:hover {
   line-height: 58px;
   height: 20px;
 }
-.testimonial-list li > div p:after {
+.testimonial-list li > .comment_Detail p:after {
   content: "“";
   font-size: 58px;
   left: 50%;
@@ -1352,14 +1353,14 @@ a:hover {
   -o-translate: rotate(180deg);
   -ms-translate: rotate(180deg);
 }
-.testimonial-list li > div span {
+.testimonial-list li > .comment_Detail span {
   display: block;
   text-align: center;
   font-style: 14px;
   font-weight: bold;
   color: #fe58a4;
 }
-.testimonial-list li > div:after {
+.testimonial-list li > .comment_Detail:after {
   width: 0;
   height: 0;
   content: "";
@@ -1372,7 +1373,7 @@ a:hover {
   margin-left: -13px;
   border-color: #fff transparent transparent transparent;
 }
-.testimonial-list li > img {
+.testimonial-list li > .imgProfile_comment > img {
   width: 74px;
   margin: 0 auto;
   display: block;
@@ -1417,19 +1418,21 @@ a:hover {
   position: relative;
   z-index: 1;
 }
-.event-carousel .event-item img {
-  display: block;
+.event-carousel .event-item .imgPromotion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #eaeaea;
   border-width: 1px 1px 0;
 }
-.event-carousel .event-item div {
+.event-carousel .event-item .detailPromotion {
   border: 1px solid #eaeaea;
   border-width: 0 1px 1px;
   background: #fff;
   padding: 30px;
   min-height: 270px;
 }
-.event-carousel .event-item div h3 {
+.event-carousel .event-item .detailPromotion h3 {
   font-size: 22px;
   color: #000;
   
@@ -1437,7 +1440,7 @@ a:hover {
   margin: 0 0 12px;
   font-weight: 400;
 }
-.event-carousel .event-item div span {
+.event-carousel .event-item .detailPromotion span {
   display: block;
   position: relative;
   color: #6b6b6b;
@@ -1447,7 +1450,7 @@ a:hover {
   padding-bottom: 20px;
   line-height: 21px;
 }
-.event-carousel .event-item div span:before {
+.event-carousel .event-item .detailPromotion span:before {
   content: "";
   position: absolute;
   left: 0;
@@ -1459,7 +1462,7 @@ a:hover {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-.event-carousel .event-item div span:after {
+.event-carousel .event-item .detailPromotion span:after {
   content: "";
   position: absolute;
   left: 13px;
@@ -1468,18 +1471,18 @@ a:hover {
   height: 2px;
   background-color: #fe58a4;
 }
-.event-carousel .event-item div p {
+.event-carousel .event-item .detailPromotion p {
   font-size: 14px;
   color: #6b6b6b;
   margin-bottom: 20px;
 }
-.event-carousel .event-item div a {
+.event-carousel .event-item .detailPromotion a {
   text-transform: uppercase;
   font-size: 14px;
   color: #fe58a4;
   position: relative;
 }
-.event-carousel .event-item div a:before {
+.event-carousel .event-item .detailPromotion a:before {
   content: "";
   position: absolute;
   right: -15px;
@@ -1494,7 +1497,7 @@ a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-.event-carousel .event-item div a:after {
+.event-carousel .event-item .detailPromotion a:after {
   content: "";
   position: absolute;
   left: 100%;
@@ -1515,12 +1518,12 @@ a:hover {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.event-carousel .event-item div a:hover:after {
+.event-carousel .event-item .detailPromotion a:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   width: 29px;
 }
-.event-carousel .event-item div a:hover:before {
+.event-carousel .event-item .detailPromotion a:hover:before {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
@@ -1568,27 +1571,27 @@ a:hover {
   width: 25%;
   margin: 0 15px;
 }
-.team-carousel li > div {
+.team-carousel li > .foodGood {
   border: 1px solid #eaeaea;
   text-align: center;
 }
-.team-carousel li > div > img {
+.team-carousel li > .foodGood > .foodGood_img > img {
   display: inline-block;
 }
-.team-carousel li > div > div {
+.team-carousel li > .foodGood > .foodGood_detail {
   background: #fafafa;
   padding: 35px 15px;
   border-top: 1px solid #eaeaea;
   min-height: 202px;
 }
-.team-carousel li > div > div span {
+.team-carousel li > .foodGood > .foodGood_detail span {
   font-style: italic;
   display: block;
   text-align: center;
   margin-bottom: 10px;
   color: #fe58a4;
 }
-.team-carousel li > div > div h3 {
+.team-carousel li > .foodGood > .foodGood_detail h3 {
   text-align: center;
   font-size: 22px;
   
@@ -1600,7 +1603,7 @@ a:hover {
   padding-bottom: 25px;
   position: relative;
 }
-.team-carousel li > div > div h3:before {
+.team-carousel li > .foodGood > .foodGood_detail h3:before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -1617,7 +1620,7 @@ a:hover {
   padding-left: 6px;
   text-align: left;
 }
-.team-carousel li > div > div h3:after {
+.team-carousel li > .foodGood > .foodGood_detail h3:after {
   content: "";
   position: absolute;
   width: 78px;
@@ -1628,14 +1631,14 @@ a:hover {
   bottom: 1px;
   background-color: #fe58a4;
 }
-.team-carousel li > div > div div {
+.team-carousel li > .foodGood > .foodGood_detail div {
   text-align: center;
 }
-.team-carousel li > div > div div a {
+.team-carousel li > .foodGood > .foodGood_detail div a {
   display: inline-block;
   margin: 0 10px;
 }
-.team-carousel li > div > div div a i {
+.team-carousel li > .foodGood > .foodGood_detail div a i {
   color: #d8d8d8;
   font-size: 17px;
   -moz-transition-property: all;
@@ -1647,7 +1650,7 @@ a:hover {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.team-carousel li > div > div div a:hover i {
+.team-carousel li > .foodGood > .foodGood_detail div a:hover i {
   color: #fe58a4;
 }
 

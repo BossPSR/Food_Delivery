@@ -78,11 +78,12 @@
 						</button>
 						<ul class="nav navbar-nav navbar-collapse collapse">
 							<li><a class="active" href="index.html">Home</a></li>
-							<li><a href="about-us.html">about us</a></li>
-							<li><a href="menu.html">menu</a></li>
-							<li><a href="reservation.html">reservation</a></li>
+							<li><a href="resturant.html">Resturant</a></li>
+							<li><a href="promotion.html">Promotion</a></li>
+							<li><a href="food.html">Food</a></li>
 							<li><a href="blog.html">blog</a></li>
-							<li><a href="contact-us.html">contact us</a></li>
+							<li><a href="contact-us.html">Contact Us</a></li>
+							<li><a href="login.html">Login</a></li>
 						</ul>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 
 		
 		<!-- Slide -->
-		<section id="main-slider" data-background="http://placehold.it/1920x1136" class="parallax-window">
+		<section id="main-slider" class="parallax-window">
 
 			<div class="section-slogan">
 				<img src="assets/img/logo.png" alt="">
@@ -136,63 +136,63 @@
 						<div class="grid-sizer col-sm-6 col-md-4"></div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="starters">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
 							<div>
-								<a href="menu.html" target="_blank"><img src="http://placehold.it/465x419" alt=""></a>
+								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
@@ -220,8 +220,11 @@
 						</span>
 						<ul class="event-carousel">
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -231,8 +234,11 @@
 								</div>
 							</li>
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -242,8 +248,11 @@
 								</div>
 							</li>
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -253,8 +262,11 @@
 								</div>
 							</li>
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -264,8 +276,11 @@
 								</div>
 							</li>
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -275,8 +290,11 @@
 								</div>
 							</li>
 							<li class="event-item">
-								<img src="http://placehold.it/370x247" alt="" class="img-responsive">
-								<div>
+								<div class="imgPromotion">
+									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+								</div>
+								
+								<div class="detailPromotion">
 									<h3>Chicken and Cashews</h3>
 									<span>18 Mar 2016</span>
 									<p>
@@ -302,9 +320,12 @@
 					<div class="col-sm-12 no-padd">
 						<ul class="team-carousel">
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
+									</div>
+									
+									<div class="foodGood_detail">
 										<span>Senior Chef</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -316,9 +337,11 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="foodGood_detail">
 										<span>Adjoint Chef</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -330,9 +353,11 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="foodGood_detail">
 										<span>Junior Chef</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -344,9 +369,11 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food3.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="foodGood_detail">
 										<span>Adapter</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -358,9 +385,11 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food2.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="foodGood_detail">
 										<span>Senior Chef</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -372,9 +401,11 @@
 								</div>
 							</li>
 							<li>
-								<div>
-									<img src="http://placehold.it/249x358" alt="" class="img-responsive">
-									<div>
+								<div class="foodGood">
+									<div class="foodGood_img">
+										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
+									</div>
+									<div class="foodGood_detail">
 										<span>Adjoint Chef</span>
 										<h3>Remeno Fentos</h3>
 										<div>
@@ -405,7 +436,7 @@
 					<div class="col-sm-12 no-padd">
 						<ul class="testimonial-list">
 							<li>
-								<div>
+								<div class="comment_Detail">
 									<p>
 										Nunc ullamcorper augue nec accumsan
 										porta. Ut lacinia fgiat viverra. Ut dictum
@@ -413,10 +444,12 @@
 									</p>
 									<span>Anna Van</span>
 								</div>
-								<img src="http://placehold.it/95x95" alt="" class="img-responsive">
+								<div class="imgProfile_comment">
+									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
+								</div>	
 							</li>
 							<li>
-								<div>
+								<div class="comment_Detail">
 									<p>
 										Nunc ullamcorper augue nec accumsan
 										porta. Ut lacinia fgiat viverra. Ut dictum
@@ -424,10 +457,12 @@
 									</p>
 									<span>Frinton Van</span>
 								</div>
-								<img src="http://placehold.it/95x95" alt="" class="img-responsive">
+								<div class="imgProfile_comment">
+									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
+								</div>
 							</li>
 							<li>
-								<div>
+								<div class="comment_Detail">
 									<p>
 										Nunc ullamcorper augue nec accumsan
 										porta. Ut lacinia fgiat viverra. Ut dictum
@@ -435,10 +470,12 @@
 									</p>
 									<span>Filipe Van</span>
 								</div>
-								<img src="http://placehold.it/95x95" alt="" class="img-responsive">
+								<div class="imgProfile_comment">
+									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
+								</div>
 							</li>
 							<li>
-								<div>
+								<div class="comment_Detail">
 									<p>
 										Nunc ullamcorper augue nec accumsan
 										porta. Ut lacinia fgiat viverra. Ut dictum
@@ -446,10 +483,12 @@
 									</p>
 									<span>Frinton Van</span>
 								</div>
-								<img src="http://placehold.it/95x95" alt="" class="img-responsive">
+								<div class="imgProfile_comment">
+									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
+								</div>
 							</li>
 							<li>
-								<div>
+								<div class="comment_Detail">
 									<p>
 										Nunc ullamcorper augue nec accumsan
 										porta. Ut lacinia fgiat viverra. Ut dictum
@@ -457,7 +496,9 @@
 									</p>
 									<span>Frinton Van</span>
 								</div>
-								<img src="http://placehold.it/95x95" alt="" class="img-responsive">
+								<div class="imgProfile_comment">
+									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
+								</div>
 							</li>
 						</ul>
 					</div>

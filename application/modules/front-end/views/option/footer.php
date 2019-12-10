@@ -50,27 +50,27 @@
 						<div class="instagram">
 							<span class="foot-title">Instragram</span>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 							<a href="">
-								<img src="http://placehold.it/83x83" alt="">
+								<img src="./public/assets/img/food1.jpg" alt="">
 								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
