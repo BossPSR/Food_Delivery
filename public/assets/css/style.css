@@ -41,6 +41,7 @@ Primary use:	Egprojets
 /*------------------------------------------------------------------
 [1. Body]
 --------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Prompt&display=swap');
 html,
 body,
 #site-wrapper {
@@ -53,7 +54,7 @@ body {
 }
 
 * {
-  font-family: "Open Sans";
+  font-family: 'Prompt', sans-serif;
 }
 *:focus {
   outline: none !important;
@@ -104,7 +105,7 @@ body {
 
 .section-suptitle {
   font-size: 30px;
-  color: #cf9b67;
+  color: #fff;
   font-family: "Architects Daughter";
   letter-spacing: 1px;
   display: block;
@@ -118,7 +119,6 @@ body {
   padding-bottom: 35px;
   position: relative;
   font-size: 40px;
-  font-family: "Oswald";
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -131,7 +131,7 @@ body {
   bottom: -1px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -144,7 +144,7 @@ body {
   bottom: 1px;
   width: 29px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
 }
 .section-title.sep-type-2:after,
 .pagination.sep-type-2:after {
@@ -161,7 +161,7 @@ body {
   left: 50%;
   margin-left: -10px;
   content: "●";
-  color: #cf9b67;
+  color: #fe58a4;
   background: #fff;
   line-height: 6px;
   font-size: 12px;
@@ -175,7 +175,7 @@ body {
 }
 
 ::selection {
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   color: #fff;
 }
 
@@ -438,15 +438,21 @@ a:hover {
   background: rgba(0, 0, 0, 0.95) !important;
 }
 
-.is-sticky > .container > .row > ul > li > a.active{
+
+
+.is-sticky > .container > .row > ul > li > a:hover{
   color:#fff;
 }
 
-.is-sticky .navbar .nav a:hover:before{
-  color:#fff;
+.is-sticky > .container > .row > ul > li > a:hover:before{
+  background-color:#fff;
 }
 
 .is-sticky > .container > .row > ul > li > a:hover:after{
+  background-color:#fff;
+}
+
+.is-sticky > .container > .row > ul > li > a.active{
   color:#fff;
 }
 
@@ -476,7 +482,6 @@ a:hover {
 
 .btn-food {
   color: #fff;
-  font-family: "Oswald";
   background-color: #cf9b67;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -724,7 +729,6 @@ a:hover {
   font-weight: 400;
   text-align: center;
   margin: 0 0 20px;
-  font-family: "Oswald";
   text-transform: uppercase;
   line-height: 80px;
   letter-spacing: 1px;
@@ -806,7 +810,7 @@ a:hover {
   font-size: 20px;
   color: #cf9b67;
   margin: 9px 0 12px;
-  font-family: "Oswald";
+
   font-weight: 400;
   letter-spacing: .5px;
 }
@@ -831,7 +835,6 @@ a:hover {
   transform: translate(0, -50%);
   color: #000;
   font-size: 26px;
-  font-family: "Oswald";
   text-align: center;
   letter-spacing: .5px;
 }
@@ -876,7 +879,6 @@ a:hover {
 .offer-right a span {
   display: block;
   text-align: center;
-  font-family: "Oswald";
   font-size: 24px;
   text-transform: uppercase;
   color: #000;
@@ -995,7 +997,6 @@ a:hover {
   display: inline-block;
   color: #fff;
   text-transform: uppercase;
-  font-family: "Oswald";
   font-size: 16px;
   border: 0;
   letter-spacing: 1px;
@@ -1053,7 +1054,6 @@ a:hover {
 }
 .delas-carousel .delas-item h4 {
   font-size: 20px;
-  font-family: "Oswald";
   text-align: center;
   margin: 0 0 10px;
   text-align: center;
@@ -1069,7 +1069,7 @@ a:hover {
 }
 .delas-carousel .delas-item span {
   font-size: 20px;
-  font-family: "Oswald";
+  
   color: #cf9b67;
   text-align: center;
   letter-spacing: 0.5px;
@@ -1136,7 +1136,6 @@ a:hover {
   line-height: 44px;
   display: inline-block;
   font-size: 14px;
-  font-family: "Oswald";
   text-transform: uppercase;
   border: 2px solid #eaeaea;
   -moz-border-radius: 8px;
@@ -1155,9 +1154,9 @@ a:hover {
   transition-duration: 0.3s;
 }
 .restaurant-filter li a.current, .restaurant-filter li a:hover {
-  background: #cf9b67;
+  background: #fe58a4;
   color: #fff;
-  border-color: #cf9b67;
+  border-color: #fe58a4;
 }
 .restaurant-filter li a.current {
   cursor: default;
@@ -1221,7 +1220,7 @@ a:hover {
   right: 20px;
   bottom: 20px;
   z-index: 2;
-  background: rgba(207, 155, 103, 0.8);
+  background: rgba(254, 88, 164, 0.8);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transition-property: all;
@@ -1261,8 +1260,8 @@ a:hover {
   display: block;
   text-align: center;
   font-size: 24px;
-  font-family: "Oswald";
-  color: #cf9b67;
+  
+  color: #fe58a4;
   margin-bottom: 4px;
   letter-spacing: .5px;
 }
@@ -1270,7 +1269,7 @@ a:hover {
   font-size: 20px;
   font-weight: 400;
   color: #000;
-  font-family: "Oswald";
+  
   text-align: center;
   letter-spacing: .5px;
   margin: 0;
@@ -1335,7 +1334,7 @@ a:hover {
   margin-left: -19px;
   position: absolute;
   top: 0;
-  font-family: "Oswald";
+  
   line-height: 58px;
   height: 20px;
 }
@@ -1346,7 +1345,7 @@ a:hover {
   margin-left: -19px;
   position: absolute;
   bottom: 0;
-  font-family: "Oswald";
+  
   line-height: 58px;
   height: 20px;
   translate: rotate(180deg);
@@ -1391,7 +1390,7 @@ a:hover {
 [10. Section Events / #events]
 --------------------------------------------------------------------*/
 #events {
-  background: url(../../assets/img/demo/bg/04.png) 0 bottom no-repeat #fafafa;
+  background-color: #fe58a4;
 }
 #events .section-title.sep-type-2:before {
   background: #fafafa;
@@ -1434,7 +1433,7 @@ a:hover {
 .event-carousel .event-item div h3 {
   font-size: 22px;
   color: #000;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   margin: 0 0 12px;
   font-weight: 400;
@@ -1456,7 +1455,7 @@ a:hover {
   bottom: -1px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -1468,7 +1467,7 @@ a:hover {
   bottom: 1px;
   width: 29px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
 }
 .event-carousel .event-item div p {
   font-size: 14px;
@@ -1478,7 +1477,7 @@ a:hover {
 .event-carousel .event-item div a {
   text-transform: uppercase;
   font-size: 14px;
-  color: #cf9b67;
+  color: #fe58a4;
   position: relative;
 }
 .event-carousel .event-item div a:before {
@@ -1489,7 +1488,7 @@ a:hover {
   margin-top: -3px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -1505,7 +1504,7 @@ a:hover {
   margin-left: 18px;
   margin-top: -1px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transition-property: all;
@@ -1550,12 +1549,12 @@ a:hover {
   border-radius: 10px;
 }
 .event-carousel .slick-dots > li button:hover {
-  background: #cf9b67;
-  border-color: #cf9b67;
+  background: #000;
+  border-color: #000;
 }
 .event-carousel .slick-dots > li.slick-active button {
-  background: #cf9b67;
-  border-color: #cf9b67;
+  background: #000;
+  border-color: #000;
 }
 
 /*------------------------------------------------------------------
@@ -1593,7 +1592,7 @@ a:hover {
 .team-carousel li > div > div h3 {
   text-align: center;
   font-size: 22px;
-  font-family: "Oswald";
+  
   color: #000;
   font-weight: 400;
   text-transform: capitalize;
@@ -1693,7 +1692,7 @@ a:hover {
   -webkit-border-radius: 100%;
   border-radius: 100%;
   font-size: 40px;
-  font-family: "Oswald";
+  
   color: #cf9b67;
   line-height: 130px;
   margin-bottom: 28px;
@@ -1713,7 +1712,7 @@ a:hover {
   text-align: center;
   color: #fff;
   font-size: 22px;
-  font-family: "Oswald";
+  
   margin: 0;
   letter-spacing: .5px;
 }
@@ -1744,7 +1743,7 @@ a:hover {
 .f-menu-item .item-right .price {
   display: block;
   font-size: 40px;
-  font-family: "Oswald";
+  
   color: #cf9b67;
   margin-bottom: 25px;
   line-height: 40px;
@@ -1753,7 +1752,7 @@ a:hover {
 .f-menu-item .item-right .price samp {
   color: #6b6b6b;
   font-size: 22px;
-  font-family: "Oswald";
+  
   text-decoration: line-through;
   margin-left: 3px;
   line-height: 22px;
@@ -1761,7 +1760,7 @@ a:hover {
 .f-menu-item .item-right h4 {
   font-size: 22px;
   color: #000;
-  font-family: "Oswald";
+  
   margin: 0 0 25px;
   letter-spacing: .5px;
   font-weight: 400;
@@ -1774,7 +1773,7 @@ a:hover {
 }
 .f-menu-item .item-right a {
   color: #6b6b6b;
-  font-family: "Oswald";
+  
   border: 2px solid #e9e9e9;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -1872,7 +1871,7 @@ a:hover {
 .ctc-item .widget b {
   display: block;
   font-size: 20px;
-  font-family: "Oswald";
+  
   color: #000;
   margin-bottom: 5px;
 }
@@ -1902,7 +1901,7 @@ a:hover {
 #newsletter h3 {
   font-size: 36px;
   color: #fff;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   margin: 0;
   font-weight: 400;
@@ -1961,7 +1960,7 @@ a:hover {
   width: 100%;
   text-align: center;
   color: #cf9a67;
-  font-family: "Oswald";
+  
   letter-spacing: 1px;
   font-size: 14px;
   border: 0;
@@ -2226,7 +2225,7 @@ a:hover {
 }
 .service-item > div h4 {
   font-size: 19px;
-  font-family: "Oswald";
+  
   margin: 0 0 10px;
   font-weight: normal;
   letter-spacing: .5px;
@@ -2541,7 +2540,7 @@ a:hover {
 }
 .desc-apps .big-title {
   font-size: 18px;
-  font-family: "Oswald";
+  
   display: block;
   margin-bottom: 5px;
   letter-spacing: .5px;
@@ -2602,7 +2601,7 @@ a:hover {
 }
 .item-contact b {
   font-size: 19px;
-  font-family: "Oswald";
+  
   display: inline-block;
   margin-bottom: 8px;
 }
@@ -2647,7 +2646,7 @@ a:hover {
 
 .entry-title {
   font-size: 20px;
-  font-family: "Oswald";
+  
   margin-bottom: 10px;
   font-weight: 400;
   letter-spacing: .5px;
@@ -2701,7 +2700,7 @@ a:hover {
 
 .btn-read-more {
   color: #6b6b6b;
-  font-family: "Oswald";
+  
   border: 2px solid #e9e9e9;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -2752,7 +2751,7 @@ a:hover {
   width: 46px;
   color: #6b6b6b;
   font-weight: 400;
-  font-family: "Oswald";
+  
   border: 2px solid #e9e9e9;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -2823,7 +2822,7 @@ a:hover {
   padding-bottom: 25px;
   position: relative;
   font-size: 26px;
-  font-family: "Oswald";
+  
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -2933,7 +2932,7 @@ a:hover {
 #blog .widget.widget_popullar li div h4 a {
   font-size: 16px;
   color: #000;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   font-weight: 400;
 }
@@ -2992,7 +2991,7 @@ a:hover {
 #blog .widget.widget_author > div span {
   font-size: 18px;
   color: #cf9b67;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   font-weight: 400;
 }
@@ -3010,7 +3009,7 @@ a:hover {
 .share-box span {
   font-size: 20px;
   color: #333333;
-  font-family: "Oswald";
+  
   margin-right: 22px;
   display: inline-block;
   font-weight: 400;
@@ -3033,7 +3032,7 @@ a:hover {
   padding-bottom: 25px;
   position: relative;
   font-size: 26px;
-  font-family: "Oswald";
+  
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -3091,7 +3090,7 @@ a:hover {
 .author .content .name {
   font-size: 18px;
   color: #cf9b67;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   font-weight: 400;
 }
@@ -3134,7 +3133,7 @@ a:hover {
 .post-comments li .comment-content h4 {
   font-size: 18px;
   color: #cf9b67;
-  font-family: "Oswald";
+  
   letter-spacing: .5px;
   font-weight: 400;
   margin: 0 0 10px;
@@ -3312,7 +3311,7 @@ a:hover {
 }
 .bloc-cms a {
   text-transform: uppercase;
-  font-family: "Oswald";
+  
   color: #cf9b67;
   position: relative;
   -moz-transition-property: all;
@@ -3490,7 +3489,7 @@ a:hover {
   font-size: 22px;
   line-height: 22px;
   color: #fff;
-  font-family: "Oswald";
+  
   position: relative;
   padding-bottom: 30px;
   margin-bottom: 30px;
