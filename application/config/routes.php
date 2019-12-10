@@ -8,6 +8,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
+/****************       front-end       *********************/ 
 
-
-$route['index'] = 'front-end/Index_ctr/index'; 
+$route['index']         = 'front-end/Index_ctr/index'; 
+$route['blog']          = 'front-end/Blog_ctr/index'; 
+$route['blog-single']   = 'front-end/Blog_ctr/blog_single'; 
+$route['contact']       = 'front-end/Contact_ctr/index'; 
