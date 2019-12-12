@@ -7,7 +7,7 @@
 				<h1 class="section-title white-font text-center">Contact us</h1>
 				<ul>
 					<li><a href="">Home</a></li>
-					<li>Contact us</li>
+					<li style="color:#fe58a4">Contact us</li>
 				</ul>
 			</div>
 		</section>

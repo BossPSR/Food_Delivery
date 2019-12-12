@@ -77,13 +77,12 @@
 							<span class="icon-bar"></span>
 						</button>
 						<ul class="nav navbar-nav navbar-collapse collapse">
-							<li><a class="active" href="index">Home</a></li>
-							<li><a href="resturant.html">Resturant</a></li>
-							<li><a href="promotion.html">Promotion</a></li>
-							<li><a href="food.html">Food</a></li>
-							<li><a href="blog">blog</a></li>
-							<li><a href="contact">Contact Us</a></li>
-							<li><a href="login.html">Login</a></li>
+							<li><a href="index">หน้าแรก</a></li>
+							<li><a href="Resturant">ร้านอาหาร</a></li>
+							<li><a href="Food">อาหาร</a></li>
+							<li><a href="blog">บล็อก</a></li>
+							<li><a href="contact">ติดต่อเรา</a></li>
+							<li><a href="login.html">ล็อกอิน</a></li>
 						</ul>
 					</div>
 				</div>

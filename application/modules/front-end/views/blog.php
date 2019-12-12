@@ -6,7 +6,7 @@
 				<h1 class="section-title white-font text-center">Blog category</h1>
 				<ul>
 					<li><a href="">Home</a></li>
-					<li>Blog category</li>
+					<li style="color:#fe58a4">Blog category</li>
 				</ul>
 			</div>
 		</section>
