@@ -82,10 +82,11 @@
 							<li><a href="Food">อาหาร</a></li>
 							<li><a href="blog">บล็อก</a></li>
 							<li><a href="contact">ติดต่อเรา</a></li>
-							<li><a href="login.html">ล็อกอิน</a></li>
+							<li><a href="Login">ล็อกอิน</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
+		
 		<!-- End Header -->
