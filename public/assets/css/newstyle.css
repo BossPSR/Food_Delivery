@@ -189,3 +189,7 @@
     line-height: 20px;
     text-decoration: none
 }
+
+.btn-fb:hover {
+    opacity: 1;
+}

@@ -20,12 +20,16 @@
 									</span>
 								</div>
 								<p class="text-center padd-top-30">
-									<button type="submit" class="btn-food">Login</button>
-								</p>								
+									<button type="submit" class="btn-food" style="width: 20%;">Login</button>
+								</p>
+
+								<div style="width: 20%; margin: 15px auto 0; text-align:center;"> 
+									<a href="#" class="fb btn-fb">
+										<i class="fa fa-facebook fa-fw"></i> Login with Facebook
+									</a>
+								</div>	
 							</form>
-							<a href="#" class="fb btn">
-								<i class="fa fa-facebook fa-fw"></i> Login with Facebook
-							</a>
+							
 						</div>
 						</form>
 					</div>
