@@ -10,6 +10,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 /****************       front-end       *********************/ 
 
+
+$route['Login']         = 'front-end/Login_ctr'; 
 $route['index']         = 'front-end/Index_ctr/index'; 
 $route['blog']          = 'front-end/Blog_ctr/index'; 
 $route['blog-single']   = 'front-end/Blog_ctr/blog_single'; 

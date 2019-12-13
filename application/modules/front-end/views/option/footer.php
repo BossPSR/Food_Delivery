@@ -96,7 +96,8 @@
 
 	<!-- Custom JS Files -->
 	<script type="text/javascript" src="public/assets/js/egprojets.custom.js"></script>
-    <!-- Custom JS Files -->
+	<!-- Custom JS Files -->
+	
 </body>
 
 </html>
