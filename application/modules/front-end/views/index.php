@@ -54,7 +54,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 hidden-xs">
 						<div class="arrowAll">
 							<div class="arrow-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -82,7 +82,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 hidden-xs">
 						<div class="arrowAll">
 							<div class="arrow-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -96,7 +96,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
 						<div class="how-it-works-wrap">
 							<div class="step">
-								<div class="icon" data-step="1">
+								<div class="icon" data-step="3">
 									<i class="fa fa-car" aria-hidden="true" style="font-size: 35px;color: #fff"></i>
 								</div>
 							</div>

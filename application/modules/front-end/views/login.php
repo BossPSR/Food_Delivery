@@ -22,6 +22,9 @@
 									<button type="submit" class="btn-food">Login</button>
 								</p>								
 							</form>
+							<a href="#" class="fb btn">
+								<i class="fa fa-facebook fa-fw"></i> Login with Facebook
+							</a>
 						</div>
 					</div>
 				</div>
