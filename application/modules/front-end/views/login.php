@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="form-reservation">
-							<form action="#" method="post">
+							<form action="LoginMe" method="post">
 								<div class="column">
 									<span>
 										<input type="email" name="email" placeholder="Eamil" class="required-field">
