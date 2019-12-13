@@ -11,7 +11,7 @@ class Login_model extends CI_Model{
     {
        $this->db->where('email', $email);
        $this->db->where('password', $password);
-       $query = $this->db->get('tbl_register');
+       $query = $this->db->get('tbl_member');
 
        if ($query->num_rows() > 0)
        {

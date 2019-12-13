@@ -13,6 +13,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['Login']         = 'front-end/Login_ctr'; 
 $route['LoginMe']         = 'front-end/Login_ctr/loginMe'; 
+$route['Logout']         = 'front-end/Login_ctr/logout'; 
 $route['index']         = 'front-end/Index_ctr/index'; 
 $route['blog']          = 'front-end/Blog_ctr/index'; 
 $route['blog-single']   = 'front-end/Blog_ctr/blog_single'; 
