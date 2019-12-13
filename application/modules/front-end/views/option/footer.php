@@ -97,7 +97,16 @@
 	<!-- Custom JS Files -->
 	<script type="text/javascript" src="public/assets/js/egprojets.custom.js"></script>
 	<!-- Custom JS Files -->
-	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    <?php if($this->session->flashdata('save_ss')): ?>
+        swal("Good job!", "You clicked the button!", "success");
+    <?php endif; ?>
+    <?php if($this->session->flashdata('del_ss')): ?>
+        swal("fill !", "You clicked the button!", "error");
+    <?php endif; ?>
+</script>
+
 </body>
 
 </html>
