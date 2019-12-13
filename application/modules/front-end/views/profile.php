@@ -18,24 +18,23 @@
 										<input type="text" name="last_name" placeholder="นามสกุล" class="required-field">
 									</span>
 							    </div>
+								<div class="column">
+									<span>
+										<input type="date" name="birthday" placeholder="วันเกิด" class="required-field">
+									</span>
+									<span>
+										<input type="text" name="id_line" placeholder="ไอดีไลน์" class="required-field">
+									</span>
+							    </div>
                                 <div class="column">
-									<span style="float:left; width:100%;padding-left:0;">
+									<span>
 										<input type="text" name="phone" placeholder="เบอร์โทร" class="required-field">
 									</span>
-							    </div>
-                                <div class="column">
-                                    <span style="float:left; width:100%;padding-left:0;">
+									<span>
 										<input type="email" name="email" placeholder="อีเมล" class="required-field">
 									</span>
-                                </div>
-                                <div class="column">
-									<span>
-										<input type="password" name="password" placeholder="รหัสผ่าน" class="required-field">
-									</span>
-									<span>
-										<input type="password" name="comfirm_password" placeholder="ยืนยันรหัสผ่าน" class="required-field">
-									</span>
 							    </div>
+                               
                                 <h3 style="color:#25282b;">สถานที่จัดส่ง</h3>
                                 <hr>
                                 <div class="column">
@@ -54,24 +53,13 @@
 										<input type="text" name="district" placeholder="ตำบล" class="required-field">
 									</span>
 							    </div>
+                                
                                 <div class="column">
-									<span style="float:left; width:100%;padding-left:0;">
-										<input type="text" name="phone" placeholder="เบอร์โทร" class="required-field">
-									</span>
-							    </div>
-                                <div class="column">
-                                    <span style="float:left; width:100%;padding-left:0;">
-										<input type="email" name="email" placeholder="อีเมล" class="required-field">
+                                    <span style="float:left;padding-left:0;padding-right: 8px;">
+										<input type="text" name="zipcode" placeholder="รหัสไปรษณีย์" class="required-field">
 									</span>
                                 </div>
-                                <div class="column">
-									<span>
-										<input type="password" name="password" placeholder="รหัสผ่าน" class="required-field">
-									</span>
-									<span>
-										<input type="password" name="comfirm_password" placeholder="ยืนยันรหัสผ่าน" class="required-field">
-									</span>
-							    </div>
+                                
 								<p class="text-center padd-top-30">
 									<button type="submit" class="btn-food">Submit</button>
 								</p>							
