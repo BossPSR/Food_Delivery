@@ -24,8 +24,8 @@
 		    <div class="container">
 				<div class="row">
 					<div class="col-sm-12">
+					<form action="my_profile_save" method="post">
 						<div class="form-reservation">
-							<form action="my_profile_save" method="post">
 							<input type="text" name="id" value="<?php echo $user['id'] ?>" hidden>
                                 <h3 style="color:#25282b;">ข้อมูลส่วนตัว</h3>
                                 <hr>
@@ -77,10 +77,22 @@
                                     <span style="float:left;padding-left:0;padding-right: 8px;">
 										<input type="text" name="zipcode" value="<?php echo $user['zipcode'] ?>" placeholder="รหัสไปรษณีย์" class="required-field">
 									</span>
-                                </div>
+								</div>
+								<h3 style="color:#25282b;">รหัสผ่าน</h3>
+                                <hr>
+                                <div class="column">
+									<span>
+										<input type="password" id="password" name="password" value="" placeholder="รหัสผ่าน" class="required-field">
+									</span>
+									<span>
+										<input type="password" id="c_password" name="c_password" value="" placeholder="ยืนยันรหัสผ่าน" class="required-field">
+									</span>
+									<span id="message" ></span>
+							    </div>
+                          
                                 
 								<p class="text-center padd-top-30">
 									<button type="submit" class="btn-food">Submit</button>
 								</p>							
-
+</form>
 </section>

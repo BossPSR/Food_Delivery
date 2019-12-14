@@ -2,7 +2,7 @@
     
 	<!-- Section Contact -->
     <section id="contact-detail" class=" padd-100">
-		<h2 class="section-title sep-type-2 text-center">Register</h2>
+		<h2 class="section-title sep-type-2 text-center">สมัครสมาชิก</h2>
 		    <div class="container">
 				<div class="row">
 					<div class="col-sm-12">
@@ -36,7 +36,7 @@
 									<span id="message"></span>
 							    </div>
 								<p class="text-center padd-top-30">
-									<button type="submit" class="btn-food">Register</button>
+									<button type="submit" class="btn-food">สมัครมาชิก</button>
 								</p>							
 
 																

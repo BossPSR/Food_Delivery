@@ -3,7 +3,7 @@
 	<!-- Section Contact -->
     <section id="contact-detail" class=" padd-100">
 			
-			<h2 class="section-title sep-type-2 text-center">Login</h2>
+			<h2 class="section-title sep-type-2 text-center">ล็อกอิน</h2>
 		
 			<div class="container">
 				<div class="row">
@@ -22,7 +22,7 @@
 									</span>
 								</div>
 								<p class="text-center padd-top-30">
-									<button type="submit" class="btn-food button_food">Login</button>
+									<button type="submit" class="btn-food button_food">ล็อกอิน</button>
 								</p>
 
 								<div class="button_fb"> 

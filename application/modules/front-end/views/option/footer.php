@@ -103,7 +103,7 @@
         swal("Good job!", '<?php echo $suss ; ?>' , "success");
     <?php endif; ?>
     <?php if($error = $this->session->flashdata('del_ss2')): ?>
-        swal("fill !", '<?php echo $error ; ?>' , "error");
+        swal("Fail !", '<?php echo $error ; ?>' , "error");
     <?php endif; ?>
 </script>
 <script>
