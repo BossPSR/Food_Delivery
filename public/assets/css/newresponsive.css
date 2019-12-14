@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+
+    .mobile_index{
+        width: 50%;
+        margin: 15px auto 15px;
+    }
+
+    .mobile_step{
+        margin-bottom: 15px;
+    }
+
+    .button_food,.button_fb{
+        width: 80%;
+    }
+}
+
+@media (max-width: 1200px){
+    .button_food,.button_fb{
+        width: 35%;
+    }
+}

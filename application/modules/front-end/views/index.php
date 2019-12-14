@@ -10,7 +10,7 @@
 				<div class="container">
 					<div class="row">
 						<form class="form-inline" action="post">
-							<div class="form-group">
+							<div class="form-group mobile_index">
 								<input type="text" class="form-control form-control-lg" id="InputSearchName"/>
 							</div>
 							<button type="submit" class="btn theme-btn btn-lg btn-slide">ค้นหาร้านอาหาร</button>
@@ -34,12 +34,12 @@
 				</div>
 
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-1">
+					<div class="col-xs-12 col-sm-12 col-md-1 col-lg-1">
 							
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-						<div class="how-it-works-wrap">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="how-it-works-wrap mobile_step">
 							<div class="step">
 								<div class="icon" data-step="1">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483 483" width="512" height="512">
@@ -54,7 +54,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 hidden-xs">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 hidden-xs hidden-sm">
 						<div class="arrowAll">
 							<div class="arrow-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -67,8 +67,8 @@
 
 					
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-						<div class="how-it-works-wrap">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="how-it-works-wrap mobile_step">
 							<div class="step">
 								<div class="icon" data-step="2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 380.721 380.721">
@@ -82,7 +82,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2 hidden-xs">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 hidden-xs hidden-sm">
 						<div class="arrowAll">
 							<div class="arrow-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -93,8 +93,8 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
-						<div class="how-it-works-wrap">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="how-it-works-wrap mobile_step">
 							<div class="step">
 								<div class="icon" data-step="3">
 									<i class="fa fa-car" aria-hidden="true" style="font-size: 35px;color: #fff"></i>
@@ -105,7 +105,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-1">
+					<div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
 							
 					</div>
 

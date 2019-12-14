@@ -193,3 +193,13 @@
 .btn-fb:hover {
     opacity: 1;
 }
+
+.button_food{
+    width: 20%; 
+}
+
+.button_fb{
+    width: 20%; 
+    margin: 15px auto 0; 
+    text-align:center;
+}

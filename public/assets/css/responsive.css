@@ -210,7 +210,7 @@ Primary use:  Egprojets
 
   .menu-mobile {
     display: block;
-    border: 1px solid #cf9b67;
+    border: 1px solid #fe58a4;
     padding: 9px 10px;
     position: absolute;
     right: 15px;
@@ -238,7 +238,7 @@ Primary use:  Egprojets
   .menu-mobile .icon-bar {
     width: 22px;
     height: 2px;
-    background: #cf9b67;
+    background: #fe58a4;
     display: block;
     border-radius: 1px;
   }
@@ -259,7 +259,7 @@ Primary use:  Egprojets
   }
 
   .menu-mobile.current {
-    background: #cf9b67;
+    background: #fe58a4;
   }
 
   .menu-mobile.current .icon-bar {
