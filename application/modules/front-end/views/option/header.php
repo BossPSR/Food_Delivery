@@ -82,8 +82,14 @@
 							<li><a href="Food">อาหาร</a></li>
 							<li><a href="blog">บล็อก</a></li>
 							<li><a href="contact">ติดต่อเรา</a></li>
+							<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
+                             <?php if ($user == true) :  ?>
+							<li><a href="Profile"><?php echo $user['first_name'].' '.$user['last_name'] ?></a></li>
+							<li><a href="Logout">ล็อกเอาท์</a></li>
+							<?php else :  ?>
 							<li><a href="Register">สมัครสมาชิก</a></li>
 							<li><a href="Login">ล็อกอิน</a></li>
+							<?php endif  ?>
 						</ul>
 					</div>
 				</div>

@@ -35,12 +35,12 @@ class Login_ctr extends CI_Controller {
                     'email' => $email
                 );
                 $this->session->set_userdata($user_data);
-                $this->session->set_flashdata('save_ss', TRUE);
-                redirect('index');
+                $this->session->set_flashdata('save_ss2', 'ล็อกอินเรียบร้อยแล้ว');
+                redirect('Profile');
             }
             else
             {
-                $this->session->set_flashdata('del_ss', '<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-triangle"></i> กรุณากรอก Email หรือ Password ให้ถูกต้อง !! </div>');
+                $this->session->set_flashdata('del_ss2', 'รหัสผ่านผิดกรุณา ตรวจสอบ!!');
                 redirect('Login','refresh');
             }
         }   
