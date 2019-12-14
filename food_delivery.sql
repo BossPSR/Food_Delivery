@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : db
 Source Server Version : 50505
 Source Host           : localhost:3306
-Source Database       : food_delivery
+Source Database       : food
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-12-13 15:56:55
+Date: 2019-12-14 14:13:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,12 +57,13 @@ CREATE TABLE `tbl_member` (
   `updated_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_member
 -- ----------------------------
 INSERT INTO `tbl_member` VALUES ('1', 'test', '001', '0879879877', 'test@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2019-12-13', 'mx001', '121/1 หมู่บ้านอรสิริน ทาวโฮม 1', 'เชียงใหม่', 'หนองหาร', 'หนองจ๋อม', '50210', '2019-12-13 15:56:30', '2019-12-13 15:56:32');
+INSERT INTO `tbl_member` VALUES ('3', 'มิกิ', 'phenomenal software', '0618096661', 'infinityp.soft@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2019-12-14', 'miki_ik', '247/5 moo 4', 'Chiangmai', 'SanSai', 'หนองจ๊อม', '50290', '2019-12-14 14:04:05', '2019-12-14 14:07:12');
 
 -- ----------------------------
 -- Table structure for `tbl_order`
