@@ -26,3 +26,12 @@ $route['Register']        = 'front-end/Register_ctr';
 $route['Register_success']        = 'front-end/Register_ctr/register_success'; 
 $route['Profile']         = 'front-end/Profile_ctr'; 
 $route['my_profile_save']         = 'front-end/Profile_ctr/my_profile_save'; 
+
+
+
+
+
+/****************       back-end       *********************/ 
+$route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
+$route['Forgot_Password_Admin']         = 'back-end/AdminLogin_ctr/forgot_password'; 
+$route['Admin_Order']                   = 'back-end/AdminOrder_ctr'; 
