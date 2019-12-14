@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="public/assets/css/style.css" />
 	<link rel="stylesheet" href="public/assets/css/responsive.css" />
 	<link rel="stylesheet" href="public/assets/css/newstyle.css" />
+	<link rel="stylesheet" href="public/assets/css/newresponsive.css" />
 	<!-- Custom CSS Files -->
 
 	<!--[if lt IE 9]>
