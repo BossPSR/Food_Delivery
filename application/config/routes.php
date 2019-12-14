@@ -22,4 +22,6 @@ $route['contact']       = 'front-end/Contact_ctr/index';
 $route['Resturant']       = 'front-end/Resturant_ctr'; 
 $route['Food']            = 'front-end/Food_ctr'; 
 $route['Register']        = 'front-end/Register_ctr'; 
+$route['Register_success']        = 'front-end/Register_ctr/register_success'; 
 $route['Profile']         = 'front-end/Profile_ctr'; 
+$route['my_profile_save']         = 'front-end/Profile_ctr/my_profile_save'; 

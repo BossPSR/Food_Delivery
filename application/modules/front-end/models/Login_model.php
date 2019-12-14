@@ -23,6 +23,16 @@ class Login_model extends CI_Model{
        }
 
     }
+
+    public function check_usre($email)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_member');
+        $this->db->where('email',$email);
+        $data = $this->db->get();
+        
+        return $data->row_array();
+    }
 }
 
 ?>

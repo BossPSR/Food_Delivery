@@ -99,14 +99,21 @@
 	<!-- Custom JS Files -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    <?php if($this->session->flashdata('save_ss')): ?>
-        swal("Good job!", "You clicked the button!", "success");
+    <?php if($suss = $this->session->flashdata('save_ss2')): ?>
+        swal("Good job!", '<?php echo $suss ; ?>' , "success");
     <?php endif; ?>
-    <?php if($this->session->flashdata('del_ss')): ?>
-        swal("fill !", "You clicked the button!", "error");
+    <?php if($error = $this->session->flashdata('del_ss2')): ?>
+        swal("fill !", '<?php echo $error ; ?>' , "error");
     <?php endif; ?>
 </script>
-
+<script>
+    $('#password, #c_password').on('keyup', function() {
+        if ($('#password').val() == $('#c_password').val()) {
+            $('#message').html('รหัสผ่านตรงกัน').css('color', 'green');
+        } else
+            $('#message').html('รหัสผ่านไม่ตรงกัน').css('color', 'red');
+    });
+</script>
 </body>
 
 </html>
