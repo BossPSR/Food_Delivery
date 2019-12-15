@@ -35,3 +35,4 @@ $route['my_profile_save']         = 'front-end/Profile_ctr/my_profile_save';
 $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
 $route['Forgot_Password_Admin']         = 'back-end/AdminLogin_ctr/forgot_password'; 
 $route['Admin_Order']                   = 'back-end/AdminOrder_ctr'; 
+$route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
