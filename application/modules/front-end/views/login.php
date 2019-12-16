@@ -26,7 +26,7 @@
 								</p>
 
 								<div class="button_fb"> 
-									<a href="#" class="fb btn-fb">
+									<a href="<?php echo $authURL; ?>" class="fb btn-fb">
 										<i class="fa fa-facebook fa-fw"></i> Login with Facebook
 									</a>
 								</div>	
