@@ -273,16 +273,16 @@
                 <li class="<?php if($this->uri->segment(1)=="Admin_Restaurant" || $this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Restaurant"><i class="fa fa-cutlery"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span></a>
                 </li>
 
-                <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Content Website</span></a>
+                <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">บล๊อก</span></a>
                     <ul class="menu-content">
-                        <li>
-                            <a href="Admin_Order">
-                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">บลีอก</span>
+                        <li class="<?php if($this->uri->segment(1)=="Admin_Blog_Promotion"){echo 'active';}?>">
+                            <a href="Admin_Blog_Promotion">
+                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">โปรโมชั่น</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="Admin_Order">
-                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">ติดต่อเรา</span>
+                        <li class="<?php if($this->uri->segment(1)=="Admin_Blog_Comment"){echo 'active';}?>">
+                            <a href="Admin_Blog_Comment">
+                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">ความคิดเห็นจากลูกค้า</span>
                             </a>
                         </li>
                     </ul>

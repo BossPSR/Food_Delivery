@@ -245,7 +245,7 @@
                                         
                                        
                                         <div class="col-sm-12 data-field-col data-list-upload">
-                                            <form action="#" class="dropzone dropzone-area" id="dataListUpload">
+                                            <form action="#" class="dropzone dropzone-area" id="dpz-single-file">
                                                 <div class="dz-message">Upload Image</div>
                                             </form>
                                         </div>

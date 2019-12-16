@@ -39,3 +39,6 @@ $route['Admin_Rider']                   = 'back-end/AdminRider_ctr';
 $route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
 $route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 
 $route['Admin_Food']                    = 'back-end/AdminFood_ctr'; 
+$route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion'; 
+$route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'; 
+$route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 

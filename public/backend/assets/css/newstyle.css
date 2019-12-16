@@ -1257,3 +1257,9 @@ _:-ms-lang(x) .table-responsive .top .dataTables_filter .form-control,
     .data-thumb-view-food .mac-checkbox {
       -webkit-appearance: none;
       top: -10px; }
+
+  .dropzone-add-promotion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

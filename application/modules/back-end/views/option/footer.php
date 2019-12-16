@@ -26,6 +26,7 @@
     <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
     <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
     <script src="public/backend/app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="public/backend/app-assets/vendors/js/ui/prism.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -38,6 +39,8 @@
     <script src="public/backend/app-assets/js/scripts/ui/data-list-view.js"></script>
     <script src="public/backend/app-assets/js/scripts/pages/app-chat.js"></script>
     <script src="public/backend/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
+    <script src="public/backend/app-assets/js/scripts/extensions/dropzone.js"></script>
+    <script src="public/backend/app-assets/js/scripts/forms/form-tooltip-valid.js"></script>
     <!-- END: Page JS-->
 
 </body>
