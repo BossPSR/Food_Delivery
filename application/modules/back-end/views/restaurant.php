@@ -206,7 +206,7 @@
                         <div class="add-new-data">
                             <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
                                 <div>
-                                    <h4 class="text-uppercase">เพิ่ม ร้านอาหาร</h4>
+                                    <h4 class="text-uppercase">ร้านอาหาร</h4>
                                 </div>
                                 <div class="hide-data-sidebar">
                                     <i class="feather icon-x"></i>

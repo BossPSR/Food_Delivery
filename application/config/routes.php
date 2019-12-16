@@ -38,3 +38,4 @@ $route['Admin_Order']                   = 'back-end/AdminOrder_ctr';
 $route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
 $route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
 $route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 
+$route['Admin_Food']                    = 'back-end/AdminFood_ctr'; 
