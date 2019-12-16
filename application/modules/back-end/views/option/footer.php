@@ -22,6 +22,10 @@
     <script src="public/backend/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
     <script src="public/backend/app-assets/vendors/js/tables/datatable/dataTables.select.min.js"></script>
     <script src="public/backend/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js"></script>
+    <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="public/backend/app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -32,6 +36,8 @@
 
     <!-- BEGIN: Page JS-->
     <script src="public/backend/app-assets/js/scripts/ui/data-list-view.js"></script>
+    <script src="public/backend/app-assets/js/scripts/pages/app-chat.js"></script>
+    <script src="public/backend/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
     <!-- END: Page JS-->
 
 </body>

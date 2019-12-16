@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/file-uploaders/dropzone.min.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/tables/datatable/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css">
+    <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -34,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/plugins/file-uploaders/dropzone.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/pages/data-list-view.css">
+    <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/pages/dashboard-ecommerce.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -262,23 +264,17 @@
                 <li class=" navigation-header"><span>Menu</span>
                 </li>
 
-                <li><a href="Admin_Order"><i class="feather icon-package"></i><span class="menu-item" data-i18n="List View">รายการอาหารล่าสุด</span></a>
+                <li class="<?php if($this->uri->segment(1)=="Admin_Order"){echo 'active';}?>"><a href="Admin_Order"><i class="feather icon-package"></i><span class="menu-item" data-i18n="List View">รายการอาหารล่าสุด</span></a>
                 </li>
 
-                <li class="nav-item"><a href="Admin_Rider"><i class="fa fa-motorcycle"></i><span class="menu-title" data-i18n="Data List">Rider List</span></a>
+                <li class="nav-item <?php if($this->uri->segment(1)=="Admin_Rider"){echo 'active';}?>"><a href="Admin_Rider"><i class="fa fa-motorcycle"></i><span class="menu-title" data-i18n="Data List">Rider List</span></a>
                 </li>
+                
+                <li class="<?php if($this->uri->segment(1)=="Admin_Restaurant" || $this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Restaurant"><i class="fa fa-cutlery"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span></a>
+                </li>
+
                 <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">Content Website</span></a>
                     <ul class="menu-content">
-                        <li>
-                            <a href="Admin_Order">
-                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Admin_Order">
-                                <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">อาหาร</span>
-                            </a>
-                        </li>
                         <li>
                             <a href="Admin_Order">
                                 <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">บลีอก</span>

@@ -36,3 +36,5 @@ $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
 $route['Forgot_Password_Admin']         = 'back-end/AdminLogin_ctr/forgot_password'; 
 $route['Admin_Order']                   = 'back-end/AdminOrder_ctr'; 
 $route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
+$route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
+$route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 

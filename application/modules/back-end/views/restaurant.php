@@ -7,12 +7,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Rider List</h2>
+                            <h2 class="content-header-title float-left mb-0">ร้านอาหาร</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Rider List
+                                    <li class="breadcrumb-item active">ร้านอาหาร
                                     </li>
                                 </ol>
                             </div>
@@ -34,12 +34,12 @@
 
                     <!-- dataTable starts -->
                     <div class="table-responsive">
-                        <table class="table data-thumb-view-rider">
+                        <table class="table data-thumb-view-restaurant">
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>รูปภาพ</th>
-                                    <th>ชื่อ</th>
+                                    <th>ชื่อร้าน</th>
                                     <th>สถานะ</th>
                                     <th>ACTION</th>
                                 </tr>
@@ -58,6 +58,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -76,6 +77,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -94,6 +96,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -111,6 +114,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -129,6 +133,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -146,6 +151,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -164,6 +170,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -181,6 +188,7 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
+                                        <a href="Admin_Type_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -198,7 +206,7 @@
                         <div class="add-new-data">
                             <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
                                 <div>
-                                    <h4 class="text-uppercase">Add Rider</h4>
+                                    <h4 class="text-uppercase">เพิ่ม ร้านอาหาร</h4>
                                 </div>
                                 <div class="hide-data-sidebar">
                                     <i class="feather icon-x"></i>
@@ -207,40 +215,43 @@
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
+
                                         <div class="col-sm-12 data-field-col">
-                                            <label for="data-category">คำนำหน้า</label>
-                                            <select class="form-control" id="data-category">
-                                                <option>นาย</option>
-                                                <option>นางสาว</option>
-                                                <option>นาง</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">ชื่อ</label>
+                                            <label for="data-name">ชื่อร้าน</label>
                                             <input type="text" class="form-control" id="data-name">
                                         </div>
+
                                         <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">นามสกุล</label>
+                                            <label for="data-name">เจ้าของร้าน</label>
                                             <input type="text" class="form-control" id="data-name">
                                         </div>
+
                                         <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">เลขบัตรประชาชน</label>
+                                            <label for="data-name">เบอร์โทรติดต่อ</label>
                                             <input type="text" class="form-control" id="data-name">
                                         </div>
+
+                                        
+                                        <div class="col-sm-12 data-field-col">
+                                            <label for="data-name">อีเมล</label>
+                                            <input type="email" class="form-control" id="data-name">
+                                        </div>
+
+                                        <div class="col-sm-12 data-field-col">
+                                            <label for="data-name">เวลาเปิด</label>
+                                            <input type="text" class="form-control pickatime">
+                                        </div>
+
+                                        <div class="col-sm-12 data-field-col">
+                                            <label for="data-name">เวลาปิด</label>
+                                            <input type="text" class="form-control pickatime">
+                                        </div>
+
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ที่อยู่</label>
                                             <textarea class="form-control" cols="30" rows="10"></textarea>
                                         </div>
 
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">เบอร์โทร</label>
-                                            <input type="text" class="form-control" id="data-name">
-                                        </div>
-
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">อีเมล</label>
-                                            <input type="email" class="form-control" id="data-name">
-                                        </div>
                                        
                                         
                                        
