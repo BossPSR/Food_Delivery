@@ -34,11 +34,15 @@ $route['logout_facebook'] = 'front-end/User_authentication/logout';
 
 /****************       back-end       *********************/ 
 $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
+$route['Admin_Login_suss']              = 'back-end/AdminLogin_ctr/admin_loginMe';
+$route['Admin_Logout']                  = 'back-end/AdminLogin_ctr/admin_logout';
 $route['Forgot_Password_Admin']         = 'back-end/AdminLogin_ctr/forgot_password'; 
 $route['Admin_Order']                   = 'back-end/AdminOrder_ctr'; 
 $route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
 $route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
 $route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 
+$route['Admin_Type_Food_com']               = 'back-end/AdminTypeFood_ctr/type_food'; 
+$route['delete_type_food']               = 'back-end/AdminTypeFood_ctr/delete_type_food'; 
 $route['Admin_Type_Food_Restaurant']    = 'back-end/AdminRestaurant_ctr/type_food'; 
 $route['Admin_Food']                    = 'back-end/AdminFood_ctr'; 
 $route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion'; 

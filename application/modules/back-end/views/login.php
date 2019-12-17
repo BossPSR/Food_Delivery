@@ -67,9 +67,9 @@
                                         <p class="px-2">Welcome back, please login to your account.</p>
                                         <div class="card-content">
                                             <div class="card-body pt-1">
-                                                <form action="">
+                                                <form action="Admin_Login_suss" method="POST">
                                                     <fieldset class="form-label-group form-group position-relative has-icon-left">
-                                                        <input type="text" class="form-control" id="user-name" placeholder="Username" required>
+                                                        <input type="text" class="form-control"  name="username" placeholder="Username" required>
                                                         <div class="form-control-position">
                                                             <i class="feather icon-user"></i>
                                                         </div>
@@ -77,7 +77,7 @@
                                                     </fieldset>
 
                                                     <fieldset class="form-label-group position-relative has-icon-left">
-                                                        <input type="password" class="form-control" id="user-password" placeholder="Password" required>
+                                                        <input type="password" class="form-control"  name="password" placeholder="Password" required>
                                                         <div class="form-control-position">
                                                             <i class="feather icon-lock"></i>
                                                         </div>
@@ -113,7 +113,16 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="public/backend/app-assets/vendors/js/ui/jquery.sticky.js"></script>
     <!-- END: Page Vendor JS-->
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- END: Page JS-->
+    <script>
+    <?php if($suss = $this->session->flashdata('save_ss2')): ?>
+        swal("Good job!", '<?php echo $suss ; ?>' , "success");
+    <?php endif; ?>
+    <?php if($error = $this->session->flashdata('del_ss2')): ?>
+        swal("Fail !", '<?php echo $error ; ?>' , "error");
+    <?php endif; ?>
+    </script>
     <!-- BEGIN: Theme JS-->
     <script src="public/backend/app-assets/js/core/app-menu.js"></script>
     <script src="public/backend/app-assets/js/core/app.js"></script>
@@ -121,7 +130,7 @@
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <!-- END: Page JS-->
+  
 
 </body>
 <!-- END: Body-->

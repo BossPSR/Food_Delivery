@@ -33,72 +33,24 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>ลำดับ</th>
                                     <th>ชื่อประเภท</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php $type_food = $this->db->get('tbl_type_food')->result_array() ;?>
+                            <?php foreach ($type_food as $key => $type_food) { ?>
                                 <tr>
                                     <td></td>
-                                    <td>1</td>
-                                    <td class="product-name">Apple Watch series 4 GPS</td>
+                                    <td class="product-name"><?php echo $type_food['type_food']  ?></td>
                                     <td class="product-action">
                                         <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
+                             <a href="delete_type_food?id=<?php echo $type_food['id'];?>"><span class="action-delete"><i class="feather icon-trash"></i></span></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>2</td>
-                                    <td class="product-name">Beats HeadPhones</td>
-                                    <td class="product-action">
-                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>3</td>
-                                    <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
-                                    <td class="product-action">
-                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>4</td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
-                                    <td class="product-action">
-                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>5</td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
-                                    <td class="product-action">
-                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>6</td>
-                                    <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
-                                    <td class="product-action">
-                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
+                                       
+                            <?php  } ?>
                             </tbody>
                         </table>
                     </div>
@@ -119,10 +71,10 @@
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
-
+                                <form action="Admin_Type_Food_com" method="POST">
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ชื่อประเภท</label>
-                                            <input type="text" class="form-control" id="data-name">
+                                            <input type="text" class="form-control" name="type_name"  required>
                                         </div>
                                     </div>
                                 </div>
@@ -137,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                     <!-- add new sidebar ends -->
                 </section>
                 <!-- Data list view end -->

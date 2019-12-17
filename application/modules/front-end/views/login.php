@@ -13,12 +13,12 @@
 							
 								<div class="column" style="display:flex; justify-content:center;">
 									<span style="float:left; width:40%; padding-left:0;">
-										<input type="email" name="email" class="form-controll" placeholder="Eamil" class="required-field">
+										<input type="email" name="email" class="form-controll" placeholder="Eamil" class="required-field" required>
 									</span>
 								</div>
 								<div class="column" style="display:flex; justify-content:center;">
 									<span style="float:left; width:40%; padding-left:0;">
-										<input type="password" name="password" placeholder="Password" class="required-field">
+										<input type="password" name="password" placeholder="Password" class="required-field" required>
 									</span>
 								</div>
 								<p class="text-center padd-top-30">
