@@ -28,11 +28,6 @@
 	<link rel="stylesheet" href="public/assets/css/newresponsive.css" />
 	<!-- Custom CSS Files -->
 
-	<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<div class="bg-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
-	<![endif]-->
 
 </head>
 
@@ -82,14 +77,19 @@
 							<li><a href="Resturant">ร้านอาหาร</a></li>
 							<li><a href="Food">อาหาร</a></li>
 							<li><a href="blog">บล็อก</a></li>
-							<li><a href="contact">ติดต่อเรา</a></li>
-							<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
-                             <?php if ($user == true) :  ?>
+							<li><a href="contact">ติดต่อเรา</a></li>	
+						<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
+						<?php $facebook_log = $this->db->get_where('users',['email'=> $this->session->userData['email']])->row_array(); ?>
+                             <?php if ($user == true ) :  ?>
+
 							<li><a href="Profile"><?php echo $user['first_name'].' '.$user['last_name'] ?></a></li>
 							<li><a href="Logout">ล็อกเอาท์</a></li>
-							<?php else :  ?>
+							<?php elseif ($facebook_log == true) : ?>
+							<li><a href="Profile"><?php echo $facebook_log['first_name'].' '.$facebook_log['last_name'] ?></a></li>
+							<li><a href="logout_facebook">ล็อกเอาท์</a></li>
+							<?php else : ?>
 							<li><a href="Register">สมัครสมาชิก</a></li>
-							<li><a href="Login">ล็อกอิน</a></li>
+							<li><a href="user_authentication">ล็อกอิน</a></li>
 							<?php endif  ?>
 						</ul>
 					</div>

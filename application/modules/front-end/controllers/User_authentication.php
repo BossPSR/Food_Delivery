@@ -55,13 +55,13 @@ class User_authentication extends CI_Controller {
         // }
         // else
         // {
-        if ($this->session->userdata('username')  != '' || $this->session->userData['email'] != '')
+        if ($this->session->userdata('email')  != '' || $this->session->userData['email'] != '')
         {
-            redirect('shop','refresh');
+            redirect('Profile','refresh');
         }else{
-            $this->load->view('options/header');
+            $this->load->view('option/header');
             $this->load->view('login',$data);
-            $this->load->view('options/footer');
+            $this->load->view('option/footer');
         }
             
         // }

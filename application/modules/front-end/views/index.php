@@ -509,37 +509,7 @@
 		
 
 		<!-- Section Contact -->
-		<section id="contact">
-			<div id="maps"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 col-md-4 col-sm-push-2 col-md-push-8">
-						<div class="ctc-item">
-							<span class="section-suptitle text-center">
-								Contact Us
-							</span>
-							<h2 class="section-title sep-type-2 text-center">
-								Get In Touch
-							</h2>
-							<p class="tel">+61 3 8376 6284</p>
-							<div class="widget">
-								<b>Address</b>
-								<p>
-									121 King Street, Melbourne<br />
-									Victoria 3000 Australia<br />
-									ABN 11 119 159 741
-								</p>
-							</div>
-							<div class="widget">
-								<b>Email</b>
-								<a href="">Order@foodlover.com</a>
-								<a href="">Sales@example.com</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+
 		<!-- End Section Contact -->
 		
 		<!-- Section Newsletter -->
