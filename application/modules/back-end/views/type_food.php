@@ -12,8 +12,8 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="Admin_Restaurant">ร้านอาหาร</a>
-                                    </li>
+                                    <!-- <li class="breadcrumb-item"><a href="Admin_Restaurant">ร้านอาหาร</a>
+                                    </li> -->
                                     <li class="breadcrumb-item active">ประเภทอาหาร
                                     </li>
                                 </ol>
@@ -21,14 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                    <div class="form-group breadcrum-right">
-                        <div class="dropdown">
-                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                            <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="content-body">
                 <!-- Data list view starts -->
@@ -51,7 +44,7 @@
                                     <td>1</td>
                                     <td class="product-name">Apple Watch series 4 GPS</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -61,7 +54,7 @@
                                     <td>2</td>
                                     <td class="product-name">Beats HeadPhones</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -71,7 +64,7 @@
                                     <td>3</td>
                                     <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -81,7 +74,7 @@
                                     <td>4</td>
                                     <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -91,7 +84,7 @@
                                     <td>5</td>
                                     <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>
@@ -101,7 +94,7 @@
                                     <td>6</td>
                                     <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span class="action-edit"><i class="feather icon-edit"></i></span>
                                         <span class="action-delete"><i class="feather icon-trash"></i></span>
                                     </td>

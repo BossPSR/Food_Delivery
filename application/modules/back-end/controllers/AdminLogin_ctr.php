@@ -23,5 +23,14 @@ class AdminLogin_ctr extends CI_Controller {
           
   }
 
+  public function profile()
+	{
+       
+    $this->load->view('option/header');
+    $this->load->view('profile');
+    $this->load->view('option/footer');
+          
+  }
+
 
 }

@@ -302,6 +302,54 @@ $(document).ready(function() {
                 }, 50);
               });
 
+          // Type Food Restaurant ประเภทอาหารของร้าน
+
+          var dataThumbView = $(".data-thumb-view-type_food_restaurant").DataTable({
+            responsive: false,
+            // columnDefs: [
+            //   {
+            //     orderable: true,
+            //     targets: 0,
+            //     checkboxes: { selectRow: false }
+            //   }
+            // ],
+            dom:
+              '<"top"<"actions action-btns"><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
+            oLanguage: {
+              sLengthMenu: "_MENU_",
+              sSearch: ""
+            },
+            aLengthMenu: [[4, 10, 15, 20], [4, 10, 15, 20]],
+            select: {
+              style: "multi"
+            },
+            order: [[1, "asc"]],
+            bInfo: false,
+            pageLength: 4,
+            buttons: [
+              {
+                text: "<i class='feather icon-plus'></i> Add New",
+                action: function() {
+                  $(this).removeClass("btn-secondary")
+                  $(".add-new-data").addClass("show")
+                  $(".overlay-bg").addClass("show")
+                },
+                className: "btn-outline-primary"
+              }
+            ],
+            initComplete: function(settings, json) {
+              $(".dt-buttons .btn").removeClass("btn-secondary")
+            }
+          })
+        
+          dataThumbView.on('draw.dt', function(){
+            setTimeout(function(){
+              if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+                $(".dt-checkboxes-cell input, .dt-checkboxes").addClass("mac-checkbox")
+              }
+            }, 50);
+          });
+
   // init thumb view datatable
   var dataThumbView = $(".data-thumb-view").DataTable({
     responsive: false,
