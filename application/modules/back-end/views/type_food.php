@@ -42,14 +42,61 @@
                             <?php foreach ($type_food as $key => $type_food) { ?>
                                 <tr>
                                     <td></td>
-                                    <td class="product-name"><?php echo $type_food['type_food']  ?></td>
+                                    <td class="product-name"><?php echo $type_food['type_food'];  ?></td>
                                     <td class="product-action">
                                         <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                             <a href="delete_type_food?id=<?php echo $type_food['id'];?>"><span class="action-delete"><i class="feather icon-trash"></i></span></a>
+                                        <span data-toggle="modal" data-target="#exampleModal<?php echo $type_food['id'];?>"><i class="feather icon-edit"></i></span>
+                                        <a href="delete_type_food?id=<?php echo $type_food['id'];?>"><span class="action-delete"><i class="feather icon-trash"></i></span></a>
                                     </td>
                                 </tr>
-                                       
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal<?php echo $type_food['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">ประเภทอาหาร</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="edit_type_food" method="POST" class="form-horizontal" novalidate>
+                                        <div class="modal-body">
+                                    
+                                        <input type="hidden" class="form-control"  name="id" value="<?php echo $type_food['id'];?>">
+                                            <div class="data-items pb-3">
+                                                <div class="data-fields px-2 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 data-field-col">
+                                                            <div class="form-group">
+                                                                <div class="controls">
+                                                                    <label for="data-name">ชื่อประเภท</label>
+                                                                    <input type="text" class="form-control"  name="type_name" value="<?php echo $type_food['type_food'];?>"required data-validation-required-message="กรุณากรอก ชื่อประเภทอาหารด้วยค่ะ">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+
+                                    
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                                <div class="add-data-btn mr-1">
+                                                    <button type="submit" class="btn btn-primary">Add Data</button>
+                                                </div>
+                                                <div class="cancel-data-btn">
+                                                    <button class="btn btn-outline-danger"  class="close" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                                </div>
+                    <!-- End Modal -->
+                               
                             <?php  } ?>
                             </tbody>
                         </table>
@@ -68,29 +115,38 @@
                                     <i class="feather icon-x"></i>
                                 </div>
                             </div>
-                            <div class="data-items pb-3">
-                                <div class="data-fields px-2 mt-3">
-                                    <div class="row">
-                                <form action="Admin_Type_Food_com" method="POST">
-                                        <div class="col-sm-12 data-field-col">
-                                            <label for="data-name">ชื่อประเภท</label>
-                                            <input type="text" class="form-control" name="type_name"  required>
+                            <form action="Admin_Type_Food_com" method="POST" class="form-horizontal" novalidate>
+
+                                <div class="data-items pb-3">
+                                    <div class="data-fields px-2 mt-3">
+                                        <div class="row">
+                                            <div class="col-sm-12 data-field-col">
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label for="data-name">ชื่อประเภท</label>
+                                                        <input type="text" class="form-control"  name="type_name" required data-validation-required-message="กรุณากรอก ชื่อประเภทอาหารด้วยค่ะ">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
-                                <div class="add-data-btn">
-                                    <button class="btn btn-primary">Add Data</button>
+                                <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                    <div class="add-data-btn">
+                                        <button type="submit" class="btn btn-primary">Add Data</button>
+                                    </div>
+                                    <div class="cancel-data-btn">
+                                        <button class="btn btn-outline-danger">Cancel</button>
+                                    </div>
                                 </div>
-                                <div class="cancel-data-btn">
-                                    <button class="btn btn-outline-danger">Cancel</button>
-                                </div>
-                            </div>
+
+                            </form>
                         </div>
                     </div>
-                    </form>
+                    
                     <!-- add new sidebar ends -->
+
+                   
                 </section>
                 <!-- Data list view end -->
 

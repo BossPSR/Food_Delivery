@@ -212,9 +212,9 @@ $(document).ready(function() {
           responsive: false,
           columnDefs: [
             {
-              orderable: true,
-              targets: 0,
-              checkboxes: { selectRow: true }
+              orderable: false,
+              targets: false,
+              checkboxes: { selectRow: false }
             }
           ],
           dom:
@@ -420,7 +420,6 @@ $(document).ready(function() {
     e.stopPropagation();
     $('#data-name').val('Altec Lansing - Bluetooth Speaker');
     $('#data-price').val('$99');
-    $(".add-new-data").addClass("show");
     $(".overlay-bg").addClass("show");
   });
 

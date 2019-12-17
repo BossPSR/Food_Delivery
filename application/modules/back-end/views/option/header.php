@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/tables/datatable/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="public/backend/app-assets/vendors/css/extensions/sweetalert2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -36,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/plugins/file-uploaders/dropzone.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/pages/data-list-view.css">
     <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="public/backend/app-assets/css/plugins/forms/validation/form-validation.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->

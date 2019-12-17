@@ -27,6 +27,9 @@
     <script src="public/backend/app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
     <script src="public/backend/app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
     <script src="public/backend/app-assets/vendors/js/ui/prism.min.js"></script>
+    <script src="public/backend/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"></script>
+    <script src="public/backend/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
+    <script src="public/backend/app-assets/vendors/js/extensions/polyfill.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -41,6 +44,8 @@
     <script src="public/backend/app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script>
     <script src="public/backend/app-assets/js/scripts/extensions/dropzone.js"></script>
     <script src="public/backend/app-assets/js/scripts/forms/form-tooltip-valid.js"></script>
+    <script src="public/backend/app-assets/js/scripts/forms/validation/form-validation.js"></script>
+    <script src="public/backend/app-assets/js/scripts/extensions/sweet-alerts.js"></script>
     <!-- END: Page JS-->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>

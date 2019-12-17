@@ -58,7 +58,28 @@ class AdminTypeFood_ctr extends CI_Controller {
         return redirect('Admin_Type_Food');
     }
 
+    public function edit_type_food()
+    {
+        $id               = $this->input->post('id');
+        $type_name        = $this->input->post('type_name');
+
+        
+        $data = array(
+            'type_food'             => $type_name,    
+            'updated_at'            => date('Y-m-d H:i:s')
+        );
+        $this->db->where('id',$id);
+        $success = $this->db->update('tbl_type_food',$data);
     
+        if($success > 0)
+        {
+            $this->session->set_flashdata('save_ss2','เพิ่มข้อมูลประเภทอาหารเรียบร้อยแล้ว !!.');
+        }else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลได้');
+        }
+            redirect('Admin_Type_Food');
+    }
   
 
 }

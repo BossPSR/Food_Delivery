@@ -41,12 +41,14 @@ $route['Admin_Order']                   = 'back-end/AdminOrder_ctr';
 $route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
 $route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
 $route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 
-$route['Admin_Type_Food_com']               = 'back-end/AdminTypeFood_ctr/type_food'; 
-$route['delete_type_food']               = 'back-end/AdminTypeFood_ctr/delete_type_food'; 
+$route['Admin_Type_Food_com']           = 'back-end/AdminTypeFood_ctr/type_food'; 
+$route['delete_type_food']              = 'back-end/AdminTypeFood_ctr/delete_type_food'; 
+$route['edit_type_food']                 = 'back-end/AdminTypeFood_ctr/edit_type_food'; 
 $route['Admin_Type_Food_Restaurant']    = 'back-end/AdminRestaurant_ctr/type_food'; 
 $route['Admin_Food']                    = 'back-end/AdminFood_ctr'; 
 $route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion'; 
 $route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'; 
 $route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 
 $route['Admin_Profile']                 = 'back-end/AdminLogin_ctr/profile'; 
+
 // 
