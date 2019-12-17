@@ -44,3 +44,4 @@ $route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion';
 $route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'; 
 $route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 
 $route['Admin_Profile']                 = 'back-end/AdminLogin_ctr/profile'; 
+// 
