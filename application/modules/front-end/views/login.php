@@ -24,13 +24,17 @@
 								<p class="text-center padd-top-30">
 									<button type="submit" class="btn-food button_food">ล็อกอิน</button>
 								</p>
-
+								
+								</form>
 								<div class="button_fb"> 
+								<?php if(!empty($authURL)){ ?>
 									<a href="<?php echo $authURL; ?>" class="fb btn-fb">
 										<i class="fa fa-facebook fa-fw"></i> Login with Facebook
 									</a>
+									<?php }else{ ?>
+                                        <?php } ?>
 								</div>	
-							</form>
+						
 							
 						</div>
 						</form>

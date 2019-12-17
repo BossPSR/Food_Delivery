@@ -26,7 +26,8 @@ $route['Register']        = 'front-end/Register_ctr';
 $route['Register_success']        = 'front-end/Register_ctr/register_success'; 
 $route['Profile']         = 'front-end/Profile_ctr'; 
 $route['my_profile_save']         = 'front-end/Profile_ctr/my_profile_save'; 
-
+$route['user_authentication'] = 'front-end/User_authentication';
+$route['logout_facebook'] = 'front-end/User_authentication/logout';
 
 
 
