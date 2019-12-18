@@ -11,11 +11,13 @@ class AdminTypeFood_ctr extends CI_Controller {
   
 	public function index()
 	{
-       
+        if ($this->session->userdata('username') == '') {
+            redirect('Admin_Login');
+     } else {
         $this->load->view('option/header');
         $this->load->view('type_food');
         $this->load->view('option/footer');
-          
+     } 
     }
 
     public function type_food()

@@ -134,7 +134,7 @@ $(document).ready(function() {
         pageLength: 4,
         buttons: [
           {
-            text: "<i class='feather icon-plus'></i> Add New",
+            text: "<i class='feather icon-plus'></i> เพิ่มข้อมูล Rider",
             action: function() {
               $(this).removeClass("btn-secondary")
               $(".add-new-data").addClass("show")
@@ -182,7 +182,7 @@ $(document).ready(function() {
         pageLength: 4,
         buttons: [
           {
-            text: "<i class='feather icon-plus'></i> Add New",
+            text: "<i class='feather icon-plus'></i> เพิ่มข้อมูลร้านอาหาร",
             action: function() {
               $(this).removeClass("btn-secondary")
               $(".add-new-data").addClass("show")
@@ -232,7 +232,7 @@ $(document).ready(function() {
           pageLength: 4,
           buttons: [
             {
-              text: "<i class='feather icon-plus'></i> Add New",
+              text: "<i class='feather icon-plus'></i> เพิ่มข้อมูลประเภทอาหาร",
               action: function() {
                 $(this).removeClass("btn-secondary")
                 $(".add-new-data").addClass("show")

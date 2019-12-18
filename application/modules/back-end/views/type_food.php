@@ -34,7 +34,7 @@
                                 <tr>
                                     <th></th>
                                     <th>ชื่อประเภท</th>
-                                    <th>ACTION</th>
+                                    <th>เครื่องมือ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,7 +84,7 @@
                                         <div class="modal-footer">
                                             <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
                                                 <div class="add-data-btn mr-1">
-                                                    <button type="submit" class="btn btn-primary">Add Data</button>
+                                                    <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
                                                 </div>
                                                 <div class="cancel-data-btn">
                                                     <button class="btn btn-outline-danger"  class="close" data-dismiss="modal" aria-label="Close">Cancel</button>
@@ -133,10 +133,10 @@
                                 </div>
                                 <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
                                     <div class="add-data-btn">
-                                        <button type="submit" class="btn btn-primary">Add Data</button>
+                                        <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
                                     </div>
                                     <div class="cancel-data-btn">
-                                        <button class="btn btn-outline-danger">Cancel</button>
+                                        <button class="btn btn-outline-danger">ยกเลิก</button>
                                     </div>
                                 </div>
 

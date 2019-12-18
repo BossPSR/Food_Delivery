@@ -44,6 +44,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="public/backend/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/backend/assets/css/newstyle.css">
+    <link href="public/backend/assets/fileupload/css/uploads.css" rel="stylesheet" type="text/css" /> 
     <!-- END: Custom CSS-->
 
 </head>
