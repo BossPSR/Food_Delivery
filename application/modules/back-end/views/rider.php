@@ -66,8 +66,8 @@
                                             <?php } ?>
                                         </td>
                                         <td class="product-action">
-                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $rider['id']; ?>"><i class="feather icon-edit"></i></span>
-                                            <a href="Admin_Rider_delete?id=<?php echo $rider['id']; ?>"><span class="action-delete"><i class="feather icon-trash"></i></span></a>
+                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $rider['id']; ?>"><i class="feather icon-edit" style="font-size:25px;"></i></span>
+                                            <a href="Admin_Rider_delete?id=<?php echo $rider['id']; ?>"><span class="action-delete"><i class="feather icon-trash" style="font-size:25px;"></i></span></a>
                                         </td>
                                     </tr>
                                     <!-- Modal -->
@@ -129,12 +129,17 @@
                                                                                             <input type="email" class="form-control" id="data-name" value="<?php echo $rider['email']; ?>" name="email" required>
                                                                                         </div>
 
-                                                                                        <div class="custom-file">
-                                                                                            <input type="file" class="custom-file-input" id="image-source" onchange="previewImage();" name="file_name">
-                                                                                            <label class="custom-file-label" for="inputGroupFile01">กรุณาเลือกไฟล์</label>
-                                                                                            <img src="uploads/rider/<?php echo $rider['file_name']; ?>" style="width: auto;height: 300px;   padding-bottom: 10px;">
-                                                                                            <img id="image-preview" alt="image preview" style="width:auto;height: 300px;">
+                                                                                        <div class="col-lg-12 data-field-col">
+                                                                                            <fieldset class="form-group">
+                                                                                                <label for="basicInputFile">รูปไรเดอร์</label>
+                                                                                                <div class="custom-file">
+                                                                                                    <input type="file" name="file_name" class="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01"/>
+                                                                                                    <label class="custom-file-label" for="inputGroupFile01"><?php echo $rider['file_name']; ?></label>
+                                                                                                    <img id="blah" style="max-width:100%; text-align:center;display: block;margin: auto;" src="uploads/rider/<?php echo $rider['file_name']; ?>" alt="" />
+                                                                                                </div>
+                                                                                            </fieldset>
                                                                                         </div>
+                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -152,9 +157,7 @@
                                                             <div class="add-data-btn mr-1">
                                                                 <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
                                                             </div>
-                                                            <div class="cancel-data-btn">
-                                                                <button class="btn btn-outline-danger" class="close" data-dismiss="modal" aria-label="Close">Cancel</button>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </form>
@@ -171,7 +174,7 @@
                     <!-- add new sidebar starts -->
                     <div class="add-new-data-sidebar">
                         <div class="overlay-bg"></div>
-                        <div class="add-new-data">
+                        <div class="add-new-data" style="overflow-y: scroll;">
                             <div class="div mt-2 px-2 d-flex new-data-title justify-content-between">
                                 <div>
                                     <h4 class="text-uppercase">Rider</h4>
@@ -214,13 +217,18 @@
                                                 <input type="email" class="form-control" id="data-name" name="email" required>
                                             </div>
 
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="image-source" onchange="previewImage();" name="file_name">
-                                                <label class="custom-file-label" for="inputGroupFile01">กรุณาเลือกไฟล์</label>
-                                                <div class="col-md-12">
-                                                    <img id="image-preview" alt="image preview" style="width:auto;height: 200px;">
-                                                </div>
+                                            <div class="col-lg-12 col-md-12 data-field-col">
+                                                <fieldset class="form-group">
+                                                    <label for="basicInputFile">รูปไรเดอร์</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" name="file_name" class="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01"/>
+                                                        <label class="custom-file-label" for="inputGroupFile01">กรุณาเลือกไฟล์</label>
+                                                        <img id="blah" style="max-width:100%;" src="" alt="" />
+                                                    </div>
+                                                </fieldset>
                                             </div>
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -243,3 +251,16 @@
         </div>
     </div>
     <!-- END: Content-->
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
