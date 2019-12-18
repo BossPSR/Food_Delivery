@@ -167,4 +167,23 @@ class AdminRider_ctr extends CI_Controller {
         return redirect('Admin_Rider');
     }
 
+    public function status_rider()
+    {
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
+
+        $this->db->where('id', $id);
+        $resultsedit = $this->db->update('tbl_rider',['status' => $status]);
+
+        if($resultsedit > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลสถานะRiderเรียบร้อยแล้ว !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลสถานะRiderได้');
+        }
+        return redirect('Admin_Rider');
+    }
+
 }

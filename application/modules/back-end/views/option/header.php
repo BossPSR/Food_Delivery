@@ -11,7 +11,8 @@
     <meta name="author" content="PIXINVENT">
     <title>Thumb View - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="public/backend/app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="public/backend/app-assets/images/ico/favicon.ico">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="public/backend/app-assets/images/ico/favicon.ico"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="public/backend/app-assets/images/logo/deejung.jpg">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -196,6 +197,9 @@
                 </li>
                 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Restaurant" || $this->uri->segment(1) == "Admin_Type_Food_Restaurant" || $this->uri->segment(1) == "Admin_Food"){echo 'active';}?>"><a href="Admin_Restaurant"><i class="fa fa-cutlery"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span></a>
+                </li>
+
+                <li class="<?php if($this->uri->segment(1)=="Admin_Type_Restaurant"){echo 'active';}?>"><a href="Admin_Type_Restaurant"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทร้านอาหาร</span></a>
                 </li>
 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Type_Food"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทอาหาร</span></a>

@@ -159,9 +159,7 @@
                                 <div class="add-data-btn">
                                     <button class="btn btn-primary">Add Data</button>
                                 </div>
-                                <div class="cancel-data-btn">
-                                    <button class="btn btn-outline-danger">Cancel</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>

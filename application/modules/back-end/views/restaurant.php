@@ -33,6 +33,7 @@
                                     <th></th>
                                     <th>รูปภาพ</th>
                                     <th>ชื่อร้าน</th>
+                                    <th>ประเภทร้านอาหาร</th>
                                     <th>สถานะ</th>
                                     <th>ACTION</th>
                                 </tr>
@@ -43,6 +44,7 @@
                                     <td class="product-img"><img src="public/backend/app-assets/images/elements/apple-watch.png" alt="Img placeholder">
                                     </td>
                                     <td class="product-name">Apple Watch series 4 GPS</td>
+                                    <td class="product-name">ร้านของหวาน</td>
                                     <td>
                                         <div class="chip chip-warning">
                                             <div class="chip-body">
@@ -61,7 +63,7 @@
                                     <td class="product-img"><img src="public/backend/app-assets/images/elements/magic-mouse.png" alt="Img placeholder">
                                     </td>
                                     <td class="product-name">Beats HeadPhones</td>
-
+                                    <td class="product-name">ร้านของหวาน</td>
                                     <td>
                                         <div class="chip chip-success">
                                             <div class="chip-body">
@@ -99,6 +101,16 @@
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
+
+                                        <div class="col-sm-12 data-field-col">
+                                            <label for="data-name">ประเภทร้านอาหาร</label>
+                                            <select class="form-control" name="title">
+                                                <option value="">ร้านของหวาน</option>
+                                                <option value="">ร้านอาหารทะเล</option>
+                                                <option value="">ร้านเส้น</option>
+                                                <option value="">ร้านอาหารตามสั่ง</option>
+                                            </select>
+                                        </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ชื่อร้าน</label>
@@ -151,9 +163,7 @@
                                 <div class="add-data-btn">
                                     <button class="btn btn-primary">Add Data</button>
                                 </div>
-                                <div class="cancel-data-btn">
-                                    <button class="btn btn-outline-danger">Cancel</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
