@@ -45,8 +45,8 @@
                                     <td class="product-name"><?php echo $type_food['type_food'];  ?></td>
                                     <td class="product-action">
                                         <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
-                                        <span data-toggle="modal" data-target="#exampleModal<?php echo $type_food['id'];?>"><i class="feather icon-edit"></i></span>
-                                        <a href="delete_type_food?id=<?php echo $type_food['id'];?>"><span class="action-delete"><i class="feather icon-trash"></i></span></a>
+                                        <span data-toggle="modal" data-target="#exampleModal<?php echo $type_food['id'];?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
+                                        <a href="delete_type_food?id=<?php echo $type_food['id'];?>"><span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span></a>
                                     </td>
                                 </tr>
                             <!-- Modal -->
@@ -59,7 +59,7 @@
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="edit_type_food" method="POST" class="form-horizontal" novalidate>
+                                    <form action="edit_type_food" method="POST" class="form-horizontal">
                                         <div class="modal-body">
                                     
                                         <input type="hidden" class="form-control"  name="id" value="<?php echo $type_food['id'];?>">
@@ -70,7 +70,7 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="data-name">ชื่อประเภท</label>
-                                                                    <input type="text" class="form-control"  name="type_name" value="<?php echo $type_food['type_food'];?>"required data-validation-required-message="กรุณากรอก ชื่อประเภทอาหารด้วยค่ะ">
+                                                                    <input type="text" class="form-control"  name="type_name" value="<?php echo $type_food['type_food'];?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>

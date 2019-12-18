@@ -51,9 +51,9 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
+                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
+                                        <span class="action-edit"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
+                                        <span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -70,122 +70,13 @@
                                         </div>
                                     </td>
                                     <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
+                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
+                                        <span class="action-edit"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
+                                        <span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/iphone-x.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
-
-                                    <td>
-                                        <div class="chip chip-danger">
-                                            <div class="chip-body">
-                                                <div class="chip-text">canceled</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/ipad-pro.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
-                                    <td>
-                                        <div class="chip chip-warning">
-                                            <div class="chip-body">
-                                                <div class="chip-text">on hold</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/jbl-speaker.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
-
-                                    <td>
-                                        <div class="chip chip-danger">
-                                            <div class="chip-body">
-                                                <div class="chip-text">canceled</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/beats-headphones.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
-                                    <td>
-                                        <div class="chip chip-warning">
-                                            <div class="chip-body">
-                                                <div class="chip-text">on hold</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/homepod.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Antec - Nano Diamond Thermal Compound</td>
-
-                                    <td>
-                                        <div class="chip chip-primary">
-                                            <div class="chip-body">
-                                                <div class="chip-text">pending</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/macbook-pro.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Antec - SmartBean Bluetooth Adapter</td>
-                                    <td>
-                                        <div class="chip chip-danger">
-                                            <div class="chip-body">
-                                                <div class="chip-text">canceled</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash"></i></span>
-                                    </td>
-                                </tr>
+                               
+   
 
 
                             </tbody>
