@@ -122,31 +122,31 @@
                                                                     <div class="col-sm-12 data-field-col">
                                                                         <div class="form-group">
                                                                             <label for="data-name">ชื่อ</label>
-                                                                            <input type="text" class="form-control" id="data-name" value="<?php echo $rider['first_name']; ?>" name="first_name" required>
+                                                                            <input type="text" class="form-control" value="<?php echo $rider['first_name']; ?>" name="first_name" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-12 data-field-col">
                                                                         <div class="form-group">
                                                                             <label for="data-name">นามสกุล</label>
-                                                                            <input type="text" class="form-control" id="data-name" value="<?php echo $rider['last_name']; ?>" name="last_name" required>
+                                                                            <input type="text" class="form-control" value="<?php echo $rider['last_name']; ?>" name="last_name" required>
                                                                         </div>
                                                                    </div>
                                                                     <div class="col-sm-12 data-field-col">
                                                                         <div class="form-group">
                                                                             <label for="data-name">เลขบัตรประชาชน</label>
-                                                                            <input type="text" class="form-control" id="data-name" value="<?php echo $rider['id_card']; ?>" name="id_card" required>
+                                                                            <input type="text" class="form-control" value="<?php echo $rider['id_card']; ?>" name="id_card" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-12 data-field-col">
                                                                         <div class="form-group">
                                                                             <label for="data-name">เบอร์โทร</label>
-                                                                            <input type="text" class="form-control" id="data-name" value="<?php echo $rider['tel']; ?>" name="tel" required>
+                                                                            <input type="text" class="form-control" value="<?php echo $rider['tel']; ?>" name="tel" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-12 data-field-col">
                                                                         <div class="form-group">
                                                                             <label for="data-name">อีเมล</label>
-                                                                            <input type="email" class="form-control" id="data-name" value="<?php echo $rider['email']; ?>" name="email" required>
+                                                                            <input type="email" class="form-control" value="<?php echo $rider['email']; ?>" name="email" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-12 data-field-col">
@@ -225,24 +225,24 @@
                                             </div>
                                             <div class="col-sm-12 data-field-col">
                                                 <label for="data-name">ชื่อ</label>
-                                                <input type="text" class="form-control" id="data-name" name="first_name" required>
+                                                <input type="text" class="form-control" name="first_name" required>
                                             </div>
                                             <div class="col-sm-12 data-field-col">
                                                 <label for="data-name">นามสกุล</label>
-                                                <input type="text" class="form-control" id="data-name" name="last_name" required>
+                                                <input type="text" class="form-control" name="last_name" required>
                                             </div>
                                             <div class="col-sm-12 data-field-col">
                                                 <label for="data-name">เลขบัตรประชาชน</label>
-                                                <input type="text" class="form-control" id="data-name" name="id_card" required>
+                                                <input type="text" class="form-control" name="id_card" required>
                                             </div>
                                             <div class="col-sm-12 data-field-col">
                                                 <label for="data-name">เบอร์โทร</label>
-                                                <input type="text" class="form-control" id="data-name" name="tel" required>
+                                                <input type="text" class="form-control" name="tel" required>
                                             </div>
 
                                             <div class="col-sm-12 data-field-col">
                                                 <label for="data-name">อีเมล</label>
-                                                <input type="email" class="form-control" id="data-name" name="email" required>
+                                                <input type="email" class="form-control" name="email" required>
                                             </div>
 
                                             <div class="col-lg-12 col-md-12 data-field-col">
