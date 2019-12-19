@@ -18,6 +18,15 @@ class AdminRestaurant_ctr extends CI_Controller {
           
     }
     
+    public function type_restaurant()
+	{
+       
+        $this->load->view('option/header');
+        $this->load->view('type_restaurant');
+        $this->load->view('option/footer');
+          
+    }
+
     public function type_food()
 	{
        
@@ -26,5 +35,4 @@ class AdminRestaurant_ctr extends CI_Controller {
         $this->load->view('option/footer');
           
     }
-
 }

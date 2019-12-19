@@ -58,6 +58,7 @@
 </script>
 </body>
 <!-- END: Body-->
-<script src="public/backend/assets/fileupload/global.js" type="text/javascript"></script>
-        <script src="public/backend/assets/fileupload/js/uploadslider.js" type="text/javascript"></script>
+    <script src="public/backend/assets/fileupload/global.js" type="text/javascript"></script>
+    <script src="public/backend/assets/fileupload/js/uploadslider.js" type="text/javascript"></script>
+
 </html>

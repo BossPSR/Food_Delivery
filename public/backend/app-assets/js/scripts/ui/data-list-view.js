@@ -62,13 +62,13 @@ $(document).ready(function() {
 
     var dataListView = $(".data-list-view-order").DataTable({
       responsive: false,
-      columnDefs: [
-        {
-          orderable: true,
-          targets: 0,
-          checkboxes: { selectRow: true }
-        }
-      ],
+      // columnDefs: [
+      //   {
+      //     orderable: true,
+      //     targets: 0,
+      //     checkboxes: { selectRow: true }
+      //   }
+      // ],
       dom:
         '<"top"<"actions action-btns"><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
       oLanguage: {
@@ -112,13 +112,13 @@ $(document).ready(function() {
 
       var dataThumbView = $(".data-thumb-view-rider").DataTable({
         responsive: false,
-        columnDefs: [
-          {
-            orderable: true,
-            targets: 0,
-            checkboxes: { selectRow: true }
-          }
-        ],
+        // columnDefs: [
+        //   {
+        //     orderable: true,
+        //     targets: 0,
+        //     checkboxes: { selectRow: true }
+        //   }
+        // ],
         dom:
           '<"top"<"actions action-btns"B><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
         oLanguage: {
@@ -160,13 +160,13 @@ $(document).ready(function() {
 
       var dataThumbView = $(".data-thumb-view-restaurant").DataTable({
         responsive: false,
-        columnDefs: [
-          {
-            orderable: true,
-            targets: 0,
-            checkboxes: { selectRow: true }
-          }
-        ],
+        // columnDefs: [
+        //   {
+        //     orderable: true,
+        //     targets: 0,
+        //     checkboxes: { selectRow: true }
+        //   }
+        // ],
         dom:
           '<"top"<"actions action-btns"B><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
         oLanguage: {
@@ -204,19 +204,67 @@ $(document).ready(function() {
         }, 50);
       });
 
+              // Type Restaurant ประเภทร้านอาหาร
+
+              var dataThumbView = $(".data-thumb-view-type_restaurant").DataTable({
+                responsive: false,
+                // columnDefs: [
+                //   {
+                //     orderable: false,
+                //     targets: false,
+                //     checkboxes: { selectRow: false }
+                //   }
+                // ],
+                dom:
+                  '<"top"<"actions action-btns"B><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
+                oLanguage: {
+                  sLengthMenu: "_MENU_",
+                  sSearch: ""
+                },
+                aLengthMenu: [[4, 10, 15, 20], [4, 10, 15, 20]],
+                select: {
+                  style: "multi"
+                },
+                order: [[1, "asc"]],
+                bInfo: false,
+                pageLength: 4,
+                buttons: [
+                  {
+                    text: "<i class='feather icon-plus'></i> เพิ่มข้อมูลประเภทร้านอาหาร",
+                    action: function() {
+                      $(this).removeClass("btn-secondary")
+                      $(".add-new-data").addClass("show")
+                      $(".overlay-bg").addClass("show")
+                    },
+                    className: "btn-outline-primary"
+                  }
+                ],
+                initComplete: function(settings, json) {
+                  $(".dt-buttons .btn").removeClass("btn-secondary")
+                }
+              })
+            
+              dataThumbView.on('draw.dt', function(){
+                setTimeout(function(){
+                  if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+                    $(".dt-checkboxes-cell input, .dt-checkboxes").addClass("mac-checkbox")
+                  }
+                }, 50);
+              });
+
 
 
         // Type Food ประเภทอาหาร
 
         var dataThumbView = $(".data-thumb-view-type_food").DataTable({
           responsive: false,
-          columnDefs: [
-            {
-              orderable: false,
-              targets: false,
-              checkboxes: { selectRow: false }
-            }
-          ],
+          // columnDefs: [
+          //   {
+          //     orderable: false,
+          //     targets: false,
+          //     checkboxes: { selectRow: false }
+          //   }
+          // ],
           dom:
             '<"top"<"actions action-btns"B><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
           oLanguage: {
@@ -258,13 +306,13 @@ $(document).ready(function() {
 
                var dataThumbView = $(".data-thumb-view-food").DataTable({
                 responsive: false,
-                columnDefs: [
-                  {
-                    orderable: true,
-                    targets: 0,
-                    checkboxes: { selectRow: true }
-                  }
-                ],
+                // columnDefs: [
+                //   {
+                //     orderable: true,
+                //     targets: 0,
+                //     checkboxes: { selectRow: true }
+                //   }
+                // ],
                 dom:
                   '<"top"<"actions action-btns"B><"action-filters"f>><"clear">rt<"bottom"<"actions">p>',
                 oLanguage: {
