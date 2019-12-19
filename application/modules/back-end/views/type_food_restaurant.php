@@ -1,4 +1,5 @@
     <!-- BEGIN: Content-->
+ <?php $id_restaurant = $this->input->get('id') ?>
     <div class="app-content content">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
@@ -33,72 +34,23 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>ลำดับ</th>
                                     <th>ชื่อประเภท</th>
-                                    <th>ACTION</th>
+                                    <th>เครื่องมือ</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php $type_restaurant_type = $this->db->get('tbl_type_food')->result_array() ;?>
+                             <?php foreach ($type_restaurant_type as $key => $type_restaurant_type) { ?>
                                 <tr>
                                     <td></td>
-                                    <td>1</td>
-                                    <td class="product-name">Apple Watch series 4 GPS</td>
+                                    <td class="product-name"><?php echo $type_restaurant_type['type_food']  ?></td>
                                     <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <a href="Admin_Food?id=<?php echo $type_restaurant_type['id']; ?>&id_restaurant=<?php echo $id_restaurant; ?>"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
                                        
                                         
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>2</td>
-                                    <td class="product-name">Beats HeadPhones</td>
-                                    <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                       
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>3</td>
-                                    <td class="product-name">Altec Lansing - Bluetooth Speaker</td>
-                                    <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                       
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>4</td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Receiver</td>
-                                    <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                       
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>5</td>
-                                    <td class="product-name">Aluratek - Bluetooth Audio Transmitter</td>
-                                    <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                       
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>6</td>
-                                    <td class="product-name">Basis - Peak Fitness and Sleep Tracker</td>
-                                    <td class="product-action">
-                                        <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
-                                       
-                                        
-                                    </td>
-                                </tr>
+                                <?php } ?> 
                             </tbody>
                         </table>
                     </div>
@@ -129,7 +81,7 @@
                             </div>
                             <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
                                 <div class="add-data-btn">
-                                    <button class="btn btn-primary">Add Data</button>
+                                    <button class="btn btn-primary">เพิ่มข้อมูล</button>
                                 </div>
                                 <div class="cancel-data-btn">
                                     <button class="btn btn-outline-danger">Cancel</button>

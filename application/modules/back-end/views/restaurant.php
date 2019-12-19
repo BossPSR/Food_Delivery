@@ -38,7 +38,7 @@
                                     <th>เบอร์โทร</th>
                                     <th>เวลาเปิด-ปิด</th>
                                     <th>สถานะ</th>
-                                    <th>ACTION</th>
+                                    <th>เครื่องมือ</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,7 +82,7 @@
                                             <?php } ?> 
                                     </td>
                                     <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
+                                        <a href="Admin_Type_Food_Restaurant?id=<?php echo $restaurant['id']; ?>"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
                                         <a href="delete_restaurant?id=<?php echo $restaurant['id']; ?>"><span class="action-delete"><i class="feather icon-trash" style="font-size:25px;"></i></span></a>
                                     </td>
@@ -96,7 +96,7 @@
                         </table>
                     </div>
                     <!-- dataTable ends -->
-
+                    <form action="food_add_com"  method="POST" ></form>
                     <!-- add new sidebar starts -->
                     <div class="add-new-data-sidebar">
                         <div class="overlay-bg"></div>
