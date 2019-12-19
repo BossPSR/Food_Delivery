@@ -104,58 +104,66 @@
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ประเภทร้านอาหาร</label>
-                                            <select class="form-control" name="title">
-                                                <option value="">ร้านของหวาน</option>
-                                                <option value="">ร้านอาหารทะเล</option>
-                                                <option value="">ร้านเส้น</option>
-                                                <option value="">ร้านอาหารตามสั่ง</option>
+                                            <select class="form-control" name="id_type_restaurant">
+                                            <?php $type_restaurant = $this->db->get('tbl_type_restaurant')->result_array() ;?>
+                                            <?php foreach ($type_restaurant as $key => $type_restaurant) { ?>
+                                                <option value="<?php echo $type_restaurant['id'];  ?>"><?php echo $type_restaurant['type_restaurant'];  ?></option>
+                                         <?php  } ?>
                                             </select>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ชื่อร้าน</label>
-                                            <input type="text" class="form-control" id="data-name">
+                                            <input type="text" class="form-control" name="restaurant_name">
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เจ้าของร้าน</label>
-                                            <input type="text" class="form-control" id="data-name">
+                                            <input type="text" class="form-control" name="restaurant_name_p">
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เบอร์โทรติดต่อ</label>
-                                            <input type="text" class="form-control" id="data-name">
+                                            <input type="text" class="form-control" name="restaurant_tel">
                                         </div>
 
                                         
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">อีเมล</label>
-                                            <input type="email" class="form-control" id="data-name">
+                                            <input type="email" class="form-control" name="restaurant_email">
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาเปิด</label>
-                                            <input type="text" class="form-control pickatime">
+                                            <input type="text" class="form-control pickatime" name="restaurant_open">
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาปิด</label>
-                                            <input type="text" class="form-control pickatime">
+                                            <input type="text" class="form-control pickatime" name="restaurant_close">
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ที่อยู่</label>
-                                            <textarea class="form-control" cols="30" rows="10"></textarea>
+                                            <textarea class="form-control" cols="30" rows="10" name="restaurant_address"></textarea>
                                         </div>
 
                                        
                                         
                                        
-                                        <div class="col-sm-12 data-field-col data-list-upload">
-                                            <form action="#" class="dropzone dropzone-area" id="dpz-single-file">
-                                                <div class="dz-message">Upload Image</div>
-                                            </form>
-                                        </div>
+                                        <div class="col-lg-12 col-md-12 data-field-col">
+                                                <fieldset class="form-group">
+                                                    <label for="basicInputFile">รูปร้านอาหาร</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" name="file_name" class="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01"/>
+                                                        <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
+                                                        <div style="width: 115px;margin: 15px auto 0;">
+                                                            <img id="blah" style="max-width:100%;" src="" alt="" />
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
                                     </div>
                                 </div>
                             </div>
