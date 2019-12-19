@@ -74,7 +74,7 @@ class AdminRestaurant_ctr extends CI_Controller {
 
     public function edit_type_food_restaurant()
     {
-        $id               = $this->input->post('id');
+        $id                     = $this->input->post('id');
         $type_restaurant        = $this->input->post('type_restaurant');
 
         
@@ -83,7 +83,7 @@ class AdminRestaurant_ctr extends CI_Controller {
             'updated_at'            => date('Y-m-d H:i:s')
         );
         $this->db->where('id',$id);
-        $success = $this->db->update('tbl_type_food',$data);
+        $success = $this->db->update('tbl_type_restaurant',$data);
     
         if($success > 0)
         {

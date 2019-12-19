@@ -70,7 +70,7 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="data-name">ชื่อประเภท</label>
-                                                                    <input type="text" class="form-control"  name="type_name" value="<?php echo $type_restaurant['type_restaurant'];?>" required>
+                                                                    <input type="text" class="form-control"  name="type_restaurant" value="<?php echo $type_restaurant['type_restaurant'];?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>
