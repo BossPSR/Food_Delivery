@@ -20,6 +20,63 @@ class AdminRestaurant_ctr extends CI_Controller {
         $this->load->view('option/footer');
      }
     }
+    public function restaurant_add_com()
+    {
+
+        
+         $this->load->library('upload');
+      
+        // |xlsx|pdf|docx
+        $config['upload_path'] = './uploads/restaurant';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']     = '200480';
+        $config['max_width'] = '5000';
+        $config['max_height'] = '5000';
+        $name_file = "Restaurant-".time();
+        $config['file_name'] = $name_file;
+
+        $this->upload->initialize($config);
+
+        $data = array();
+
+            if ($_FILES['file_name']['name']) {           
+                if ($this->upload->do_upload('file_name')){
+
+                    $gamber     = $this->upload->data();
+                    $data = array
+                    (
+                        'file_name'     => $gamber['file_name'],
+                        'id_type_restaurant'         => $this->input->post('id_type_restaurant') , 
+                        'restaurant_name'   => $this->input->post('restaurant_name') , 
+                        'restaurant_name_p'   => $this->input->post('restaurant_name_p') , 
+                        'restaurant_tel'   => $this->input->post('restaurant_tel') , 
+                        'restaurant_email'          => $this->input->post('restaurant_email') , 
+                        'restaurant_open'          => $this->input->post('restaurant_open') , 
+                        'restaurant_close'          => $this->input->post('restaurant_close') , 
+                        'restaurant_address'          => $this->input->post('restaurant_address') , 
+                        'create_at'     => date('Y-m-d H:i:s') 
+
+                    );
+                     
+                    $resultsedit = $this->db->insert('tbl_restaurant',$data);
+                }
+               
+            }
+
+           
+
+            if($resultsedit > 0)
+            {
+                $this->session->set_flashdata('save_ss2','เพิ่มข้อมูลร้านอาหารเรียบร้อยแล้ว !!.');
+            }
+            else
+            {
+                $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลร้านอาหารได้');
+            }
+            return redirect('Admin_Restaurant');
+    }
+
+
     
     public function type_restaurant()
 	{
@@ -105,6 +162,8 @@ class AdminRestaurant_ctr extends CI_Controller {
             $this->load->view('option/footer');
         }    
     }
+
+
 
   
 }

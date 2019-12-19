@@ -44,6 +44,7 @@ $route['Admin_Rider_edit_com']          = 'back-end/AdminRider_ctr/rider_edit_co
 $route['Admin_Rider_delete']            = 'back-end/AdminRider_ctr/delete_rider'; 
 $route['Admin_Rider_status']            = 'back-end/AdminRider_ctr/status_rider'; 
 $route['Admin_Restaurant']              = 'back-end/AdminRestaurant_ctr'; 
+$route['Restaurant_add_com']              = 'back-end/AdminRestaurant_ctr/restaurant_add_com'; 
 $route['Admin_Restaurant_com']          = 'back-end/AdminRestaurant_ctr/type_restaurant_com'; 
 $route['Admin_Restaurant_edit_com']     = 'back-end/AdminRestaurant_ctr/edit_type_food_restaurant'; 
 $route['delete_type_food_restaurant']   = 'back-end/AdminRestaurant_ctr/delete_type_food_restaurant'; 

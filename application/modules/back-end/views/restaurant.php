@@ -101,7 +101,7 @@
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
-
+                                        <form action="Restaurant_add_com" method="POST" enctype="multipart/form-data">
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ประเภทร้านอาหาร</label>
                                             <select class="form-control" name="id_type_restaurant">
@@ -114,33 +114,33 @@
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ชื่อร้าน</label>
-                                            <input type="text" class="form-control" name="restaurant_name">
+                                            <input type="text" class="form-control" name="restaurant_name" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เจ้าของร้าน</label>
-                                            <input type="text" class="form-control" name="restaurant_name_p">
+                                            <input type="text" class="form-control" name="restaurant_name_p" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เบอร์โทรติดต่อ</label>
-                                            <input type="text" class="form-control" name="restaurant_tel">
+                                            <input type="text" class="form-control" name="restaurant_tel" required>
                                         </div>
 
                                         
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">อีเมล</label>
-                                            <input type="email" class="form-control" name="restaurant_email">
+                                            <input type="email" class="form-control" name="restaurant_email" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาเปิด</label>
-                                            <input type="text" class="form-control pickatime" name="restaurant_open">
+                                            <input type="text" class="form-control pickatime" name="restaurant_open" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาปิด</label>
-                                            <input type="text" class="form-control pickatime" name="restaurant_close">
+                                            <input type="text" class="form-control pickatime" name="restaurant_close" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
@@ -163,7 +163,6 @@
                                                     </div>
                                                 </fieldset>
                                             </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -171,6 +170,7 @@
                                 <div class="add-data-btn">
                                     <button class="btn btn-primary">Add Data</button>
                                 </div>
+                                </form>
 
                             </div>
                         </div>
