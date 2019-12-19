@@ -33,51 +33,62 @@
                                     <th></th>
                                     <th>รูปภาพ</th>
                                     <th>ชื่อร้าน</th>
+                                    <th>ชื่อเจ้าของร้าน</th>
                                     <th>ประเภทร้านอาหาร</th>
+                                    <th>เบอร์โทร</th>
+                                    <th>เวลาเปิด-ปิด</th>
                                     <th>สถานะ</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php $restaurant = $this->db->get('tbl_restaurant')->result_array() ;?>
+                            <?php foreach ($restaurant as $key => $restaurant) { ?>
                                 <tr>
                                     <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/apple-watch.png" alt="Img placeholder">
+                                    <td class="product-img"><img src="uploads/restaurant/<?php echo $restaurant['file_name'];?>" alt="Img placeholder">
                                     </td>
-                                    <td class="product-name">Apple Watch series 4 GPS</td>
-                                    <td class="product-name">ร้านของหวาน</td>
+                                    <td class="product-name"><?php echo $restaurant['restaurant_name'];?></td>
+                                    <td class="product-name"><?php echo $restaurant['restaurant_name_p'];?></td>
+                                    <?php $restaurant_type = $this->db->get_where('tbl_type_restaurant',['id' => $restaurant['id_type_restaurant']])->result_array(); ?>
+                                    <?php foreach ($restaurant_type as $key => $restaurant_type) { ?>
+                                    <td class="product-name"><?php echo $restaurant_type['type_restaurant'];?></td>
+                                    <?php } ?> 
+                                    <td class="product-name"><?php echo $restaurant['restaurant_tel'];?></td>
+                                    <td class="product-name"><?php echo $restaurant['restaurant_open'].' '.$restaurant['restaurant_close'];?></td>
                                     <td>
-                                        <div class="chip chip-warning">
-                                            <div class="chip-body">
-                                                <div class="chip-text">on hold</div>
-                                            </div>
-                                        </div>
+                                    <?php if ($restaurant['status'] == '1') { ?>
+                                           
+                                            <div class="dropdown">
+                                                <button class="btn btn-success dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    เปิด
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="status_restaurant?id=<?php echo $restaurant['id']; ?>&status=0">ปิด</a>
+                                                </div>
+                                            </div> 
+
+                                            <?php } else { ?>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-danger dropdown-toggle mr-1" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    ปิด
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                    <a class="dropdown-item" href="status_restaurant?id=<?php echo $restaurant['id']; ?>&status=1">เปิด</a>
+                                                </div>
+                                            </div> 
+
+                                            <?php } ?> 
                                     </td>
                                     <td class="product-action">
                                         <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
                                         <span class="action-edit"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span>
+                                        <a href="delete_restaurant?id=<?php echo $restaurant['id']; ?>"><span class="action-delete"><i class="feather icon-trash" style="font-size:25px;"></i></span></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="product-img"><img src="public/backend/app-assets/images/elements/magic-mouse.png" alt="Img placeholder">
-                                    </td>
-                                    <td class="product-name">Beats HeadPhones</td>
-                                    <td class="product-name">ร้านของหวาน</td>
-                                    <td>
-                                        <div class="chip chip-success">
-                                            <div class="chip-body">
-                                                <div class="chip-text">Delivered</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="product-action">
-                                        <a href="Admin_Type_Food_Restaurant"><span class="action-food"><i class="fa fa-cutlery" style="font-size: 25px;"></i></span></a>
-                                        <span class="action-edit"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
-                                        <span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span>
-                                    </td>
-                                </tr>
-                               
+                              
+                                <?php } ?> 
    
 
 
@@ -182,4 +193,17 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
     <!-- END: Content-->

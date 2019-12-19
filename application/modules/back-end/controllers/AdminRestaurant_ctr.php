@@ -54,7 +54,7 @@ class AdminRestaurant_ctr extends CI_Controller {
                         'restaurant_open'          => $this->input->post('restaurant_open') , 
                         'restaurant_close'          => $this->input->post('restaurant_close') , 
                         'restaurant_address'          => $this->input->post('restaurant_address') , 
-                        'create_at'     => date('Y-m-d H:i:s') 
+                        'created_at'     => date('Y-m-d H:i:s') 
 
                     );
                      
@@ -76,6 +76,42 @@ class AdminRestaurant_ctr extends CI_Controller {
             return redirect('Admin_Restaurant');
     }
 
+
+
+    public function status_restaurant()
+    {
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
+
+        $this->db->where('id', $id);
+        $resultsedit = $this->db->update('tbl_restaurant',['status' => $status]);
+
+        if($resultsedit > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลสถานะร้านอาหารเรียบร้อยแล้ว !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลสถานะอาหารได้');
+        }
+        return redirect('Admin_Restaurant');
+    }
+
+    public function delete_restaurant()
+    {
+
+        $id = $this->input->get('id');
+
+        if ($this->Type_model->restaurant($id))
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถลบข้อมูลได้ !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('save_ss2','ลบข้อมูลประเภทร้านอาหารเรียบร้อยแล้ว');
+        }
+        return redirect('Admin_Restaurant');
+    }
 
     
     public function type_restaurant()
@@ -109,7 +145,7 @@ class AdminRestaurant_ctr extends CI_Controller {
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลร้านอาหารได้');
             }
-                redirect('Admin_Type_Restaurant');
+                redirect('Admin_Restaurant');
         
     }
 
