@@ -12,6 +12,13 @@ class Type_model extends CI_Model{
         $this->db->where('id',$id);
         $this->db->delete('tbl_type_food');
     }
+
+    public function type_restaurant($id)
+    {
+        $this->db->where('id',$id);
+        $this->db->delete('tbl_type_restaurant');
+    }
+
  
 }
 
