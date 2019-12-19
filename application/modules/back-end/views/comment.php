@@ -28,55 +28,23 @@
 
                 <!-- Card Captions and Overlay section start -->
                 <section id="card-caps">
+                <?php $contact = $this->db->get('tbl_contact')->result_array() ;?>
+                <?php foreach ($contact as $key => $contact) { ?>
                     <div class="row my-3">
                         <div class="col-xl-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h4 class="card-title"><?php echo $contact['subject'] ?></h4>
+                                        <p class="card-text"><?php echo $contact['description'] ?></p>
+                                        <p class="card-text"><?php echo $contact['email'].' Tel.'.$contact['tel'] ?></p>
+                                        <p class="card-text"><small class="text-muted"><?php echo $contact['create_at'] ?></small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php }  ?>
                 </section>
                 <!-- Card Captions and Overlay section end -->
 
