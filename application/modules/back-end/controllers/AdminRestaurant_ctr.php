@@ -95,5 +95,16 @@ class AdminRestaurant_ctr extends CI_Controller {
             redirect('Admin_Type_Restaurant');
     }
 
+    public function type_food()
+    {
+        if ($this->session->userdata('username') == '') {
+            redirect('Admin_Login');
+        } else {
+            $this->load->view('option/header');
+            $this->load->view('type_food_restaurant');
+            $this->load->view('option/footer');
+        }    
+    }
+
   
 }
