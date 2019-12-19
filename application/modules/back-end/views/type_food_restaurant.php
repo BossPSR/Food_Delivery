@@ -45,7 +45,7 @@
                                     <td></td>
                                     <td class="product-name"><?php echo $type_restaurant_type['type_food']  ?></td>
                                     <td class="product-action">
-                                        <a href="Admin_Food?id=<?php echo $type_restaurant_type['id']; ?>&id_restaurant=<?php echo $id_restaurant; ?>"><span class="action-food"><i class="fa fa-cutlery"></i></span></a>
+                                        <a href="Admin_Food?id=<?php echo $type_restaurant_type['id']; ?>&id_restaurant=<?php echo $id_restaurant; ?>"><span class="action-food"><i class="fa fa-cutlery" style="font-size:25px;"></i></span></a>
                                        
                                         
                                     </td>

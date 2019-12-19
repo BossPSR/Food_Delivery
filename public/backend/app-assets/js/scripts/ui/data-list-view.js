@@ -328,7 +328,7 @@ $(document).ready(function() {
                 pageLength: 4,
                 buttons: [
                   {
-                    text: "<i class='feather icon-plus'></i> Add New",
+                    text: "<i class='feather icon-plus'></i> เพิ่มอาหาร",
                     action: function() {
                       $(this).removeClass("btn-secondary")
                       $(".add-new-data").addClass("show")

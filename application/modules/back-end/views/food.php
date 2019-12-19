@@ -53,16 +53,100 @@
                                     <td class="product-name"><?php echo $food['name_menu'];?></td>
                                     <td class="product-price"><?php echo $food['price_menu'];?> บาท</td>
                                     <td class="product-action">
-                                        <span class="action-edit"><i class="feather icon-edit"></i></span>
+                                        <span data-toggle="modal" data-target="#exampleModal<?php echo $food['id'];?>"><i class="feather icon-edit" style="font-size:25px;"></i></span>
                                         <a href="delete_food?id=<?php echo $food['id'];?>&id_restaurant=<?php echo $id_restaurant; ?>&id_food=<?php echo $id_food; ?>"><span class="action-delete"><i class="feather icon-trash" style="font-size:25px;"></i></span></a>
                                     </td>
                                 </tr>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal<?php echo $food['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">อาหาร</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="edit_type_food" method="POST" class="form-horizontal">
+                                        <div class="modal-body">
+                                    
+                                        <input type="hidden" class="form-control"  name="id" value="<?php echo $food['id'];?>">
+                                            <div class="data-items pb-3">
+                                                <div class="data-fields px-2 mt-3">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 data-field-col">
+                                                            <div class="form-group">
+                                                                <div class="controls">
+                                                                    <label for="data-name">ชื่ออาหาร</label>
+                                                                    <input type="text" class="form-control"  name="type_name" value="" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12 data-field-col">
+                                                            <div class="form-group">
+                                                                <div class="controls">
+                                                                    <label for="data-name">ราคา</label>
+                                                                    <input type="number" class="form-control"  name="type_name" value="" required>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12 col-md-12 data-field-col">
+                                                            <fieldset class="form-group">
+                                                                <label for="basicInputFile">รูปภาพ</label>
+                                                                <div class="custom-file">
+                                                                    <input type="file" name="file_name" class="custom-file-input" onchange="readURL_edit<?php echo $food['id']; ?>(this);"  id="inputGroupFile01"/>
+                                                                    <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
+                                                                    <div style="width: 115px;margin: 15px auto 0;">
+                                                                        <img id="blah_edit<?php echo $food['id']; ?>" style="max-width:100%;" src="" alt="" />
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+
+                                    
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                                <div class="add-data-btn mr-1">
+                                                    <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    
+                                </div>
+                                
+                    <!-- End Modal -->
+
+                            <script type="text/javascript">
+                                function readURL_edit<?php echo $food['id']; ?>(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+
+                                        reader.onload = function (e) {
+                                            $('#blah_edit<?php echo $food['id']; ?>').attr('src', e.target.result);
+                                        }
+
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                            </script>
                             <?php  } ?>
                             </tbody>
                         </table>
                     </div>
                     <!-- dataTable ends -->
-                    <form action="food_add_com" method="POST" enctype="multipart/form-data">
+                   
                     <!-- add new sidebar starts -->
                     <div class="add-new-data-sidebar">
                         <div class="overlay-bg"></div>
@@ -76,6 +160,7 @@
                                     <i class="feather icon-x"></i>
                                 </div>
                             </div>
+                            <form action="food_add_com" method="POST" enctype="multipart/form-data">
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
