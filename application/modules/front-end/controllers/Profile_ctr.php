@@ -14,8 +14,10 @@ class Profile_ctr extends CI_Controller
 		if ($this->session->userdata('email') == '') {
 			redirect('Login');
 		} else {
+			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 			$this->load->view('option/header');
-			$this->load->view('profile');
+			$this->load->view('option/header_user');
+			$this->load->view('profile',$data);
 			$this->load->view('option/footer');
 		}
 	}
@@ -103,6 +105,32 @@ class Profile_ctr extends CI_Controller
 			}
 		} else {
 			redirect('Login', 'refresh');
+		}
+	}
+
+	public function order_list()
+	{
+		if ($this->session->userdata('email') == '') {
+			redirect('Login');
+		} else {
+			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$this->load->view('option/header');
+			$this->load->view('option/header_user');
+			$this->load->view('order_list',$data);
+			$this->load->view('option/footer');
+		}
+	}
+
+	public function order_detail()
+	{
+		if ($this->session->userdata('email') == '') {
+			redirect('Login');
+		} else {
+			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$this->load->view('option/header');
+			$this->load->view('option/header_user',$data);
+			$this->load->view('order_detail');
+			$this->load->view('option/footer');
 		}
 	}
 }

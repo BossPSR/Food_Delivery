@@ -307,3 +307,7 @@
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
+
+  .newtable > .row > div > table > thead > tr > th , .newtable > .row > div > table > tbody > tr > td , .newtable > .row > div > table > tbody > tr > th{
+    text-align: center;
+  }

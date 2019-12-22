@@ -73,23 +73,23 @@
 							<span class="icon-bar"></span>
 						</button>
 						<ul class="nav navbar-nav navbar-collapse collapse">
-							<li><a href="index">หน้าแรก</a></li>
-							<li><a href="Resturant">ร้านอาหาร</a></li>
-							<li><a href="Food">อาหาร</a></li>
-							<li><a href="blog">บล็อก</a></li>
-							<li><a href="contact">ติดต่อเรา</a></li>	
+							<li><a href="index" class="<?php if($this->uri->segment(1) == "index"){echo 'active';} ?>">หน้าแรก</a></li>
+							<li><a href="Resturant" class="<?php if($this->uri->segment(1) == "Resturant"){echo 'active';} ?>">ร้านอาหาร</a></li>
+							<li><a href="Food" class="<?php if($this->uri->segment(1) == "Food"){echo 'active';} ?>">อาหาร</a></li>
+							<li><a href="blog" class="<?php if($this->uri->segment(1) == "blog"){echo 'active';} ?>">บล็อก</a></li>
+							<li><a href="contact" class="<?php if($this->uri->segment(1) == "contact"){echo 'active';} ?>">ติดต่อเรา</a></li>	
 						<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
 						<?php $facebook_log = $this->db->get_where('users',['email'=> $this->session->userData['email']])->row_array(); ?>
                              <?php if ($user == true ) :  ?>
 
-							<li><a href="Profile"><?php echo $user['first_name'].' '.$user['last_name'] ?></a></li>
+							<li><a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $user['first_name'].' '.$user['last_name'] ?></a></li>
 							<li><a href="Logout">ล็อกเอาท์</a></li>
 							<?php elseif ($facebook_log == true) : ?>
-							<li><a href="Profile"><?php echo $facebook_log['first_name'].' '.$facebook_log['last_name'] ?></a></li>
+							<li><a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $facebook_log['first_name'].' '.$facebook_log['last_name'] ?></a></li>
 							<li><a href="logout_facebook">ล็อกเอาท์</a></li>
 							<?php else : ?>
-							<li><a href="Register">สมัครสมาชิก</a></li>
-							<li><a href="user_authentication">ล็อกอิน</a></li>
+							<li><a href="Register" class="<?php if($this->uri->segment(1) == "Register"){echo 'active';} ?>">สมัครสมาชิก</a></li>
+							<li><a href="user_authentication" class="<?php if($this->uri->segment(1) == "user_authentication"){echo 'active';} ?>">ล็อกอิน</a></li>
 							<?php endif  ?>
 						</ul>
 					</div>

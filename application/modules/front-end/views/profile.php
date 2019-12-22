@@ -1,24 +1,4 @@
-<br><br>
-<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
-<section class="menu_after_loginAll">
-	<div class="menu_after_login">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<ul>
-								<li class="menu_list_after">
-									<a href="#">ข้อมูลส่วนตัว</a>
-									<a href="#">รายการอาหารล่าสุด</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-	</div>
-
-</section>
-    
-	<!-- Section Contact -->
+<!-- Section Contact -->
     <section id="contact-detail" class=" padd-100">
 		<h2 class="section-title sep-type-2 text-center">Profile</h2>
 		    <div class="container">
