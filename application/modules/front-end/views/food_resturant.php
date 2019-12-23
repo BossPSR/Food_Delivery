@@ -20,11 +20,13 @@
 						<div class="grid-sizer col-sm-6 col-md-4"></div>
 						<?php foreach ($menu as $menuDetail) { ?>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="<?php echo $menuDetail['id_type_food'];  ?>">
-							<div>
+							
+						     <a href="Cart"><div>
 								<div class="image_food"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
 								<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
 								<h3><?php echo $menuDetail['name_menu']; ?></h3>
 							</div>
+							</a>
 						</div>
 						<?php } ?>
 

@@ -21,6 +21,10 @@ class Resturant_ctr extends CI_Controller {
 
 	public function food()
 	{
+
+		if ($this->session->userdata('email') == '') {
+			redirect('Login');
+		} else {
 		  $resturant_id = $this->input->get('resturant_id');
 		  $data['resturant'] = $this->db->get_where('tbl_restaurant',['id' => $resturant_id])->row_array();
 		  $data['menu'] = $this->db->get_where('tbl_menu',['id_restaurant' => $resturant_id])->result_array();
@@ -28,8 +32,9 @@ class Resturant_ctr extends CI_Controller {
           $this->load->view('food_resturant',$data);
           $this->load->view('option/footer');
   
-
+		}
 	}
+
 
 	public function order()
 	{
@@ -41,5 +46,16 @@ class Resturant_ctr extends CI_Controller {
 		$this->load->view('option/footer');
 	}
 
+
+	public function cart()
+	{
+		  
+		$this->load->view('option/header'); 
+		$this->load->view('option/header_user');
+        $this->load->view('cart');
+        $this->load->view('option/footer');
+  
+
+	}
 
 }

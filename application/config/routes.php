@@ -32,6 +32,9 @@ $route['OrderList']                     = 'front-end/Profile_ctr/order_list';
 $route['OrderDetail']                   = 'front-end/Profile_ctr/order_detail';
 $route['Food_Resturant']                = 'front-end/Resturant_ctr/food';
 $route['Order_User']                    = 'front-end/Resturant_ctr/order';
+$route['Cart']                    = 'front-end/Resturant_ctr/cart';
+
+
 
 /****************       back-end       *********************/ 
 $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
