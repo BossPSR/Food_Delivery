@@ -72,7 +72,82 @@ class AdminFood_ctr extends CI_Controller {
             }
             return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
     }
-  
+
+    public function food_edit_com()
+    {
+        $id = $this->input->post('id');
+        $id_food = $this->input->post('id_food'); 
+        $id_restaurant = $this->input->post('id_restaurant'); 
+         $this->load->library('upload');
+      
+        // |xlsx|pdf|docx
+        $config['upload_path'] = './uploads/food';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size']     = '200480';
+        $config['max_width'] = '5000';
+        $config['max_height'] = '5000';
+        $name_file = "Food-".time();
+        $config['file_name'] = $name_file;
+
+        $this->upload->initialize($config);
+
+        $data = array();
+
+
+        if (empty($_FILES['file_name']['name'])) 
+        {
+            $data = array
+            (
+                
+               
+                'name_menu'         => $this->input->post('name_menu') , 
+                'price_menu'   => $this->input->post('price_menu') , 
+                'id_type_food'   => $this->input->post('id_food') , 
+                'id_restaurant'   => $this->input->post('id_restaurant') , 
+                'created_at'     => date('Y-m-d H:i:s') 
+
+               
+            );
+        }
+        else
+        {
+
+            if ($_FILES['file_name']['name']) {           
+                if ($this->upload->do_upload('file_name')){
+
+                    $gamber     = $this->upload->data();
+                    $data = array
+                    (
+                        'file_name'     => $gamber['file_name'],
+                        'name_menu'         => $this->input->post('name_menu') , 
+                        'price_menu'   => $this->input->post('price_menu') , 
+                        'id_type_food'   => $this->input->post('id_food') , 
+                        'id_restaurant'   => $this->input->post('id_restaurant') , 
+                        'created_at'     => date('Y-m-d H:i:s') 
+
+                        
+                    );
+
+                }
+            }
+
+        }
+            $this->db->where('id', $id);
+            $resultsedit = $this->db->update('tbl_menu',$data);
+         
+
+            if($resultsedit > 0)
+            {
+                $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลเมนูอาหารเรียบร้อยแล้ว !!.');
+            }
+            else
+            {
+                $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลเมนูอาหารได้');
+            }
+            return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
+    }
+
+
 
 
     

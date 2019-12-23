@@ -97,7 +97,7 @@
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <form action="Admin_Rider_edit_com" method="POST" class="form-horizontal" enctype="multipart/form-data" novalidate>
+                                                <form action="Restaurant_edit_com" method="POST" class="form-horizontal" enctype="multipart/form-data" novalidate>
                                                     <div class="modal-body">
 
                                                         <input type="hidden" class="form-control" name="id" value="<?php echo $restaurant['id']; ?>">                                                        
@@ -110,7 +110,7 @@
                                                                         <select class="form-control" name="id_type_restaurant">
                                                                         <?php $type_restaurant = $this->db->get('tbl_type_restaurant')->result_array() ;?>
                                                                         <?php foreach ($type_restaurant as $key => $type_restaurant) { ?>
-                                                                            <option value="<?php echo $type_restaurant['id'];  ?>"><?php echo $type_restaurant['type_restaurant'];  ?></option>
+                                                                            <option value="<?php echo $type_restaurant['id']; ?>" <?php echo $type_restaurant['id'] == $restaurant['id_type_restaurant']?"selected":"" ?>><?php echo $type_restaurant['type_restaurant']; ?></option>
                                                                     <?php  } ?>
                                                                         </select>
                                                                     </div>
@@ -119,44 +119,44 @@
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">ชื่อร้าน</label>
-                                                                        <input type="text" class="form-control" name="restaurant_name" required>
+                                                                        <input type="text" class="form-control" name="restaurant_name" value="<?php echo $restaurant['restaurant_name']; ?>" required>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เจ้าของร้าน</label>
-                                                                        <input type="text" class="form-control" name="restaurant_name_p" required>
+                                                                        <input type="text" class="form-control" name="restaurant_name_p"  value="<?php echo $restaurant['restaurant_name_p']; ?>"  required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เบอร์โทรติดต่อ</label>
-                                                                        <input type="text" class="form-control" name="restaurant_tel" required>
+                                                                        <input type="text" class="form-control" name="restaurant_tel" value="<?php echo $restaurant['restaurant_tel']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">อีเมล</label>
-                                                                        <input type="email" class="form-control" name="restaurant_email" required>
+                                                                        <input type="email" class="form-control" name="restaurant_email" value="<?php echo $restaurant['restaurant_email']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เวลาเปิด</label>
-                                                                        <input type="text" class="form-control pickatime" name="restaurant_open" required>
+                                                                        <input type="text" class="form-control pickatime" name="restaurant_open" value="<?php echo $restaurant['restaurant_open']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เวลาปิด</label>
-                                                                        <input type="text" class="form-control pickatime" name="restaurant_close" required>
+                                                                        <input type="text" class="form-control pickatime" name="restaurant_close" value="<?php echo $restaurant['restaurant_close']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">ที่อยู่</label>
-                                                                        <textarea class="form-control" cols="30" rows="10" name="restaurant_address"></textarea>
+                                                                        <textarea class="form-control" cols="30" rows="10" name="restaurant_address"><?php echo $restaurant['restaurant_address']; ?></textarea>
                                                                     </div>
                                                                 </div>
 
@@ -170,7 +170,7 @@
                                                                                 <input type="file" name="file_name" class="custom-file-input" onchange="readURL_edit<?php echo $restaurant['id']; ?>(this);"  id="inputGroupFile01"/>
                                                                                 <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
                                                                                 <div style="width: 115px;margin: 15px auto 0;">
-                                                                                    <img id="blah_edit<?php echo $restaurant['id']; ?>" style="max-width:100%;" src="" alt="" />
+                                                                                <img id="blah_edit<?php echo $restaurant['id']; ?>" style="max-width:100%;" src="uploads/restaurant/<?php echo $restaurant['file_name']; ?>" alt="" />
                                                                                 </div>
                                                                             </div>
                                                                         </fieldset>

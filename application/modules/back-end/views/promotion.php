@@ -26,64 +26,33 @@
             <div class="content-body">
                 <a href="Admin_Blog_Promotion_Add" style="display:inline-block;">
                     <button type="button" class="btn btn-flat-primary border-primary text-primary">
-                        <span><i class="feather icon-plus"></i> Add New</span>
+                        <span><i class="feather icon-plus"></i>เพิ่มข้อมูลโปรโมรชั่น</span>
                     </button>
                 </a>
+                <?php $promotion = $this->db->get('tbl_promotion')->result_array(); ?>
+                <?php foreach ($promotion as $key => $promotion) { ?>
                 <!-- Card Captions and Overlay section start -->
                 <section id="card-caps">
                     <div class="row my-3">
                         <div class="col-xl-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-content">
-                                    <img class="card-img-top img-fluid" src="public/backend/app-assets/images/slider/05.jpg" alt="Card image cap" />
+                                    <img class="card-img-top img-fluid" src="uploads/promotion/<?php echo $promotion['file_name'] ?>" alt="Card image cap" />
                                     <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h4 class="card-title"><?php echo $promotion['name_promotion'] ?></h4>
+                                        <p class="card-text"><?php echo $promotion['details'] ?></p>
+                                     
+                                        <p class="card-text"><small class="text-muted"><?php echo $promotion['create_at'] ?></small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <img class="card-img-top img-fluid" src="public/backend/app-assets/images/slider/05.jpg" alt="Card image cap" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6 col-md-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-content">
-                                    <img class="card-img-top img-fluid" src="public/backend/app-assets/images/slider/05.jpg" alt="Card image cap" />
-                                    <div class="card-body">
-                                        <h4 class="card-title">Top Image Cap</h4>
-                                        <p class="card-text">Jelly-o sesame snaps cheesecake topping. Cupcake fruitcake macaroon donut
-                                            pastry gummies tiramisu chocolate bar muffin. Dessert bonbon caramels brownie chocolate bar
-                                            chocolate tart dragée.</p>
-                                        <p class="card-text">Cupcake fruitcake macaroon donut pastry gummies tiramisu chocolate bar
-                                            muffin.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                       
+                       
                 </section>
+                                <?php  } ?>
+
                 <!-- Card Captions and Overlay section end -->
 
 

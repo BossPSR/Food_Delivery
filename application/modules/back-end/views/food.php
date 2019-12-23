@@ -44,7 +44,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $food = $this->db->get('tbl_menu')->result_array() ;?>
+                    
+                            <?php $food = $this->db->get_where('tbl_menu',['id_type_food' => $id_food])->result_array(); ?>
                             <?php foreach ($food as $key => $food) { ?>
                                 <tr>
                                     <td></td>
@@ -68,10 +69,12 @@
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="edit_type_food" method="POST" class="form-horizontal">
+                                    <form action="food_edit_com" method="POST" class="form-horizontal" enctype="multipart/form-data" >
                                         <div class="modal-body">
                                     
                                         <input type="hidden" class="form-control"  name="id" value="<?php echo $food['id'];?>">
+                                        <input type="hidden" class="form-control"  name="id_restaurant" value="<?php echo $id_restaurant ;?>">
+                                        <input type="hidden" class="form-control"  name="id_food" value="<?php echo $id_food;?>">
                                             <div class="data-items pb-3">
                                                 <div class="data-fields px-2 mt-3">
                                                     <div class="row">
@@ -79,7 +82,7 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="data-name">ชื่ออาหาร</label>
-                                                                    <input type="text" class="form-control"  name="type_name" value="" required>
+                                                                    <input type="text" class="form-control"  name="name_menu" value="<?php echo $food['name_menu'];?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -88,7 +91,7 @@
                                                             <div class="form-group">
                                                                 <div class="controls">
                                                                     <label for="data-name">ราคา</label>
-                                                                    <input type="number" class="form-control"  name="type_name" value="" required>
+                                                                    <input type="number" class="form-control"  name="price_menu" value="<?php echo $food['price_menu'];?>" required>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -100,7 +103,7 @@
                                                                     <input type="file" name="file_name" class="custom-file-input" onchange="readURL_edit<?php echo $food['id']; ?>(this);"  id="inputGroupFile01"/>
                                                                     <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
                                                                     <div style="width: 115px;margin: 15px auto 0;">
-                                                                        <img id="blah_edit<?php echo $food['id']; ?>" style="max-width:100%;" src="" alt="" />
+                                                                    <img id="blah_edit<?php echo $food['id']; ?>" style="max-width:100%;" src="uploads/food/<?php echo $food['file_name']; ?>" alt="" />
                                                                     </div>
                                                                 </div>
                                                             </fieldset>

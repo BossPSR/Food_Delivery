@@ -27,6 +27,7 @@
             </div>
             <div class="content-body">
                 <!-- Card Captions and Overlay section start -->
+                <form action="promotion_add_com"  method="POST" enctype="multipart/form-data">
                 <section id="card-caps">
                     <div class="row my-3">
                         <div class="col-xl-12 col-md-12 col-sm-12">
@@ -34,38 +35,55 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="col-sm-6 data-field-col data-list-upload m-auto">
-                                            <label for="data-name">รูปภาพโปรโมชั่น</label>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                            </div>
-       
                                             <label for="data-name">ชื่อโปรโมชั่น</label>
-                                            <input type="text" class="form-control" id="data-name">
+                                            <input type="text" class="form-control" name="name_promotion" >
+
 
                                             <label for="data-name">รายละเอียดโปรโมชั่น</label>
-                                            <textarea class="form-control" cols="30" rows="10"></textarea>
-                                            
+                                            <textarea class="form-control" cols="30" rows="10" name="details"></textarea>
+                                            <br>
+                                            <label for="data-name">รูปภาพโปรโมชั่น</label>
+                                            <div class="custom-file">
+                                                <input type="file" name="file_name" ass="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01">
+                                                <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
+                                                <div style="width: 115px;margin: 15px auto 0;">
+                                                    <img id="blah" style="max-width:100%;" src="" alt="" />
+                                                </div>
+                                            </div>
                                             <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
                                                 <div class="add-data-btn">
-                                                    <button class="btn btn-primary">Add Data</button>
+                                                    <button class="btn btn-primary">เพิ่ม ข้อมูลโปรโมชั่น</button>
                                                 </div>
                                                 <div class="cancel-data-btn">
-                                                    <button class="btn btn-outline-danger">Cancel</button>
+                                                    <a href="Admin_Blog_Promotion"><button class="btn btn-outline-danger">ยกเลิก</button></a>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                </form>
                 <!-- Card Captions and Overlay section end -->
 
 
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
     <!-- END: Content-->
