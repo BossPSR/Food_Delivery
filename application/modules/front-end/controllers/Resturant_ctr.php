@@ -22,6 +22,7 @@ class Resturant_ctr extends CI_Controller {
 	public function food()
 	{
 		  $resturant_id = $this->input->get('resturant_id');
+		  $data['resturant'] = $this->db->get_where('tbl_restaurant',['id' => $resturant_id])->row_array();
 		  $data['menu'] = $this->db->get_where('tbl_menu',['id_restaurant' => $resturant_id])->result_array();
           $this->load->view('option/header'); 
           $this->load->view('food_resturant',$data);
