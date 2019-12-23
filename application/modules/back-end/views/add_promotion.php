@@ -35,28 +35,31 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="col-sm-6 data-field-col data-list-upload m-auto">
-                                            <label for="data-name">ชื่อโปรโมชั่น</label>
-                                            <input type="text" class="form-control" name="name_promotion" >
-
-
-                                            <label for="data-name">รายละเอียดโปรโมชั่น</label>
-                                            <textarea class="form-control" cols="30" rows="10" name="details"></textarea>
-                                            <br>
-                                            <label for="data-name">รูปภาพโปรโมชั่น</label>
-                                            <div class="custom-file">
-                                                <input type="file" name="file_name" ass="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01">
-                                                <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
-                                                <div style="width: 115px;margin: 15px auto 0;">
-                                                    <img id="blah" style="max-width:100%;" src="" alt="" />
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="data-name">ชื่อโปรโมชั่น</label>
+                                                <input type="text" class="form-control" name="name_promotion" >
                                             </div>
-                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                            <div class="form-group">
+                                                <label for="data-name">รายละเอียดโปรโมชั่น</label>
+                                                <textarea class="form-control" cols="30" rows="10" name="details"></textarea>
+                                            </div>
+                                            
+                                            <label for="data-name">รูปภาพโปรโมชั่น</label>
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_name" ass="custom-file-input" onchange="readURL(this);"  id="inputGroupFile01">
+                                                    <div class="form-group">
+                                                        <label class="custom-file-label" for="inputGroupFile01" style="overflow: hidden;">กรุณาเลือกไฟล์</label>
+                                                        <div style="width: 115px;margin: 30px auto 0;">
+                                                            <img id="blah" style="max-width:100%;" src="" alt="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-5">
                                                 <div class="add-data-btn">
                                                     <button class="btn btn-primary">เพิ่ม ข้อมูลโปรโมชั่น</button>
                                                 </div>
-                                                <div class="cancel-data-btn">
-                                                    <a href="Admin_Blog_Promotion"><button class="btn btn-outline-danger">ยกเลิก</button></a>
-                                                </div>
+                                               
                                             </div>
                                         </div>
 

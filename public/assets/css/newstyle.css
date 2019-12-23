@@ -311,3 +311,29 @@
   .newtable > .row > div > table > thead > tr > th , .newtable > .row > div > table > tbody > tr > td , .newtable > .row > div > table > tbody > tr > th{
     text-align: center;
   }
+
+  .order_table > div > table > thead > tr > th , .order_table > div > table > tbody > tr > td , .order_table > div > table > tbody > tr > th{
+    text-align: center;
+  }
+
+  .order_shopping{
+    font-size:20px;
+    height: 50px;
+  }
+  .order_shopping_number{
+    content: attr(data-step);
+    position: absolute;
+    top: 0;
+    left: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 22px;
+    line-height: 38px;
+    background-color: #fe58a4;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+  }

@@ -794,30 +794,34 @@ a:hover {
 .offer-item:last-child {
   margin-bottom: 0;
 }
-.offer-item img {
+
+.offer-item a {
+  display: inline-block;
+}
+.offer-item a img {
   width: 20%;
   float: left;
   padding: 10px;
   background: #f2f2f2;
 }
-.offer-item div {
+.offer-item a div {
   width: 60%;
   float: left;
   padding-left: 20px;
   padding-right: 20px;
 }
-.offer-item div h3 {
+.offer-item a div h3 {
   font-size: 20px;
-  color: #cf9b67;
+  color: #fe58a4;
   margin: 9px 0 12px;
 
   font-weight: 400;
   letter-spacing: .5px;
 }
-.offer-item div p {
+.offer-item a div p {
   color: #6b6b6b;
 }
-.offer-item .offer-price {
+.offer-item a .offer-price {
   position: absolute;
   right: 15px;
   top: 50%;
@@ -1170,14 +1174,15 @@ a:hover {
   display: block;
   clear: both;
 }
-.restaurant-list a {
+.restaurant-list .image_food {
   margin-bottom: 30px;
   display: block;
   position: relative;
   overflow: hidden;
   height: 250px;
+  cursor: pointer;
 }
-.restaurant-list a img {
+.restaurant-list .image_food img {
   max-width: 100%;
   position: relative;
   z-index: 0;
@@ -1190,7 +1195,7 @@ a:hover {
   -webkit-transition-duration: 3s;
   transition-duration: 3s;
 }
-.restaurant-list a:after {
+.restaurant-list .image_food:after {
   content: "";
   position: absolute;
   left: 50%;
@@ -1213,7 +1218,7 @@ a:hover {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-.restaurant-list a:before {
+.restaurant-list .image_food:before {
   content: "";
   position: absolute;
   left: 20px;
@@ -1233,17 +1238,17 @@ a:hover {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.restaurant-list a:hover:before, .restaurant-list a:hover:after {
+.restaurant-list .image_food:hover:before, .restaurant-list .image_food:hover:after {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.restaurant-list a:hover:after {
+.restaurant-list .image_food:hover:after {
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-.restaurant-list a:hover img {
+.restaurant-list .image_food:hover img {
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -webkit-transform: scale(1.5);
@@ -2168,7 +2173,7 @@ a:hover {
 .gray-bg .menu-item {
   background: #fafafa;
 }
-.gray-bg .offer-item .offer-price {
+.gray-bg .offer-item a .offer-price {
   background: #fff;
 }
 
@@ -2255,7 +2260,7 @@ a:hover {
   margin-left: -91px;
 }
 
-#gallery .restaurant-list a {
+#gallery .restaurant-list .image_food {
   margin-bottom: 0;
 }
 

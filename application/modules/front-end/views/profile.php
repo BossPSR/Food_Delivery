@@ -73,6 +73,10 @@
                                 
 								<p class="text-center padd-top-30">
 									<button type="submit" class="btn-food">Submit</button>
-								</p>							
-</form>
+								</p>			
+					</div>				
+				</form>
+			</div>
+		</div>
+	</div>
 </section>

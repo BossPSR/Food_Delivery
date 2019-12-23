@@ -207,7 +207,7 @@
 
                 <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">บล๊อก</span></a>
                     <ul class="menu-content">
-                        <li class="<?php if($this->uri->segment(1)=="Admin_Blog_Promotion"){echo 'active';}?>">
+                        <li class="<?php if($this->uri->segment(1)=="Admin_Blog_Promotion" || $this->uri->segment(1)=="Admin_Blog_Promotion_Add"){echo 'active';}?>">
                             <a href="Admin_Blog_Promotion">
                                 <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">โปรโมชั่น</span>
                             </a>

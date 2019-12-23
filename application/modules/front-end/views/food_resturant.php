@@ -1,4 +1,4 @@
-		<section id="restaurant-menu" class="padd-100">
+<section id="restaurant-menu" class="padd-100">
 			<span class="section-suptitle text-center">Food Lover</span>
 			<h2 class="section-title sep-type-2 text-center">
 				resturant menu
@@ -17,69 +17,77 @@
 						<div class="grid-sizer col-sm-6 col-md-4"></div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-							<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
 							<div>
-							<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
 							<div>
-							<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="starters">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
 							<div>
-								<a href="Resturant" target="_blank"><div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div></a>
+								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
 								<span>Only $25</span>
 								<h3>Chicken and Cashews</h3>
 							</div>
 						</div>
+
+					
 					</div>
 				</div>
 			</div>
 		</section>
-		
+<script>
+	$(document).ready(function(){
+		$(".image_food").click(function(){
+			$("span").toggleClass("main");
+		});
+	});
+</script>

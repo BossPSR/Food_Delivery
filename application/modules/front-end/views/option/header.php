@@ -32,7 +32,7 @@
 </head>
 
 <body>
-	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Loader Bloc -->
 	<div class="site-loader">
 		<div class="loading"></div>
@@ -74,16 +74,30 @@
 						</button>
 						<ul class="nav navbar-nav navbar-collapse collapse">
 							<li><a href="index" class="<?php if($this->uri->segment(1) == "index"){echo 'active';} ?>">หน้าแรก</a></li>
-							<li><a href="Resturant" class="<?php if($this->uri->segment(1) == "Resturant"){echo 'active';} ?>">ร้านอาหาร</a></li>
+							<li><a href="Resturant" class="<?php if($this->uri->segment(1) == "Resturant" || $this->uri->segment(1) == "Food_Resturant"){echo 'active';} ?>">ร้านอาหาร</a></li>
 							<li><a href="Food" class="<?php if($this->uri->segment(1) == "Food"){echo 'active';} ?>">อาหาร</a></li>
 							<li><a href="blog" class="<?php if($this->uri->segment(1) == "blog"){echo 'active';} ?>">บล็อก</a></li>
 							<li><a href="contact" class="<?php if($this->uri->segment(1) == "contact"){echo 'active';} ?>">ติดต่อเรา</a></li>	
 						<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
 						<?php $facebook_log = $this->db->get_where('users',['email'=> $this->session->userData['email']])->row_array(); ?>
                              <?php if ($user == true ) :  ?>
+								
+							<li>
+								<a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $user['first_name'].' '.$user['last_name'] ?></a>
+							</li>
+							<li class="order_shoppingList">
+								<a href="Order_User" class="<?php if($this->uri->segment(1) == "Order_User"){echo 'active';} ?>" style="cursor: pointer; width: 50px; padding-bottom:0;">
+									<div class="order_shopping">
+										<i class="fa fa-shopping-cart"aria-hidden="true"></i>
+									</div>
 
-							<li><a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $user['first_name'].' '.$user['last_name'] ?></a></li>
-							<li><a href="Logout">ล็อกเอาท์</a></li>
+									<div class="order_shopping_number">0</div>
+
+								</a>
+							</li>
+							 <li>
+								<a href="Logout">ล็อกเอาท์</a>
+							</li>
 							<?php elseif ($facebook_log == true) : ?>
 							<li><a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $facebook_log['first_name'].' '.$facebook_log['last_name'] ?></a></li>
 							<li><a href="logout_facebook">ล็อกเอาท์</a></li>

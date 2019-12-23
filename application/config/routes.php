@@ -30,7 +30,8 @@ $route['user_authentication']           = 'front-end/User_authentication';
 $route['logout_facebook']               = 'front-end/User_authentication/logout';
 $route['OrderList']                     = 'front-end/Profile_ctr/order_list';
 $route['OrderDetail']                   = 'front-end/Profile_ctr/order_detail';
-
+$route['Food_Resturant']                = 'front-end/Resturant_ctr/food';
+$route['Order_User']                    = 'front-end/Resturant_ctr/order';
 
 /****************       back-end       *********************/ 
 $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
