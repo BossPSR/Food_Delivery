@@ -9,13 +9,13 @@
 						
 					
 						<div class="menu-item">
-						<?php foreach ($resturant as $key => $resturantDetail) {
+						<?php foreach ($resturant as $resturantDetail) {
 
 						?>
 							<div class="col-md-6">
 								
-								<div class="offer-item">
-								<a href="Food_Resturant?=<?php echo $resturantDetail['id']; ?>">
+								<div class="offer-item" style="background-color:#eee;">
+								<a href="Food_Resturant?resturant_id=<?php echo $resturantDetail['id']; ?>">
 									<img src="uploads/restaurant/<?php echo $resturantDetail['file_name']; ?>" alt="" class="img-responsive">
 									<div>
 										<h3><?php echo $resturantDetail['restaurant_name']; ?></h3>

@@ -8,76 +8,25 @@
 				<div class="row">
 					<ul class="restaurant-filter">
 						<li><a href="" class="current" data-filter="">All dishes</a></li>
-						<li><a href="" data-filter="dinner">dinner</a></li>
-						<li><a href="" data-filter="lunch">lunch</a></li>
-						<li><a href="" data-filter="drinks">drinks</a></li>
-						<li><a href="" data-filter="starters">starters</a></li>
+						<?php 
+							$type_food = $this->db->get('tbl_type_food')->result_array();
+							foreach ($type_food as $typeFood) {
+						
+						?>
+						<li><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
+						<?php } ?>
 					</ul>
 					<div class="restaurant-list">
 						<div class="grid-sizer col-sm-6 col-md-4"></div>
+						<?php foreach ($menu as $menuDetail) { ?>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
 							<div>
-								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
+								<div class="image_food"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
+								<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
+								<h3><?php echo $menuDetail['name_menu']; ?></h3>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="starters">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res2.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
-							<div>
-								<div class="image_food"><img src="./public/assets/img/res1.png" alt=""></div>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
+						<?php } ?>
 
 					
 					</div>
