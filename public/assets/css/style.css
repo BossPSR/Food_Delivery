@@ -796,7 +796,7 @@ a:hover {
 }
 
 .offer-item a {
-  display: inline-block;
+  display: block;
 }
 .offer-item a img {
   width: 20%;
