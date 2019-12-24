@@ -50,7 +50,7 @@ class Login_ctr extends CI_Controller {
     public function logout()
     {
         $this->session->sess_destroy();//ล้างsession
-
+        $this->cart->destroy();
         redirect('index');//กลับไปหน้า Login
     }
 

@@ -80,18 +80,18 @@
 							<li><a href="contact" class="<?php if($this->uri->segment(1) == "contact"){echo 'active';} ?>">ติดต่อเรา</a></li>	
 						<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
 						<?php $facebook_log = $this->db->get_where('users',['email'=> $this->session->userData['email']])->row_array(); ?>
-                             <?php if ($user == true ) :  ?>
+                             <?php if ($this->session->userdata('email') != '' ) :  ?>
 								
 							<li>
 								<a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $user['first_name'].' '.$user['last_name'] ?></a>
 							</li>
 							<li class="order_shoppingList">
-								<a href="Order_User" class="<?php if($this->uri->segment(1) == "Order_User"){echo 'active';} ?>" style="cursor: pointer; width: 50px; padding-bottom:0;">
+								<a href="Cart" class="<?php if($this->uri->segment(1) == "Order_User"){echo 'active';} ?>" style="cursor: pointer; width: 50px; padding-bottom:0;">
 									<div class="order_shopping">
 										<i class="fa fa-shopping-cart"aria-hidden="true"></i>
 									</div>
 
-									<div class="order_shopping_number">0</div>
+									<div class="order_shopping_number"><?php echo count($this->cart->contents()); ?></div>
 
 								</a>
 							</li>

@@ -27,7 +27,7 @@
 							    </div>
                                 <div class="column">
 									<span>
-										<input type="text" name="phone" value="<?php echo $user['tel'] ?>" placeholder="เบอร์โทร" class="required-field">
+										<input type="text" name="tel" value="<?php echo $user['tel'] ?>" placeholder="เบอร์โทร" class="required-field">
 									</span>
 									<span>
 										<input type="email" name="email" value="<?php echo $user['email'] ?>" placeholder="อีเมล" class="required-field">
@@ -46,7 +46,7 @@
 							    </div>
                                 <div class="column">
 									<span>
-										<input type="text" name="address" value="<?php echo $user['amphur'] ?>" placeholder="อำเภอ" class="required-field">
+										<input type="text" name="amphur" value="<?php echo $user['amphur'] ?>" placeholder="อำเภอ" class="required-field">
 									</span>
 									<span>
 										<input type="text" name="district" value="<?php echo $user['district'] ?>" placeholder="ตำบล" class="required-field">

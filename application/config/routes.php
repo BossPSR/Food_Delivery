@@ -32,8 +32,10 @@ $route['OrderList']                     = 'front-end/Profile_ctr/order_list';
 $route['OrderDetail']                   = 'front-end/Profile_ctr/order_detail';
 $route['Food_Resturant']                = 'front-end/Resturant_ctr/food';
 $route['Order_User']                    = 'front-end/Resturant_ctr/order';
-$route['Cart']                    = 'front-end/Resturant_ctr/cart';
-$route['destroy_cart']                    = 'front-end/Resturant_ctr/destroy_cart';
+$route['Cart']                          = 'front-end/Resturant_ctr/cart';
+$route['save_cart']                     = 'front-end/Resturant_ctr/save_cart';
+$route['delet_cart']                    = 'front-end/Resturant_ctr/delet_cart';
+$route['destroy_cart']                  = 'front-end/Resturant_ctr/destroy_cart';
 
 
 

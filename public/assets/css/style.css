@@ -961,7 +961,7 @@ a:hover {
 .form-reservation .column > span:last-child {
   float: right;
   padding-right: 0;
-  padding-left: 8px;
+  padding-left: 0px;
 }
 .form-reservation .column textarea {
   -moz-border-radius: 10px;

@@ -197,7 +197,7 @@
     <h2 class="section-title sep-type-2 text-center">รายการอาหาร</h2>
     <div class="container">
         <div class="row">
-
+        <?php if (!empty($this->cart->contents())) : ?>
             <div class="shopping-cart">
                 <!-- Title -->
                 <div class="title">
@@ -211,11 +211,12 @@
 
                     <?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
 
-
                     <!-- Product #1 -->
                     <div class="item">
                         <div class="buttons">
+                            <a href="delet_cart?rowid=<?php echo $items['rowid']; ?>">
                             <span class="delete-btns"></span>
+                            </a>
                             <!-- <span class="like-btns"></span> -->
                         </div>
 
@@ -229,12 +230,12 @@
                         </div>
 
                         <div class="quantity">
-                            <button class="plus-btns" type="button" name="button">
-                                <img src="public/assets/img/plus.svg" alt="" />
-                            </button>
-                            <input type="text" name="name" value="<?php echo $items['qty'] ?>">
                             <button class="minus-btns" type="button" name="button">
                                 <img src="public/assets/img/minus.svg" alt="" />
+                            </button>
+                            <input type="text" name="name" value="<?php echo $items['qty'] ?>">
+                            <button class="plus-btns" type="button" name="button">
+                                <img src="public/assets/img/plus.svg" alt="" />
                             </button>
                         </div>
 
@@ -270,6 +271,13 @@
                 <!-- <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button> -->
                 <a href="Order_User" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</a>
             </div>
+            <?php else : ?>
+				<div class="text-center">
+					<h1 style="margin: 0;color: #fe58a4;font-size: 100px;">ไม่มีสินค้าในตะกร้า</h1>
+					<h1>กรุณาลองเลือกอาหารร้านอื่นดูครับ</h1>
+					<a href="index">เลือกอาหารร้านอื่นๆ</a>
+				</div>
+			<?php endif ; ?>
         </div>
     </div>
 </section>

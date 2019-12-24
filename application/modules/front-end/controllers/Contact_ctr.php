@@ -11,10 +11,10 @@ class Contact_ctr extends CI_Controller {
   
 	public function index()
 	{
- 
-          $this->load->view('option/header'); 
-          $this->load->view('contact');
-          $this->load->view('option/footer');
+        $this->cart->destroy();
+        $this->load->view('option/header'); 
+        $this->load->view('contact');
+        $this->load->view('option/footer');
   
 
 	}
@@ -44,11 +44,12 @@ class Contact_ctr extends CI_Controller {
             if($success > 0)
             {
                 $this->session->set_flashdata('save_ss2','ส่งข้อมูลไปยังเว็บไซต์เรียบร้อยแล้ว กรุณารอการตอบกลับ 1-2 วันทำการ !!.');
-            }else
+            }
+            else
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถส่งข้อมูลได้เนื่องจากมีข้อผิดพลาด');
             }
-                redirect('contact');
+            redirect('contact');
         
     }
 

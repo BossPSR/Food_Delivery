@@ -15,6 +15,7 @@ class Profile_ctr extends CI_Controller
 			redirect('Login');
 		} else {
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$this->cart->destroy();
 			$this->load->view('option/header');
 			$this->load->view('option/header_user');
 			$this->load->view('profile',$data);
@@ -33,9 +34,9 @@ class Profile_ctr extends CI_Controller
 			$birthday            = $this->input->post('birthday');
 			$line                = $this->input->post('id_line');
 			$address             = $this->input->post('address');
-			$province             = $this->input->post('province');
-			$amphur             = $this->input->post('amphur');
-			$district             = $this->input->post('district');
+			$province            = $this->input->post('province');
+			$amphur              = $this->input->post('amphur');
+			$district            = $this->input->post('district');
 			$zipcode             = $this->input->post('zipcode');
 			$updated_at          = date('Y-m-d H:i:s');
 			$c_password          = $this->input->post('c_password');
