@@ -40,7 +40,17 @@
                                     <img class="card-img-top img-fluid" src="uploads/promotion/<?php echo $promotion['file_name'] ?>" alt="Card image cap" />
                                     <div class="card-body">
                                         <h4 class="card-title"><?php echo $promotion['name_promotion'] ?></h4>
-                                        <p class="card-text"><?php echo $promotion['details'] ?></p>
+                                        <p class="card-text">
+                                        
+                                            <?php 
+                                                $detailPromotion = $promotion['details'];
+                                                if (strlen($detailPromotion) > 80){
+                                                    $detailPromotion = mb_substr($detailPromotion,0,80,'UTF-8').'...';
+                                               }
+                                               echo $detailPromotion;
+                                            ?>
+                                            
+                                        </p>
                                      
                                         <p class="card-text"><small class="text-muted"><?php echo $promotion['create_at'] ?></small></p>
                                         <span data-toggle="modal" data-target="#exampleModal<?php echo $promotion['id'];?>" style="display: inline-block; cursor: pointer;"><i class="feather icon-edit" style="font-size: 25px;"></i></span>

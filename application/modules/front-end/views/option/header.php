@@ -76,7 +76,7 @@
 							<li><a href="index" class="<?php if($this->uri->segment(1) == "index"){echo 'active';} ?>">หน้าแรก</a></li>
 							<li><a href="Resturant" class="<?php if($this->uri->segment(1) == "Resturant" || $this->uri->segment(1) == "Food_Resturant"){echo 'active';} ?>">ร้านอาหาร</a></li>
 							<li><a href="Food" class="<?php if($this->uri->segment(1) == "Food"){echo 'active';} ?>">อาหาร</a></li>
-							<li><a href="blog" class="<?php if($this->uri->segment(1) == "blog"){echo 'active';} ?>">บล็อก</a></li>
+							<li><a href="promotion" class="<?php if($this->uri->segment(1) == "promotion" || $this->uri->segment(1) == "promotion-single"){echo 'active';} ?>">โปรโมชั่น</a></li>
 							<li><a href="contact" class="<?php if($this->uri->segment(1) == "contact"){echo 'active';} ?>">ติดต่อเรา</a></li>	
 						<?php $user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array() ?>
 						<?php $facebook_log = $this->db->get_where('users',['email'=> $this->session->userData['email']])->row_array(); ?>

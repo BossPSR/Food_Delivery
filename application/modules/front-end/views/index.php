@@ -120,84 +120,39 @@
 		<section id="restaurant-menu" class="padd-100">
 			<span class="section-suptitle text-center">Food Lover</span>
 			<h2 class="section-title sep-type-2 text-center">
-				resturant menu
+				ร้านอาหาร
 			</h2>
-			
+
+			<ul class="restaurant-filter">
+				<li><a href="" class="current" data-filter="">All dishes</a></li>
+					<?php 
+						$type_restaurant = $this->db->get('tbl_type_restaurant')->result_array();
+						foreach ($type_restaurant as $typeRestaurant) {
+						
+					?>
+				<li><a href="" data-filter="<?php echo $typeRestaurant['id']; ?>"><?php echo $typeRestaurant['type_restaurant']; ?></a></li>
+					<?php } ?>
+			</ul>
+
 			<div class="container">
 				<div class="row">
-					<ul class="restaurant-filter">
-						<li><a href="" class="current" data-filter="">All dishes</a></li>
-						<li><a href="" data-filter="dinner">dinner</a></li>
-						<li><a href="" data-filter="lunch">lunch</a></li>
-						<li><a href="" data-filter="drinks">drinks</a></li>
-						<li><a href="" data-filter="starters">starters</a></li>
-					</ul>
-					<div class="restaurant-list">
-						<div class="grid-sizer col-sm-6 col-md-4"></div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
+					<div class="menu-carousel vertical-carousel">
+						<div class="restaurant-list">
+							<div class="grid-sizer col-sm-6 col-md-4"></div>
+							<?php foreach ($resturant as $resturantDetail) { ?>
+							<div class="col-sm-6 col-md-4 grid-item" data-filter="<?php echo $resturantDetail['id_type_restaurant'];  ?>">
+								<div>
+									<a href="Food_Resturant?resturant_id=<?php echo $resturantDetail['id']; ?>"><div class="image_food"><img src="uploads/restaurant/<?php echo $resturantDetail['file_name']; ?>" alt=""></div></a>
+									<h3><?php echo $resturantDetail['restaurant_name']; ?></h3>
+									<span><?php echo $resturantDetail['restaurant_open']." - ".$resturantDetail['restaurant_close']; ?></span>
+									
+								</div>
 							</div>
+						<?php } ?>
+
+					
 						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="drinks">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="lunch">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="starters">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res2.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 grid-item" data-filter="dinner">
-							<div>
-								<a href="menu.html" target="_blank"><img src="./public/assets/img/res1.png" alt=""></a>
-								<span>Only $25</span>
-								<h3>Chicken and Cashews</h3>
-							</div>
-						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
 		</section>
@@ -219,90 +174,30 @@
 							Month of December
 						</span>
 						<ul class="event-carousel">
+						<?php foreach ($promotion as $key => $promotionDetail) { ?>
 							<li class="event-item">
 								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
+									<img src="uploads/promotion/<?php echo $promotionDetail['file_name']; ?>" alt="" class="img-responsive">
 								</div>
 								
 								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
+									<h3><?php echo $promotionDetail['name_promotion']; ?></h3>
+									<span><?php echo $promotionDetail['create_at'];?></span>
 									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
+									   <?php 
+									   	$detailPromotion = $promotionDetail['details'];
+									   if (strlen($detailPromotion) > 80){
+											$detailPromotion = mb_substr($detailPromotion,0,80,'UTF-8').'...';
+									   }
+									   echo $detailPromotion;
+									   	
+									   ?>
 									</p>
 									<a href="">Read More</a>
 								</div>
 							</li>
-							<li class="event-item">
-								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
-								</div>
-								
-								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
-									</p>
-									<a href="">Read More</a>
-								</div>
-							</li>
-							<li class="event-item">
-								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
-								</div>
-								
-								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
-									</p>
-									<a href="">Read More</a>
-								</div>
-							</li>
-							<li class="event-item">
-								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
-								</div>
-								
-								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
-									</p>
-									<a href="">Read More</a>
-								</div>
-							</li>
-							<li class="event-item">
-								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
-								</div>
-								
-								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
-									</p>
-									<a href="">Read More</a>
-								</div>
-							</li>
-							<li class="event-item">
-								<div class="imgPromotion">
-									<img src="./public/assets/img/pro1.png" alt="" class="img-responsive">
-								</div>
-								
-								<div class="detailPromotion">
-									<h3>Chicken and Cashews</h3>
-									<span>18 Mar 2016</span>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur piscing elit. Vestibulum dapibus vehiculdum. estibulum a felis ac sem hendrerit mattis...
-									</p>
-									<a href="">Read More</a>
-								</div>
-							</li>
+						<?php } ?>
+							
 						</ul>
 					</div>
 				</div>
@@ -317,106 +212,33 @@
 			</h2>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12 no-padd">
-						<ul class="team-carousel">
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
-									</div>
-									
-									<div class="foodGood_detail">
-										<span>Senior Chef</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food2.jpg" alt="" class="img-responsive">
-									</div>
-									<div class="foodGood_detail">
-										<span>Adjoint Chef</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
-									</div>
-									<div class="foodGood_detail">
-										<span>Junior Chef</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food3.jpg" alt="" class="img-responsive">
-									</div>
-									<div class="foodGood_detail">
-										<span>Adapter</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food2.jpg" alt="" class="img-responsive">
-									</div>
-									<div class="foodGood_detail">
-										<span>Senior Chef</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="foodGood">
-									<div class="foodGood_img">
-										<img src="./public/assets/img/food1.jpg" alt="" class="img-responsive">
-									</div>
-									<div class="foodGood_detail">
-										<span>Adjoint Chef</span>
-										<h3>Remeno Fentos</h3>
-										<div>
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<a href="#"><i class="fa fa-facebook"></i></a>
-											<a href="#"><i class="fa fa-instagram"></i></a>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul>
+					<ul class="restaurant-filter">
+						<li><a href="" class="current" data-filter="">All dishes</a></li>
+						<?php 
+							$type_food = $this->db->get('tbl_type_food')->result_array();
+							foreach ($type_food as $typeFood) {
+						
+						?>
+						<li><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
+						<?php } ?>
+					</ul>
+					<div class="restaurant-list">
+						<div class="grid-sizer col-sm-6 col-md-4"></div>
+						<?php
+							
+							foreach ($menu as $menuDetail) {
+						?>
+
+						<div class="col-sm-6 col-md-4 grid-item" data-filter="<?php echo $menuDetail['id_type_food'];  ?>">
+							<div>
+								<a href="Food_Resturant?resturant_id=<?php echo $menuDetail['id_restaurant']; ?>"><div class="image_food"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div></a>
+								<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
+								<h3><?php echo $menuDetail['name_menu']; ?></h3>
+							</div>
+						</div>
+						
+						<?php } ?>
+			
 					</div>
 				</div>
 			</div>

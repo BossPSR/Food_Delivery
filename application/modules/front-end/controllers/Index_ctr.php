@@ -11,10 +11,12 @@ class Index_ctr extends CI_Controller {
   
 	public function index()
 	{
- 
-          $this->load->view('option/header'); 
-          $this->load->view('index');
-          $this->load->view('option/footer');
+		$data['resturant'] = $this->db->get('tbl_restaurant')->result_array();
+		$data['menu'] = $this->db->get('tbl_menu')->result_array();
+		$data['promotion'] = $this->db->get('tbl_promotion')->result_array();
+        $this->load->view('option/header'); 
+        $this->load->view('index',$data);
+        $this->load->view('option/footer');
   
 
 	}

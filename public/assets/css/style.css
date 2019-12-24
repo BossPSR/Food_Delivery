@@ -272,8 +272,8 @@ a:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid rgba(207, 155, 103, 0.1);
-  border-left-color: rgba(207, 155, 103, 0.4);
+  border: 1px solid rgba(254, 88, 164, 0.1);
+  border-left-color: rgba(254, 88, 164, 0.4);
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   border-radius: 999px;
@@ -1424,6 +1424,7 @@ a:hover {
   z-index: 1;
 }
 .event-carousel .event-item .imgPromotion {
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2670,7 +2671,7 @@ a:hover {
   float: left;
 }
 .meta li i {
-  color: #cf9b67;
+  color: #fe58a4;
   font-size: 15px;
   margin-right: 5px;
 }
@@ -2686,7 +2687,7 @@ a:hover {
   bottom: 0px;
   width: 6px;
   height: 6px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -2698,7 +2699,7 @@ a:hover {
   bottom: 2px;
   width: 29px;
   height: 2px;
-  background-color: #cf9b67;
+  background-color: #fe58a4;
 }
 
 .extrait-post {
@@ -2728,8 +2729,8 @@ a:hover {
 }
 .btn-read-more:hover {
   color: #fff;
-  background-color: #cf9b67;
-  border-color: #cf9b67;
+  background-color: #fe58a4;
+  border-color: #fe58a4;
 }
 
 .pagination {
@@ -2782,8 +2783,8 @@ a:hover {
 }
 .pagination li a:hover, .pagination li a.active {
   color: #fff;
-  background-color: #cf9b67;
-  border-color: #cf9b67;
+  background-color: #fe58a4;
+  border-color: #fe58a4;
 }
 .pagination li a.prev, .pagination li a.next {
   width: 116px;

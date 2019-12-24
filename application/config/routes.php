@@ -15,8 +15,8 @@ $route['Login']                         = 'front-end/Login_ctr';
 $route['LoginMe']                       = 'front-end/Login_ctr/loginMe'; 
 $route['Logout']                        = 'front-end/Login_ctr/logout'; 
 $route['index']                         = 'front-end/Index_ctr/index'; 
-$route['blog']                          = 'front-end/Blog_ctr/index'; 
-$route['blog-single']                   = 'front-end/Blog_ctr/blog_single'; 
+$route['promotion']                     = 'front-end/Promotion_ctr/index'; 
+$route['promotion-single']              = 'front-end/Promotion_ctr/promotion_single'; 
 $route['contact']                       = 'front-end/Contact_ctr/index'; 
 $route['contact_com']                   = 'front-end/Contact_ctr/Contacr_com'; 
 
