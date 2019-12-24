@@ -209,10 +209,14 @@
 
                 <?php foreach ($this->cart->contents() as $items) : ?>
 
-                    <?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
+                    
 
                     <!-- Product #1 -->
                     <div class="item">
+                    <?php 
+                        echo form_hidden('rowid', $items['rowid']); 
+                        echo form_hidden('price', $items['price']);
+                    ?>
                         <div class="buttons">
                             <a href="delet_cart?rowid=<?php echo $items['rowid']; ?>">
                             <span class="delete-btns"></span>
@@ -263,7 +267,10 @@
 
                     </div>
 
-                    <div class="total-price"><?php echo $this->cart->format_number($this->cart->total()); ?> บาท</div>
+                    <div class="total-price" id="total_pirce">
+                        <?php echo $this->cart->format_number($this->cart->total()); ?> บาท
+                    </div>
+                    
                 </div>
 
             </div>
@@ -284,35 +291,64 @@
 
 
 <script type="text/javascript">
+    
+    function getTotalitem() {
+        $.ajax({
+            url:'total_cart_item',
+            success:function(response){
+                $('.order_shopping_number').html(response);
+            }
+        })
+    }
+
+    function getTotal() {
+        $.ajax({
+            url:'total_cart',
+            success:function(response){
+                $('#total_pirce').html(response + " บาท");
+            }
+        })
+    }
+
+
+    function setNumber(params,button) {
+
+        let input = $(button).parent().find('input');
+        let row_id = $(button).parents('.item').find('input[name="rowid"]').val();
+        let price = $(button).parents('.item').find('input[name="price"]').val();
+        let amount = $(input).val();
+            amount = JSON.parse(amount);
+
+        $.ajax({
+          url:'update_cart',
+          method: 'post',
+          data:{
+            type: params,
+            amount: amount,
+            row_id: row_id,
+            price:price
+          },
+          success:function (response) {
+            response = JSON.parse(response);
+            $(input).val(response.amount);
+            $(button).parents('.item').find('.total-price').html(response.sub_total + " บาท");
+            getTotalitem();
+            getTotal();
+          }
+        });
+        
+        
+    }
     $('.minus-btns').on('click', function(e) {
         e.preventDefault();
         var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
-
-        if (value > 1) {
-            value = value - 1;
-        } else {
-            value = 0;
-        }
-
-        $input.val(value);
-
+        setNumber('minus',$this)
     });
 
     $('.plus-btns').on('click', function(e) {
         e.preventDefault();
         var $this = $(this);
-        var $input = $this.closest('div').find('input');
-        var value = parseInt($input.val());
-
-        if (value < 100) {
-            value = value + 1;
-        } else {
-            value = 100;
-        }
-
-        $input.val(value);
+        setNumber('plus',$this)
     });
 
     $('.like-btns').on('click', function() {

@@ -91,7 +91,7 @@
 										<i class="fa fa-shopping-cart"aria-hidden="true"></i>
 									</div>
 
-									<div class="order_shopping_number"><?php echo count($this->cart->contents()); ?></div>
+									<div class="order_shopping_number"><?php echo $this->cart->total_items(); ?></div>
 
 								</a>
 							</li>

@@ -11,7 +11,7 @@ class Food_ctr extends CI_Controller {
   
 	public function index()
 	{
-		$this->cart->destroy();
+		
         $this->load->view('option/header'); 
         $this->load->view('food');
         $this->load->view('option/footer');
