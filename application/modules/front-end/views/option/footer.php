@@ -90,14 +90,14 @@
 	<!-- End Site Wrapper -->
 
 	<!-- Contribute JS Files -->
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 	<script type="text/javascript" src="public/assets/js/egprojets.lib.js"></script>
 	<!-- End Contribute JS Files -->
 
 	<!-- Custom JS Files -->
 	<script type="text/javascript" src="public/assets/js/egprojets.custom.js"></script>
 	<!-- Custom JS Files -->
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="public/assets/js/sweetalert.min.js"></script>
 <script>
     <?php if($suss = $this->session->flashdata('save_ss2')): ?>
         swal("Good job!", '<?php echo $suss ; ?>' , "success");

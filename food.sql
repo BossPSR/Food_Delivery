@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-12-17 18:06:18
+Date: 2019-12-24 11:37:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -104,6 +104,28 @@ INSERT INTO `tbl_member` VALUES ('1', 'test', '001', '0879879877', 'test@gmail.c
 INSERT INTO `tbl_member` VALUES ('3', 'มิกิ', 'phenomenal software', null, 'infinityp.soft@gmail.com', '5d1d14584b0c06caf0496045c696e989', '2019-12-14', 'miki_ik', '', 'Chiangmai', null, 'หนองจ๊อม', '50290', '2019-12-14 14:53:22', '2019-12-14 14:53:22');
 
 -- ----------------------------
+-- Table structure for `tbl_menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_menu`;
+CREATE TABLE `tbl_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_type_food` varchar(255) DEFAULT NULL,
+  `id_restaurant` varchar(255) DEFAULT NULL,
+  `name_menu` varchar(255) DEFAULT NULL,
+  `price_menu` varchar(255) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tbl_menu
+-- ----------------------------
+INSERT INTO `tbl_menu` VALUES ('9', '9', '2', 'ยำคิวบิด', '69', 'Food-1577075478.jpg', '2019-12-23 11:31:18');
+INSERT INTO `tbl_menu` VALUES ('10', '9', '2', 'ยำ2โทน', '89', 'Food-1577106119.jpg', '2019-12-23 20:01:59');
+INSERT INTO `tbl_menu` VALUES ('11', '9', '2', 'ยำข้าวโพด', '69', 'Food-1577106135.jpg', '2019-12-23 20:02:15');
+
+-- ----------------------------
 -- Table structure for `tbl_order`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_order`;
@@ -125,25 +147,69 @@ CREATE TABLE `tbl_order` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `tbl_promotion`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_promotion`;
+CREATE TABLE `tbl_promotion` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_promotion` varchar(255) DEFAULT NULL,
+  `details` text DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `create_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tbl_promotion
+-- ----------------------------
+INSERT INTO `tbl_promotion` VALUES ('1', 'ส่งฟรี 40 บาท', 'ส่งฟรี 40 บาท', 'Promotion-1577082993.jpg', '2019-12-23 13:36:33');
+
+-- ----------------------------
 -- Table structure for `tbl_restaurant`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_restaurant`;
 CREATE TABLE `tbl_restaurant` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_type_restaurant` int(11) DEFAULT NULL,
   `restaurant_name` varchar(255) DEFAULT NULL,
-  `restaurant_detail` varchar(255) DEFAULT NULL,
+  `restaurant_name_p` varchar(255) DEFAULT NULL,
+  `restaurant_tel` varchar(255) DEFAULT NULL,
+  `restaurant_email` varchar(255) DEFAULT NULL,
+  `restaurant_address` varchar(255) DEFAULT '',
   `file_name` varchar(255) DEFAULT NULL,
-  `restaurant_time` varchar(200) DEFAULT NULL,
-  `restaurant_minute` varchar(100) DEFAULT NULL,
-  `status` int(11) DEFAULT 0,
+  `restaurant_open` varchar(200) DEFAULT '',
+  `restaurant_close` varchar(100) DEFAULT '',
+  `status` int(11) DEFAULT 1 COMMENT '1="ว่าง" 0="ไม่ว่าง"',
   `updated_at` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_restaurant
+-- ----------------------------
+INSERT INTO `tbl_restaurant` VALUES ('2', '5', 'ร้านยำชั้น2', 'นายมิกิ  อาษาวงค์', '0618096661', 'infinityp.soft@gmail.com', '', 'Restaurant-1577074270.jpg', '6:00 AM', '10:30 PM', '0', null, '2019-12-23 11:11:10');
+
+-- ----------------------------
+-- Table structure for `tbl_rider`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_rider`;
+CREATE TABLE `tbl_rider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT '',
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `id_card` varchar(255) DEFAULT NULL,
+  `tel` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT '1' COMMENT '1="ว่าง" 0="ไม่ว่าง"',
+  `create_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tbl_rider
 -- ----------------------------
 
 -- ----------------------------
@@ -156,12 +222,16 @@ CREATE TABLE `tbl_type_food` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_type_food
 -- ----------------------------
-INSERT INTO `tbl_type_food` VALUES ('1', 'อาหารหลัก', '2019-12-17 16:09:21', null);
+INSERT INTO `tbl_type_food` VALUES ('5', 'อาหารหลัก', '2019-12-19 10:09:22', null);
+INSERT INTO `tbl_type_food` VALUES ('6', 'อาหารหวาน', '2019-12-19 14:11:40', null);
+INSERT INTO `tbl_type_food` VALUES ('7', 'เส้น', '2019-12-19 14:11:55', null);
+INSERT INTO `tbl_type_food` VALUES ('8', 'อาหารทะเล', '2019-12-19 14:12:11', null);
+INSERT INTO `tbl_type_food` VALUES ('9', 'ยำ', '2019-12-19 14:14:39', null);
 
 -- ----------------------------
 -- Table structure for `tbl_type_restaurant`
@@ -173,11 +243,13 @@ CREATE TABLE `tbl_type_restaurant` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_type_restaurant
 -- ----------------------------
+INSERT INTO `tbl_type_restaurant` VALUES ('4', 'คาเฟ่', '2019-12-19 14:15:05', '2019-12-19 14:15:05');
+INSERT INTO `tbl_type_restaurant` VALUES ('5', 'ร้านยำ', '2019-12-19 11:24:54', null);
 
 -- ----------------------------
 -- Table structure for `users`

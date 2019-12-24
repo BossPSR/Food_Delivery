@@ -203,6 +203,8 @@
                 <div class="title">
                     รายละเอียดรายการ
                 </div>
+
+
                 <?php $i = 1; ?>
 
                 <?php foreach ($this->cart->contents() as $items) : ?>
@@ -265,8 +267,8 @@
 
             </div>
             <div style="text-align: right;">
-                <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button>
-                <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button>
+                <!-- <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button> -->
+                <a href="Order_User" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</a>
             </div>
         </div>
     </div>

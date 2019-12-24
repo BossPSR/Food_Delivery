@@ -62,9 +62,9 @@ class Resturant_ctr extends CI_Controller {
 			'price'   		=> $id_cart->price_menu,
 			'name'    		=> $id_cart->name_menu,
 			'file_name'    	=> $id_cart->file_name
-	);
+		);
 	
-	 	$test = $this->cart->insert($data);
+	 	$this->cart->insert($data);
 	
 
 		$this->load->view('option/header'); 
