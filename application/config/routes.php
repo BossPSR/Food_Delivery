@@ -33,6 +33,7 @@ $route['OrderDetail']                   = 'front-end/Profile_ctr/order_detail';
 $route['Food_Resturant']                = 'front-end/Resturant_ctr/food';
 $route['Order_User']                    = 'front-end/Resturant_ctr/order';
 $route['Cart']                    = 'front-end/Resturant_ctr/cart';
+$route['destroy_cart']                    = 'front-end/Resturant_ctr/destroy_cart';
 
 
 

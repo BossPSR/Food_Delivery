@@ -203,119 +203,69 @@
                 <div class="title">
                     รายละเอียดรายการ
                 </div>
+                <?php $i = 1; ?>
 
-                <!-- Product #1 -->
-                <div class="item">
-                    <div class="buttons">
-                        <span class="delete-btns"></span>
-                        <!-- <span class="like-btns"></span> -->
+                <?php foreach ($this->cart->contents() as $items) : ?>
+
+                    <?php echo form_hidden($i . '[rowid]', $items['rowid']); ?>
+
+
+                    <!-- Product #1 -->
+                    <div class="item">
+                        <div class="buttons">
+                            <span class="delete-btns"></span>
+                            <!-- <span class="like-btns"></span> -->
+                        </div>
+
+                        <div class="image">
+                            <img src="uploads/food/<?php echo $items['file_name'] ?>" alt="" style="width: 90px; height:90px" />
+                        </div>
+
+                        <div class="description">
+                            <span><?php echo $items['name'] ?></span>
+                            
+                        </div>
+
+                        <div class="quantity">
+                            <button class="plus-btns" type="button" name="button">
+                                <img src="public/assets/img/plus.svg" alt="" />
+                            </button>
+                            <input type="text" name="name" value="<?php echo $items['qty'] ?>">
+                            <button class="minus-btns" type="button" name="button">
+                                <img src="public/assets/img/minus.svg" alt="" />
+                            </button>
+                        </div>
+
+                        <div class="total-price"><?php echo $this->cart->format_number($items['subtotal']); ?> บาท</div>
                     </div>
+                    <?php $i++; ?>
 
-                    <div class="image">
-                        <img src="public/assets/img/item-1.png" alt="" />
-                    </div>
-
-                    <div class="description">
-                        <span>Common Projects</span>
-                        <span>Bball High</span>
-                        <span>White</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="plus-btns" type="button" name="button">
-                            <img src="public/assets/img/plus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="minus-btns" type="button" name="button">
-                            <img src="public/assets/img/minus.svg" alt="" />
-                        </button>
-                    </div>
-
-                    <div class="total-price">$549</div>
-                </div>
-
-                <!-- Product #2 -->
-                <div class="item">
-                    <div class="buttons">
-                        <span class="delete-btns"></span>
-                        <!-- <span class="like-btns"></span> -->
-                    </div>
-
-                    <div class="image">
-                        <img src="public/assets/img/item-2.png" alt="" />
-                    </div>
-
-                    <div class="description">
-                        <span>Maison Margiela</span>
-                        <span>Future Sneakers</span>
-                        <span>White</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="plus-btns" type="button" name="button">
-                            <img src="public/assets/img/plus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="minus-btns" type="button" name="button">
-                            <img src="public/assets/img/minus.svg" alt="" />
-                        </button>
-                    </div>
-
-                    <div class="total-price">$870</div>
-                </div>
+                <?php endforeach; ?>
 
                 <!-- Product #3 -->
                 <div class="item">
                     <div class="buttons">
-                        <span class="delete-btns"></span>
-                        <!-- <span class="like-btns"></span> -->
+
                     </div>
 
-                    <div class="image">
-                        <img src="public/assets/img/item-3.png" alt="" />
-                    </div>
+                    <div class="image" style="margin-right: 450px;">
 
-                    <div class="description">
-                        <span>Our Legacy</span>
-                        <span>Brushed Scarf</span>
-                        <span>Brown</span>
-                    </div>
-
-                    <div class="quantity">
-                        <button class="plus-btns" type="button" name="button">
-                            <img src="public/assets/img/plus.svg" alt="" />
-                        </button>
-                        <input type="text" name="name" value="1">
-                        <button class="minus-btns" type="button" name="button">
-                            <img src="public/assets/img/minus.svg" alt="" />
-                        </button>
-                    </div>
-
-                    <div class="total-price">$349</div>
-                </div>
-                <!-- Product #3 -->
-                <div class="item">
-                    <div class="buttons">
-                       
-                    </div>
-
-                    <div class="image" style="margin-right: 481px;">
-                       
                     </div>
 
                     <div class="description" style="padding-top: 27px;margin-right: 0px;text-align: right;">
-                    อดรวมทั้งหมด
+                        ยอดรวมทั้งหมด
                     </div>
 
                     <div class="quantity">
-                       
+
                     </div>
 
-                    <div class="total-price">$1500</div>
+                    <div class="total-price"><?php echo $this->cart->format_number($this->cart->total()); ?> บาท</div>
                 </div>
-                
+
             </div>
             <div style="text-align: right;">
+                <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button>
                 <button type="button" class="btn btn-success" style="font-size: 18px;width: 233px;">ยืนยันการสั่งซื้อสินค้า</button>
             </div>
         </div>
