@@ -33,13 +33,13 @@ class Register_ctr extends CI_Controller {
 		if ($username_check) {
 			echo "<script>";
 			echo "alert('ขออภัย Email  นี้มีผู้อื่นใช้แล้ว กรุณาลองใหม่อีกครั้ง !!!');";
-			echo "window.location='register';";
+			echo "window.location='Register';";
 			echo "</script>";
 		} else {
 			if ($password != $c_password) {
 				echo "<script>";
 				echo "alert('กรุณากรอกรหัสผ่านให้ตรงกัน กรุณาลองใหม่อีกครั้ง !!!');";
-				echo "window.location='register';";
+				echo "window.location='Register';";
 				echo "</script>";
 			} else {
 				$data = array(
