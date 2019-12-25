@@ -15,7 +15,7 @@ class Profile_ctr extends CI_Controller
 			redirect('Login');
 		} else {
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
-			// $this->cart->destroy();
+			$this->cart->destroy();
 			$this->load->view('option/header');
 			$this->load->view('option/header_user');
 			$this->load->view('profile',$data);
@@ -115,6 +115,7 @@ class Profile_ctr extends CI_Controller
 			redirect('Login');
 		} else {
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$data['orderList'] = $this->db->get_where('tbl_order', ['id_member' => $data['user']['id']])->result_array();
 			$this->load->view('option/header');
 			$this->load->view('option/header_user');
 			$this->load->view('order_list',$data);
@@ -127,10 +128,13 @@ class Profile_ctr extends CI_Controller
 		if ($this->session->userdata('email') == '') {
 			redirect('Login');
 		} else {
+			$id = $this->input->get('id');
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$data['orderDetailAll'] = $this->db->get_where('tbl_order_detail', ['id_order' => $id])->result_array();
+			$data['orderAll'] = $this->db->get_where('tbl_order', ['id' => $id])->row_array();
 			$this->load->view('option/header');
 			$this->load->view('option/header_user',$data);
-			$this->load->view('order_detail');
+			$this->load->view('order_detail',$data);
 			$this->load->view('option/footer');
 		}
 	}

@@ -210,12 +210,13 @@
             }
             $menuOne = $this->db->get_where('tbl_menu',['id' => $item])->row_array();
             $menuList = $this->db->get_where('tbl_menu',['id_restaurant' => $menuOne['id_restaurant']])->result_array();
+            $restaurantName = $this->db->get_where('tbl_restaurant',['id' => $menuOne['id_restaurant']])->row_array();
             
         ?>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
             
             <!-- Modal content-->
             <div class="modal-content">
@@ -223,19 +224,29 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">เพิ่มรายการอาหาร</h4>
                 </div>
-                <div class="modal-body">
-                <?php  foreach ($menuList as  $menuDetail) { ?>
-                    <a href="add_cart?id=<?php echo $menuDetail['id'];  ?>">
-                        <div>
-						    <div class="image_food_shopping"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
-							<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
-							<h3><?php echo $menuDetail['name_menu']; ?></h3>
-						</div>
-					</a>
-                <?php } ?>
+                <div class="modal-body" style="padding:0;">
+                    
+                    <h1 class="text-center form-group"><?php echo $restaurantName['restaurant_name']; ?></h1>
+                    <div class="shopping_listOrder">
+                        
+                        <?php  foreach ($menuList as  $menuDetail) { ?>
+                        <div style="width:25%;float:left;padding: 15px;" class="form-group" data-filter="<?php echo $menuDetail['id_type_food'];  ?>">
+
+                            <a href="add_cart?id=<?php echo $menuDetail['id'];  ?>" style="color: #337ab7; text-decoration: none;">
+                                <div class="border_food_shopping">
+                                    <div class="image_food_shopping"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
+                                    <span><?php echo $menuDetail['price_menu']; ?> บาท</span>
+                                    <h3><?php echo $menuDetail['name_menu']; ?></h3>
+                                </div>
+                            </a>
+                                            
+                        </div>
+                        <?php } ?>
+                    </div>
+                     
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                
                 </div>
             </div>
             

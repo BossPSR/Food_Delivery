@@ -13,7 +13,7 @@ class Resturant_ctr extends CI_Controller {
 	public function index()
 	{
 		  $data['resturant'] = $this->db->get('tbl_restaurant')->result_array();
-		  
+		  $this->cart->destroy();
           $this->load->view('option/header'); 
           $this->load->view('resturant',$data);
           $this->load->view('option/footer');
@@ -59,6 +59,7 @@ class Resturant_ctr extends CI_Controller {
 	public function save_cart()
 	{
 		$data = array(
+			'id_member'     => $this->input->post('id'),
 			'address' 		=> $this->input->post('address'),
 			'province' 		=> $this->input->post('province'),
 			'amphur' 		=> $this->input->post('amphur'),

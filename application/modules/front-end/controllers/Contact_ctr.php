@@ -11,7 +11,7 @@ class Contact_ctr extends CI_Controller {
   
 	public function index()
 	{
-        
+        $this->cart->destroy();
         $this->load->view('option/header'); 
         $this->load->view('contact');
         $this->load->view('option/footer');

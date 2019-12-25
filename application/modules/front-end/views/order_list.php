@@ -15,27 +15,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php 
+                        $i = 0;
+                        foreach ($orderList as $orderDetail) {
+                        $i += 1;
+                    ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td><a href="OrderDetail">Mark</a></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <th scope="row"><?php echo $i; ?></th>
+                        <td><a href="OrderDetail?id=<?php echo $orderDetail['id']; ?>"><?php echo $orderDetail['code']; ?></a></td>
+                        <td><?php echo $orderDetail['rider']; ?></td>
+                        <td><?php echo $orderDetail['status']; ?></td>
+                        <td><?php echo $orderDetail['total']; ?></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><a href="OrderDetail">Jacob</a></td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><a href="OrderDetail">Larry the Bird</a></td>
-                        <td>Otto</td>
-                        <td>@fat</td>
-                        <td>@twitter</td>
-                    </tr>
+
+                    <?php } ?>
+                   
                 </tbody>
             </table>
         </div>

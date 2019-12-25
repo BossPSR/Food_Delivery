@@ -86,7 +86,7 @@
 								<a href="Profile" class="<?php if($this->uri->segment(1) == "Profile" || $this->uri->segment(1) == "OrderList" || $this->uri->segment(1) == "OrderDetail"){echo 'active';} ?>"><?php echo $user['first_name'].' '.$user['last_name'] ?></a>
 							</li>
 							<li class="order_shoppingList">
-								<a href="Cart" class="<?php if($this->uri->segment(1) == "Order_User"){echo 'active';} ?>" style="cursor: pointer; width: 50px; padding-bottom:0;">
+								<a href="Cart" class="<?php if($this->uri->segment(1) == "Order_User" || $this->uri->segment(1) == "Cart"){echo 'active';} ?>" style="cursor: pointer; width: 50px; padding-bottom:0;">
 									<div class="order_shopping">
 										<i class="fa fa-shopping-cart"aria-hidden="true"></i>
 									</div>
