@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <style>
     .shopping-cart {
         width: auto;
@@ -196,9 +199,61 @@
 <section id="contact-detail" class=" padd-100">
     <h2 class="section-title sep-type-2 text-center">รายการอาหาร</h2>
     <div class="container">
+        <?php 
+            if (!empty($this->cart->contents())) : 
+            $item = "";
+            foreach ($this->cart->contents() as $key => $check_item_id) {
+                $item = $check_item_id['id'];
+                if ($key == 0) {
+                    break;
+                }
+            }
+            $menuOne = $this->db->get_where('tbl_menu',['id' => $item])->row_array();
+            $menuList = $this->db->get_where('tbl_menu',['id_restaurant' => $menuOne['id_restaurant']])->result_array();
+            
+        ?>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">เพิ่มรายการอาหาร</h4>
+                </div>
+                <div class="modal-body">
+                <?php  foreach ($menuList as  $menuDetail) { ?>
+                    <a href="add_cart?id=<?php echo $menuDetail['id'];  ?>">
+                        <div>
+						    <div class="image_food_shopping"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
+							<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
+							<h3><?php echo $menuDetail['name_menu']; ?></h3>
+						</div>
+					</a>
+                <?php } ?>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+            <div class="row">
+                <div style="padding: 0 30px;">
+                    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">เพิ่มรายการอาหาร</button>
+                </div>
+            </div>
+        <?php endif ; ?>
         <div class="row">
         <?php if (!empty($this->cart->contents())) : ?>
             <div class="shopping-cart">
+                <div style="padding:20px 30px 0; font-size: 18px; font-weight: 400; color:red">
+                    **หมายเหตุ คุณจะไม่สามารถสั่งอาหารจากร้านอื่นได้**
+                </div>
                 <!-- Title -->
                 <div class="title">
                     รายละเอียดรายการ
@@ -237,7 +292,7 @@
                             <button class="minus-btns" type="button" name="button">
                                 <img src="public/assets/img/minus.svg" alt="" />
                             </button>
-                            <input type="text" name="name" value="<?php echo $items['qty'] ?>">
+                            <input type="text" name="name" value="<?php echo $items['qty'] ?>" readonly>
                             <button class="plus-btns" type="button" name="button">
                                 <img src="public/assets/img/plus.svg" alt="" />
                             </button>
