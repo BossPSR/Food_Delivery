@@ -21,7 +21,7 @@
 						<?php foreach ($menu as $menuDetail) { ?>
 						<div class="col-sm-6 col-md-4 grid-item" data-filter="<?php echo $menuDetail['id_type_food'];  ?>">
 							
-						     <a href="Cart?id=<?php echo $menuDetail['id'];  ?>"><div>
+						     <a href="add_cart?id=<?php echo $menuDetail['id'];  ?>"><div>
 								<div class="image_food"><img src="uploads/food/<?php echo $menuDetail['file_name']; ?>" alt=""></div>
 								<span><?php echo $menuDetail['price_menu']; ?> บาท</span>
 								<h3><?php echo $menuDetail['name_menu']; ?></h3>

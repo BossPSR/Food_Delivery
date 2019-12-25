@@ -13,7 +13,7 @@ class Resturant_ctr extends CI_Controller {
 	public function index()
 	{
 		  $data['resturant'] = $this->db->get('tbl_restaurant')->result_array();
-		  $this->cart->destroy();
+		  
           $this->load->view('option/header'); 
           $this->load->view('resturant',$data);
           $this->load->view('option/footer');
@@ -49,34 +49,11 @@ class Resturant_ctr extends CI_Controller {
 
 	public function cart()
 	{
-		if ($id_food = $this->input->get('id')) 
-		{
-			$id_cart = $this->Cart_model->Cart($id_food);
-		
-			$data = array(
-				'id'      			=> $id_cart->id,
-				'qty'     			=> 1,
-				'price'   			=> $id_cart->price_menu,
-				'name'    			=> $id_cart->name_menu,
-				'file_name'    		=> $id_cart->file_name,
-				'id_restaurant'    	=> $id_cart->id_restaurant
-			);
-		
-			$this->cart->insert($data);
-		
 			$this->load->view('option/header'); 
 			$this->load->view('option/header_user');
 			$this->load->view('cart');
 			$this->load->view('option/footer');
-		}
-		else
-		{
-			$this->load->view('option/header'); 
-			$this->load->view('option/header_user');
-			$this->load->view('cart');
-			$this->load->view('option/footer');
-			// $this->session->set_flashdata('del_ss2', 'ไม่มีอาหารที่คุณเลือก กรุณาลองใหม่อีกครั้ง!!');
-		}
+		
 	}
 
 	public function save_cart()
@@ -148,8 +125,68 @@ class Resturant_ctr extends CI_Controller {
 	}
 
 
+	// Boss
 
+	public function add_cart()
+	{
+		$id_food = $this->input->get('id');
+		$id_cart = $this->Cart_model->Cart($id_food);
+		
+			$data = array(
+				'id'      			=> $id_cart->id,
+				'qty'     			=> 1,
+				'price'   			=> $id_cart->price_menu,
+				'name'    			=> $id_cart->name_menu,
+				'file_name'    		=> $id_cart->file_name,
+				'id_restaurant'    	=> $id_cart->id_restaurant
+			);
+		
+			$this->cart->insert($data);
+			redirect('Cart');
+	}
 
+	public function update_cart()
+	{
+		// print_r($_POST);
+		// die();
+		$type = $this->input->post('type');
+		$amount = $this->input->post('amount');
+		$row_id = $this->input->post('row_id');
+		$price = $this->input->post('price');
+		if ($type == 'minus') {
+			if ($amount <= 1) {
+				$amount = 1;
+			}else{
+				$amount = $amount - 1;
+			}
+		}
 
+		if ($type == 'plus') {
+			$amount = $amount + 1;
+		}
+
+		$data = array(
+			'rowid' => $row_id,
+			'qty'   => $amount
+		);
+		
+		$this->cart->update($data);
+		$result = [];
+		$result['status'] = "success";
+		$result['amount'] = $amount;
+		$result['sub_total'] = number_format($price * $amount,2);
+		echo json_encode($result);
+
+	}
+
+	public function total_cart_item()
+	{
+		echo $this->cart->total_items();
+	}
+
+	public function total_cart()
+	{
+		echo number_format($this->cart->total(),2);
+	}
 
 }
