@@ -74,5 +74,6 @@ $route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'
 $route['promotion_add_com']      = 'back-end/AdminBlog_ctr/promotion_add_com'; 
 $route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 
 $route['Admin_Profile']                 = 'back-end/AdminLogin_ctr/profile'; 
+$route['Rider_edit']                 = 'back-end/AdminOrder_ctr/rider_edit'; 
 
 // 
