@@ -43,7 +43,7 @@ class Profile_ctr extends CI_Controller
 			$password            = $this->input->post('password');
 
 
-			if ($password && $c_password == '') {
+			if ($password =='' && $c_password == '' ) {
 				$data = array(
 					'first_name'        => $first_name,
 					'last_name'         => $last_name,

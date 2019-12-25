@@ -50,6 +50,7 @@
                                    <th></th>
                                    <th>ลำดับ</th>
                                    <th>รหัสสั่งซื้อ</th>
+                                   <th>ร้าน</th>
                                    <th>ผู้ส่ง</th>
                                    <th>สถานะ</th>
                                    <th>ราคารวม</th>
@@ -58,93 +59,144 @@
                            </thead>
                            <tbody>
                                <?php
-                                    $i = 1;
-                                    foreach ($order as $key => $orderDetail) {
-                                       
-                               ?>
-                               <tr>
-                                   <td></td>
-                                   <td><?php echo $i; ?></td>
-                                   <td class="product-name"><?php echo $orderDetail['code']; ?></td>
+                                $i = 1;
+                                foreach ($order as $key => $orderDetail) {
 
-                                   <td class="product-price"><?php echo $orderDetail['code']; ?></td>
-                                   <td class="product-price"><?php echo $orderDetail['status']; ?></td>
-                                   <td class="product-price"><?php echo $orderDetail['total']; ?></td>
-                                   <td class="product-action">
-                                       <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id'];?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
-                                   </td>
-                               </tr>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal<?php echo $orderDetail['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">รายการอาหารล่าสุด</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <form action="edit_type_food" method="POST" class="form-horizontal">
-                                        <div class="modal-body">
-                                    
-                                        <input type="hidden" class="form-control"  name="id" value="<?php echo $orderDetail['id'];?>">
-                                            <div class="data-items pb-3">
-                                                <div class="data-fields px-2 mt-3">
-                                                    <div class="row">
-                                                        <div class="col-sm-12 data-field-col">
-                                                            <div class="form-group">
-                                                                <div class="controls">
-                                                                    <label for="data-name">รหัสสั่งซื้อ</label>
-                                                                    <div class="form-control" ><?php echo $orderDetail['code'];?></div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <div class="controls">
-                                                                    <label for="data-name">ผู้ส่ง</label>
-                                                                    <div class="form-control" ><?php echo $orderDetail['code'];?></div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <div class="controls">
-                                                                    <label for="data-name">ราคารวม</label>
-                                                                    <div class="form-control"><?php echo $orderDetail['total'];?></div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <div class="controls">
-                                                                    <label for="data-name">รหัสสั่งซื้อ</label>
-                                                                    <div class="form-control"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        
-
-                                    
-                                        </div>
-                                        <div class="modal-footer">
-                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
-                                                
-
-                                            </div>
-                                        </div>
-                                    </form>
-                                    </div>
-                                    
-                                </div>
-                            <!-- End Modal -->
-
-
-                                <?php 
-                                        $i += 1;
-                                    } 
                                 ?>
+                                   <tr>
+                                       <td></td>
+                                       <td><?php echo $i; ?></td>
+                                       <td class="product-name"><?php echo $orderDetail['code']; ?></td>
+                                      
+                                           <td class="product-name">
+                                        <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->row_array(); ?>
+                                        <?php $restaurant_name = $this->db->get_where('tbl_restaurant', ['id' => $order_type['id_restaurant']])->result_array(); ?>
+                                        <?php foreach ($restaurant_name as $key => $restaurant_name) { ?>
+                                        <?php echo $restaurant_name['restaurant_name']; ?>
+                                        <?php } ?>
+                                            </td>
+                                         
+                                     
+                                       <?php if ($orderDetail['rider'] == '0') : ?>
+                                           <td class="product-price">ยังไม่มีผู้ส่ง</td>
+                                       <?php else : ?>
+                                        <?php $rider_name = $this->db->get_where('tbl_rider', ['id' => $orderDetail['rider']])->row_array(); ?>
+                                           <td class="product-price"><?php echo $rider_name['title'].' '.$rider_name['first_name'].' '.$rider_name['last_name']; ?></td>
+
+                                       <?php endif ?>
+
+                                       <?php if ($orderDetail['status'] == '0') : ?>
+                                    <td class="product-price">กำลังตรวจสอบ</td>
+                                        <?php elseif($orderDetail['status'] == '1') : ?>
+                                        <td class="product-price">กำลังดำเนินงาน</td>
+                                    <?php elseif($orderDetail['status'] == '2') : ?> 
+                                    <td class="product-price">กำลังจัดส่งอาหาร</td>
+                                    <?php elseif($orderDetail['status'] == '3') : ?> 
+                                        <td class="product-price">จัดส่งเรียบร้อย</td>
+                                    <?php else : ?>
+                                        <td class="product-price">ยกเลิกรายการอาหาร</td>
+                                     <?php endif ?>
+            
+
+                                       <td class="product-price"><?php echo $orderDetail['total']; ?></td>
+                                       <td class="product-action">
+                                           <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id']; ?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
+                                       </td>
+                                   </tr>
+
+                                   <!-- Modal -->
+                                   <div class="modal fade" id="exampleModal<?php echo $orderDetail['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog" role="document">
+                                           <div class="modal-content">
+                                               <div class="modal-header">
+                                                   <h5 class="modal-title" id="exampleModalLabel">รายการอาหารล่าสุด</h5>
+                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                       <span aria-hidden="true">&times;</span>
+                                                   </button>
+                                               </div>
+                                               <form action="edit_type_food" method="POST" class="form-horizontal">
+                                                   <div class="modal-body">
+
+                                                       <input type="hidden" class="form-control" name="id" value="<?php echo $orderDetail['id']; ?>">
+                                                       <div class="data-items pb-3">
+                                                           <div class="data-fields px-2 mt-3">
+                                                               <div class="row">
+                                                                   <div class="col-sm-12 data-field-col">
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">รหัสสั่งซื้อ</label>
+                                                                               <div class="form-control"><?php echo $orderDetail['code']; ?></div>
+                                                                           </div>
+                                                                       </div>
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ชื่อลูกค้า</label>
+                                                                               <?php if ($orderDetail['id_member'] == '0') : ?>
+                                                                                <div class="form-control">-</div>
+                                                                                <?php else : ?>
+
+                                                                               <?php $member_name = $this->db->get_where('tbl_member', ['id' => $orderDetail['id_member']])->result_array(); ?>
+                                                                               <?php foreach ($member_name as $key => $member_name) { ?>
+                                                                               <div class="form-control"><?php echo $member_name['first_name'].' '. $member_name['last_name'] ; ?></div>
+                                                                               <?php }?>
+                                                                               <?php endif ?>
+                                                                           </div>
+                                                                          
+                                                                       </div>
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ผู้ส่ง</label>
+                                                                            
+                                                                             <select class="form-control" name="id_rider"  onchange="location = this.value;">
+                                                                         <?php $rider = $this->db->get('tbl_rider')->result_array() ;?>
+                                                                        <?php foreach ($rider as $key => $rider) { ?>
+                                                                           
+                                                                         <option value="Rider_edit?id_order=<?php echo $orderDetail['id']; ?>&id_rider=<?php echo $rider['id']; ?>" <?php echo $rider['id'] == $orderDetail['rider']?"selected":"" ?>><?php echo $rider['title'].' '.$rider['first_name'].'  '.$rider['last_name'] ; ?></option>
+
+                                                                 <?php  } ?>
+                                                                        </select>
+                                                                           </div>
+                                                                       </div>
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">รายการเมนู</label>
+                                                                               <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->result_array(); ?>
+                                                                               <?php foreach ($order_type as $key => $order_type) { ?>
+                                                                               <div class="form-control"><?php echo $order_type['name_item']; ?>  <?php echo $order_type['price_item']; ?></div>
+                                                                               <?php }?>
+                                                                           </div>
+                                                                       </div>
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ราคารวม</label>
+                                                                               <div class="form-control"><?php echo $orderDetail['total']; ?></div>
+                                                                           </div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+
+
+
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                       <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+
+
+                                                       </div>
+                                                   </div>
+                                               </form>
+                                           </div>
+
+                                       </div>
+                                       <!-- End Modal -->
+
+
+                                   <?php
+                                    $i += 1;
+                                }
+                                    ?>
 
 
                            </tbody>
@@ -152,7 +204,7 @@
                    </div>
                    <!-- DataTable ends -->
 
-                   
+
                </section>
                <!-- Data list view end -->
 
