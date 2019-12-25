@@ -337,3 +337,16 @@
     font-weight: 700;
     color: #fff;
   }
+
+  .image_food_shopping{
+    margin-bottom: 30px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    cursor: pointer;
+  }
+
+  .image_food_shopping > img{
+    max-width: 100%;
+  }
