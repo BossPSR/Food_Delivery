@@ -237,7 +237,7 @@
                             <button class="minus-btns" type="button" name="button">
                                 <img src="public/assets/img/minus.svg" alt="" />
                             </button>
-                            <input type="text" name="name" value="<?php echo $items['qty'] ?>">
+                            <input type="text" name="name" value="<?php echo $items['qty'] ?>" readonly>
                             <button class="plus-btns" type="button" name="button">
                                 <img src="public/assets/img/plus.svg" alt="" />
                             </button>
