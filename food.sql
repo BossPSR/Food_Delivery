@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-12-24 11:37:24
+Date: 2019-12-24 22:15:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -95,13 +95,12 @@ CREATE TABLE `tbl_member` (
   `updated_at` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_member
 -- ----------------------------
-INSERT INTO `tbl_member` VALUES ('1', 'test', '001', '0879879877', 'test@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2019-12-13', 'mx001', '121/1 หมู่บ้านอรสิริน ทาวโฮม 1', 'เชียงใหม่', 'หนองหาร', 'หนองจ๋อม', '50210', '2019-12-13 15:56:30', '2019-12-13 15:56:32');
-INSERT INTO `tbl_member` VALUES ('3', 'มิกิ', 'phenomenal software', null, 'infinityp.soft@gmail.com', '5d1d14584b0c06caf0496045c696e989', '2019-12-14', 'miki_ik', '', 'Chiangmai', null, 'หนองจ๊อม', '50290', '2019-12-14 14:53:22', '2019-12-14 14:53:22');
+INSERT INTO `tbl_member` VALUES ('4', 'ืnattaphon', 'kiattikul', '0925623256', 'test@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', '1996-12-24', 'ไม่บอก', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '2019-12-24 16:45:11', '2019-12-24 16:45:11');
 
 -- ----------------------------
 -- Table structure for `tbl_menu`
@@ -130,21 +129,58 @@ INSERT INTO `tbl_menu` VALUES ('11', '9', '2', 'ยำข้าวโพด', '6
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_order`;
 CREATE TABLE `tbl_order` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) NOT NULL,
+  `id_member` int(11) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   `province` varchar(255) DEFAULT NULL,
   `amphur` varchar(255) DEFAULT NULL,
   `district` varchar(255) DEFAULT NULL,
   `zipcode` varchar(200) DEFAULT NULL,
+  `zip_price` varchar(200) NOT NULL,
   `note` varchar(255) DEFAULT NULL,
-  `restaurant` varchar(255) DEFAULT NULL,
   `total` varchar(100) DEFAULT NULL,
+  `rider` int(11) NOT NULL,
+  `status` int(5) DEFAULT 0,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_order
 -- ----------------------------
+INSERT INTO `tbl_order` VALUES ('5', 'FD-201912247515', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '173', '0', '0', '2019-12-24 16:41:29', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('6', 'FD-201912242546', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '193', '0', '0', '2019-12-24 16:45:23', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('7', 'FD-201912248017', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '84', '0', '0', '2019-12-24 16:47:06', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('8', 'FD-201912247808', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '371', '0', '0', '2019-12-24 19:43:36', '0000-00-00 00:00:00');
+
+-- ----------------------------
+-- Table structure for `tbl_order_detail`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_order_detail`;
+CREATE TABLE `tbl_order_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_order` int(11) NOT NULL,
+  `id_restaurant` int(11) NOT NULL,
+  `name_item` varchar(255) DEFAULT NULL,
+  `qty` int(11) NOT NULL,
+  `price_item` varchar(255) DEFAULT NULL,
+  `sumtotal` varchar(255) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tbl_order_detail
+-- ----------------------------
+INSERT INTO `tbl_order_detail` VALUES ('10', '5', '2', 'ยำคิวบิด', '1', '69', '69.00', 'Food-1577075478.jpg', '2019-12-24 16:41:29', null);
+INSERT INTO `tbl_order_detail` VALUES ('11', '5', '2', 'ยำ2โทน', '1', '89', '89.00', 'Food-1577106119.jpg', '2019-12-24 16:41:29', null);
+INSERT INTO `tbl_order_detail` VALUES ('12', '6', '2', 'ยำ2โทน', '2', '89', '178.00', 'Food-1577106119.jpg', '2019-12-24 16:45:23', null);
+INSERT INTO `tbl_order_detail` VALUES ('13', '7', '2', 'ยำคิวบิด', '1', '69', '69.00', 'Food-1577075478.jpg', '2019-12-24 16:47:06', null);
+INSERT INTO `tbl_order_detail` VALUES ('14', '8', '2', 'ยำ2โทน', '4', '89', '356.00', 'Food-1577106119.jpg', '2019-12-24 19:43:36', null);
 
 -- ----------------------------
 -- Table structure for `tbl_promotion`
@@ -206,11 +242,13 @@ CREATE TABLE `tbl_rider` (
   `status` varchar(255) DEFAULT '1' COMMENT '1="ว่าง" 0="ไม่ว่าง"',
   `create_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_rider
 -- ----------------------------
+INSERT INTO `tbl_rider` VALUES ('4', 'นาย', 'เจม', 'นะ', '111222663337', '0925623256', 'jame0879871121@gmail.com', 'Rider-1577185583.jpg', '1', '2019-12-24 18:06:23');
+INSERT INTO `tbl_rider` VALUES ('5', 'นาย', 'บอส', 'บอส', '55555555', '084387225', 'vvv.@gmail.com', 'Rider-1577185645.jpg', '1', '2019-12-24 18:07:25');
 
 -- ----------------------------
 -- Table structure for `tbl_type_food`
