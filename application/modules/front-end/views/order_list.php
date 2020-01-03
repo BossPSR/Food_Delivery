@@ -23,7 +23,8 @@
                     <tr>
                         <th scope="row"><?php echo $i; ?></th>
                         <td><a href="OrderDetail?id=<?php echo $orderDetail['id']; ?>"><?php echo $orderDetail['code']; ?></a></td>
-                        <td><?php echo $orderDetail['rider']; ?></td>
+                        <?php $rider = $this->db->get_where('tbl_rider',['id' => $orderDetail['rider']])->row_array(); ?>
+                        <td><?php echo $rider['title'].$rider['first_name']." ".$rider['last_name']; ?></td>
                         <td><?php echo $orderDetail['status']; ?></td>
                         <td><?php echo $orderDetail['total']; ?></td>
                     </tr>

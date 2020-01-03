@@ -454,3 +454,37 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+.logo_deejung{
+  display: none;
+}
+
+#mark{
+  color: red;
+}
+
+@media print {
+
+  .logo_deejung{
+    display: block;
+    width: 30%;
+    margin: auto auto 15px;
+  }
+
+  .logo_deejung > img{
+    max-width: 100%;
+  }
+
+  #buttonPrint {
+  	display: none;
+  }
+
+  .orderData{
+    display: flex;
+  }
+
+  #mark{
+    color: red;
+  }
+
+}
