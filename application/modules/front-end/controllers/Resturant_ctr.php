@@ -22,16 +22,18 @@ class Resturant_ctr extends CI_Controller {
 	public function food()
 	{
 
-		if ($this->session->userdata('email') == '') {
-			redirect('Login');
-		} else {
+		if ($this->session->userdata('email') != '' || $this->session->userData['email'] != '') {
+		  $data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 		  $resturant_id = $this->input->get('resturant_id');
 		  $data['resturant'] = $this->db->get_where('tbl_restaurant',['id' => $resturant_id])->row_array();
 		  $data['menu'] = $this->db->get_where('tbl_menu',['id_restaurant' => $resturant_id])->result_array();
           $this->load->view('option/header'); 
           $this->load->view('food_resturant',$data);
           $this->load->view('option/footer');
-  
+		} else {
+
+			redirect('user_authentication');
+
 		}
 	}
 
@@ -39,6 +41,7 @@ class Resturant_ctr extends CI_Controller {
 	public function order()
 	{
 		$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+		
 
 		$this->load->view('option/header'); 
 		$this->load->view('option/header_user');
@@ -58,8 +61,10 @@ class Resturant_ctr extends CI_Controller {
 
 	public function save_cart()
 	{
+		$user_f = $this->db->get_where('users', ['email' => $this->session->userData['email']])->row_array();
 		$data = array(
 			'id_member'     => $this->input->post('id'),
+			'id_facebook'   => $user_f['oauth_uid'],
 			'address' 		=> $this->input->post('address'),
 			'province' 		=> $this->input->post('province'),
 			'amphur' 		=> $this->input->post('amphur'),
