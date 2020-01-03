@@ -127,6 +127,8 @@ class Resturant_ctr extends CI_Controller {
 		   $this->email->set_newline("\r\n");
 		   $this->email->from('deejungd@deejungdelivery.com');
 		   $this->email->to($user_f['email']);
+		   $subject = 'title';
+		   $message = 'message';
 		   $this->email->subject($subject);
 		   $this->email->message($message);
 		
