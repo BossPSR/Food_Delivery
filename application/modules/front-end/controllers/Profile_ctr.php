@@ -11,15 +11,15 @@ class Profile_ctr extends CI_Controller
 
 	public function index()
 	{
-		if ($this->session->userdata('email') == '') {
-			redirect('Login');
-		} else {
+		if ($this->session->userdata('email') != '' || $this->session->userData['email'] != '') {
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 			$this->cart->destroy();
 			$this->load->view('option/header');
 			$this->load->view('option/header_user');
-			$this->load->view('profile',$data);
+			$this->load->view('profile', $data);
 			$this->load->view('option/footer');
+		} else {
+			redirect('user_authentication');
 		}
 	}
 
@@ -43,7 +43,7 @@ class Profile_ctr extends CI_Controller
 			$password            = $this->input->post('password');
 
 
-			if ($password =='' && $c_password == '' ) {
+			if ($password == '' && $c_password == '') {
 				$data = array(
 					'first_name'        => $first_name,
 					'last_name'         => $last_name,
@@ -111,31 +111,42 @@ class Profile_ctr extends CI_Controller
 
 	public function order_list()
 	{
-		if ($this->session->userdata('email') == '') {
-			redirect('Login');
-		} else {
-			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+		if ($this->session->userdata('email') != '' || $this->session->userData['email'] != '') {
+			if($this->session->userdata('email') == true){
+					$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+	
 			$data['orderList'] = $this->db->get_where('tbl_order', ['id_member' => $data['user']['id']])->result_array();
+			}
+			else{
+
+				$data['user_f'] = $this->db->get_where('users', ['email' => $this->session->userData['email']])->row_array();
+	
+				$data['orderList'] = $this->db->get_where('tbl_order', ['id_facebook' => $data['user_f']['oauth_uid']])->result_array();
+			}
 			$this->load->view('option/header');
 			$this->load->view('option/header_user');
-			$this->load->view('order_list',$data);
+			$this->load->view('order_list', $data);
 			$this->load->view('option/footer');
+		} else {
+			
+			redirect('user_authentication');
 		}
 	}
 
 	public function order_detail()
 	{
-		if ($this->session->userdata('email') == '') {
-			redirect('Login');
-		} else {
+		if ($this->session->userdata('email') != '' || $this->session->userData['email'] != '') {
 			$id = $this->input->get('id');
 			$data['user'] = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 			$data['orderDetailAll'] = $this->db->get_where('tbl_order_detail', ['id_order' => $id])->result_array();
 			$data['orderAll'] = $this->db->get_where('tbl_order', ['id' => $id])->row_array();
 			$this->load->view('option/header');
-			$this->load->view('option/header_user',$data);
-			$this->load->view('order_detail',$data);
+			$this->load->view('option/header_user', $data);
+			$this->load->view('order_detail', $data);
 			$this->load->view('option/footer');
+		} else {
+
+			redirect('user_authentication');
 		}
 	}
 }
