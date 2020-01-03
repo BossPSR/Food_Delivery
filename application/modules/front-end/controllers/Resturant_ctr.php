@@ -62,18 +62,35 @@ class Resturant_ctr extends CI_Controller {
 	public function save_cart()
 	{
 		$user_f = $this->db->get_where('users', ['email' => $this->session->userData['email']])->row_array();
-		$data = array(
-			'id_member'     => $this->input->post('id'),
-			'id_facebook'   => $user_f['oauth_uid'],
-			'address' 		=> $this->input->post('address'),
-			'province' 		=> $this->input->post('province'),
-			'amphur' 		=> $this->input->post('amphur'),
-			'district' 		=> $this->input->post('district'),
-			'zipcode' 		=> $this->input->post('zipcode'),
-			'zip_price' 	=> '15',
-			'total' 		=> $this->cart->total() + 15 ,
-			'created_at' 	=> date('Y-m-d H:i:s')
-		);
+		if (empty($user_f)) {
+			$user_f = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$data = array(
+				'id_member'     => $this->input->post('id'),
+				'id_facebook'   => "",
+				'address' 		=> $this->input->post('address'),
+				'province' 		=> $this->input->post('province'),
+				'amphur' 		=> $this->input->post('amphur'),
+				'district' 		=> $this->input->post('district'),
+				'zipcode' 		=> $this->input->post('zipcode'),
+				'zip_price' 	=> '15',
+				'total' 		=> $this->cart->total() + 15 ,
+				'created_at' 	=> date('Y-m-d H:i:s')
+			);
+		}else{
+			$data = array(
+				'id_member'     => 0,
+				'id_facebook'   => $user_f['oauth_uid'],
+				'address' 		=> $this->input->post('address'),
+				'province' 		=> $this->input->post('province'),
+				'amphur' 		=> $this->input->post('amphur'),
+				'district' 		=> $this->input->post('district'),
+				'zipcode' 		=> $this->input->post('zipcode'),
+				'zip_price' 	=> '15',
+				'total' 		=> $this->cart->total() + 15 ,
+				'created_at' 	=> date('Y-m-d H:i:s')
+			);
+		}
+		
 		$this->db->insert('tbl_order', $data);
 		$id = $this->db->insert_id();
 		
@@ -92,6 +109,26 @@ class Resturant_ctr extends CI_Controller {
 			$success = $this->db->insert('tbl_order_detail', $data_item);
 
 		}
+
+			//config email settings
+			$config['protocol'] = 'smtp';
+			$config['smtp_host'] = 'smtp.gmail.com';
+			$config['smtp_port'] = '587';
+			$config['smtp_user'] = 'deejungd@deejungdelivery.com';
+			$config['smtp_pass'] = '1@dvlsrPY24';  //sender's password
+			$config['mailtype'] = 'html';
+			$config['charset'] = 'utf-8';
+			$config['wordwrap'] = 'TRUE';
+			$config['smtp_crypto'] = 'tls';
+			$config['newline'] = "\r\n";
+	 
+		//$file_path = 'uploads/' . $file_name;
+		   $this->load->library('email', $config);
+		   $this->email->set_newline("\r\n");
+		   $this->email->from('deejungd@deejungdelivery.com');
+		   $this->email->to($user_f['email']);
+		   $this->email->subject($subject);
+		   $this->email->message($message);
 		
 
 		if ($success > 0) {
