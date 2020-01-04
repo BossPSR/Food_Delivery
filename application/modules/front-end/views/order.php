@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 		 	<?php if (!empty($this->cart->contents())) : ?>
-			<form action="save_cart" method="post">
+			<form action="save_cart" method="post" enctype="multipart/form-data">
 				<div class="col-sm-5">
 					<div class="form-reservation">
 						<input type="text" name="id" value="<?php echo $user['id'] ?>" hidden>
