@@ -29,9 +29,14 @@
 				document.getElementById("formMap").lat.value = pos.lat;
 				document.getElementById('formMap').lng.value = pos.lng;
 
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+					map: maps,
+				});
+
 				infoWindow.setPosition(pos);
 				infoWindow.setContent('ที่อยู่ของคุณ');
-				infoWindow.open(maps);
+				infoWindow.open(maps,marker);
 				map.setCenter(pos);
 			  }, function() {
 				handleLocationError(true, infoWindow, map.getCenter());

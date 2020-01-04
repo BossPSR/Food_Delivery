@@ -212,7 +212,7 @@
                                                    <div class="modal-footer">
                                                        <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
 
-
+<div id="test"></div>
                                                        </div>
                                                    </div>
                                                </form>
@@ -244,24 +244,32 @@
 
    <script>
     function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
 
+        navigator.geolocation.getCurrentPosition(function(position) {
+        var posNow = {lat: position.coords.latitude,lng: position.coords.longitude};
+            
         <?php foreach ($round as $key => $round) { ?>  
-          
-            var map;
-            map = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
+            
+            
+            var maps;
+            maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
             center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
             zoom: 18,
-
             });
-            
+
             var marker = new google.maps.Marker({
                 position: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
-                map:map,
+                map:maps,
             });
-              
-        <?php }  ?>              
+
+        <?php }  ?> 
+        
+        });//end navi               
 			
 	}
+
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
