@@ -168,9 +168,9 @@
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="public/backend/html/ltr/vertical-menu-template-semi-dark/index.html">
-                        <div class="brand-logo"></div>
-                        <h2 class="brand-text mb-0">Vuexy</h2>
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="https://deejungdelivery.com/">
+                       
+                        <h2 class="brand-text mb-0">deejungdelivery</h2>
                     </a></li>
                 <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
             </ul>
@@ -199,7 +199,9 @@
                 <li class="<?php if($this->uri->segment(1)=="Admin_Restaurant" || $this->uri->segment(1) == "Admin_Type_Food_Restaurant" || $this->uri->segment(1) == "Admin_Food"){echo 'active';}?>"><a href="Admin_Restaurant"><i class="fa fa-cutlery"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span></a>
                 </li>
 
-                <li class="<?php if($this->uri->segment(1)=="Admin_Type_Restaurant"){echo 'active';}?>"><a href="Admin_Type_Restaurant"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทร้านอาหาร</span></a>
+                <li class="<?php if($this->uri->segment(1)=="Admin_Type_Restaurant"){echo 'active';}?>"><a href="Admin_Type_Restaurant"><i class="feather icon-bar-chart"></i><span class="menu-item" data-i18n="List View">ประเภทร้านอาหาร</span></a>
+                </li>
+                <li class="<?php if($this->uri->segment(1)=="coupon"){echo 'active';}?>"><a href="coupon"><i class="feather icon-file-plus"></i><span class="menu-item" data-i18n="List View">คูปองส่วนลด</span></a>
                 </li>
 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Type_Food"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทอาหาร</span></a>

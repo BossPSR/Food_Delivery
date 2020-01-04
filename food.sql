@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2020-01-04 11:33:05
+Date: 2020-01-04 15:00:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,6 +52,23 @@ CREATE TABLE `tbl_contact` (
 -- Records of tbl_contact
 -- ----------------------------
 INSERT INTO `tbl_contact` VALUES ('1', 'miki', 'mikiboy004@gmail.com', 'nice', '0618096661', 'nice', '2019-12-14 14:47:50');
+
+-- ----------------------------
+-- Table structure for `tbl_coupon`
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_coupon`;
+CREATE TABLE `tbl_coupon` (
+  `id` int(11) NOT NULL,
+  `name_coupon` varchar(255) DEFAULT NULL,
+  `code_coupon` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tbl_coupon
+-- ----------------------------
+INSERT INTO `tbl_coupon` VALUES ('1', 'ส่วนลดใช้ครั้งแรก', 'New100', '100');
 
 -- ----------------------------
 -- Table structure for `tbl_food`
@@ -141,6 +158,7 @@ CREATE TABLE `tbl_order` (
   `zip_price` varchar(200) NOT NULL,
   `note` varchar(255) DEFAULT NULL,
   `total` varchar(100) DEFAULT NULL,
+  `vat` varchar(255) DEFAULT '',
   `rider` int(11) NOT NULL,
   `status` int(5) DEFAULT 0,
   `created_at` datetime NOT NULL,
@@ -151,10 +169,10 @@ CREATE TABLE `tbl_order` (
 -- ----------------------------
 -- Records of tbl_order
 -- ----------------------------
-INSERT INTO `tbl_order` VALUES ('5', 'FD-201912247515', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '173', '5', '1', '2019-12-24 16:41:29', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('6', 'FD-201912242546', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '193', '4', '3', '2019-12-24 16:45:23', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('7', 'FD-201912248017', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '84', '4', '3', '2019-12-24 16:47:06', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('8', 'FD-201912247808', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '371', '4', '1', '2019-12-24 19:43:36', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('5', 'FD-201912247515', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '173', '20', '5', '1', '2019-12-24 16:41:29', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('6', 'FD-201912242546', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '193', null, '4', '3', '2019-12-24 16:45:23', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('7', 'FD-201912248017', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '84', null, '4', '3', '2019-12-24 16:47:06', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('8', 'FD-201912247808', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '371', null, '4', '1', '2019-12-24 19:43:36', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `tbl_order_detail`
