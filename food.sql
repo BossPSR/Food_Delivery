@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-12-24 22:15:24
+Date: 2020-01-04 11:33:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -100,7 +100,7 @@ CREATE TABLE `tbl_member` (
 -- ----------------------------
 -- Records of tbl_member
 -- ----------------------------
-INSERT INTO `tbl_member` VALUES ('4', 'ืnattaphon', 'kiattikul', '0925623256', 'test@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', '1996-12-24', 'ไม่บอก', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '2019-12-24 16:45:11', '2019-12-24 16:45:11');
+INSERT INTO `tbl_member` VALUES ('4', 'nattaphon', 'kiattikul', '0925623256', 'test@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1996-12-24', 'ไม่บอก', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '2019-12-25 10:51:50', '2019-12-25 13:37:51');
 
 -- ----------------------------
 -- Table structure for `tbl_menu`
@@ -132,7 +132,8 @@ CREATE TABLE `tbl_order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `id_member` int(11) NOT NULL,
-  `address` varchar(255) DEFAULT NULL,
+  `id_facebook` varchar(255) DEFAULT '',
+  `address` varchar(255) DEFAULT '',
   `province` varchar(255) DEFAULT NULL,
   `amphur` varchar(255) DEFAULT NULL,
   `district` varchar(255) DEFAULT NULL,
@@ -150,10 +151,10 @@ CREATE TABLE `tbl_order` (
 -- ----------------------------
 -- Records of tbl_order
 -- ----------------------------
-INSERT INTO `tbl_order` VALUES ('5', 'FD-201912247515', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '173', '0', '0', '2019-12-24 16:41:29', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('6', 'FD-201912242546', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '193', '0', '0', '2019-12-24 16:45:23', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('7', 'FD-201912248017', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '84', '0', '0', '2019-12-24 16:47:06', '0000-00-00 00:00:00');
-INSERT INTO `tbl_order` VALUES ('8', 'FD-201912247808', '0', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '371', '0', '0', '2019-12-24 19:43:36', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('5', 'FD-201912247515', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '173', '5', '1', '2019-12-24 16:41:29', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('6', 'FD-201912242546', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '193', '4', '3', '2019-12-24 16:45:23', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('7', 'FD-201912248017', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '84', '4', '3', '2019-12-24 16:47:06', '0000-00-00 00:00:00');
+INSERT INTO `tbl_order` VALUES ('8', 'FD-201912247808', '4', null, '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '15', null, '371', '4', '1', '2019-12-24 19:43:36', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `tbl_order_detail`
@@ -236,6 +237,8 @@ CREATE TABLE `tbl_rider` (
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `id_card` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT '',
+  `password` varchar(255) DEFAULT '',
   `tel` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `file_name` varchar(255) DEFAULT NULL,
@@ -247,8 +250,8 @@ CREATE TABLE `tbl_rider` (
 -- ----------------------------
 -- Records of tbl_rider
 -- ----------------------------
-INSERT INTO `tbl_rider` VALUES ('4', 'นาย', 'เจม', 'นะ', '111222663337', '0925623256', 'jame0879871121@gmail.com', 'Rider-1577185583.jpg', '1', '2019-12-24 18:06:23');
-INSERT INTO `tbl_rider` VALUES ('5', 'นาย', 'บอส', 'บอส', '55555555', '084387225', 'vvv.@gmail.com', 'Rider-1577185645.jpg', '1', '2019-12-24 18:07:25');
+INSERT INTO `tbl_rider` VALUES ('4', 'นาย', 'เจม', 'นะ', '111222663337', 'rider1', 'e10adc3949ba59abbe56e057f20f883e', '0925623256', 'jame0879871121@gmail.com', 'Rider-1577185583.jpg', '1', '2019-12-24 18:06:23');
+INSERT INTO `tbl_rider` VALUES ('5', 'นาย', 'บอส', 'บอส', '55555555', 'rider2', 'e10adc3949ba59abbe56e057f20f883e', '084387225', 'vvv.@gmail.com', 'Rider-1577185645.jpg', '1', '2019-12-24 18:07:25');
 
 -- ----------------------------
 -- Table structure for `tbl_type_food`
@@ -310,9 +313,3 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('24', 'facebook', '2356299801127131', 'Nattaphon', 'Jame', 'jame0925623256@gmail.com', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2356299801127131&height=50&width=50&ext=1576726828&hash=AeQkiC5DeUoWSGvE', '', '2019-08-19 17:53:21', '2019-11-19 10:40:28');
-INSERT INTO `users` VALUES ('25', 'facebook', '1389271181226826', 'Chinnawat', 'Kaewmuangfang', 'chinnawat_buzz@hotmail.co.th', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1389271181226826&height=50&width=50&ext=1569397101&hash=AeTKQNcQiDk_o1Yz', '', '2019-08-20 11:09:40', '2019-08-26 14:38:21');
-INSERT INTO `users` VALUES ('26', 'facebook', '2543641525698182', 'เนย', 'มอร์ฟีน', 'nuey_chin@hotmail.com', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2543641525698182&height=50&width=50&ext=1568867006&hash=AeRL_W8hJ5gML5Wi', '', '2019-08-20 11:10:05', '2019-08-20 11:23:26');
-INSERT INTO `users` VALUES ('27', 'facebook', '2613741632017352', 'Chayanin', 'Chayanin', 'chayani_n@hotmail.com', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2613741632017352&height=50&width=50&ext=1571723446&hash=AeTfcQny2FMhzQse', '', '2019-08-20 11:35:03', '2019-09-22 12:50:47');
-INSERT INTO `users` VALUES ('28', 'facebook', '2654870534573188', 'Miki', 'Asawong', 'miki_ik@hotmail.com', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=2654870534573188&height=50&width=50&ext=1577327996&hash=AeQoUcW1Z4dFC3Pw', '', '2019-08-20 11:48:48', '2019-11-26 09:39:57');
-INSERT INTO `users` VALUES ('29', 'facebook', '1418018171683193', 'Chawanitnon', 'Paphatsaran', 'golfzaazeed@hotmail.com', '', 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1418018171683193&height=50&width=50&ext=1568964834&hash=AeRlULwk7wRGm1mX', '', '2019-08-21 14:33:55', '2019-08-21 14:33:55');
