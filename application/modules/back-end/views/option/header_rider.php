@@ -72,9 +72,9 @@
                         
                         <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon feather icon-maximize"></i></a></li>
                         
-                       
+                        <?php $user = $this->db->get_where('tbl_rider', ['username' => $this->session->userdata('username')])->row_array() ?>
                         <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">Admin</span></div><span><img class="round" src="public/backend/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                                <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600"><?php echo $user['username'] ?></span></div><span><img class="round" src="public/backend/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="Admin_Profile"><i class="feather icon-user"></i> Edit Profile</a>
                                 <div class="dropdown-divider"></div><a class="dropdown-item" href="Admin_Logout"><i class="feather icon-power"></i> Logout</a>
@@ -190,10 +190,10 @@
                 <li class=" navigation-header"><span>Menu</span>
                 </li>
 
-                <li class="<?php if($this->uri->segment(1)=="Admin_Order"){echo 'active';}?>"><a href="Admin_Order"><i class="feather icon-package"></i><span class="menu-item" data-i18n="List View">รายการอาหารล่าสุด</span></a>
+                <li class="<?php if($this->uri->segment(1)=="Admin_Order"){echo 'active';}?>"><a href="Admin_Order_rider"><i class="feather icon-package"></i><span class="menu-item" data-i18n="List View">รายการอาหารล่าสุด</span></a>
                 </li>
 
-                <li class="nav-item <?php if($this->uri->segment(1)=="Admin_Rider"){echo 'active';}?>"><a href="Admin_Rider"><i class="fa fa-motorcycle"></i><span class="menu-title" data-i18n="Data List">Rider List</span></a>
+                <!-- <li class="nav-item <?php if($this->uri->segment(1)=="Admin_Rider"){echo 'active';}?>"><a href="Admin_Rider"><i class="fa fa-motorcycle"></i><span class="menu-title" data-i18n="Data List">Rider List</span></a>
                 </li>
                 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Restaurant" || $this->uri->segment(1) == "Admin_Type_Food_Restaurant" || $this->uri->segment(1) == "Admin_Food"){echo 'active';}?>"><a href="Admin_Restaurant"><i class="fa fa-cutlery"></i><span class="menu-item" data-i18n="List View">ร้านอาหาร</span></a>
@@ -203,9 +203,9 @@
                 </li>
 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Type_Food"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทอาหาร</span></a>
-                </li>
+                </li> -->
 
-                <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">บล๊อก</span></a>
+                <!-- <li class=" nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title" data-i18n="Data List">บล๊อก</span></a>
                     <ul class="menu-content">
                         <li class="<?php if($this->uri->segment(1)=="Admin_Blog_Promotion" || $this->uri->segment(1)=="Admin_Blog_Promotion_Add"){echo 'active';}?>">
                             <a href="Admin_Blog_Promotion">
@@ -216,7 +216,7 @@
                             <a href="Admin_Blog_Comment">
                                 <i class="feather icon-circle"></i><span class="menu-item" data-i18n="List View">ความคิดเห็นจากลูกค้า</span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 

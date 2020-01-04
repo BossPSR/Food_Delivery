@@ -33,9 +33,21 @@ class AdminLogin_ctr extends CI_Controller {
                 $user_data = array(
                     'username' => $username
                 );
+                
                 $this->session->set_userdata($user_data);
                 $this->session->set_flashdata('save_ss2', 'ล็อกอินเรียบร้อยแล้ว');
                 redirect('Admin_Order');
+            }
+            
+            elseif ($this->Login_model->login_rider($username, $password))
+            {
+                $user_data = array(
+                    'username' => $username
+                );
+                
+                $this->session->set_userdata($user_data);
+                $this->session->set_flashdata('save_ss2', 'ล็อกอินเรียบร้อยแล้ว');
+                redirect('Admin_Order_rider');
             }
             else
             {
