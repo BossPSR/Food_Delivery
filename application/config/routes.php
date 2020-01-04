@@ -51,6 +51,7 @@ $route['Forgot_Password_Admin']         = 'back-end/AdminLogin_ctr/forgot_passwo
 $route['Admin_Order']                   = 'back-end/AdminOrder_ctr'; 
 $route['Admin_Order_status']            = 'back-end/AdminOrder_ctr/status_order'; 
 $route['Admin_Order_rider']             = 'back-end/AdminOrder_ctr/rider_order'; 
+$route['Admin_Order_vat']             = 'back-end/AdminOrder_ctr/vat_order'; 
 $route['Admin_Rider']                   = 'back-end/AdminRider_ctr'; 
 $route['Admin_Rider_com']               = 'back-end/AdminRider_ctr/rider_add_com'; 
 $route['Admin_Rider_edit_com']          = 'back-end/AdminRider_ctr/rider_edit_com'; 
@@ -75,9 +76,13 @@ $route['food_edit_com']                  = 'back-end/AdminFood_ctr/food_edit_com
 $route['delete_food']                   = 'back-end/AdminFood_ctr/delete_food'; 
 $route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion'; 
 $route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'; 
-$route['promotion_add_com']      = 'back-end/AdminBlog_ctr/promotion_add_com'; 
+$route['promotion_add_com']             = 'back-end/AdminBlog_ctr/promotion_add_com'; 
 $route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 
 $route['Admin_Profile']                 = 'back-end/AdminLogin_ctr/profile'; 
 $route['Rider_edit']                 = 'back-end/AdminOrder_ctr/rider_edit'; 
+$route['coupon']                     = 'back-end/AdminRestaurant_ctr/coupon'; 
+$route['coupon_com']                 = 'back-end/AdminRestaurant_ctr/coupon_com'; 
+$route['edit_coupon_com']                 = 'back-end/AdminRestaurant_ctr/edit_coupon_com'; 
+$route['delete_coupon']                 = 'back-end/AdminRestaurant_ctr/delete_coupon'; 
 
 // 

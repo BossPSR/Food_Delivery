@@ -201,6 +201,8 @@
 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Type_Restaurant"){echo 'active';}?>"><a href="Admin_Type_Restaurant"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทร้านอาหาร</span></a>
                 </li>
+                <li class="<?php if($this->uri->segment(1)=="coupon"){echo 'active';}?>"><a href="coupon"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">คูปองส่วนลด</span></a>
+                </li>
 
                 <li class="<?php if($this->uri->segment(1)=="Admin_Type_Food"){echo 'active';}?>"><a href="Admin_Type_Food"><i class="fa fa-list-ol"></i><span class="menu-item" data-i18n="List View">ประเภทอาหาร</span></a>
                 </li>

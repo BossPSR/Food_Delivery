@@ -228,7 +228,87 @@ class AdminRestaurant_ctr extends CI_Controller {
                 redirect('Admin_Restaurant');
         
     }
+    public function coupon()
+	{
+        if ($this->session->userdata('username') == '') {
+            redirect('Admin_Login');
+     } else {
+        $this->load->view('option/header');
+        $this->load->view('coupon');
+        $this->load->view('option/footer');
+     }    
+    }
 
+    public function coupon_com()
+    {
+        $name_coupon           = $this->input->post('name_coupon');
+        $code_coupon           = $this->input->post('code_coupon');
+        $price                 = $this->input->post('price');
+
+        
+            $data = array(
+                'name_coupon'             => $name_coupon,
+                'code_coupon'             => $code_coupon,
+                'price'                   => $price
+       			
+               
+               
+            );
+            $success = $this->db->insert('tbl_coupon',$data);
+        
+            if($success > 0)
+            {
+                $this->session->set_flashdata('save_ss2','เพิ่มข้อมูลคูปองเรียบร้อยแล้ว !!.');
+            }else
+            {
+                $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มคูปองได้');
+            }
+                redirect('coupon');
+        
+    }
+
+    public function edit_coupon_com()
+    {
+        $id                     = $this->input->post('id');
+        $name_coupon           = $this->input->post('name_coupon');
+        $code_coupon           = $this->input->post('code_coupon');
+        $price                 = $this->input->post('price');
+
+
+        
+        $data = array(
+            'name_coupon'             => $name_coupon,
+            'code_coupon'             => $code_coupon,
+            'price'                   => $price
+        );
+        $this->db->where('id',$id);
+        $success = $this->db->update('tbl_coupon',$data);
+    
+        if($success > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลคูปองเรียบร้อยแล้ว  !!.');
+        }else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลคูปองได้ ');
+        }
+            redirect('coupon');
+    }
+
+    public function delete_coupon()
+    {
+
+        $id = $this->input->get('id');
+
+        if ($this->Type_model->coupon($id))
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถลบข้อมูลได้ !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('save_ss2','ลบข้อมูลคูปองเรียบร้อยแล้ว');
+        }
+        return redirect('coupon');
+    }
     public function delete_type_food_restaurant()
     {
 
