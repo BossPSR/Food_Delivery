@@ -74,6 +74,8 @@ class Resturant_ctr extends CI_Controller {
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '15',
 				'total' 		=> $this->cart->total() + 15 ,
+				'lat' 		    => $this->input->post('lat'),
+				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')
 			);
 		}else{
@@ -87,6 +89,8 @@ class Resturant_ctr extends CI_Controller {
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '15',
 				'total' 		=> $this->cart->total() + 15 ,
+				'lat' 		    => $this->input->post('lat'),
+				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')
 			);
 		}

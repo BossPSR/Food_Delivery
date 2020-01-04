@@ -1,3 +1,13 @@
+<style>
+
+      .map {
+		height: 250px;
+		width: 100%
+      }
+    
+</style>
+
+
    <!-- BEGIN: Content-->
    <div class="app-content content">
        <div class="content-overlay"></div>
@@ -60,8 +70,13 @@
                            <tbody>
                                <?php
                                 $i = 1;
+                                $round = [];
+                                $lat = [];
+                                $lng = [];
                                 foreach ($order as $key => $orderDetail) {
-
+                                    $round[] = $i;
+                                    $lat[] = $orderDetail['lat'];
+                                    $lng[] = $orderDetail['lng'];
                                 ?>
                                    <tr>
                                        <td></td>
@@ -178,6 +193,14 @@
                                                                                <div class="form-control"><?php echo $orderDetail['total']; ?></div>
                                                                            </div>
                                                                        </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">แผนที่</label>
+                                                                               <div class="form-control map" id="map<?php echo $i;?>"></div>
+                                                                           </div>
+                                                                       </div>
+
                                                                        <div class="modal-footer">
                                                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
                                                                                <div class="add-data-btn mr-1">
@@ -226,3 +249,34 @@
        </div>
    </div>
    <!-- END: Content-->
+
+   <script>
+    function initMap() {
+
+        <?php foreach ($round as $key => $round) { ?>  
+          
+            var map;
+            map = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
+            center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+            zoom: 18,
+         });
+
+         var marker = new google.maps.Marker({
+                position: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+                map:map,
+            });
+              
+        <?php }  ?>              
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0&callback=initMap"
+    async defer></script>
