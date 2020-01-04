@@ -63,7 +63,7 @@ class Resturant_ctr extends CI_Controller {
 	{
 		$user_f = $this->db->get_where('users', ['email' => $this->session->userData['email']])->row_array();
 		if (empty($user_f)) {
-			$user_f = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
+			$user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 			$data = array(
 				'id_member'     => $this->input->post('id'),
 				'id_facebook'   => "",
@@ -90,7 +90,7 @@ class Resturant_ctr extends CI_Controller {
 				'created_at' 	=> date('Y-m-d H:i:s')
 			);
 		}
-		
+
 		$this->db->insert('tbl_order', $data);
 		$id = $this->db->insert_id();
 		
@@ -110,27 +110,13 @@ class Resturant_ctr extends CI_Controller {
 
 		}
 
-			//config email settings
-			$config['protocol'] = 'smtp';
-			$config['smtp_host'] = 'smtp.gmail.com';
-			$config['smtp_port'] = '587';
-			$config['smtp_user'] = 'deejungd@deejungdelivery.com';
-			$config['smtp_pass'] = '1@dvlsrPY24';  //sender's password
-			$config['mailtype'] = 'html';
-			$config['charset'] = 'utf-8';
-			$config['wordwrap'] = 'TRUE';
-			$config['smtp_crypto'] = 'tls';
-			$config['newline'] = "\r\n";
-	 
-		//$file_path = 'uploads/' . $file_name;
-		   $this->load->library('email', $config);
-		   $this->email->set_newline("\r\n");
-		   $this->email->from('deejungd@deejungdelivery.com');
-		   $this->email->to($user_f['email']);
-		   $subject = 'title';
-		   $message = 'message';
-		   $this->email->subject($subject);
-		   $this->email->message($message);
+		
+
+		if (empty($user_f)) {
+			$this->sendEmail($user['email'],$id);
+		}else{
+			$this->sendEmail($user_f['email'],$id);
+		}
 		
 
 		if ($success > 0) {
@@ -143,6 +129,7 @@ class Resturant_ctr extends CI_Controller {
 			
 			$this->cart->destroy();
 			$this->session->set_flashdata('save_ss2', 'สั่งซื้ออาหารเรียบร้อย กรุณารอไรเดอร์ของเราไปรับอาหารค่ะ !');
+			$this->lineNotify();
 			redirect('OrderList');
 		}
 		else
@@ -232,6 +219,47 @@ class Resturant_ctr extends CI_Controller {
 	public function total_cart()
 	{
 		echo number_format($this->cart->total(),2);
+	}
+
+	private function sendEmail($userEmail,$id)
+	{
+		$subject = 'รายการสั่งอาหารของคุณ';
+		$message = 'https://deejungdelivery.com/OrderDetail?id='.$id;
+		 
+		 //config email settings
+		 $config['protocol'] = 'smtp';
+		 $config['smtp_host'] = 'smtp.gmail.com';
+		 $config['smtp_port'] = '587';
+		 $config['smtp_user'] = 'deejungd@deejungdelivery.com';
+		 $config['smtp_pass'] = '1@dvlsrPY24';  //sender's password
+		 $config['mailtype'] = 'html';
+		 $config['charset'] = 'utf-8';
+		 $config['wordwrap'] = 'TRUE';
+		 $config['smtp_crypto'] = 'tls';
+		 $config['newline'] = "\r\n";
+	  
+		 //$file_path = 'uploads/' . $file_name;
+			$this->load->library('email', $config);
+			$this->email->set_newline("\r\n");
+			$this->email->from('deejungd@deejungdelivery.com');
+			$this->email->to($userEmail);
+			$this->email->subject($subject);
+			$this->email->message($message);
+		  
+			if($this->email->send()==true)
+			{
+				echo 'เข้าแล้วนะครับ';
+			}
+			else
+			{
+				echo 'ยังไม่เข้าครับ';
+			}
+		   
+	}
+
+	private function lineNotify()
+	{
+		$this->load->view('line_notify');
 	}
 
 }
