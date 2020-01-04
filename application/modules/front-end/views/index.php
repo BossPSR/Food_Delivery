@@ -257,71 +257,21 @@
 				<div class="row">
 					<div class="col-sm-12 no-padd">
 						<ul class="testimonial-list">
+						<?php 
+							foreach ($contact_comment as $contactComment) {
+						?>
 							<li>
 								<div class="comment_Detail">
 									<p>
-										Nunc ullamcorper augue nec accumsan
-										porta. Ut lacinia fgiat viverra. Ut dictum
-										turpis in ipsum sagittis finibus.
+										<?php echo $contactComment['description']; ?>
 									</p>
-									<span>Anna Van</span>
+									<span><?php echo $contactComment['name']; ?></span>
 								</div>
 								<div class="imgProfile_comment">
 									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
 								</div>	
 							</li>
-							<li>
-								<div class="comment_Detail">
-									<p>
-										Nunc ullamcorper augue nec accumsan
-										porta. Ut lacinia fgiat viverra. Ut dictum
-										turpis in ipsum sagittis finibus.
-									</p>
-									<span>Frinton Van</span>
-								</div>
-								<div class="imgProfile_comment">
-									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
-								</div>
-							</li>
-							<li>
-								<div class="comment_Detail">
-									<p>
-										Nunc ullamcorper augue nec accumsan
-										porta. Ut lacinia fgiat viverra. Ut dictum
-										turpis in ipsum sagittis finibus.
-									</p>
-									<span>Filipe Van</span>
-								</div>
-								<div class="imgProfile_comment">
-									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
-								</div>
-							</li>
-							<li>
-								<div class="comment_Detail">
-									<p>
-										Nunc ullamcorper augue nec accumsan
-										porta. Ut lacinia fgiat viverra. Ut dictum
-										turpis in ipsum sagittis finibus.
-									</p>
-									<span>Frinton Van</span>
-								</div>
-								<div class="imgProfile_comment">
-									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
-								</div>
-							</li>
-							<li>
-								<div class="comment_Detail">
-									<p>
-										Nunc ullamcorper augue nec accumsan
-										porta. Ut lacinia fgiat viverra. Ut dictum
-										turpis in ipsum sagittis finibus.
-									</p>
-									<span>Frinton Van</span>
-								</div>
-								<div class="imgProfile_comment">
-									<img src="./public/assets/img/person_comment1.jpg" alt="" class="img-responsive">
-								</div>
-							</li>
+						<?php } ?>
 						</ul>
 					</div>
 				</div>
@@ -333,25 +283,3 @@
 		<!-- Section Contact -->
 
 		<!-- End Section Contact -->
-		
-		<!-- Section Newsletter -->
-		<section id="newsletter" class="padd-100">
-			<form action="#" method="post">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-4">
-							<h3>Subscribe Newsletter</h3>
-						</div>
-						<div class="col-sm-6">
-							<input type="text" placeholder="Email Address">
-						</div>
-						<div class="col-sm-2">
-							<button type="submit">submit</button>
-						</div>
-					</div>
-				</div>
-			</form>
-		</section>
-		<!-- End Section Newsletter -->
-
-		
