@@ -248,27 +248,58 @@
         var directionsDisplay = new google.maps.DirectionsRenderer;
 
         navigator.geolocation.getCurrentPosition(function(position) {
-        var posNow = {lat: position.coords.latitude,lng: position.coords.longitude};
+        
             
         <?php foreach ($round as $key => $round) { ?>  
             
-            
+            var posNow = [
+                            {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
+                            {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
+                        ];
             var maps;
             maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
             center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
             zoom: 18,
             });
 
-            var marker = new google.maps.Marker({
-                position: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
-                map:maps,
+            var marker, info;
+
+            $.each(posNow, function(i, item){
+
+                    marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(item.lat, item.lng),
+                    map: maps,
+                    title: item.location
+                    });
+
+                info = new google.maps.InfoWindow();
+
+                // google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                //     return function() {
+                        
+                //     info.setContent(item.location);
+                //     info.open(maps, marker);
+
+      
+                //     }
+                // })(marker, i));
+
+                google.maps.event.addListener(marker, 'load', (function(marker, i) {    
+                    info.setContent(item.location);
+                    info.open(maps, marker);    
+                })(marker, i));
+
             });
+
+           
 
         <?php }  ?> 
         
         });//end navi               
 			
 	}
+
+
 
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
