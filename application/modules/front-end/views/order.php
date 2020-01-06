@@ -203,7 +203,11 @@
 	$(document).ready(function(){
 		$("#coupon").keyup(function(){
 			var coupon = $("#coupon").val();
-			var user_id = <?php echo $user['id'] ?>;
+			<?php if(isset($user['id'])){ ?>
+				var user_id = <?php echo $user['id'] ?>;
+			<?php }else{ ?>
+				var user_id = 0;
+			<?php }?>
 			$.ajax({
 				url:'checkCoupon',
 				data:{
