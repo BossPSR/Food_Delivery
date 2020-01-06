@@ -112,8 +112,11 @@
                                            <td class="product-price">ยกเลิกรายการอาหาร</td>
                                        <?php endif ?>
 
-
-                                       <td class="product-price"><?php echo $orderDetail['total']; ?></td>
+                                       <?php if($orderDetail['vat'] != null){ ?>
+                                            <td class="product-price"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></td>
+                                        <?php }else{ ?>
+                                            <td class="product-price"><?php echo $orderDetail['total']; ?></td>
+                                        <?php } ?>
                                        <td class="product-action">
                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id']; ?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
                                        </td>
@@ -183,7 +186,9 @@
                                                                                     $key += 1;   
                                                                                 ?>
                                                                                    <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
-                                                                               <?php } ?>
+                                                                               <?php
+
+                                                                                } ?>
                                                                            </div>
                                                                        </div>
                                                                        <div class="form-group">
@@ -191,14 +196,23 @@
                                                                                <label for="data-name">Vat+</label>
                                                                            </div>
                                                                            <div style="overflow: hidden;">
-                                                                                <input type="text" name="vat" class="form-control" style="width:70%;float:left">
+                                                                                <?php if($orderDetail['vat'] != null){ ?>
+                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left" value="<?php echo $orderDetail['vat']; ?>">
+                                                                                <?php }else{ ?>
+                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left">
+                                                                                <?php } ?>
+                                                                                
                                                                                <div style="width:30%;float:right; text-align:right;"><button type="submit" class="btn btn-primary">บันทึก Vat</button></div>
                                                                            </div>
                                                                        </div>
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ราคารวม</label>
-                                                                               <div class="form-control"><?php echo $orderDetail['total']; ?></div>
+                                                                               <?php if($orderDetail['vat'] != null){ ?>
+                                                                                <div class="form-control"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></div>
+                                                                               <?php }else{ ?>
+                                                                                <div class="form-control"><?php echo $orderDetail['total']; ?></div>
+                                                                               <?php } ?>
                                                                            </div>
                                                                        </div>
 

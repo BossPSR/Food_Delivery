@@ -78,44 +78,45 @@
                                     $lat[] = $orderDetail['lat'];
                                     $lng[] = $orderDetail['lng'];
                                 ?>
-
-                                
                                    <tr>
                                        <td></td>
                                        <td><?php echo $i; ?></td>
                                        <td class="product-name"><?php echo $orderDetail['code']; ?></td>
-                                      
-                                           <td class="product-name">
-                                        <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->row_array(); ?>
-                                        <?php $restaurant_name = $this->db->get_where('tbl_restaurant', ['id' => $order_type['id_restaurant']])->result_array(); ?>
-                                        <?php foreach ($restaurant_name as $key => $restaurant_name) { ?>
-                                        <?php echo $restaurant_name['restaurant_name']; ?>
-                                        <?php } ?>
-                                            </td>
-                                         
-                                     
+
+                                       <td class="product-name">
+                                           <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->row_array(); ?>
+                                           <?php $restaurant_name = $this->db->get_where('tbl_restaurant', ['id' => $order_type['id_restaurant']])->result_array(); ?>
+                                           <?php foreach ($restaurant_name as $key => $restaurant_name) { ?>
+                                               <?php echo $restaurant_name['restaurant_name']; ?>
+                                           <?php } ?>
+                                       </td>
+
+
                                        <?php if ($orderDetail['rider'] == '0') : ?>
                                            <td class="product-price">ยังไม่มีผู้ส่ง</td>
                                        <?php else : ?>
-                                        <?php $rider_name = $this->db->get_where('tbl_rider', ['id' => $orderDetail['rider']])->row_array(); ?>
-                                           <td class="product-price"><?php echo $rider_name['title'].' '.$rider_name['first_name'].' '.$rider_name['last_name']; ?></td>
+                                           <?php $rider_name = $this->db->get_where('tbl_rider', ['id' => $orderDetail['rider']])->row_array(); ?>
+                                           <td class="product-price"><?php echo $rider_name['title'] . ' ' . $rider_name['first_name'] . ' ' . $rider_name['last_name']; ?></td>
 
                                        <?php endif ?>
 
                                        <?php if ($orderDetail['status'] == '0') : ?>
-                                    <td class="product-price">กำลังตรวจสอบ</td>
-                                        <?php elseif($orderDetail['status'] == '1') : ?>
-                                        <td class="product-price">กำลังดำเนินงาน</td>
-                                    <?php elseif($orderDetail['status'] == '2') : ?> 
-                                    <td class="product-price">กำลังจัดส่งอาหาร</td>
-                                    <?php elseif($orderDetail['status'] == '3') : ?> 
-                                        <td class="product-price">จัดส่งเรียบร้อย</td>
-                                    <?php else : ?>
-                                        <td class="product-price">ยกเลิกรายการอาหาร</td>
-                                     <?php endif ?>
-            
+                                           <td class="product-price">กำลังตรวจสอบ</td>
+                                       <?php elseif ($orderDetail['status'] == '1') : ?>
+                                           <td class="product-price">กำลังดำเนินงาน</td>
+                                       <?php elseif ($orderDetail['status'] == '2') : ?>
+                                           <td class="product-price">กำลังจัดส่งอาหาร</td>
+                                       <?php elseif ($orderDetail['status'] == '3') : ?>
+                                           <td class="product-price">จัดส่งเรียบร้อย</td>
+                                       <?php else : ?>
+                                           <td class="product-price">ยกเลิกรายการอาหาร</td>
+                                       <?php endif ?>
 
-                                       <td class="product-price"><?php echo $orderDetail['total']; ?></td>
+                                       <?php if($orderDetail['vat'] != null){ ?>
+                                            <td class="product-price"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></td>
+                                        <?php }else{ ?>
+                                            <td class="product-price"><?php echo $orderDetail['total']; ?></td>
+                                        <?php } ?>
                                        <td class="product-action">
                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id']; ?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
                                        </td>
@@ -131,7 +132,7 @@
                                                        <span aria-hidden="true">&times;</span>
                                                    </button>
                                                </div>
-                                               <form action="edit_type_food" method="POST" class="form-horizontal">
+                                               <form action="Admin_Order_vat" method="POST" class="form-horizontal">
                                                    <div class="modal-body">
 
                                                        <input type="hidden" class="form-control" name="id" value="<?php echo $orderDetail['id']; ?>">
@@ -148,49 +149,70 @@
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ชื่อลูกค้า</label>
-                                                                               <?php if ($orderDetail['id_member'] == 0 && isset($orderDetail['id_facebook']) ) :  ?>
-                                                                                <?php $facebook_name = $this->db->get_where('users', ['oauth_uid' => $orderDetail['id_facebook']])->result_array(); ?>
-                                                                               <?php foreach ($facebook_name as $key => $facebook_name) { ?>
-                                                                               <div class="form-control"><?php echo $facebook_name['first_name'].' '. $facebook_name['last_name'] ; ?></div>
-                                                                               <?php }?>
-                                                                                <?php else: ?>
-                                                                               <?php $member_name = $this->db->get_where('tbl_member', ['id' => $orderDetail['id_member']])->result_array(); ?>
-                                                                               <?php foreach ($member_name as $key => $member_name) { ?>
-                                                                               <div class="form-control"><?php echo $member_name['first_name'].' '. $member_name['last_name'] ; ?></div>
-                                                                               <?php }?>
+                                                                               <?php if ($orderDetail['id_member'] == '0') : ?>
+                                                                                   <div class="form-control">-</div>
+                                                                               <?php else : ?>
+
+                                                                                   <?php $member_name = $this->db->get_where('tbl_member', ['id' => $orderDetail['id_member']])->result_array(); ?>
+                                                                                   <?php foreach ($member_name as $key => $member_name) { ?>
+                                                                                       <div class="form-control"><?php echo $member_name['first_name'] . ' ' . $member_name['last_name']; ?></div>
+                                                                                   <?php } ?>
                                                                                <?php endif ?>
                                                                            </div>
-                                                                          
+
                                                                        </div>
                                                                        <div class="form-group">
                                                                            <div class="controls">
-                                                                               <label for="data-name">สถานะ</label>
-                                                                            
-                                                                             <select class="form-control" name="id_status"  onchange="location = this.value;">
-                                                                        
-                                                                           
-                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=1">กำลังดำเนินงาน</option>
-                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=2">กำลังจัดส่งอาหาร</option>
-                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=3">จัดส่งเรียบร้อย</option>
-                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=4">ยกเลิกรายการอาหาร</option>
+                                                                               <label for="data-name">ผู้ส่ง</label>
 
-                                                              
-                                                                        </select>
+                                                                               <select class="form-control" name="id_rider" onchange="location = this.value;">
+                                                                               <?php if ($orderDetail['rider'] == '0') { ?>
+                                                                                    <option>ยังไม่มีผู้ส่ง</option>
+                                                                               <?php } ?>
+                                                                                   <?php $rider = $this->db->get('tbl_rider')->result_array(); ?>
+                                                                                   <?php foreach ($rider as $key => $rider) { ?>
+
+                                                                                       <option value="Rider_edit?id_order=<?php echo $orderDetail['id']; ?>&id_rider=<?php echo $rider['id']; ?>" <?php echo $rider['id'] == $orderDetail['rider'] ? "selected" : "" ?>><?php echo $rider['title'] . ' ' . $rider['first_name'] . '  ' . $rider['last_name']; ?></option>
+
+                                                                                   <?php  } ?>
+                                                                               </select>
                                                                            </div>
-                                                                       </div> 
+                                                                       </div>
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">รายการเมนู</label>
                                                                                <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->result_array(); ?>
-                                                                               <?php foreach ($order_type as $key => $order_type) { ?>
-                                                                               <div class="form-control"><?php echo $order_type['name_item']; ?>  <?php echo $order_type['price_item']; ?> จำนวน  <?php echo $order_type['qty']; ?> </div>
-                                                                               <?php }?>
+                                                                               <?php foreach ($order_type as $key => $order_type) { 
+                                                                                    $key += 1;   
+                                                                                ?>
+                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
+                                                                               <?php
+
+                                                                                } ?>
+                                                                           </div>
+                                                                       </div>
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">Vat+</label>
+                                                                           </div>
+                                                                           <div style="overflow: hidden;">
+                                                                                <?php if($orderDetail['vat'] != null){ ?>
+                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left" value="<?php echo $orderDetail['vat']; ?>">
+                                                                                <?php }else{ ?>
+                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left">
+                                                                                <?php } ?>
+                                                                                
+                                                                               <div style="width:30%;float:right; text-align:right;"><button type="submit" class="btn btn-primary">บันทึก Vat</button></div>
                                                                            </div>
                                                                        </div>
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ราคารวม</label>
-                                                                               <div class="form-control"><?php echo $orderDetail['total']; ?></div>
+                                                                               <?php if($orderDetail['vat'] != null){ ?>
+                                                                                <div class="form-control"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></div>
+                                                                               <?php }else{ ?>
+                                                                                <div class="form-control"><?php echo $orderDetail['total']; ?></div>
+                                                                               <?php } ?>
                                                                            </div>
                                                                        </div>
 
@@ -201,6 +223,12 @@
                                                                            </div>
                                                                        </div>
 
+                                                                       <div class="modal-footer">
+                                                                           <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+
+
+                                                                           </div>
+                                                                       </div>
                                                                    </div>
                                                                </div>
                                                            </div>
@@ -212,7 +240,7 @@
                                                    <div class="modal-footer">
                                                        <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
 
-<div id="test"></div>
+
                                                        </div>
                                                    </div>
                                                </form>
@@ -243,67 +271,64 @@
    <!-- END: Content-->
 
    <script>
-
-    function initMap() {
+  function initMap() {
  
-        var directionsService = new google.maps.DirectionsService();
-        var directionsRenderer = new google.maps.DirectionsRenderer();
-        navigator.geolocation.getCurrentPosition(function(position) {
-        
-            
-        <?php foreach ($round as $key => $round) { ?>  
-            
-            var posNow = [
-                            {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
-                            {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
-                        ];
-            var maps;
-                maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
-                center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
-                zoom: 18,
-            });
+ var directionsService = new google.maps.DirectionsService();
+ var directionsRenderer = new google.maps.DirectionsRenderer();
+ navigator.geolocation.getCurrentPosition(function(position) {
+ 
+     
+ <?php foreach ($round as $key => $round) { ?>  
+     
+     var posNow = [
+                     {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
+                     {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
+                 ];
+     var maps;
+         maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
+         center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+         zoom: 18,
+     });
 
-            directionsRenderer.setMap(maps);
+     directionsRenderer.setMap(maps);
 
-            var marker, info;
+     var marker, info;
 
-            $.each(posNow, function(i, item){
+     $.each(posNow, function(i, item){
 
-                    marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(item.lat, item.lng),
-                    map: maps,
-                    title: item.location
-                    });
+             marker = new google.maps.Marker({
+             position: new google.maps.LatLng(item.lat, item.lng),
+             map: maps,
+             title: item.location
+             });
 
-                info = new google.maps.InfoWindow();
+         info = new google.maps.InfoWindow();
 
-                // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                //     return function() {
-                        
-                //     info.setContent(item.location);
-                //     info.open(maps, marker);
-
-      
-                //     }
-                // })(marker, i));
-
-                google.maps.event.addListener(marker, 'load', (function(marker, i) {    
-                    info.setContent(item.location);
-                    info.open(maps, marker);   
-                    
-                })(marker, i));
-
-            });
+         // google.maps.event.addListener(marker, 'click', (function(marker, i) {
+         //     return function() {
+                 
+         //     info.setContent(item.location);
+         //     info.open(maps, marker);
 
 
+         //     }
+         // })(marker, i));
 
-        <?php }  ?> 
-        
-        });//end navi               
-			
-	}
+         google.maps.event.addListener(marker, 'load', (function(marker, i) {    
+             info.setContent(item.location);
+             info.open(maps, marker);   
+             
+         })(marker, i));
+
+     });
 
 
+
+ <?php }  ?> 
+ 
+ });//end navi               
+     
+}
 
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -313,7 +338,6 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
-
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0&callback=initMap"

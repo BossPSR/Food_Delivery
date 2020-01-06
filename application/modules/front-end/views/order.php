@@ -167,6 +167,7 @@
 									<th>รวมเมื่อใช้ส่วนลด</th>
 									<td id="newTotal"></td>
 									<input type="hidden" name="coupon" id="couponUser" value="">
+									<input type="hidden" name="coupon_id" id="coupon_id" value="">
 								</tr>
 
 							</tbody>
@@ -224,12 +225,14 @@
         $.ajax({
             url:'newTotal',
 			data:{
-				coupon:coupon.price
+				coupon:coupon.price,
+				coupon_id:coupon.coupon_id
 			},
             success:function(response){
 				response = JSON.parse(response);
                 $('#newTotal').html(response.total + " บาท");
 				$('#couponUser').val(response.coupon);
+				$('#coupon_id').val(response.coupon_id);
             }
         })
     }

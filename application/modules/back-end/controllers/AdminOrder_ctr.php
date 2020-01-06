@@ -92,13 +92,13 @@ class AdminOrder_ctr extends CI_Controller
 
         $vat           = $this->input->post('vat');
         $id           = $this->input->post('id');
-
-
+        if ($vat == "") {
+            $vat = null;
+        }
 
         $data = array(
 
             'vat'             => $vat
-
 
 
         );
