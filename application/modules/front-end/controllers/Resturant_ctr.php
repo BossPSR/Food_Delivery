@@ -297,7 +297,7 @@ class Resturant_ctr extends CI_Controller {
 		if (isset($coupon)) {
 			$user_coupon = $this->db->get_where('tbl_user_coupon',['coupon_id' => $coupon->id,'member_id' => $this->input->get('user_id')])->row();
 			if (isset($user_coupon)) {
-				$result['status'] = 'คูปองนี้ ท่านใช้งานไปแล้วค่ะ';
+				$result['status'] = '<span style="color:red">คูปองนี้ ท่านใช้งานไปแล้วค่ะ</span>';
 				$result['coupon_id'] = 0;
 				$result['price'] = 0;
 			}else{
@@ -305,22 +305,22 @@ class Resturant_ctr extends CI_Controller {
 				if (isset($user_f)) {
 					$user_couponFB = $this->db->get_where('tbl_user_coupon',['coupon_id' => $coupon->id,'facebook_id' => $user_f['oauth_uid']])->row();
 					if (isset($user_couponFB)) {
-						$result['status'] = 'คูปองนี้ ท่านใช้งานไปแล้วค่ะ';
+						$result['status'] = '<span style="color:red">คูปองนี้ ท่านใช้งานไปแล้วค่ะ</span>';
 						$result['coupon_id'] = 0;
 						$result['price'] = 0;
 					}else{
-						$result['status'] = 'คูปองนี้ สามารถใช้งานได้ค่ะ';
+						$result['status'] = '<span style="color:green">คูปองนี้ สามารถใช้งานได้ค่ะ</span>';
 						$result['coupon_id'] = $coupon->id;
 						$result['price'] = $coupon->price;	
 					}
 				}else{
-					$result['status'] = 'คูปองนี้ สามารถใช้งานได้ค่ะ';
+					$result['status'] = '<span style="color:green">คูปองนี้ สามารถใช้งานได้ค่ะ</span>';
 					$result['coupon_id'] = $coupon->id;
 					$result['price'] = $coupon->price;	
 				}
 			}
 		}else{
-			$result['status'] = 'ไม่พบคูปองนี้ค่ะ';
+			$result['status'] = '<span style="color:red">ไม่พบคูปองนี้ค่ะ</span>';
 			$result['coupon_id'] = 0;
 			$result['price'] = 0;
 		}	

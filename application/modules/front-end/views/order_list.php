@@ -24,17 +24,21 @@
                         <th scope="row"><?php echo $i; ?></th>
                         <td><a href="OrderDetail?id=<?php echo $orderDetail['id']; ?>"><?php echo $orderDetail['code']; ?></a></td>
                         <?php $rider = $this->db->get_where('tbl_rider',['id' => $orderDetail['rider']])->row_array(); ?>
-                        <td><?php echo $rider['title'].$rider['first_name']." ".$rider['last_name']; ?></td>
+                        <?php if($orderDetail['rider'] == 0){?>
+                            <td>-</td>
+                        <?php }else{ ?>
+                            <td><?php echo $rider['title'].$rider['first_name']." ".$rider['last_name']; ?></td>
+                        <?php }?>
                         <?php if ($orderDetail['status'] == '0') : ?>
-                            <td>กำลังตรวจสอบ</td>
+                            <td style="color:coral">กำลังตรวจสอบ</td>
                         <?php elseif ($orderDetail['status'] == '1') : ?>
-                            <td>กำลังดำเนินงาน</td>
+                            <td style="color:yellowgreen">กำลังดำเนินงาน</td>
                         <?php elseif ($orderDetail['status'] == '2') : ?>
-                            <td>กำลังจัดส่งอาหาร</td>
+                            <td style="color:forestgreen">กำลังจัดส่งอาหาร</td>
                         <?php elseif ($orderDetail['status'] == '3') : ?>
-                            <td>จัดส่งเรียบร้อย</td>
+                            <td style="color:green">จัดส่งเรียบร้อย</td>
                         <?php else : ?>
-                            <td>ยกเลิกรายการอาหาร</td>
+                            <td style="color:red">ยกเลิกรายการอาหาร</td>
                         <?php endif ?>
                        
                         <td><?php echo $orderDetail['total']; ?></td>
