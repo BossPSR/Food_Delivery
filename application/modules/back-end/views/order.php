@@ -189,7 +189,10 @@
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">Vat+</label>
-                                                                               <input type="text" name="vat" class="form-control">
+                                                                           </div>
+                                                                           <div style="overflow: hidden;">
+                                                                                <input type="text" name="vat" class="form-control" style="width:70%;float:left">
+                                                                               <div style="width:30%;float:right; text-align:right;"><button type="submit" class="btn btn-primary">บันทึก Vat</button></div>
                                                                            </div>
                                                                        </div>
                                                                        <div class="form-group">
@@ -208,9 +211,7 @@
 
                                                                        <div class="modal-footer">
                                                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
-                                                                               <div class="add-data-btn mr-1">
-                                                                                   <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
-                                                                               </div>
+
 
                                                                            </div>
                                                                        </div>

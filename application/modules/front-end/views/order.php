@@ -153,13 +153,20 @@
 								<tr>
 									<td colspan="3"><div id="showCoupon"></div></td>
 									<th>คูปอง</th>
-									<td><input class="form-control" type="text" id="coupon" name="coupon"></td>
+									<td><input class="form-control" type="text" id="coupon"></td>
 								</tr>
 
 								<tr>
 									<td colspan="3"></td>
 									<th>รวม</th>
 									<td><?php echo $this->cart->format_number($this->cart->total() + 15); ?> บาท</td>
+								</tr>
+
+								<tr class="newTotalCoupon" style="display:none;">
+									<td colspan="3"></td>
+									<th>รวมเมื่อใช้ส่วนลด</th>
+									<td id="newTotal"></td>
+									<input type="hidden" name="coupon" id="couponUser" value="">
 								</tr>
 
 							</tbody>
@@ -204,11 +211,28 @@
 						
 					 },
 				success:function(response){
-					$('#showCoupon').html(response);
+					response = JSON.parse(response);
+					$('#showCoupon').html(response.status);
+					$(".newTotalCoupon").css("display", "table-row");
+					newTotal(response);
 				}
 			})
 		});
 	});
+
+	function newTotal(coupon) {
+        $.ajax({
+            url:'newTotal',
+			data:{
+				coupon:coupon.price
+			},
+            success:function(response){
+				response = JSON.parse(response);
+                $('#newTotal').html(response.total + " บาท");
+				$('#couponUser').val(response.coupon);
+            }
+        })
+    }
 
 
 </script>

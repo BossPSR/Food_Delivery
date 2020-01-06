@@ -61,19 +61,21 @@ class Resturant_ctr extends CI_Controller {
 
 	public function save_cart()
 	{
+
 		$user_f = $this->db->get_where('users', ['email' => $this->session->userData['email']])->row_array();
 		if (empty($user_f)) {
 			$user = $this->db->get_where('tbl_member', ['email' => $this->session->userdata('email')])->row_array();
 			$data = array(
 				'id_member'     => $this->input->post('id'),
-				'id_facebook'   => "",
+				'id_facebook'   => null,
 				'address' 		=> $this->input->post('address'),
 				'province' 		=> $this->input->post('province'),
 				'amphur' 		=> $this->input->post('amphur'),
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '15',
-				'total' 		=> $this->cart->total() + 15 ,
+				'total' 		=> $this->cart->total() + 15 - $this->input->post('coupon'),
+				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')
@@ -88,7 +90,8 @@ class Resturant_ctr extends CI_Controller {
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '15',
-				'total' 		=> $this->cart->total() + 15 ,
+				'total' 		=> $this->cart->total() + 15 - $this->input->post('coupon'),
+				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')
@@ -268,17 +271,39 @@ class Resturant_ctr extends CI_Controller {
 
 	public function checkCoupon()
 	{
+		$result = [];
 		$coupon = $this->db->get_where('tbl_coupon',['code_coupon' => $this->input->get('coupon')])->row();
 		if (isset($coupon)) {
 			$user_coupon = $this->db->get_where('tbl_user_coupon',['coupon_id' => $coupon->id,'member_id' => $this->input->get('user_id')])->row();
 			if (isset($user_coupon)) {
-				echo 'คูปองนี้ ท่านใช้งานไปแล้วค่ะ';
+				$result['status'] = 'คูปองนี้ ท่านใช้งานไปแล้วค่ะ';
+				$result['price'] = 0;
+			}else{
+				$result['status'] = 'คูปองนี้ สามารถใช้งานได้ค่ะ';
+				$result['price'] = $coupon->price;
 			}
-			echo 'คูปองนี้ สามารถใช้งานได้ค่ะ';
 		}else{
-			echo 'ไม่พบคูปองนี้ค่ะ';
-		}
+			$result['status'] = 'ไม่พบคูปองนี้ค่ะ';
+			$result['price'] = 0;
+		}	
 		
+		echo json_encode($result);
+		
+	}
+
+	public function newTotal()
+	{
+		$result = [];
+		if ($this->input->get('coupon') == 0) {
+			$coupon = 0;
+		}else{
+			$coupon = $this->input->get('coupon');
+		}
+		$total = $this->cart->total() + 15 - $coupon;
+
+		$result['total'] = number_format($total,2);
+		$result['coupon'] = $coupon;
+		echo json_encode($result);
 	}
 
 }

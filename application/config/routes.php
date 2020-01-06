@@ -45,6 +45,7 @@ $route['total_cart']                    = 'front-end/Resturant_ctr/total_cart';
 $route['sendemail']                     = 'front-end/Sendemail_ctr';
 $route['send']                          = 'front-end/Sendemail_ctr/send';
 $route['checkCoupon']                   = 'front-end/Resturant_ctr/checkCoupon';
+$route['newTotal']                      = 'front-end/Resturant_ctr/newTotal';
 
 /****************       back-end       *********************/ 
 $route['Admin_Login']                   = 'back-end/AdminLogin_ctr';
