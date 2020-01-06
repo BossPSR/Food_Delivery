@@ -149,6 +149,13 @@
 									<th>ค่าจัดส่ง</th>
 									<td>15 บาท</td>
 								</tr>
+
+								<tr>
+									<td colspan="3"><div id="showCoupon"></div></td>
+									<th>คูปอง</th>
+									<td><input class="form-control" type="text" id="coupon" name="coupon"></td>
+								</tr>
+
 								<tr>
 									<td colspan="3"></td>
 									<th>รวม</th>
@@ -183,3 +190,25 @@
 		</div>
 	</div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#coupon").keyup(function(){
+			var coupon = $("#coupon").val();
+			var user_id = <?php echo $user['id'] ?>;
+			$.ajax({
+				url:'checkCoupon',
+				data:{
+						coupon:coupon,
+						user_id:user_id,
+						
+					 },
+				success:function(response){
+					$('#showCoupon').html(response);
+				}
+			})
+		});
+	});
+
+
+</script>

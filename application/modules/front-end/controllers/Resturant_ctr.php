@@ -266,4 +266,19 @@ class Resturant_ctr extends CI_Controller {
 		$this->load->view('line_notify');
 	}
 
+	public function checkCoupon()
+	{
+		$coupon = $this->db->get_where('tbl_coupon',['code_coupon' => $this->input->get('coupon')])->row();
+		if (isset($coupon)) {
+			$user_coupon = $this->db->get_where('tbl_user_coupon',['coupon_id' => $coupon->id,'member_id' => $this->input->get('user_id')])->row();
+			if (isset($user_coupon)) {
+				echo 'คูปองนี้ ท่านใช้งานไปแล้วค่ะ';
+			}
+			echo 'คูปองนี้ สามารถใช้งานได้ค่ะ';
+		}else{
+			echo 'ไม่พบคูปองนี้ค่ะ';
+		}
+		
+	}
+
 }

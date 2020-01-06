@@ -163,6 +163,9 @@
                                                                                <label for="data-name">ผู้ส่ง</label>
 
                                                                                <select class="form-control" name="id_rider" onchange="location = this.value;">
+                                                                               <?php if ($orderDetail['rider'] == '0') { ?>
+                                                                                    <option>ยังไม่มีผู้ส่ง</option>
+                                                                               <?php } ?>
                                                                                    <?php $rider = $this->db->get('tbl_rider')->result_array(); ?>
                                                                                    <?php foreach ($rider as $key => $rider) { ?>
 
@@ -176,8 +179,10 @@
                                                                            <div class="controls">
                                                                                <label for="data-name">รายการเมนู</label>
                                                                                <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->result_array(); ?>
-                                                                               <?php foreach ($order_type as $key => $order_type) { ?>
-                                                                                   <div class="form-control"><?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
+                                                                               <?php foreach ($order_type as $key => $order_type) { 
+                                                                                    $key += 1;   
+                                                                                ?>
+                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
                                                                                <?php } ?>
                                                                            </div>
                                                                        </div>
@@ -251,62 +256,65 @@
    <!-- END: Content-->
 
    <script>
-    function initMap() {
-        
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
+  function initMap() {
+ 
+ var directionsService = new google.maps.DirectionsService();
+ var directionsRenderer = new google.maps.DirectionsRenderer();
+ navigator.geolocation.getCurrentPosition(function(position) {
+ 
+     
+ <?php foreach ($round as $key => $round) { ?>  
+     
+     var posNow = [
+                     {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
+                     {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
+                 ];
+     var maps;
+         maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
+         center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+         zoom: 18,
+     });
 
-        navigator.geolocation.getCurrentPosition(function(position) {
-        
-            
-        <?php foreach ($round as $key => $round) { ?>  
-            
-            var posNow = [
-                            {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
-                            {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
-                        ];
-            var maps;
-            maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
-            center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
-            zoom: 18,
-            });
+     directionsRenderer.setMap(maps);
 
-            var marker, info;
+     var marker, info;
 
-            $.each(posNow, function(i, item){
+     $.each(posNow, function(i, item){
 
-                    marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(item.lat, item.lng),
-                    map: maps,
-                    title: item.location
-                    });
+             marker = new google.maps.Marker({
+             position: new google.maps.LatLng(item.lat, item.lng),
+             map: maps,
+             title: item.location
+             });
 
-                info = new google.maps.InfoWindow();
+         info = new google.maps.InfoWindow();
 
-                // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                //     return function() {
-                        
-                //     info.setContent(item.location);
-                //     info.open(maps, marker);
+         // google.maps.event.addListener(marker, 'click', (function(marker, i) {
+         //     return function() {
+                 
+         //     info.setContent(item.location);
+         //     info.open(maps, marker);
 
-      
-                //     }
-                // })(marker, i));
 
-                google.maps.event.addListener(marker, 'load', (function(marker, i) {    
-                    info.setContent(item.location);
-                    info.open(maps, marker);    
-                })(marker, i));
+         //     }
+         // })(marker, i));
 
-            });
+         google.maps.event.addListener(marker, 'load', (function(marker, i) {    
+             info.setContent(item.location);
+             info.open(maps, marker);   
+             
+         })(marker, i));
 
-           
+     });
 
-        <?php }  ?> 
-        
-        });//end navi  
-          
-    }
+
+
+ <?php }  ?> 
+ 
+ });//end navi               
+     
+}
+
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);

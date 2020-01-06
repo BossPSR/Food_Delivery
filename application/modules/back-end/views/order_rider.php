@@ -243,10 +243,11 @@
    <!-- END: Content-->
 
    <script>
-    function initMap() {
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
 
+    function initMap() {
+ 
+        var directionsService = new google.maps.DirectionsService();
+        var directionsRenderer = new google.maps.DirectionsRenderer();
         navigator.geolocation.getCurrentPosition(function(position) {
         
             
@@ -257,10 +258,12 @@
                             {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
                         ];
             var maps;
-            maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
-            center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
-            zoom: 18,
+                maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
+                center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+                zoom: 18,
             });
+
+            directionsRenderer.setMap(maps);
 
             var marker, info;
 
@@ -286,12 +289,13 @@
 
                 google.maps.event.addListener(marker, 'load', (function(marker, i) {    
                     info.setContent(item.location);
-                    info.open(maps, marker);    
+                    info.open(maps, marker);   
+                    
                 })(marker, i));
 
             });
 
-           
+
 
         <?php }  ?> 
         

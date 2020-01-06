@@ -56,7 +56,17 @@
                     <tr>
                         <td colspan="2"></td>
                         <th>สถานะ</th>
-                        <td><?php echo $orderAll['status'];?></td>
+                        <?php if ($orderAll['status'] == '0') : ?>
+                            <td>กำลังตรวจสอบ</td>
+                        <?php elseif ($orderAll['status'] == '1') : ?>
+                            <td>กำลังดำเนินงาน</td>
+                        <?php elseif ($orderAll['status'] == '2') : ?>
+                            <td>กำลังจัดส่งอาหาร</td>
+                        <?php elseif ($orderAll['status'] == '3') : ?>
+                            <td>จัดส่งเรียบร้อย</td>
+                        <?php else : ?>
+                            <td>ยกเลิกรายการอาหาร</td>
+                        <?php endif ?>
                     </tr>                    
                 </tbody>
             </table>
