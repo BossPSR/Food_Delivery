@@ -74,11 +74,20 @@ class AdminLogin_ctr extends CI_Controller {
   }
 
   public function profile()
-	{
-       
-    $this->load->view('option/header');
-    $this->load->view('profile');
-    $this->load->view('option/footer');
+  {
+
+     if ($this->session->userdata('username') == '') {
+            redirect('Admin_Login');
+        } else {
+        $data = [];
+        $data['profile'] = $this->db->get_where('tbl_admin',['username'=>$this->session->userdata('username')])->row_array();
+
+        $this->load->view('option/header');
+        $this->load->view('profile',$data);
+        $this->load->view('option/footer');
+        }
+
+
           
   }
 

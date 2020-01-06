@@ -31,18 +31,27 @@
                                 <div class="card-content">
                                     <div class="card-body">
                                         <div class="col-sm-6 data-field-col data-list-upload m-auto">
-                                            <label for="data-name">รูปภาพโปรไฟล์</label>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                            <div>
+                                                <label for="data-name">ชื่อ</label>
+                                                <div class="custom-file form-group">                 
+                                                    <input type="text" class="form-control" id="data-name" value="<?php echo $profile['full_name']; ?>">
+                                                </div>
                                             </div>
-       
-                                            <label for="data-name">ชื่อ</label>
-                                            <input type="text" class="form-control" id="data-name">
-
+                                            
+                                            <div>
+                                                <label for="data-name">รูปภาพโปรไฟล์</label>
+                                                <div class="custom-file form-group">
+                                                    <input type="file" name="file_name" class="custom-file-input" id="inputGroupFile01" onchange="readURL(this);">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    <div style="width: 115px;margin: 15px auto 0;">
+                                                        <img id="blah" style="max-width:100%;" src="" alt="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
                                            
                                             
-                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
+                                            <div class="add-data-footer d-flex justify-content-around px-3 mt-5">
                                                 <div class="add-data-btn">
                                                     <button class="btn btn-primary">Add Data</button>
                                                 </div>
@@ -65,3 +74,17 @@
         </div>
     </div>
     <!-- END: Content-->
+
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
