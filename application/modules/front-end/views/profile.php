@@ -3,6 +3,7 @@
 		<h2 class="section-title sep-type-2 text-center">Profile</h2>
 		    <div class="container">
 				<div class="row">
+				<?php if (!empty($user)) { ?>
 					<div class="col-sm-12">
 					<form action="my_profile_save" method="post">
 						<div class="form-reservation">
@@ -77,6 +78,33 @@
 					</div>				
 				</form>
 			</div>
+				<?php }else{?>
+
+					<div class="col-sm-12">
+					<form action="" method="post">
+						<div class="form-reservation">
+							<input type="text" name="id" value="<?php echo $user_f['id'] ?>" hidden>
+                                <h3 style="color:#25282b;">ข้อมูลส่วนตัว</h3>
+                                <hr>
+                                <div class="column">
+									<span>
+										<input type="text" name="first_name" value="<?php echo $user_f['first_name'] ?>" placeholder="ชื่อ" class="required-field" readonly>
+									</span>
+									<span>
+										<input type="text" name="last_name" value="<?php echo $user_f['last_name'] ?>" placeholder="นามสกุล" class="required-field" readonly>
+									</span>
+							    </div>
+
+								<div class="column">
+									<span style="float:left;">
+										<input type="email" name="email" value="<?php echo $user_f['email'] ?>" placeholder="อีเมล" class="required-field" readonly>
+									</span>
+							    </div>
+								
+					</div>				
+				</form>
+			</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>
