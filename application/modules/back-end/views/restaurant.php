@@ -34,7 +34,7 @@
                                     <th>ชื่อเจ้าของร้าน</th>
                                     <th>ประเภทร้านอาหาร</th>
                                     <th>เวลาเปิด-ปิด</th>
-                                    <th>สถานะ</th>
+                                    <th>ร้านอาหารแนะนำ</th>
                                     <th>เครื่องมือ</th>
                                 </tr>
                             </thead>
@@ -54,14 +54,14 @@
                                     
                                     <td class="product-name"><?php echo $restaurant['restaurant_open'].' '.$restaurant['restaurant_close'];?></td>
                                     <td>
-                                    <?php if ($restaurant['status'] == '1') { ?>
+                                    <?php if ($restaurant['status_show'] == '1') { ?>
                                            
                                             <div class="dropdown">
                                                 <button class="btn btn-success dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     เปิด
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="status_restaurant?id=<?php echo $restaurant['id']; ?>&status=0">ปิด</a>
+                                                    <a class="dropdown-item" href="status_show_restaurant?id=<?php echo $restaurant['id']; ?>&status=0">ปิด</a>
                                                 </div>
                                             </div> 
 
@@ -72,7 +72,7 @@
                                                     ปิด
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                                    <a class="dropdown-item" href="status_restaurant?id=<?php echo $restaurant['id']; ?>&status=1">เปิด</a>
+                                                    <a class="dropdown-item" href="status_show_restaurant?id=<?php echo $restaurant['id']; ?>&status=1">เปิด</a>
                                                 </div>
                                             </div> 
 

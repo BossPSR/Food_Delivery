@@ -105,15 +105,18 @@ class Resturant_ctr extends CI_Controller {
 		
 		foreach ($this->cart->contents() as $items)
 		{
+			$resturant = $this->db->get_where('tbl_restaurant',['id' => $items['id_restaurant']])->row_array();
 			$data_item = array(
-				'id_order' 			=> $id,
-				'id_restaurant' 	=> $items['id_restaurant'],
-				'name_item' 		=> $items['name'],
-				'qty' 				=> $items['qty'],
-				'price_item' 		=> $items['price'],
-				'file_name' 		=> $items['file_name'],
-				'sumtotal' 			=> $this->cart->format_number($items['subtotal']),
-				'created_at' 		=> date('Y-m-d H:i:s')
+				'id_order' 				=> $id,
+				'restaurant' 	    	=> $resturant['restaurant_name'],
+				'restaurant_address' 	=> $resturant['restaurant_address'],
+				'restaurant_tel' 	    => $resturant['restaurant_tel'],
+				'name_item' 			=> $items['name'],
+				'qty' 					=> $items['qty'],
+				'price_item' 			=> $items['price'],
+				'file_name' 			=> $items['file_name'],
+				'sumtotal' 				=> $this->cart->format_number($items['subtotal']),
+				'created_at' 			=> date('Y-m-d H:i:s')
 			);
 			$success = $this->db->insert('tbl_order_detail', $data_item);
 

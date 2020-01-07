@@ -88,7 +88,9 @@ $route['adminEdit_profile']             = 'back-end/AdminLogin_ctr/editProfile';
 $route['Rider_edit']                    = 'back-end/AdminOrder_ctr/rider_edit'; 
 $route['coupon']                        = 'back-end/AdminRestaurant_ctr/coupon'; 
 $route['coupon_com']                    = 'back-end/AdminRestaurant_ctr/coupon_com'; 
-$route['edit_coupon_com']                = 'back-end/AdminRestaurant_ctr/edit_coupon_com'; 
+$route['edit_coupon_com']               = 'back-end/AdminRestaurant_ctr/edit_coupon_com'; 
 $route['delete_coupon']                 = 'back-end/AdminRestaurant_ctr/delete_coupon'; 
-
+$route['status_show_contact']           = 'back-end/AdminBlog_ctr/status_show_contact'; 
+$route['status_show_restaurant']        = 'back-end/AdminRestaurant_ctr/status_show_restaurant'; 
+$route['status_show_food']              = 'back-end/AdminRestaurant_ctr/status_show_food'; 
 // 

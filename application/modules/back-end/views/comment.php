@@ -34,6 +34,30 @@
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
+                                        <?php if ($contact['status_show'] == '1') { ?>
+                                           
+                                           <div class="dropdown text-right">
+                                               <button class="btn btn-success dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   เปิดการโชว์หน้าเว็บไซต์
+                                               </button>
+                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                   <a class="dropdown-item" href="status_show_contact?id=<?php echo $contact['id']; ?>&status=0">ปิด</a>
+                                               </div>
+                                           </div> 
+
+                                           <?php } else { ?>
+
+                                           <div class="dropdown text-right">
+                                               <button class="btn btn-danger dropdown-toggle mr-1" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   ปิดการโชว์หน้าเว็บไซต์
+                                               </button>
+                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                   <a class="dropdown-item" href="status_show_contact?id=<?php echo $contact['id']; ?>&status=1">เปิด</a>
+                                               </div>
+                                           </div> 
+
+                                           <?php } ?> 
+
                                         <h4 class="card-title"><?php echo $contact['subject'] ?></h4>
                                         <p class="card-text"><?php echo $contact['description'] ?></p>
                                         <p class="card-text"><?php echo $contact['email'].' Tel.'.$contact['tel'] ?></p>

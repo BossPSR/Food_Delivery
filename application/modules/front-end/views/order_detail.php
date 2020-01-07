@@ -15,6 +15,7 @@
                         <th scope="col">รายการ</th>
                         <th scope="col">จำนวน</th>
                         <th scope="col">ราคา</th>
+                        <th scope="col">ราคารวม</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,18 +29,22 @@
                         <th scope="row"><?php echo $i;?></th> 
                         <td><?php echo $orderDetail['name_item'];?></td>
                         <td><?php echo $orderDetail['qty'];?></td>
-                        <td><?php echo $orderDetail['price_item'];?></td>
+                        <td><?php echo number_format($orderDetail['price_item'],2);?></td>
+                        <td><?php echo $orderDetail['sumtotal'];?></td>
                     </tr>
                     <?php 
                     
                         
-                        $restaurant[] = $orderDetail['id_restaurant'];
+                        $restaurant[] = $orderDetail['restaurant'];
+                        $address_restaurant[] = $orderDetail['restaurant_address'];
+                        $tel_restaurant[] = $orderDetail['restaurant_tel'];
                         
                     ?>
                 <?php 
                     } 
                     $restaurant = array_unique($restaurant);
-                    $addressRestaurant = $this->db->get_where('tbl_restaurant',['id' => $restaurant[0]])->row_array();
+                    $addressRestaurant = array_unique($address_restaurant);
+                    $telRestaurant = array_unique($tel_restaurant);
                 ?>
 
                 
@@ -49,12 +54,20 @@
                         <td>฿15</td>
                     </tr> -->
                     <tr>
-                        <td colspan="2"></td>
-                        <th>รวม</th>
-                        <td><?php echo $orderAll['total'];?></td>
+                        <td colspan="3"></td>
+                        <th>ราคารวมทั้งหมด</th>
+                        <td><?php 
+                                if (isset($orderAll['vat'])) {
+                                    $totalPrice = $orderAll['total'] + $orderAll['vat'];
+                                    echo number_format($totalPrice,2);
+                                }else{
+                                    echo number_format($orderAll['total'],2);
+                                }
+                            ?>
+                        </td>
                     </tr>    
                     <tr>
-                        <td colspan="2"></td>
+                        <td colspan="3"></td>
                         <th>สถานะ</th>
                         <?php if ($orderAll['status'] == '0') : ?>
                             <td style="color:coral">กำลังตรวจสอบ</td>
@@ -81,9 +94,9 @@
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-1 col-lg-6">
-                    <div>ชื่อร้าน <?php echo $addressRestaurant['restaurant_name'];?></div>
-                    <div>เบอร์ติดต่อ <?php echo $addressRestaurant['restaurant_tel']; ?></div>
-                    <div>ที่อยู่ร้าน <?php echo $addressRestaurant['restaurant_address']; ?></div>
+                    <div>ชื่อร้าน <?php echo  $restaurant[0];?></div>
+                    <div>เบอร์ติดต่อ <?php echo $addressRestaurant[0]; ?></div>
+                    <div>ที่อยู่ร้าน <?php echo $telRestaurant[0]; ?></div>
                 </div>
             </div>
 

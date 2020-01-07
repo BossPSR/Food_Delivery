@@ -53,7 +53,8 @@ class AdminRestaurant_ctr extends CI_Controller {
                         'restaurant_email'          => $this->input->post('restaurant_email') , 
                         'restaurant_open'          => $this->input->post('restaurant_open') , 
                         'restaurant_close'          => $this->input->post('restaurant_close') , 
-                        'restaurant_address'          => $this->input->post('restaurant_address') , 
+                        'restaurant_address'          => $this->input->post('restaurant_address') ,
+                        'status_show'     => "0", 
                         'created_at'     => date('Y-m-d H:i:s') 
 
                     );
@@ -191,7 +192,11 @@ class AdminRestaurant_ctr extends CI_Controller {
         {
             $this->session->set_flashdata('save_ss2','ลบข้อมูลประเภทร้านอาหารเรียบร้อยแล้ว');
         }
-        return redirect('Admin_Restaurant');
+
+        $this->db->where('id_restaurant',$id);
+        $this->db->delete('tbl_menu');
+
+        redirect('Admin_Restaurant');
     }
 
     
@@ -361,6 +366,44 @@ class AdminRestaurant_ctr extends CI_Controller {
     }
 
 
+    public function status_show_restaurant()
+    {
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
 
+        $this->db->where('id', $id);
+        $resultsedit = $this->db->update('tbl_restaurant',['status_show' => $status]);
+
+        if($resultsedit > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลสถานะร้านอาหารแนะนำเรียบร้อยแล้ว !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลสถานะร้านอาหารแนะนำได้');
+        }
+        return redirect('Admin_Restaurant');
+    }
+
+    public function status_show_food()
+    {
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
+        $id_restaurant = $this->input->get('id_restaurant');
+        $id_food = $this->input->get('id_food');
+
+        $this->db->where('id', $id);
+        $resultsedit = $this->db->update('tbl_menu',['status_show' => $status]);
+
+        if($resultsedit > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลสถานะร้านอาหารแนะนำเรียบร้อยแล้ว !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลสถานะร้านอาหารแนะนำได้');
+        }
+        return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
+    }
   
 }

@@ -81,11 +81,10 @@
                                        <td class="product-name"><?php echo $orderDetail['code']; ?></td>
 
                                        <td class="product-name">
-                                           <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->row_array(); ?>
-                                           <?php $restaurant_name = $this->db->get_where('tbl_restaurant', ['id' => $order_type['id_restaurant']])->result_array(); ?>
-                                           <?php foreach ($restaurant_name as $key => $restaurant_name) { ?>
-                                               <?php echo $restaurant_name['restaurant_name']; ?>
-                                           <?php } ?>
+                                            <?php $order_type = $this->db->get_where('tbl_order_detail', ['id_order' => $orderDetail['id']])->row_array(); ?>
+                                           <?php $restaurant_name = $this->db->get_where('tbl_restaurant', ['restaurant_name' => $order_type['restaurant']])->row_array(); ?>
+                                          
+                                            <?php echo $restaurant_name['restaurant_name']; ?>
                                        </td>
 
 
@@ -198,6 +197,13 @@
                                                                                <?php }else{ ?>
                                                                                 <div class="form-control"><?php echo $orderDetail['total']; ?></div>
                                                                                <?php } ?>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">เบอร์โทร</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['tel']; ?></div>
                                                                            </div>
                                                                        </div>
 

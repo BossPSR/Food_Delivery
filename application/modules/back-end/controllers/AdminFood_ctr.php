@@ -29,7 +29,7 @@ class AdminFood_ctr extends CI_Controller {
       
         // |xlsx|pdf|docx
         $config['upload_path'] = './uploads/food';
-        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['allowed_types'] = '*';
         $config['max_size']     = '200480';
         $config['max_width'] = '5000';
         $config['max_height'] = '5000';
@@ -51,6 +51,7 @@ class AdminFood_ctr extends CI_Controller {
                         'price_menu'   => $this->input->post('price_menu') , 
                         'id_type_food'   => $this->input->post('id_food') , 
                         'id_restaurant'   => $this->input->post('id_restaurant') , 
+                        'status_show'     => "0",
                         'created_at'     => date('Y-m-d H:i:s') 
 
                     );
@@ -70,7 +71,7 @@ class AdminFood_ctr extends CI_Controller {
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลเมนูได้');
             }
-            return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
+            redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
     }
 
     public function food_edit_com()
@@ -144,7 +145,7 @@ class AdminFood_ctr extends CI_Controller {
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลเมนูอาหารได้');
             }
-            return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
+            redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
     }
 
 
@@ -167,6 +168,6 @@ class AdminFood_ctr extends CI_Controller {
         {
             $this->session->set_flashdata('save_ss2','ลบข้อมูลเมนูเรียบร้อยแล้ว');
         }
-        return redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
+        redirect('Admin_Food?id='.$id_food.'&id_restaurant='.$id_restaurant);
     }
 }

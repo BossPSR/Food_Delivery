@@ -12,9 +12,9 @@
                             <h2 class="content-header-title float-left mb-0">อาหาร</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="Admin_Restaurant">ร้านอาหาร</a>
+                                    <li class="breadcrumb-item active">ร้านอาหาร
                                     </li>
-                                    <li class="breadcrumb-item"><a href="Admin_Type_Food_Restaurant">ประเภทอาหาร</a>
+                                    <li class="breadcrumb-item active">ประเภทอาหาร
                                     </li>
                                     <li class="breadcrumb-item active">อาหาร
                                     </li>
@@ -38,12 +38,13 @@
                                     <th>รูปภาพ</th>
                                     <th>ชื่ออาหาร</th>
                                     <th>ราคา</th>
+                                    <th>อาหารแนะนำ</th>
                                     <th>เครื่องมือ</th>
                                 </tr>
                             </thead>
                             <tbody>
                     
-                            <?php $food = $this->db->get_where('tbl_menu',['id_type_food' => $id_food])->result_array(); ?>
+                            <?php $food = $this->db->get_where('tbl_menu',['id_restaurant' => $id_restaurant,'id_type_food' => $id_food])->result_array(); ?>
                             <?php foreach ($food as $key => $food) { ?>
                                 <tr>
                                     <td></td>
@@ -51,6 +52,31 @@
                                     </td>
                                     <td class="product-name"><?php echo $food['name_menu'];?></td>
                                     <td class="product-price"><?php echo $food['price_menu'];?> บาท</td>
+                                    <td>
+                                    <?php if ($food['status_show'] == '1') { ?>
+                                           
+                                           <div class="dropdown">
+                                               <button class="btn btn-success dropdown-toggle mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   เปิด
+                                               </button>
+                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                   <a class="dropdown-item" href="status_show_food?id=<?php echo $food['id']; ?>&status=0&id_restaurant=<?php echo $id_restaurant ?>&id_food=<?php echo $id_food ?>">ปิด</a>
+                                               </div>
+                                           </div> 
+
+                                           <?php } else { ?>
+
+                                           <div class="dropdown">
+                                               <button class="btn btn-danger dropdown-toggle mr-1" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                   ปิด
+                                               </button>
+                                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                   <a class="dropdown-item" href="status_show_food?id=<?php echo $food['id']; ?>&status=1&id_restaurant=<?php echo $id_restaurant ?>&id_food=<?php echo $id_food ?>">เปิด</a>
+                                               </div>
+                                           </div> 
+
+                                           <?php } ?> 
+                                    </td>
                                     <td class="product-action">
                                         <span data-toggle="modal" data-target="#exampleModal<?php echo $food['id'];?>"><i class="feather icon-edit" style="font-size:25px;"></i></span>
                                         <a href="delete_food?id=<?php echo $food['id'];?>&id_restaurant=<?php echo $id_restaurant; ?>&id_food=<?php echo $id_food; ?>"><span class="action-delete"><i class="feather icon-trash" style="font-size:25px;"></i></span></a>

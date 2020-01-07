@@ -11,7 +11,7 @@
                             <h2 class="content-header-title float-left mb-0">ประเภทอาหาร</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="Admin_Restaurant">ร้านอาหาร</a>
+                                    <li class="breadcrumb-item active">ร้านอาหาร
                                     </li>
                                     <li class="breadcrumb-item active">ประเภทอาหาร
                                     </li>

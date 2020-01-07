@@ -85,6 +85,28 @@ class AdminBlog_ctr extends CI_Controller {
         $this->load->view('option/footer');
           
     }
+
+    public function status_show_contact()
+	{
+        $id = $this->input->get('id');
+        $status = $this->input->get('status');
+   
+
+        $this->db->where('id', $id);
+        $status_show_contact = $this->db->update('tbl_contact',['status_show' => $status]);
+         
+
+        if($status_show_contact > 0)
+        {
+            $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลสถานะการโชว์เรียบร้อยแล้ว !!.');
+        }
+        else
+        {
+            $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลสถานะการโชว์ได้');
+        }
+        
+        redirect('Admin_Blog_Comment');
+    }
     
   
 

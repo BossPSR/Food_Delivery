@@ -120,7 +120,7 @@
 		<section id="restaurant-menu" class="padd-100">
 			<span class="section-suptitle text-center">Food Lover</span>
 			<h2 class="section-title sep-type-2 text-center">
-				ร้านอาหาร
+				ร้านอาหารแนะนำ
 			</h2>
 
 			<ul class="restaurant-filter">
