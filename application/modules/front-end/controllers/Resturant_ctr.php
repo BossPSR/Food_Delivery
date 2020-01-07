@@ -108,9 +108,9 @@ class Resturant_ctr extends CI_Controller {
 			$resturant = $this->db->get_where('tbl_restaurant',['id' => $items['id_restaurant']])->row_array();
 			$data_item = array(
 				'id_order' 				=> $id,
-				'restaurant' 	    	=> $resturant['restaurant_name'],
-				'restaurant_address' 	=> $resturant['restaurant_address'],
-				'restaurant_tel' 	    => $resturant['restaurant_tel'],
+				'restaurant' 	    	=> $resturant['restaurant_name'],			
+				'restaurant_address' 	=> $this->input->post('address').' '.$this->input->post('district').' '.$this->input->post('amphur').' '.$this->input->post('province').' '.$this->input->post('zipcode'),
+				'restaurant_tel' 	    => $this->input->post('tel'),
 				'name_item' 			=> $items['name'],
 				'qty' 					=> $items['qty'],
 				'price_item' 			=> $items['price'],
