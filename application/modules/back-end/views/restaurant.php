@@ -229,11 +229,11 @@
                                     <i class="feather icon-x"></i>
                                 </div>
                             </div>
-                            <form action="food_add_com"  method="POST" >
+                            <form action="Restaurant_add_com" method="POST" enctype="multipart/form-data">
                             <div class="data-items pb-3">
                                 <div class="data-fields px-2 mt-3">
                                     <div class="row">
-                                        <form action="Restaurant_add_com" method="POST" enctype="multipart/form-data">
+                                        
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">ประเภทร้านอาหาร</label>
                                             <select class="form-control" name="id_type_restaurant">
@@ -300,12 +300,13 @@
                             </div>
                             <div class="add-data-footer d-flex justify-content-around px-3 mt-2 form-group">
                                     <div class="add-data-btn">
-                                        <button class="btn btn-primary">เพิ่มข้อมูล</button>
+                                        <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
                                     </div>
-                                </div>
+                            </div>
+                            </form>
                         </div>
                     </div>
-                    </form>
+                    
                     <!-- add new sidebar ends -->
                 </section>
                 <!-- Data list view end -->

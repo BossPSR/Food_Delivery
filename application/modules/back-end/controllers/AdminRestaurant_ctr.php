@@ -58,10 +58,11 @@ class AdminRestaurant_ctr extends CI_Controller {
 
                     );
                      
-                    $resultsedit = $this->db->insert('tbl_restaurant',$data);
+                    
                 }
-               
             }
+            
+                $resultsedit = $this->db->insert('tbl_restaurant',$data);
 
            
 
@@ -73,7 +74,7 @@ class AdminRestaurant_ctr extends CI_Controller {
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลร้านอาหารได้');
             }
-            return redirect('Admin_Restaurant');
+            redirect('Admin_Restaurant');
     }
 
     public function restaurant_edit_com()

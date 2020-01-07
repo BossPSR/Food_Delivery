@@ -17,13 +17,13 @@
 			<h2 class="sr-only">Blog</h2>
 			<div class="container">
 				<div class="row">
-
-					<div class="col-md-12">
-						<?php 
+					<?php 
 							$i = 0;
 							foreach ($promotion as $promotionDetail) {
 							$i += 1;
 						?>
+					<div class="col-md-12">
+						
 						<article class="blog-item">
 							<div class="col-md-4">
 								<div class="entry-thumbnail text-center" style="height: 282px; overflow: hidden;display: flex;justify-content: center;align-items: center;">
@@ -65,10 +65,11 @@
 							</div>
 							
 						</article>
+						</div>
 							<?php 
 								} 
 							?>
-						<div class="pagination sep-type-2">
+						<!-- <div class="pagination sep-type-2">
 							<ul>
 								<li><a href="#" class="prev">previous </a></li>
 								<li><a href="#" class="active">1</a></li>
@@ -78,8 +79,8 @@
 							
 								<li><a href="#" class="next">Next</a></li>
 							</ul>
-						</div>
-					</div>
+						</div> -->
+					
 					
 				</div>
 			</div>

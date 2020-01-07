@@ -317,12 +317,13 @@
          google.maps.event.addListener(marker, 'load', (function(marker, i) {    
              info.setContent(item.location);
              info.open(maps, marker);   
-             
          })(marker, i));
+
+         
 
      });
 
-
+     
 
  <?php }  ?> 
  
