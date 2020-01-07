@@ -91,5 +91,64 @@ class AdminLogin_ctr extends CI_Controller {
           
   }
 
+  public function editProfile()
+  {
+    if($this->session->userdata('username') == '') {
+        redirect('Admin_Login');
+    }else{
+        $profile = $this->db->get_where('tbl_admin',['username'=>$this->session->userdata('username')])->row_array();
+        if (!empty($profile)) {
+           
+            $this->load->library('upload');
+      
+            // |xlsx|pdf|docx
+            $config['upload_path'] = './uploads/admin';
+            $config['allowed_types'] = '*';
+            $config['max_size']     = '200480';
+            $config['max_width'] = '5000';
+            $config['max_height'] = '5000';
+            $name_file = "Admin-".time();
+            $config['file_name'] = $name_file;
+    
+            $this->upload->initialize($config);     
+    
+            if (empty($_FILES['file_name']['name'])) 
+            {
+                $data = [
+                    'full_name' => $this->input->post('full_name')
+                ];
+
+            }else{
+
+                if ($_FILES['file_name']['name']) {           
+                    if ($this->upload->do_upload('file_name')){
+    
+                        $gamber     = $this->upload->data();
+                        $data = [
+                            'full_name' => $this->input->post('full_name'),
+                            'file_name' => $gamber['file_name'],
+                        ];
+    
+                    }
+                }
+            }
+            $this->db->where('id', $profile['id']);
+            $result = $this->db->update('tbl_admin',$data);
+
+            if($result > 0)
+            {
+                $this->session->set_flashdata('save_ss2','แก้ไขข้อมูลAdminเรียบร้อยแล้ว !!.');
+            }
+            else
+            {
+                $this->session->set_flashdata('del_ss2','ไม่สามารถแก้ไขข้อมูลAdminได้');
+            }
+            return redirect('Admin_Profile');
+            
+        }
+
+    }
+  }
+
 
 }

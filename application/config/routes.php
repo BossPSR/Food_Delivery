@@ -76,17 +76,18 @@ $route['Admin_Type_Restaurant']         = 'back-end/AdminRestaurant_ctr/type_res
 $route['Admin_Type_Food_Restaurant']    = 'back-end/AdminRestaurant_ctr/type_food'; 
 $route['Admin_Food']                    = 'back-end/AdminFood_ctr'; 
 $route['food_add_com']                  = 'back-end/AdminFood_ctr/food_add_com'; 
-$route['food_edit_com']                  = 'back-end/AdminFood_ctr/food_edit_com'; 
+$route['food_edit_com']                 = 'back-end/AdminFood_ctr/food_edit_com'; 
 $route['delete_food']                   = 'back-end/AdminFood_ctr/delete_food'; 
 $route['Admin_Blog_Promotion']          = 'back-end/AdminBlog_ctr/promotion'; 
 $route['Admin_Blog_Promotion_Add']      = 'back-end/AdminBlog_ctr/add_promotion'; 
 $route['promotion_add_com']             = 'back-end/AdminBlog_ctr/promotion_add_com'; 
 $route['Admin_Blog_Comment']            = 'back-end/AdminBlog_ctr/comment'; 
 $route['Admin_Profile']                 = 'back-end/AdminLogin_ctr/profile'; 
-$route['Rider_edit']                 = 'back-end/AdminOrder_ctr/rider_edit'; 
-$route['coupon']                     = 'back-end/AdminRestaurant_ctr/coupon'; 
-$route['coupon_com']                 = 'back-end/AdminRestaurant_ctr/coupon_com'; 
-$route['edit_coupon_com']                 = 'back-end/AdminRestaurant_ctr/edit_coupon_com'; 
+$route['adminEdit_profile']             = 'back-end/AdminLogin_ctr/editProfile'; 
+$route['Rider_edit']                    = 'back-end/AdminOrder_ctr/rider_edit'; 
+$route['coupon']                        = 'back-end/AdminRestaurant_ctr/coupon'; 
+$route['coupon_com']                    = 'back-end/AdminRestaurant_ctr/coupon_com'; 
+$route['edit_coupon_com']                = 'back-end/AdminRestaurant_ctr/edit_coupon_com'; 
 $route['delete_coupon']                 = 'back-end/AdminRestaurant_ctr/delete_coupon'; 
 
 // 

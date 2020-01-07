@@ -84,7 +84,7 @@ class AdminRider_ctr extends CI_Controller {
       
         // |xlsx|pdf|docx
         $config['upload_path'] = './uploads/rider';
-        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['allowed_types'] = '*';
         $config['max_size']     = '200480';
         $config['max_width'] = '5000';
         $config['max_height'] = '5000';
