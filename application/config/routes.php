@@ -67,6 +67,7 @@ $route['Restaurant_edit_com']            = 'back-end/AdminRestaurant_ctr/restaur
 $route['status_restaurant']             = 'back-end/AdminRestaurant_ctr/status_restaurant'; 
 $route['Admin_Restaurant_com']          = 'back-end/AdminRestaurant_ctr/type_restaurant_com'; 
 $route['Admin_Restaurant_edit_com']     = 'back-end/AdminRestaurant_ctr/edit_type_food_restaurant'; 
+$route['delete_type_food_restaurant']     = 'back-end/AdminRestaurant_ctr/delete_type_food_restaurant'; 
 $route['delete_restaurant']             = 'back-end/AdminRestaurant_ctr/delete_restaurant'; 
 $route['Admin_Type_Food']               = 'back-end/AdminTypeFood_ctr'; 
 $route['Admin_Type_Food_com']           = 'back-end/AdminTypeFood_ctr/type_food'; 

@@ -10,8 +10,6 @@
                             <h2 class="content-header-title float-left mb-0">โปรโมชั่น</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                    </li>
                                     <li class="breadcrumb-item active">บล๊อก
                                     </li>
                                     <li class="breadcrumb-item active">โปรโมชั่น
@@ -33,7 +31,7 @@
                 <?php foreach ($promotion as $key => $promotion) { ?>
                 <!-- Card Captions and Overlay section start -->
                 <section id="card-caps">
-                    <div class="row my-3">
+                    <div class="row my-3" style="display: flex; justify-content: center;">
                         <div class="col-xl-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-content">

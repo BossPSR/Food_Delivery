@@ -51,6 +51,18 @@ class AdminOrder_ctr extends CI_Controller
         $success = $this->db->update('tbl_order', $data);
 
 
+        $rider = $this->db->get_where('tbl_rider',['id' => $id_rider])->row();
+        if ($rider->status == 1) {
+            $this->db->where('id',$id_rider);
+            $this->db->update('tbl_rider', ['status' => 0]);
+        }else{
+            $this->db->where('id',$id_rider);
+            $this->db->update('tbl_rider', ['status' => 1]);
+        }
+
+        
+
+
 
         if ($success > 0) {
             $this->session->set_flashdata('save_ss2', 'เพิ่มผู้ส่งเรียบร้อยแล้ว!!.');
@@ -76,8 +88,11 @@ class AdminOrder_ctr extends CI_Controller
         );
         $this->db->where('id', $id_order);
         $success = $this->db->update('tbl_order', $data);
-
-
+        $rider = $this->db->get_where('tbl_rider',['username' => $this->session->userdata('username')])->row();
+        if ($id_status == 3 || $id_status == 4) {
+            $this->db->where('id',$rider->id);
+            $this->db->update('tbl_rider', ['status' => 1]);
+        }
 
         if ($success > 0) {
             $this->session->set_flashdata('save_ss2', 'เปลี่ยนสถานะเรียบร้อยแล้ว!!.');

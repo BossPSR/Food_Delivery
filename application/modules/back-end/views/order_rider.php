@@ -20,10 +20,7 @@
                            <h2 class="content-header-title float-left mb-0">รายการอาหารล่าสุด</h2>
                            <div class="breadcrumb-wrapper col-12">
                                <ol class="breadcrumb">
-                                   <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                   </li>
-                                   <li class="breadcrumb-item"><a href="#">Order List</a>
-                                   </li>
+                                   
                                    <li class="breadcrumb-item active">รายการอาหารล่าสุด
                                    </li>
                                </ol>
@@ -161,23 +158,24 @@
                                                                            </div>
 
                                                                        </div>
+
                                                                        <div class="form-group">
                                                                            <div class="controls">
-                                                                               <label for="data-name">ผู้ส่ง</label>
+                                                                               <label for="data-name">สถานะ</label>
+                                                                            
+                                                                             <select class="form-control" name="id_status"  onchange="location = this.value;">
+                                                                        
+                                                                           
+                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=1" <?php if($orderDetail['status'] == 1) echo 'selected'; ?>>กำลังดำเนินงาน</option>
+                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=2" <?php if($orderDetail['status'] == 2) echo 'selected'; ?>>กำลังจัดส่งอาหาร</option>
+                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=3" <?php if($orderDetail['status'] == 3) echo 'selected'; ?>>จัดส่งเรียบร้อย</option>
+                                                                         <option value="Admin_Order_status?id_order=<?php echo $orderDetail['id']; ?>&id_status=4" <?php if($orderDetail['status'] == 4) echo 'selected'; ?>>ยกเลิกรายการอาหาร</option>
 
-                                                                               <select class="form-control" name="id_rider" onchange="location = this.value;">
-                                                                               <?php if ($orderDetail['rider'] == '0') { ?>
-                                                                                    <option>ยังไม่มีผู้ส่ง</option>
-                                                                               <?php } ?>
-                                                                                   <?php $rider = $this->db->get('tbl_rider')->result_array(); ?>
-                                                                                   <?php foreach ($rider as $key => $rider) { ?>
-
-                                                                                       <option value="Rider_edit?id_order=<?php echo $orderDetail['id']; ?>&id_rider=<?php echo $rider['id']; ?>" <?php echo $rider['id'] == $orderDetail['rider'] ? "selected" : "" ?>><?php echo $rider['title'] . ' ' . $rider['first_name'] . '  ' . $rider['last_name']; ?></option>
-
-                                                                                   <?php  } ?>
-                                                                               </select>
+                                                              
+                                                                        </select>
                                                                            </div>
                                                                        </div>
+                                                                       
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">รายการเมนู</label>
@@ -191,20 +189,7 @@
                                                                                 } ?>
                                                                            </div>
                                                                        </div>
-                                                                       <div class="form-group">
-                                                                           <div class="controls">
-                                                                               <label for="data-name">Vat+</label>
-                                                                           </div>
-                                                                           <div style="overflow: hidden;">
-                                                                                <?php if($orderDetail['vat'] != null){ ?>
-                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left" value="<?php echo $orderDetail['vat']; ?>">
-                                                                                <?php }else{ ?>
-                                                                                    <input type="text" name="vat" class="form-control" style="width:70%;float:left">
-                                                                                <?php } ?>
-                                                                                
-                                                                               <div style="width:30%;float:right; text-align:right;"><button type="submit" class="btn btn-primary">บันทึก Vat</button></div>
-                                                                           </div>
-                                                                       </div>
+                                                             
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ราคารวม</label>
@@ -213,6 +198,41 @@
                                                                                <?php }else{ ?>
                                                                                 <div class="form-control"><?php echo $orderDetail['total']; ?></div>
                                                                                <?php } ?>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ที่อยู่</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['address']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ตำบล</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['district']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">อำเภอ</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['amphur']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">จังหวัด</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['province']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">รหัสไปรษณีย์</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['zipcode']; ?></div>
                                                                            </div>
                                                                        </div>
 

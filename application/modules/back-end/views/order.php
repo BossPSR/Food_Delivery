@@ -20,10 +20,6 @@
                            <h2 class="content-header-title float-left mb-0">รายการอาหารล่าสุด</h2>
                            <div class="breadcrumb-wrapper col-12">
                                <ol class="breadcrumb">
-                                   <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                   </li>
-                                   <li class="breadcrumb-item"><a href="#">Order List</a>
-                                   </li>
                                    <li class="breadcrumb-item active">รายการอาหารล่าสุด
                                    </li>
                                </ol>
@@ -213,6 +209,41 @@
                                                                                <?php }else{ ?>
                                                                                 <div class="form-control"><?php echo $orderDetail['total']; ?></div>
                                                                                <?php } ?>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ที่อยู่</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['address']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ตำบล</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['district']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">อำเภอ</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['amphur']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">จังหวัด</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['province']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">รหัสไปรษณีย์</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['zipcode']; ?></div>
                                                                            </div>
                                                                        </div>
 

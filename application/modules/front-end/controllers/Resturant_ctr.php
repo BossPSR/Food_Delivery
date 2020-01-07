@@ -68,13 +68,14 @@ class Resturant_ctr extends CI_Controller {
 			$data = array(
 				'id_member'     => $this->input->post('id'),
 				'id_facebook'   => null,
+				'tel' 		    => $this->input->post('tel'),
 				'address' 		=> $this->input->post('address'),
 				'province' 		=> $this->input->post('province'),
 				'amphur' 		=> $this->input->post('amphur'),
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
-				'zip_price' 	=> '15',
-				'total' 		=> $this->cart->total() + 15 - $this->input->post('coupon'),
+				'zip_price' 	=> '0',
+				'total' 		=> $this->cart->total() - $this->input->post('coupon'),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
@@ -84,13 +85,14 @@ class Resturant_ctr extends CI_Controller {
 			$data = array(
 				'id_member'     => 0,
 				'id_facebook'   => $user_f['oauth_uid'],
+				'tel' 		    => $this->input->post('tel'),
 				'address' 		=> $this->input->post('address'),
 				'province' 		=> $this->input->post('province'),
 				'amphur' 		=> $this->input->post('amphur'),
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
-				'zip_price' 	=> '15',
-				'total' 		=> $this->cart->total() + 15 - $this->input->post('coupon'),
+				'zip_price' 	=> '0',
+				'total' 		=> $this->cart->total() - $this->input->post('coupon'),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
@@ -343,7 +345,7 @@ class Resturant_ctr extends CI_Controller {
 			$coupon = $this->input->get('coupon');
 			$coupon_id = $this->input->get('coupon_id');
 		}
-		$total = $this->cart->total() + 15 - $coupon;
+		$total = $this->cart->total() - $coupon;
 
 		$result['total'] = number_format($total,2);
 		$result['coupon'] = $coupon;

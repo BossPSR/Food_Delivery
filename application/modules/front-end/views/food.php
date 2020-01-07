@@ -7,13 +7,13 @@
 			<div class="container">
 				<div class="row">
 					<ul class="restaurant-filter">
-						<li><a href="" class="current" data-filter="">All dishes</a></li>
+						<li class="form-group"><a href="" class="current" data-filter="">All dishes</a></li>
 						<?php 
 							$type_food = $this->db->get('tbl_type_food')->result_array();
 							foreach ($type_food as $typeFood) {
 						
 						?>
-						<li><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
+						<li class="form-group"><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
 						<?php } ?>
 					</ul>
 					<div class="restaurant-list">

@@ -43,11 +43,11 @@
                 ?>
 
                 
-                    <tr>
+                    <!-- <tr>
                         <td colspan="2" id="mark">**หมายเหตุนอกเขตนครปฐม ฿69.00**</td>
                         <th>ค่าจัดส่ง</th>
                         <td>฿15</td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td colspan="2"></td>
                         <th>รวม</th>
@@ -76,7 +76,7 @@
                     <div>รหัสสั่งซื้อ <?php echo $orderAll['code']; ?></div>
                     <div>วันที่สั่งซื้อ <?php echo $orderAll['created_at']." น."; ?></div>
                     <div>ชื่อผู้สั่ง <?php echo $user['first_name']." ".$user['last_name']; ?></div>
-                    <div>เบอร์ติดต่อ <?php echo $user['tel']; ?></div>
+                    <div>เบอร์ติดต่อ <?php echo $orderAll['tel']; ?></div>
                     <div>สถานที่จัดส่ง <?php echo $orderAll['address']." ".$orderAll['district']." ".$orderAll['amphur']." ".$orderAll['province']." ".$orderAll['zipcode']; ?></div>
                 </div>
 

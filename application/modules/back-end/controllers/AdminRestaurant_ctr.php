@@ -226,7 +226,7 @@ class AdminRestaurant_ctr extends CI_Controller {
             {
                 $this->session->set_flashdata('del_ss2','ไม่สามารถเพิ่มข้อมูลร้านอาหารได้');
             }
-                redirect('Admin_Restaurant');
+                redirect('Admin_Type_Restaurant');
         
     }
     public function coupon()

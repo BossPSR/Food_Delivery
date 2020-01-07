@@ -3,13 +3,13 @@
 			<span class="section-suptitle text-center">Food Lover</span>
 			<h2 class="section-title sep-type-2 text-center">ร้านอาหาร</h2>
 			<ul class="restaurant-filter">
-				<li><a href="" class="current" data-filter="">All dishes</a></li>
+				<li class="form-group"><a href="" class="current" data-filter="">All dishes</a></li>
 					<?php 
 						$type_restaurant = $this->db->get('tbl_type_restaurant')->result_array();
 						foreach ($type_restaurant as $typeRestaurant) {
 						
 					?>
-				<li><a href="" data-filter="<?php echo $typeRestaurant['id']; ?>"><?php echo $typeRestaurant['type_restaurant']; ?></a></li>
+				<li class="form-group"><a href="" data-filter="<?php echo $typeRestaurant['id']; ?>"><?php echo $typeRestaurant['type_restaurant']; ?></a></li>
 					<?php } ?>
 			</ul>
 			<div class="container">

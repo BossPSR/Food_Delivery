@@ -10,8 +10,6 @@
                             <h2 class="content-header-title float-left mb-0">ความคิดเห็นจากลูกค้า</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                    </li>
                                     <li class="breadcrumb-item active">บล๊อก
                                     </li>
                                     <li class="breadcrumb-item active">ความคิดเห็นจากลูกค้า
@@ -29,8 +27,9 @@
                 <!-- Card Captions and Overlay section start -->
                 <section id="card-caps">
                 <?php $contact = $this->db->get('tbl_contact')->result_array() ;?>
-                <?php foreach ($contact as $key => $contact) { ?>
+                
                     <div class="row my-3">
+                    <?php foreach ($contact as $key => $contact) { ?>
                         <div class="col-xl-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-content">
@@ -43,13 +42,14 @@
                                 </div>
                             </div>
                         </div>
-
-                <?php }  ?>
+                    <?php }  ?>
+                    </div>
+                
                 </section>
                 <!-- Card Captions and Overlay section end -->
 
 
-            </div>
+            
         </div>
     </div>
     <!-- END: Content-->

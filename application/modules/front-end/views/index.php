@@ -124,13 +124,13 @@
 			</h2>
 
 			<ul class="restaurant-filter">
-				<li><a href="" class="current" data-filter="">All dishes</a></li>
+				<li class="form-group"><a href="" class="current" data-filter="">All dishes</a></li>
 					<?php 
 						$type_restaurant = $this->db->get('tbl_type_restaurant')->result_array();
 						foreach ($type_restaurant as $typeRestaurant) {
 						
 					?>
-				<li><a href="" data-filter="<?php echo $typeRestaurant['id']; ?>"><?php echo $typeRestaurant['type_restaurant']; ?></a></li>
+				<li class="form-group"><a href="" data-filter="<?php echo $typeRestaurant['id']; ?>"><?php echo $typeRestaurant['type_restaurant']; ?></a></li>
 					<?php } ?>
 			</ul>
 
@@ -193,7 +193,7 @@
 									   	
 									   ?>
 									</p>
-									<a href="">Read More</a>
+									<a href="promotion-single?id=<?php echo $promotionDetail['id']; ?>">Read More</a>
 								</div>
 							</li>
 						<?php } ?>
@@ -213,13 +213,13 @@
 			<div class="container">
 				<div class="row">
 					<ul class="restaurant-filter">
-						<li><a href="" class="current" data-filter="">All dishes</a></li>
+						<li class="form-group"><a href="" class="current" data-filter="">All dishes</a></li>
 						<?php 
 							$type_food = $this->db->get('tbl_type_food')->result_array();
 							foreach ($type_food as $typeFood) {
 						
 						?>
-						<li><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
+						<li class="form-group"><a href="" data-filter="<?php echo $typeFood['id']; ?>"><?php echo $typeFood['type_food']; ?></a></li>
 						<?php } ?>
 					</ul>
 					<div class="restaurant-list">

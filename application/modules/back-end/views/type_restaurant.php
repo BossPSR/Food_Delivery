@@ -10,8 +10,6 @@
                             <h2 class="content-header-title float-left mb-0">ประเภทร้านอาหาร</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                                    </li>
                                     <!-- <li class="breadcrumb-item"><a href="Admin_Restaurant">ร้านอาหาร</a>
                                     </li> -->
                                     <li class="breadcrumb-item active">ประเภทร้านอาหาร
@@ -46,7 +44,7 @@
                                     <td class="product-action">
                                         <!-- <a href="Admin_Food"><span class="action-food"><i class="fa fa-cutlery"></i></span></a> -->
                                         <span data-toggle="modal" data-target="#exampleModal<?php echo $type_restaurant['id'];?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
-                                        <a href="delete_type_food_restaurant?id=<?php echo $type_restaurant['id'];?>"><span class="action-delete"><i class="feather icon-trash" style="font-size: 25px;"></i></span></a>
+                                        
                                     </td>
                                 </tr>
                             <!-- Modal -->

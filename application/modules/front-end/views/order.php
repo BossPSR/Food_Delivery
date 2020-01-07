@@ -84,11 +84,19 @@
 						</div>
 						
 						<div class="column">
+							<span style="font-size: 17px;">เบอร์โทร</span>
+							<span style="width: 100%">
+								<input type="text" name="tel" value="<?php echo $user['tel'] ?>" placeholder="เบอร์โทร" class="required-field" required>
+							</span>
+						</div>
+
+						<div class="column">
 							<span style="font-size: 17px;">ที่อยู่</span>
 							<span style="width: 100%">
 								<input type="text" name="address" value="<?php echo $user['address'] ?>" placeholder="ที่อยู่" class="required-field" required>
 							</span>
 						</div>
+
 						<div class="column">
 							<span style="font-size: 17px;">จังหวัด</span>
 							<span style="width: 100%">
@@ -144,11 +152,11 @@
 									<?php $i++; ?>
 								<?php endforeach; ?>
 
-								<tr>
+								<!-- <tr>
 									<td colspan="3">**หมายเหตุเฉพาะในเมื่อง นอกพื้นที่ลดค่าจัดส่ง 20%</td>
 									<th>ค่าจัดส่ง</th>
 									<td>15 บาท</td>
-								</tr>
+								</tr> -->
 
 								<tr>
 									<td colspan="3"><div id="showCoupon"></div></td>
@@ -159,7 +167,7 @@
 								<tr>
 									<td colspan="3"></td>
 									<th>รวม</th>
-									<td><?php echo $this->cart->format_number($this->cart->total() + 15); ?> บาท</td>
+									<td><?php echo $this->cart->format_number($this->cart->total()); ?> บาท</td>
 								</tr>
 
 								<tr class="newTotalCoupon" style="display:none;">
