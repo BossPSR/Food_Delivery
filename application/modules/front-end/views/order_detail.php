@@ -30,7 +30,7 @@
                         <td><?php echo $orderDetail['name_item'];?></td>
                         <td><?php echo $orderDetail['qty'];?></td>
                         <td><?php echo number_format($orderDetail['price_item'],2);?></td>
-                        <td><?php echo $orderDetail['sumtotal'];?></td>
+                        <td><?php echo number_format($orderDetail['sumtotal'],2);?></td>
                     </tr>
                     <?php 
                     
@@ -53,12 +53,41 @@
                         <th>ค่าจัดส่ง</th>
                         <td>฿15</td>
                     </tr> -->
+                    <?php if (!empty($orderAll['vat'])) { ?>
+                    <tr>
+                        <td colspan="3"></td>
+                        <th>ราคา Vat+</th>
+                        <td>
+                            <?php echo number_format($orderAll['vat'],2); ?>
+                        </td>
+                    </tr> 
+                    <?php } ?>
+
+                    <?php if (!empty($orderAll['coupon'])) { ?>
+                    <tr>
+                        <td colspan="3"></td>
+                        <th>คูปอง</th>
+                        <td>
+                            <?php echo number_format($orderAll['coupon'],2); ?>
+                        </td>
+                    </tr> 
+                    <?php } ?>
+
                     <tr>
                         <td colspan="3"></td>
                         <th>ราคารวมทั้งหมด</th>
                         <td><?php 
-                                if (isset($orderAll['vat'])) {
+                                if (!empty($orderAll['vat'])) {
                                     $totalPrice = $orderAll['total'] + $orderAll['vat'];
+                                    if (!empty($orderAll['coupon'])) {
+                                        $totalPrice -= $orderAll['coupon'];
+                                    }
+                                    echo number_format($totalPrice,2);
+                                }elseif (!empty($orderAll['coupon'])) {
+                                    $totalPrice = $orderAll['total'] - $orderAll['coupon'];
+                                    if (!empty($orderAll['vat'])) {
+                                        $totalPrice += $orderAll['vat'];
+                                    }
                                     echo number_format($totalPrice,2);
                                 }else{
                                     echo number_format($orderAll['total'],2);

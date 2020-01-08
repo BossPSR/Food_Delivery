@@ -40,8 +40,27 @@
                         <?php else : ?>
                             <td style="color:red">ยกเลิกรายการอาหาร</td>
                         <?php endif ?>
+
+                        
                        
-                        <td><?php echo $orderDetail['total']; ?></td>
+                        <td><?php 
+                                if (!empty($orderDetail['vat'])) {
+                                    $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                    if (!empty($orderDetail['coupon'])) {
+                                        $totalPrice -= $orderDetail['coupon'];
+                                    }
+                                    echo number_format($totalPrice,2);
+                                }elseif (!empty($orderDetail['coupon'])) {
+                                    $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                    if (!empty($orderDetail['vat'])) {
+                                        $totalPrice += $orderDetail['vat'];
+                                    }
+                                    echo number_format($totalPrice,2);
+                                }else{
+                                    echo number_format($orderDetail['total'],2);
+                                }
+                            ?>
+                        </td>
                     </tr>
 
                     <?php } ?>

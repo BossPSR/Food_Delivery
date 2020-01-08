@@ -1,6 +1,6 @@
 	
 		<!-- Section Main -->
-		<section id="breadcrumb" data-background="http://placehold.it/1920x1000" class="parallax-window">
+		<section id="breadcrumb" data-background="" class="parallax-window">
 			<div>
 				<span class="section-suptitle text-center">Food Lover</span>
 				<h1 class="section-title white-font text-center">Promotion</h1>

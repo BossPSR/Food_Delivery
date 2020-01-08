@@ -108,11 +108,27 @@
                                            <td class="product-price">ยกเลิกรายการอาหาร</td>
                                        <?php endif ?>
 
-                                       <?php if($orderDetail['vat'] != null){ ?>
-                                            <td class="product-price"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></td>
-                                        <?php }else{ ?>
-                                            <td class="product-price"><?php echo $orderDetail['total']; ?></td>
-                                        <?php } ?>
+                                       
+                                        <td class="product-price">
+                                            <?php 
+                                                if (!empty($orderDetail['vat'])) {
+                                                    $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                    if (!empty($orderDetail['coupon'])) {
+                                                        $totalPrice -= $orderDetail['coupon'];
+                                                    }
+                                                    echo $totalPrice;
+                                                }elseif (!empty($orderDetail['coupon'])) {
+                                                    $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                    if (!empty($orderDetail['vat'])) {
+                                                        $totalPrice += $orderDetail['vat'];
+                                                    }
+                                                    echo $totalPrice;
+                                                }else{
+                                                    echo $orderDetail['total'];
+                                                }
+                                            ?>
+                                        </td>
+                                        
                                        <td class="product-action">
                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id']; ?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
                                        </td>
@@ -188,15 +204,43 @@
                                                                                 } ?>
                                                                            </div>
                                                                        </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">Vat+</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['vat']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">คูปอง</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['coupon']; ?></div>
+                                                                           </div>
+                                                                       </div>
                                                              
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ราคารวม</label>
-                                                                               <?php if($orderDetail['vat'] != null){ ?>
-                                                                                <div class="form-control"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></div>
-                                                                               <?php }else{ ?>
-                                                                                <div class="form-control"><?php echo $orderDetail['total']; ?></div>
-                                                                               <?php } ?>
+                                                                               <div class="form-control">
+                                                                                    <?php 
+                                                                                        if (!empty($orderDetail['vat'])) {
+                                                                                            $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                                                            if (!empty($orderDetail['coupon'])) {
+                                                                                                $totalPrice -= $orderDetail['coupon'];
+                                                                                            }
+                                                                                            echo $totalPrice;
+                                                                                        }elseif (!empty($orderDetail['coupon'])) {
+                                                                                            $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                                                            if (!empty($orderDetail['vat'])) {
+                                                                                                $totalPrice += $orderDetail['vat'];
+                                                                                            }
+                                                                                            echo $totalPrice;
+                                                                                        }else{
+                                                                                            echo $orderDetail['total'];
+                                                                                        }
+                                                                                    ?>
+                                                                                </div>
                                                                            </div>
                                                                        </div>
 
@@ -358,6 +402,9 @@
 }
 
 
+
+
+
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -365,6 +412,9 @@
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
+
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0&callback=initMap"

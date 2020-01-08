@@ -107,11 +107,29 @@
                                            <td class="product-price">ยกเลิกรายการอาหาร</td>
                                        <?php endif ?>
 
-                                       <?php if($orderDetail['vat'] != null){ ?>
-                                            <td class="product-price"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></td>
-                                        <?php }else{ ?>
-                                            <td class="product-price"><?php echo $orderDetail['total']; ?></td>
-                                        <?php } ?>
+
+                                        <td class="product-price">
+                                        <?php 
+                                            if (!empty($orderDetail['vat'])) {
+                                                $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                if (!empty($orderDetail['coupon'])) {
+                                                    $totalPrice -= $orderDetail['coupon'];
+                                                }
+                                                echo $totalPrice;
+                                            }elseif (!empty($orderDetail['coupon'])) {
+                                                $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                if (!empty($orderDetail['vat'])) {
+                                                    $totalPrice += $orderDetail['vat'];
+                                                }
+                                                echo $totalPrice;
+                                            }else{
+                                                echo $orderDetail['total'];
+                                            }
+                                        ?>
+                                        </td>
+
+                                           
+ 
                                        <td class="product-action">
                                            <span data-toggle="modal" data-target="#exampleModal<?php echo $orderDetail['id']; ?>"><i class="feather icon-edit" style="font-size: 25px;"></i></span>
                                        </td>
@@ -180,7 +198,7 @@
                                                                                <?php foreach ($order_type as $key => $order_type) { 
                                                                                     $key += 1;   
                                                                                 ?>
-                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
+                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?> ราคารวม <?php echo $order_type['sumtotal']; ?></div>
                                                                                <?php
 
                                                                                 } ?>
@@ -200,14 +218,38 @@
                                                                                <div style="width:30%;float:right; text-align:right;"><button type="submit" class="btn btn-primary">บันทึก Vat</button></div>
                                                                            </div>
                                                                        </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">คูปอง</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['coupon']; ?></div>
+                                                                           </div>
+                                                                       </div>
+
                                                                        <div class="form-group">
                                                                            <div class="controls">
                                                                                <label for="data-name">ราคารวม</label>
-                                                                               <?php if($orderDetail['vat'] != null){ ?>
-                                                                                <div class="form-control"><?php echo $orderDetail['total'] + $orderDetail['vat']; ?></div>
-                                                                               <?php }else{ ?>
-                                                                                <div class="form-control"><?php echo $orderDetail['total']; ?></div>
-                                                                               <?php } ?>
+                                                                               
+                                                                                <div class="form-control">
+                                                                                    <?php 
+                                                                                        if (!empty($orderDetail['vat'])) {
+                                                                                            $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                                                            if (!empty($orderDetail['coupon'])) {
+                                                                                                $totalPrice -= $orderDetail['coupon'];
+                                                                                            }
+                                                                                            echo $totalPrice;
+                                                                                        }elseif (!empty($orderDetail['coupon'])) {
+                                                                                            $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                                                            if (!empty($orderDetail['vat'])) {
+                                                                                                $totalPrice += $orderDetail['vat'];
+                                                                                            }
+                                                                                            echo $totalPrice;
+                                                                                        }else{
+                                                                                            echo $orderDetail['total'];
+                                                                                        }
+                                                                                    ?>
+                                                                                </div>
+                                                                             
                                                                            </div>
                                                                        </div>
 

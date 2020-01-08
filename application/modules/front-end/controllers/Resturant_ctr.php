@@ -75,7 +75,7 @@ class Resturant_ctr extends CI_Controller {
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '0',
-				'total' 		=> $this->cart->total() - $this->input->post('coupon'),
+				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
@@ -92,7 +92,7 @@ class Resturant_ctr extends CI_Controller {
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
 				'zip_price' 	=> '0',
-				'total' 		=> $this->cart->total() - $this->input->post('coupon'),
+				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
@@ -115,7 +115,7 @@ class Resturant_ctr extends CI_Controller {
 				'qty' 					=> $items['qty'],
 				'price_item' 			=> $items['price'],
 				'file_name' 			=> $items['file_name'],
-				'sumtotal' 				=> $this->cart->format_number($items['subtotal']),
+				'sumtotal' 				=> $items['subtotal'],
 				'created_at' 			=> date('Y-m-d H:i:s')
 			);
 			$success = $this->db->insert('tbl_order_detail', $data_item);
