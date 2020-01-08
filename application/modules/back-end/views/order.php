@@ -387,9 +387,7 @@
 
         var d = R * c;
 
-        if(d >= 3){
-            var d = 'dd'
-        }
+        
         console.log(d)
 
      var marker, info;

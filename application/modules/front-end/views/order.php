@@ -6,7 +6,7 @@
       }
     
 </style>
-
+<?php $adminLatLng = $this->db->get('tbl_admin')->row_array();?>
 <script>
      function initMap() {
 			var mapOptions = {
@@ -25,6 +25,94 @@
 				  lat: position.coords.latitude,
 				  lng: position.coords.longitude
 				};
+
+				var R = 6371; // metres
+				var φ1 = degrees_to_radians(<?php echo $adminLatLng['lat'] ?>);
+				var φ2 = degrees_to_radians(pos.lat);
+				var Δφ = degrees_to_radians(pos.lat-<?php echo $adminLatLng['lat'] ?>);
+				var Δλ = degrees_to_radians(pos.lng-<?php echo $adminLatLng['lng'] ?>);
+
+				var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+						Math.cos(φ1) * Math.cos(φ2) *
+						Math.sin(Δλ/2) * Math.sin(Δλ/2);
+				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+				var d = R * c;
+
+				if(d >= 0 && d <= 1.99){
+					document.getElementById("delivery").innerHTML = 29;
+					document.getElementById("formMap").deliveryValue.value = 29;
+				}
+				else if(d >= 2.00 && d <= 3.99){
+					document.getElementById("delivery").innerHTML = 39;
+					document.getElementById("formMap").deliveryValue.value = 39;
+				}
+				else if(d >= 4.00 && d <= 4.99){
+					document.getElementById("delivery").innerHTML = 49;
+					document.getElementById("formMap").deliveryValue.value = 49;
+				}
+				else if(d >= 5.00 && d <= 5.99){
+					document.getElementById("delivery").innerHTML = 59;
+					document.getElementById("formMap").deliveryValue.value = 59;
+				}
+				else if(d >= 6.00 && d <= 6.99){
+					document.getElementById("delivery").innerHTML = 69;
+					document.getElementById("formMap").deliveryValue.value = 69;
+				}
+				else if(d >= 7.00 && d <= 7.99){
+					document.getElementById("delivery").innerHTML = 79;
+					document.getElementById("formMap").deliveryValue.value = 79;
+				}
+				else if(d >= 8.00 && d <= 8.99){
+					document.getElementById("delivery").innerHTML = 89;
+					document.getElementById("formMap").deliveryValue.value = 89;
+				}
+				else if(d >= 9.00 && d <= 9.99){
+					document.getElementById("delivery").innerHTML = 99;
+					document.getElementById("formMap").deliveryValue.value = 99;
+				}
+				else if(d >= 10.00 && d <= 10.99){
+					document.getElementById("delivery").innerHTML = 109;
+					document.getElementById("formMap").deliveryValue.value = 109;
+				}
+				else if(d >= 11.00 && d <= 11.99){
+					document.getElementById("delivery").innerHTML = 119;
+					document.getElementById("formMap").deliveryValue.value = 119;
+				}
+				else if(d >= 12.00 && d <= 12.99){
+					document.getElementById("delivery").innerHTML = 129;
+					document.getElementById("formMap").deliveryValue.value = 129;
+				}
+				else if(d >= 13.00 && d <= 13.99){
+					document.getElementById("delivery").innerHTML = 139;
+					document.getElementById("formMap").deliveryValue.value = 139;
+				}
+				else if(d >= 14.00 && d <= 14.99){
+					document.getElementById("delivery").innerHTML = 149;
+					document.getElementById("formMap").deliveryValue.value = 149;
+				}
+				else if(d >= 15.00 && d <= 15.99){
+					document.getElementById("delivery").innerHTML = 159;
+					document.getElementById("formMap").deliveryValue.value = 159;
+				}
+				else if(d >= 16.00 && d <= 16.99){
+					document.getElementById("delivery").innerHTML = 169;
+					document.getElementById("formMap").deliveryValue.value = 169;
+				}
+				else if(d >= 17.00 && d <= 17.99){
+					document.getElementById("delivery").innerHTML = 179;
+					document.getElementById("formMap").deliveryValue.value = 179;
+				}
+				else if(d >= 18.00 && d <= 18.99){
+					document.getElementById("delivery").innerHTML = 189;
+					document.getElementById("formMap").deliveryValue.value = 189;
+				}
+				else if(d >= 19.00){
+					document.getElementById("delivery").innerHTML = 199;
+					document.getElementById("formMap").deliveryValue.value = 199;
+				}
+
+				console.log(d)
 
 				document.getElementById("formMap").lat.value = pos.lat;
 				document.getElementById('formMap').lng.value = pos.lng;
@@ -56,6 +144,12 @@
         infoWindow.open(map);
       }
 
+	  function degrees_to_radians(degrees)
+		{
+		var pi = Math.PI;
+		return degrees * (pi/180);
+		}
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0&callback=initMap"
     async defer></script>
@@ -80,7 +174,6 @@
 							<div id="lng"></div> -->
 							<input type="hidden" name="lat">
 							<input type="hidden" name="lng">
-							
 						</div>
 						
 						<div class="column">
@@ -152,11 +245,12 @@
 									<?php $i++; ?>
 								<?php endforeach; ?>
 
-								<!-- <tr>
-									<td colspan="3">**หมายเหตุเฉพาะในเมื่อง นอกพื้นที่ลดค่าจัดส่ง 20%</td>
+								<tr>
+									<!-- <td colspan="3">**หมายเหตุเฉพาะในเมื่อง นอกพื้นที่ลดค่าจัดส่ง 20%</td> -->
+									<td colspan="3"></td>
 									<th>ค่าจัดส่ง</th>
-									<td>15 บาท</td>
-								</tr> -->
+									<td><span id="delivery"></span> บาท</td>
+								</tr> 
 
 								<tr>
 									<td colspan="3"><div id="showCoupon"></div></td>
@@ -176,6 +270,7 @@
 									<td id="newTotal"></td>
 									<input type="hidden" name="coupon" id="couponUser" value="">
 									<input type="hidden" name="coupon_id" id="coupon_id" value="">
+									<input type="hidden" name="deliveryValue" id="deliveryValue">
 								</tr>
 
 							</tbody>
