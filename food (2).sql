@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2020 at 09:10 AM
+-- Generation Time: Jan 08, 2020 at 06:38 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -33,15 +33,17 @@ CREATE TABLE `tbl_admin` (
   `full_name` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `file_name` varchar(255) DEFAULT NULL
+  `file_name` varchar(255) DEFAULT NULL,
+  `lat` varchar(100) DEFAULT NULL,
+  `lng` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`id`, `full_name`, `username`, `password`, `file_name`) VALUES
-(1, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Admin-1578378483.jpg');
+INSERT INTO `tbl_admin` (`id`, `full_name`, `username`, `password`, `file_name`, `lat`, `lng`) VALUES
+(1, 'Admin', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Admin-1578378483.jpg', '18.8699831', '98.9814426');
 
 -- --------------------------------------------------------
 
@@ -80,6 +82,13 @@ CREATE TABLE `tbl_coupon` (
   `code_coupon` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_coupon`
+--
+
+INSERT INTO `tbl_coupon` (`id`, `name_coupon`, `code_coupon`, `price`) VALUES
+(0, 'ลด50', 'new50', '50');
 
 -- --------------------------------------------------------
 
@@ -192,13 +201,7 @@ CREATE TABLE `tbl_order` (
 --
 
 INSERT INTO `tbl_order` (`id`, `code`, `id_member`, `id_facebook`, `tel`, `address`, `province`, `amphur`, `district`, `zipcode`, `zip_price`, `note`, `coupon`, `total`, `vat`, `rider`, `status`, `lat`, `lng`, `created_at`, `updated_at`) VALUES
-(1, 'FD-202001073771', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, NULL, '267', NULL, 4, 1, '18.8737729', '99.0164236', '2020-01-07 17:39:06', '0000-00-00 00:00:00'),
-(2, 'FD-202001075612', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, NULL, '178', NULL, 4, 0, '18.8737784', '99.01653700000001', '2020-01-07 17:45:45', '0000-00-00 00:00:00'),
-(3, 'FD-202001073483', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, NULL, '267', NULL, 0, 0, '18.8738413', '99.01645099999999', '2020-01-07 18:02:01', '0000-00-00 00:00:00'),
-(4, 'FD-202001074374', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, NULL, '138', NULL, 0, 0, '18.8699831', '98.9814426', '2020-01-07 23:23:07', '0000-00-00 00:00:00'),
-(5, 'FD-202001077175', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, NULL, '316', NULL, 0, 0, '18.8699831', '98.9814426', '2020-01-07 23:33:21', '0000-00-00 00:00:00'),
-(6, 'FD-202001088716', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, '0', '178', NULL, 0, 0, '18.873778599999998', '99.0164385', '2020-01-08 10:13:29', '0000-00-00 00:00:00'),
-(7, 'FD-202001082737', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '0', NULL, '100', '178', '10', 4, 0, '18.873795299999998', '99.01645119999999', '2020-01-08 10:14:14', '0000-00-00 00:00:00');
+(1, 'FD-202001098751', 4, NULL, '0925623256', '123 หมู่ 1', 'เชียงใหม่', 'สันกำแพง', 'สันทราย', '50212', '29', NULL, '50', '158', '10', 4, 0, '18.8700939', '98.9813873', '2020-01-09 00:18:48', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -226,14 +229,8 @@ CREATE TABLE `tbl_order_detail` (
 --
 
 INSERT INTO `tbl_order_detail` (`id`, `id_order`, `restaurant`, `restaurant_address`, `restaurant_tel`, `name_item`, `qty`, `price_item`, `sumtotal`, `file_name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ร้านยำชั้น2', NULL, NULL, 'ยำ2โทน', 3, '89', '267', 'Food-1577106119.jpg', '2020-01-07 17:39:06', NULL),
-(2, 2, 'ร้านยำชั้น2', NULL, NULL, 'ยำ2โทน', 2, '89', '178', 'Food-1577106119.jpg', '2020-01-07 17:45:45', NULL),
-(3, 3, 'ร้านยำชั้น2', NULL, NULL, 'ยำ2โทน', 3, '89', '267', 'Food-1577106119.jpg', '2020-01-07 18:02:01', NULL),
-(4, 4, 'ร้านยำชั้น2', NULL, NULL, 'ยำข้าวโพด', 2, '69', '138', 'Food-1577106135.jpg', '2020-01-07 23:23:07', NULL),
-(5, 5, 'ร้านยำชั้น2', '', '0618096661', 'ยำข้าวโพด', 2, '69', '138', 'Food-1577106135.jpg', '2020-01-07 23:33:21', NULL),
-(6, 5, 'ร้านยำชั้น2', '', '0618096661', 'ยำ2โทน', 2, '89', '178', 'Food-1577106119.jpg', '2020-01-07 23:33:21', NULL),
-(7, 6, 'ร้านยำชั้น2', '123 หมู่ 1 สันทราย สันกำแพง เชียงใหม่ 50212', '0925623256', 'ยำ2โทน', 2, '89', '178', 'Food-1577106119.jpg', '2020-01-08 10:13:29', NULL),
-(8, 7, 'ร้านยำชั้น2', '123 หมู่ 1 สันทราย สันกำแพง เชียงใหม่ 50212', '0925623256', 'ยำ2โทน', 2, '89', '178', 'Food-1577106119.jpg', '2020-01-08 10:14:14', NULL);
+(1, 1, 'ร้านยำชั้น2', '123 หมู่ 1 สันทราย สันกำแพง เชียงใหม่ 50212', '0925623256', 'ยำ2โทน', 1, '89', '89', 'Food-1577106119.jpg', '2020-01-09 00:18:48', NULL),
+(2, 1, 'ร้านยำชั้น2', '123 หมู่ 1 สันทราย สันกำแพง เชียงใหม่ 50212', '0925623256', 'ยำข้าวโพด', 1, '69', '69', 'Food-1577106135.jpg', '2020-01-09 00:18:48', NULL);
 
 -- --------------------------------------------------------
 
@@ -528,13 +525,13 @@ ALTER TABLE `tbl_menu`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_detail`
 --
 ALTER TABLE `tbl_order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_promotion`

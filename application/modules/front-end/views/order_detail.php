@@ -48,11 +48,11 @@
                 ?>
 
                 
-                    <!-- <tr>
-                        <td colspan="2" id="mark">**หมายเหตุนอกเขตนครปฐม ฿69.00**</td>
+                    <tr>
+                        <td colspan="3"></td>
                         <th>ค่าจัดส่ง</th>
-                        <td>฿15</td>
-                    </tr> -->
+                        <td><?php echo number_format($orderAll['zip_price'],2); ?></td>
+                    </tr>
                     <?php if (!empty($orderAll['vat'])) { ?>
                     <tr>
                         <td colspan="3"></td>
@@ -79,18 +79,22 @@
                         <td><?php 
                                 if (!empty($orderAll['vat'])) {
                                     $totalPrice = $orderAll['total'] + $orderAll['vat'];
+                                    $totalPrice += $orderDetail['zip_price'];
                                     if (!empty($orderAll['coupon'])) {
                                         $totalPrice -= $orderAll['coupon'];
                                     }
                                     echo number_format($totalPrice,2);
                                 }elseif (!empty($orderAll['coupon'])) {
                                     $totalPrice = $orderAll['total'] - $orderAll['coupon'];
+                                    $totalPrice += $orderAll['zip_price'];
                                     if (!empty($orderAll['vat'])) {
                                         $totalPrice += $orderAll['vat'];
                                     }
                                     echo number_format($totalPrice,2);
                                 }else{
-                                    echo number_format($orderAll['total'],2);
+                                    $totalPrice = $orderAll['total'];
+                                    $totalPrice += $orderAll['zip_price'];
+                                    echo number_format($totalPrice,2);
                                 }
                             ?>
                         </td>

@@ -46,18 +46,22 @@
                         <td><?php 
                                 if (!empty($orderDetail['vat'])) {
                                     $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                    $totalPrice += $orderDetail['zip_price'];
                                     if (!empty($orderDetail['coupon'])) {
                                         $totalPrice -= $orderDetail['coupon'];
                                     }
                                     echo number_format($totalPrice,2);
                                 }elseif (!empty($orderDetail['coupon'])) {
                                     $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                    $totalPrice += $orderDetail['zip_price'];
                                     if (!empty($orderDetail['vat'])) {
                                         $totalPrice += $orderDetail['vat'];
                                     }
                                     echo number_format($totalPrice,2);
                                 }else{
-                                    echo number_format($orderDetail['total'],2);
+                                    $totalPrice = $orderDetail['total'];
+                                    $totalPrice += $orderDetail['zip_price'];
+                                    echo number_format($totalPrice,2);
                                 }
                             ?>
                         </td>

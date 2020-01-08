@@ -74,7 +74,7 @@ class Resturant_ctr extends CI_Controller {
 				'amphur' 		=> $this->input->post('amphur'),
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
-				'zip_price' 	=> '0',
+				'zip_price' 	=> $this->input->post('zip_priceValue'),
 				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
@@ -91,7 +91,7 @@ class Resturant_ctr extends CI_Controller {
 				'amphur' 		=> $this->input->post('amphur'),
 				'district' 		=> $this->input->post('district'),
 				'zipcode' 		=> $this->input->post('zipcode'),
-				'zip_price' 	=> '0',
+				'zip_price' 	=> $this->input->post('zip_priceValue'),
 				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
 				'lat' 		    => $this->input->post('lat'),
@@ -308,10 +308,12 @@ class Resturant_ctr extends CI_Controller {
 					$result['status'] = '<span style="color:red">คูปองนี้ ท่านใช้งานไปแล้วค่ะ</span>';
 					$result['coupon_id'] = 0;
 					$result['price'] = 0;
+					$result['zip_priceValue'] = $this->input->get('zip_priceValue');
 				}else{	
 					$result['status'] = '<span style="color:green">คูปองนี้ สามารถใช้งานได้ค่ะ</span>';
 					$result['coupon_id'] = $coupon->id;
 					$result['price'] = $coupon->price;	
+					$result['zip_priceValue'] = $this->input->get('zip_priceValue');
 				}
 			// User
 			}else{
@@ -320,16 +322,19 @@ class Resturant_ctr extends CI_Controller {
 					$result['status'] = '<span style="color:red">คูปองนี้ ท่านใช้งานไปแล้วค่ะ</span>';
 					$result['coupon_id'] = 0;
 					$result['price'] = 0;
+					$result['zip_priceValue'] = $this->input->get('zip_priceValue');
 				}else{
 					$result['status'] = '<span style="color:green">คูปองนี้ สามารถใช้งานได้ค่ะ</span>';
 					$result['coupon_id'] = $coupon->id;
 					$result['price'] = $coupon->price;	
+					$result['zip_priceValue'] = $this->input->get('zip_priceValue');
 				}
 			}
 		}else{
 			$result['status'] = '<span style="color:red">ไม่พบคูปองนี้ค่ะ</span>';
 			$result['coupon_id'] = 0;
 			$result['price'] = 0;
+			$result['zip_priceValue'] = $this->input->get('zip_priceValue');
 		}
 
 		
@@ -349,11 +354,24 @@ class Resturant_ctr extends CI_Controller {
 			$coupon_id = $this->input->get('coupon_id');
 		}
 		$total = $this->cart->total() - $coupon;
+		$total += $this->input->get('zip_priceValue');
 
 		$result['total'] = number_format($total,2);
 		$result['coupon'] = $coupon;
 		$result['coupon_id'] = $coupon_id;
 		echo json_encode($result);
+	}
+
+	public function zipPrice_value()
+	{
+		$zip_priceValue = $this->input->get('zip_priceValue');
+		if (empty($zip_priceValue)) {
+			$zip_priceValue = 0;
+		}
+		$total = $this->cart->total() + $zip_priceValue;
+		echo number_format($total,2);
+
+		
 	}
 
 }

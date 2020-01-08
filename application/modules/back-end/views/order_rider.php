@@ -113,18 +113,22 @@
                                             <?php 
                                                 if (!empty($orderDetail['vat'])) {
                                                     $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                    $totalPrice += $orderDetail['zip_price'];
                                                     if (!empty($orderDetail['coupon'])) {
                                                         $totalPrice -= $orderDetail['coupon'];
                                                     }
                                                     echo $totalPrice;
                                                 }elseif (!empty($orderDetail['coupon'])) {
                                                     $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                    $totalPrice += $orderDetail['zip_price'];
                                                     if (!empty($orderDetail['vat'])) {
                                                         $totalPrice += $orderDetail['vat'];
                                                     }
                                                     echo $totalPrice;
                                                 }else{
-                                                    echo $orderDetail['total'];
+                                                    $totalPrice = $orderDetail['total'];
+                                                    $totalPrice += $orderDetail['zip_price'];
+                                                    echo $totalPrice;
                                                 }
                                             ?>
                                         </td>
@@ -224,20 +228,24 @@
                                                                                <label for="data-name">ราคารวม</label>
                                                                                <div class="form-control">
                                                                                     <?php 
-                                                                                        if (!empty($orderDetail['vat'])) {
+                                                                                       if (!empty($orderDetail['vat'])) {
                                                                                             $totalPrice = $orderDetail['total'] + $orderDetail['vat'];
+                                                                                            $totalPrice += $orderDetail['zip_price'];
                                                                                             if (!empty($orderDetail['coupon'])) {
                                                                                                 $totalPrice -= $orderDetail['coupon'];
                                                                                             }
                                                                                             echo $totalPrice;
                                                                                         }elseif (!empty($orderDetail['coupon'])) {
                                                                                             $totalPrice = $orderDetail['total'] - $orderDetail['coupon'];
+                                                                                            $totalPrice += $orderDetail['zip_price'];
                                                                                             if (!empty($orderDetail['vat'])) {
                                                                                                 $totalPrice += $orderDetail['vat'];
                                                                                             }
                                                                                             echo $totalPrice;
                                                                                         }else{
-                                                                                            echo $orderDetail['total'];
+                                                                                            $totalPrice = $orderDetail['total'];
+                                                                                            $totalPrice += $orderDetail['zip_price'];
+                                                                                            echo $totalPrice;
                                                                                         }
                                                                                     ?>
                                                                                 </div>
