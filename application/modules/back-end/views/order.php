@@ -371,6 +371,27 @@
 
      directionsRenderer.setMap(maps);
 
+
+          
+
+        var R = 6371; // metres
+        var φ1 = degrees_to_radians(posNow[0].lat);
+        var φ2 = degrees_to_radians(posNow[1].lat);
+        var Δφ = degrees_to_radians(posNow[1].lat-posNow[0].lat);
+        var Δλ = degrees_to_radians(posNow[1].lng-posNow[0].lng);
+
+        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+        var d = R * c;
+
+        if(d >= 3){
+            var d = 'dd'
+        }
+        console.log(d)
+
      var marker, info;
 
      $.each(posNow, function(i, item){
@@ -407,6 +428,12 @@
  
  });//end navi               
      
+}
+
+function degrees_to_radians(degrees)
+{
+  var pi = Math.PI;
+  return degrees * (pi/180);
 }
 
 
