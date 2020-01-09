@@ -26,7 +26,8 @@
 				  lng: position.coords.longitude
 				};
 
-				checkLatLng(pos);
+				var checkLat_lng= checkLatLng(pos);
+				console.log(checkLat_lng);
 
 				// var R = 6371; // metres
 				// var φ1 = degrees_to_radians(<?php echo $adminLatLng['lat'] ?>);
@@ -40,7 +41,7 @@
 				// var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
 				// var d = R * c;
-				console.log(checkLatLng());
+				
 
 
 				if(d >= 0 && d <= 1.99){
@@ -156,15 +157,17 @@
 
 		function checkLatLng(pos) {
 			$.ajax({
-            url:'checkLatLng',
-			data:{
-				lat:pos.lat,
-				lng:pos.lng
-			},
-            success:function(response){
-				var d = response;
-            }
-        	});
+					url:'checkLatLng',
+					data:{
+						lat:pos.lat,
+						lng:pos.lng
+					},
+					success:function(responseLatLng){
+						responseLatLng = JSON.parse(responseLatLng);
+						return responseLatLng;
+
+					}
+			});
 		}
 
     </script>
