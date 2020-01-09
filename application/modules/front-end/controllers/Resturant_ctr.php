@@ -374,4 +374,54 @@ class Resturant_ctr extends CI_Controller {
 		
 	}
 
+	public function checkLatLng()
+	{
+		
+		$lat = $this->input->get('lat');
+		$lng = $this->input->get('lng');
+		$adminLatLng = $this->db->get('tbl_admin')->row_array();
+
+		$get_data = $this->callAPI('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$adminLatLng['lat'].','.$adminLatLng['lng'].'&destinations='.$lat.','.$lng.'&key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0', false);
+		$response = json_decode($get_data, true);
+		$dataKm = $response['rows'][0]['elements'][0]['distance']['text'];
+		echo $dataKm;
+		exit();
+	}
+
+	private function callAPI($method, $url, $data){
+		$curl = curl_init();
+	
+		switch ($method){
+		case "POST":
+			curl_setopt($curl, CURLOPT_POST, 1);
+			if ($data)
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+			break;
+		case "PUT":
+			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+			if ($data)
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+			break;
+		default:
+			if ($data)
+				$url = sprintf("%s?%s", $url, http_build_query($data));
+		}
+	
+		// OPTIONS:
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+		'APIKEY: 111111111111111111111',
+		'Content-Type: application/json',
+		));
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+	
+		// EXECUTE:
+		$result = curl_exec($curl);
+		if(!$result){die("Connection Failure");}
+		curl_close($curl);
+		return $result;
+	}
+
+
 }

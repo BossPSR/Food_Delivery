@@ -6,7 +6,7 @@
       }
     
 </style>
-<?php $adminLatLng = $this->db->get('tbl_admin')->row_array();?>
+<!-- <?php $adminLatLng = $this->db->get('tbl_admin')->row_array(); ?> -->
 <script>
      function initMap() {
 			var mapOptions = {
@@ -26,18 +26,22 @@
 				  lng: position.coords.longitude
 				};
 
-				var R = 6371; // metres
-				var φ1 = degrees_to_radians(<?php echo $adminLatLng['lat'] ?>);
-				var φ2 = degrees_to_radians(pos.lat);
-				var Δφ = degrees_to_radians(pos.lat-<?php echo $adminLatLng['lat'] ?>);
-				var Δλ = degrees_to_radians(pos.lng-<?php echo $adminLatLng['lng'] ?>);
+				checkLatLng(pos);
 
-				var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-						Math.cos(φ1) * Math.cos(φ2) *
-						Math.sin(Δλ/2) * Math.sin(Δλ/2);
-				var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+				// var R = 6371; // metres
+				// var φ1 = degrees_to_radians(<?php echo $adminLatLng['lat'] ?>);
+				// var φ2 = degrees_to_radians(pos.lat);
+				// var Δφ = degrees_to_radians(pos.lat-<?php echo $adminLatLng['lat'] ?>);
+				// var Δλ = degrees_to_radians(pos.lng-<?php echo $adminLatLng['lng'] ?>);
 
-				var d = R * c;
+				// var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+				// 		Math.cos(φ1) * Math.cos(φ2) *
+				// 		Math.sin(Δλ/2) * Math.sin(Δλ/2);
+				// var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+				// var d = R * c;
+				console.log(checkLatLng());
+
 
 				if(d >= 0 && d <= 1.99){
 					document.getElementById("zip_price").innerHTML = 29;
@@ -148,6 +152,19 @@
 		{
 		var pi = Math.PI;
 		return degrees * (pi/180);
+		}
+
+		function checkLatLng(pos) {
+			$.ajax({
+            url:'checkLatLng',
+			data:{
+				lat:pos.lat,
+				lng:pos.lng
+			},
+            success:function(response){
+				var d = response;
+            }
+        	});
 		}
 
     </script>
