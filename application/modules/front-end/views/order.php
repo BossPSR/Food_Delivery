@@ -66,7 +66,7 @@
 		}
 
 		function checkLatLng(pos) {
-			let test = false;
+
 			$.ajax({
 					url:'checkLatLng',
 					data:{
@@ -171,6 +171,7 @@
 							}
 							var zip_priceValue = $("#zip_priceValue").val();
 							zip_price(zip_priceValue);
+							keyUpcoupon(zip_priceValue);
 					
 				}
 			});
@@ -331,10 +332,8 @@
 </section>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-		
 
+	function keyUpcoupon(zip_priceValue){
 		$("#coupon").keyup(function(){
 			var coupon = $("#coupon").val();
 			<?php if(isset($user['id'])){ ?>
@@ -347,18 +346,19 @@
 				data:{
 						coupon:coupon,
 						user_id:user_id,
-						zip_priceValue:zip_priceValue,
+						zip_priceValue:zip_priceValue
 					 },
 				success:function(response){
 					response = JSON.parse(response);
+					console.log(response)
 					$('#showCoupon').html(response.status);
 					$(".newTotalCoupon").css("display", "table-row");
 					newTotal(response);
 				}
 			})
 		});
-		
-	});
+
+	}
 
 	function zip_price(zip_priceValue) {
 		$.ajax({
@@ -380,10 +380,11 @@
 			data:{
 				coupon:coupon.price,
 				coupon_id:coupon.coupon_id,
-				zip_priceValue:coupon.zip_priceValue,
+				zip_priceValue:coupon.zip_priceValue
 			},
             success:function(response){
 				response = JSON.parse(response);
+				
                 $('#newTotal').html(response.total + " บาท");
 				$('#couponUser').val(response.coupon);
 				$('#coupon_id').val(response.coupon_id);
