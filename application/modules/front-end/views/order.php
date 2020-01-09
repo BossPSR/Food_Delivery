@@ -25,10 +25,12 @@
 				  lat: position.coords.latitude,
 				  lng: position.coords.longitude
 				};
-
+				
 				var checkLat_lng= checkLatLng(pos);
+				
 				console.log(checkLat_lng);
-
+				
+				
 				// var R = 6371; // metres
 				// var φ1 = degrees_to_radians(<?php echo $adminLatLng['lat'] ?>);
 				// var φ2 = degrees_to_radians(pos.lat);
@@ -44,80 +46,80 @@
 				
 
 
-				if(d >= 0 && d <= 1.99){
-					document.getElementById("zip_price").innerHTML = 29;
-					document.getElementById("formMap").zip_priceValue.value = 29;
-				}
-				else if(d >= 2.00 && d <= 3.99){
-					document.getElementById("zip_price").innerHTML = 39;
-					document.getElementById("formMap").zip_priceValue.value = 39;
-				}
-				else if(d >= 4.00 && d <= 4.99){
-					document.getElementById("zip_price").innerHTML = 49;
-					document.getElementById("formMap").zip_priceValue.value = 49;
-				}
-				else if(d >= 5.00 && d <= 5.99){
-					document.getElementById("zip_price").innerHTML = 59;
-					document.getElementById("formMap").zip_priceValue.value = 59;
-				}
-				else if(d >= 6.00 && d <= 6.99){
-					document.getElementById("zip_price").innerHTML = 69;
-					document.getElementById("formMap").zip_priceValue.value = 69;
-				}
-				else if(d >= 7.00 && d <= 7.99){
-					document.getElementById("zip_price").innerHTML = 79;
-					document.getElementById("formMap").zip_priceValue.value = 79;
-				}
-				else if(d >= 8.00 && d <= 8.99){
-					document.getElementById("zip_price").innerHTML = 89;
-					document.getElementById("formMap").zip_priceValue.value = 89;
-				}
-				else if(d >= 9.00 && d <= 9.99){
-					document.getElementById("zip_price").innerHTML = 99;
-					document.getElementById("formMap").zip_priceValue.value = 99;
-				}
-				else if(d >= 10.00 && d <= 10.99){
-					document.getElementById("zip_price").innerHTML = 109;
-					document.getElementById("formMap").zip_priceValue.value = 109;
-				}
-				else if(d >= 11.00 && d <= 11.99){
-					document.getElementById("zip_price").innerHTML = 119;
-					document.getElementById("formMap").zip_priceValue.value = 119;
-				}
-				else if(d >= 12.00 && d <= 12.99){
-					document.getElementById("zip_price").innerHTML = 129;
-					document.getElementById("formMap").zip_priceValue.value = 129;
-				}
-				else if(d >= 13.00 && d <= 13.99){
-					document.getElementById("zip_price").innerHTML = 139;
-					document.getElementById("formMap").zip_priceValue.value = 139;
-				}
-				else if(d >= 14.00 && d <= 14.99){
-					document.getElementById("zip_price").innerHTML = 149;
-					document.getElementById("formMap").zip_priceValue.value = 149;
-				}
-				else if(d >= 15.00 && d <= 15.99){
-					document.getElementById("zip_price").innerHTML = 159;
-					document.getElementById("formMap").zip_priceValue.value = 159;
-				}
-				else if(d >= 16.00 && d <= 16.99){
-					document.getElementById("zip_price").innerHTML = 169;
-					document.getElementById("formMap").zip_priceValue.value = 169;
-				}
-				else if(d >= 17.00 && d <= 17.99){
-					document.getElementById("zip_price").innerHTML = 179;
-					document.getElementById("formMap").zip_priceValue.value = 179;
-				}
-				else if(d >= 18.00 && d <= 18.99){
-					document.getElementById("zip_price").innerHTML = 189;
-					document.getElementById("formMap").zip_priceValue.value = 189;
-				}
-				else if(d >= 19.00){
-					document.getElementById("zip_price").innerHTML = 199;
-					document.getElementById("formMap").zip_priceValue.value = 199;
-				}
+				// if(d >= 0 && d <= 1.99){
+				// 	document.getElementById("zip_price").innerHTML = 29;
+				// 	document.getElementById("formMap").zip_priceValue.value = 29;
+				// }
+				// else if(d >= 2.00 && d <= 3.99){
+				// 	document.getElementById("zip_price").innerHTML = 39;
+				// 	document.getElementById("formMap").zip_priceValue.value = 39;
+				// }
+				// else if(d >= 4.00 && d <= 4.99){
+				// 	document.getElementById("zip_price").innerHTML = 49;
+				// 	document.getElementById("formMap").zip_priceValue.value = 49;
+				// }
+				// else if(d >= 5.00 && d <= 5.99){
+				// 	document.getElementById("zip_price").innerHTML = 59;
+				// 	document.getElementById("formMap").zip_priceValue.value = 59;
+				// }
+				// else if(d >= 6.00 && d <= 6.99){
+				// 	document.getElementById("zip_price").innerHTML = 69;
+				// 	document.getElementById("formMap").zip_priceValue.value = 69;
+				// }
+				// else if(d >= 7.00 && d <= 7.99){
+				// 	document.getElementById("zip_price").innerHTML = 79;
+				// 	document.getElementById("formMap").zip_priceValue.value = 79;
+				// }
+				// else if(d >= 8.00 && d <= 8.99){
+				// 	document.getElementById("zip_price").innerHTML = 89;
+				// 	document.getElementById("formMap").zip_priceValue.value = 89;
+				// }
+				// else if(d >= 9.00 && d <= 9.99){
+				// 	document.getElementById("zip_price").innerHTML = 99;
+				// 	document.getElementById("formMap").zip_priceValue.value = 99;
+				// }
+				// else if(d >= 10.00 && d <= 10.99){
+				// 	document.getElementById("zip_price").innerHTML = 109;
+				// 	document.getElementById("formMap").zip_priceValue.value = 109;
+				// }
+				// else if(d >= 11.00 && d <= 11.99){
+				// 	document.getElementById("zip_price").innerHTML = 119;
+				// 	document.getElementById("formMap").zip_priceValue.value = 119;
+				// }
+				// else if(d >= 12.00 && d <= 12.99){
+				// 	document.getElementById("zip_price").innerHTML = 129;
+				// 	document.getElementById("formMap").zip_priceValue.value = 129;
+				// }
+				// else if(d >= 13.00 && d <= 13.99){
+				// 	document.getElementById("zip_price").innerHTML = 139;
+				// 	document.getElementById("formMap").zip_priceValue.value = 139;
+				// }
+				// else if(d >= 14.00 && d <= 14.99){
+				// 	document.getElementById("zip_price").innerHTML = 149;
+				// 	document.getElementById("formMap").zip_priceValue.value = 149;
+				// }
+				// else if(d >= 15.00 && d <= 15.99){
+				// 	document.getElementById("zip_price").innerHTML = 159;
+				// 	document.getElementById("formMap").zip_priceValue.value = 159;
+				// }
+				// else if(d >= 16.00 && d <= 16.99){
+				// 	document.getElementById("zip_price").innerHTML = 169;
+				// 	document.getElementById("formMap").zip_priceValue.value = 169;
+				// }
+				// else if(d >= 17.00 && d <= 17.99){
+				// 	document.getElementById("zip_price").innerHTML = 179;
+				// 	document.getElementById("formMap").zip_priceValue.value = 179;
+				// }
+				// else if(d >= 18.00 && d <= 18.99){
+				// 	document.getElementById("zip_price").innerHTML = 189;
+				// 	document.getElementById("formMap").zip_priceValue.value = 189;
+				// }
+				// else if(d >= 19.00){
+				// 	document.getElementById("zip_price").innerHTML = 199;
+				// 	document.getElementById("formMap").zip_priceValue.value = 199;
+				// }
 
-				console.log(d)
+		
 
 				document.getElementById("formMap").lat.value = pos.lat;
 				document.getElementById('formMap').lng.value = pos.lng;
@@ -156,6 +158,7 @@
 		}
 
 		function checkLatLng(pos) {
+			let test = false;
 			$.ajax({
 					url:'checkLatLng',
 					data:{
@@ -164,10 +167,93 @@
 					},
 					success:function(responseLatLng){
 						responseLatLng = JSON.parse(responseLatLng);
-						return responseLatLng;
+						var dd = responseLatLng.dataKm;
+						    dd = dd.split(" ");
+						var d = dd[0];
+							if (dd[1] != 'km') {
+								d = 0;
+							}
 
-					}
+							if(d >= 0 && d <= 1.99){
+								document.getElementById("zip_price").innerHTML = 29;
+								document.getElementById("formMap").zip_priceValue.value = 29;
+							}
+							else if(d >= 2.00 && d <= 3.99){
+								document.getElementById("zip_price").innerHTML = 39;
+								document.getElementById("formMap").zip_priceValue.value = 39;
+							}
+							else if(d >= 4.00 && d <= 4.99){
+								document.getElementById("zip_price").innerHTML = 49;
+								document.getElementById("formMap").zip_priceValue.value = 49;
+							}
+							else if(d >= 5.00 && d <= 5.99){
+								document.getElementById("zip_price").innerHTML = 59;
+								document.getElementById("formMap").zip_priceValue.value = 59;
+							}
+							else if(d >= 6.00 && d <= 6.99){
+								document.getElementById("zip_price").innerHTML = 69;
+								document.getElementById("formMap").zip_priceValue.value = 69;
+							}
+							else if(d >= 7.00 && d <= 7.99){
+								document.getElementById("zip_price").innerHTML = 79;
+								document.getElementById("formMap").zip_priceValue.value = 79;
+							}
+							else if(d >= 8.00 && d <= 8.99){
+								document.getElementById("zip_price").innerHTML = 89;
+								document.getElementById("formMap").zip_priceValue.value = 89;
+							}
+							else if(d >= 9.00 && d <= 9.99){
+								document.getElementById("zip_price").innerHTML = 99;
+								document.getElementById("formMap").zip_priceValue.value = 99;
+							}
+							else if(d >= 10.00 && d <= 10.99){
+								document.getElementById("zip_price").innerHTML = 109;
+								document.getElementById("formMap").zip_priceValue.value = 109;
+							}
+							else if(d >= 11.00 && d <= 11.99){
+								document.getElementById("zip_price").innerHTML = 119;
+								document.getElementById("formMap").zip_priceValue.value = 119;
+							}
+							else if(d >= 12.00 && d <= 12.99){
+								document.getElementById("zip_price").innerHTML = 129;
+								document.getElementById("formMap").zip_priceValue.value = 129;
+							}
+							else if(d >= 13.00 && d <= 13.99){
+								document.getElementById("zip_price").innerHTML = 139;
+								document.getElementById("formMap").zip_priceValue.value = 139;
+							}
+							else if(d >= 14.00 && d <= 14.99){
+								document.getElementById("zip_price").innerHTML = 149;
+								document.getElementById("formMap").zip_priceValue.value = 149;
+							}
+							else if(d >= 15.00 && d <= 15.99){
+								document.getElementById("zip_price").innerHTML = 159;
+								document.getElementById("formMap").zip_priceValue.value = 159;
+							}
+							else if(d >= 16.00 && d <= 16.99){
+								document.getElementById("zip_price").innerHTML = 169;
+								document.getElementById("formMap").zip_priceValue.value = 169;
+							}
+							else if(d >= 17.00 && d <= 17.99){
+								document.getElementById("zip_price").innerHTML = 179;
+								document.getElementById("formMap").zip_priceValue.value = 179;
+							}
+							else if(d >= 18.00 && d <= 18.99){
+								document.getElementById("zip_price").innerHTML = 189;
+								document.getElementById("formMap").zip_priceValue.value = 189;
+							}
+							else if(d >= 19.00){
+								document.getElementById("zip_price").innerHTML = 199;
+								document.getElementById("formMap").zip_priceValue.value = 199;
+							}
+							var zip_priceValue = $("#zip_priceValue").val();
+							zip_price(zip_priceValue);
+					
+				}
 			});
+			
+			// return test;
+			
 		}
 
     </script>
@@ -324,8 +410,7 @@
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script type="text/javascript">
 	$(document).ready(function(){
-		var zip_priceValue = $("#zip_priceValue").val();
-		zip_price(zip_priceValue);
+		
 		
 
 		$("#coupon").keyup(function(){
