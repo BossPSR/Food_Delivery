@@ -384,8 +384,10 @@ class Resturant_ctr extends CI_Controller {
 		$get_data = $this->callAPI('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$adminLatLng['lat'].','.$adminLatLng['lng'].'&destinations='.$lat.','.$lng.'&key=AIzaSyBXknkzDUafgeyQ3WFBEHjHQUKoHfJ-og0', false);
 		$response = json_decode($get_data, true);
 		$dataKm = $response['rows'][0]['elements'][0]['distance']['text'];
+		$dataKmNum = $response['rows'][0]['elements'][0]['distance']['value'];
 		$result = [];
 		$result['dataKm'] = $dataKm;
+		$result['dataKmNum'] = $dataKmNum;
 		echo json_encode($result);
 		
 	}
