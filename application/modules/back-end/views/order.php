@@ -364,90 +364,49 @@
        </div>
    </div>
    <!-- END: Content-->
-
+<?php $adminList = $this->db->get('tbl_admin')->row_array(); ?>
    <script>
   function initMap() {
  
- var directionsService = new google.maps.DirectionsService();
- var directionsRenderer = new google.maps.DirectionsRenderer();
- navigator.geolocation.getCurrentPosition(function(position) {
  
-     
  <?php foreach ($round as $key => $round) { ?>  
-     
+     var directionsService<?php echo $round; ?> = new google.maps.DirectionsService();
+     var directionsRenderer<?php echo $round; ?> = new google.maps.DirectionsRenderer();
      var posNow = [
-                     {location:"ที่อยู่ของคุณ",lat: position.coords.latitude,lng: position.coords.longitude},
+                     {location:"ที่อยู่ของคุณ",lat: <?php echo $adminList['lat'] ?>,lng: <?php echo $adminList['lng'] ?>},
                      {location:"ที่อยู่ของลูกค้า",lat: <?php echo $lat[$key]; ?>,lng:<?php echo $lng[$key]; ?>}
                  ];
      var maps;
          maps = new google.maps.Map(document.getElementById('map<?php echo $round; ?>'), {
-         center: {lat: <?php echo $lat[$key]; ?>, lng: <?php echo $lng[$key]; ?>},
+         center: {lat: 18.841, lng: 98.998},
          zoom: 18,
      });
 
-     directionsRenderer.setMap(maps);
+     directionsRenderer<?php echo $round; ?>.setMap(maps);
 
+     directionsService<?php echo $round; ?>.route(
+            {
+              origin: posNow[0].lat+','+  posNow[0].lng,
+              destination:  posNow[1].lat+','+  posNow[1].lng,
+              travelMode: 'DRIVING'
+            },
+            function(response, status) {
+              if (status === 'OK') {
+                directionsRenderer<?php echo $round; ?>.setDirections(response);
+              } else {
+                window.alert('Directions request failed due to ' + status);
+              }
+            }
+            
+     );
 
-          
-
-        var R = 6371; // metres
-        var φ1 = degrees_to_radians(posNow[0].lat);
-        var φ2 = degrees_to_radians(posNow[1].lat);
-        var Δφ = degrees_to_radians(posNow[1].lat-posNow[0].lat);
-        var Δλ = degrees_to_radians(posNow[1].lng-posNow[0].lng);
-
-        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                Math.cos(φ1) * Math.cos(φ2) *
-                Math.sin(Δλ/2) * Math.sin(Δλ/2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-        var d = R * c;
-
-        
-        console.log(d)
-
-     var marker, info;
-
-     $.each(posNow, function(i, item){
-
-             marker = new google.maps.Marker({
-             position: new google.maps.LatLng(item.lat, item.lng),
-             map: maps,
-             title: item.location
-             });
-
-         info = new google.maps.InfoWindow();
-
-         // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-         //     return function() {
-                 
-         //     info.setContent(item.location);
-         //     info.open(maps, marker);
-
-
-         //     }
-         // })(marker, i));
-
-         google.maps.event.addListener(marker, 'load', (function(marker, i) {    
-             info.setContent(item.location);
-             info.open(maps, marker);   
-             
-         })(marker, i));
-
-     });
+     
 
 
 
  <?php }  ?> 
- 
- });//end navi               
+         
      
-}
-
-function degrees_to_radians(degrees)
-{
-  var pi = Math.PI;
-  return degrees * (pi/180);
 }
 
 
