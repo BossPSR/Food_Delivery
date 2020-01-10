@@ -31,7 +31,7 @@
                                     <th></th>
                                     <th>รูปภาพ</th>
                                     <th>ชื่อร้าน</th>
-                                    <th>ชื่อเจ้าของร้าน</th>
+                             
                                     <th>ประเภทร้านอาหาร</th>
                                     <th>เวลาเปิด-ปิด</th>
                                     <th>ร้านอาหารแนะนำ</th>
@@ -46,7 +46,7 @@
                                     <td class="product-img"><img src="uploads/restaurant/<?php echo $restaurant['file_name'];?>" alt="Img placeholder">
                                     </td>
                                     <td class="product-name"><?php echo $restaurant['restaurant_name'];?></td>
-                                    <td class="product-name"><?php echo $restaurant['restaurant_name_p'];?></td>
+                                    
                                     <?php $restaurant_type = $this->db->get_where('tbl_type_restaurant',['id' => $restaurant['id_type_restaurant']])->result_array(); ?>
                                     <?php foreach ($restaurant_type as $key => $restaurant_type) { ?>
                                     <td class="product-name"><?php echo $restaurant_type['type_restaurant'];?></td>
@@ -142,13 +142,13 @@
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เวลาเปิด</label>
-                                                                        <input type="text" class="form-control pickatime" name="restaurant_open" value="<?php echo $restaurant['restaurant_open']; ?>" required>
+                                                                        <input type="text" class="form-control pickatime-format" name="restaurant_open" value="<?php echo $restaurant['restaurant_open']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
                                                                     <div class="form-group">
                                                                         <label for="data-name">เวลาปิด</label>
-                                                                        <input type="text" class="form-control pickatime" name="restaurant_close" value="<?php echo $restaurant['restaurant_close']; ?>" required>
+                                                                        <input type="text" class="form-control pickatime-format" name="restaurant_close" value="<?php echo $restaurant['restaurant_close']; ?>" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-12 data-field-col">
@@ -265,12 +265,12 @@
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาเปิด</label>
-                                            <input type="text" class="form-control pickatime" name="restaurant_open" required>
+                                            <input type="text" class="form-control pickatime-format" name="restaurant_open" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">
                                             <label for="data-name">เวลาปิด</label>
-                                            <input type="text" class="form-control pickatime" name="restaurant_close" required>
+                                            <input type="text" class="form-control pickatime-format" name="restaurant_close" required>
                                         </div>
 
                                         <div class="col-sm-12 data-field-col">

@@ -77,9 +77,12 @@
     // Format options
     $('.pickatime-format').pickatime({
         // Escape any “rule” characters with an exclamation mark (!).
-        format: 'T!ime selected: h:i a',
-        formatLabel: 'HH:i a',
-        formatSubmit: 'HH:i',
+        // format: 'T!ime selected: h:i a',
+        format: 'HH:i A',
+        // formatLabel: 'HH:i a',
+        formatLabel: 'HH:i A',
+        // formatSubmit: 'HH:i',
+        formatSubmit: 'HH:i A',
         hiddenPrefix: 'prefix__',
         hiddenSuffix: '__suffix'
     });
