@@ -195,6 +195,24 @@ class Resturant_ctr extends CI_Controller {
 	public function add_cart()
 	{
 		$id_food = $this->input->get('id');
+		$menuDetail = $this->db->get_where('tbl_menu',['id' => $id_food])->row_array();
+
+		$resturantCheckOpen = $this->db->get_where('tbl_restaurant',['id' => $menuDetail['id_restaurant']])->row_array();
+		$current_timeMenu = date('H:i A');
+		$sunriseMenu = $resturantCheckOpen['restaurant_open'];
+		$sunsetMenu = $resturantCheckOpen['restaurant_close'];
+		$date1Menu = DateTime::createFromFormat('H:i a', $current_timeMenu);
+		$date2Menu = DateTime::createFromFormat('H:i a', $sunriseMenu);
+		$date3Menu = DateTime::createFromFormat('H:i a', $sunsetMenu);
+
+		$check = false;
+
+		if ($date1Menu > $date2Menu && $date1Menu < $date3Menu) {
+			$check = true;
+		}else{
+			redirect('index');
+		}
+
 		$id_cart = $this->Cart_model->Cart($id_food);
 		
 			$data = array(
