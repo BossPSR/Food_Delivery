@@ -211,6 +211,13 @@
 
                                                                        <div class="form-group">
                                                                            <div class="controls">
+                                                                               <label for="data-name">รายละเอียดเพิ่มเติม</label>
+                                                                               <textarea class="form-control" cols="30" rows="10" aria-invalid="false" readonly><?php echo $orderDetail['detail']; ?></textarea>
+                                                                           </div>
+                                                                       </div>                                                                  
+                                                                       
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
                                                                                <label for="data-name">ค่าจัดส่ง</label>
                                                                                 <div class="form-control"><?php echo $orderDetail['zip_price']; ?></div>
                                                                            </div>

@@ -305,6 +305,15 @@
 							</tbody>
 						</table>
 					</div>
+					<div class="form-reservation">
+						<div class="column">
+							<span style="font-size: 17px;">รายละเอียดเพิ่มเติม</span>
+							<span style="width: 100%">
+								<textarea name="detail" placeholder="เช่น จะให้จัดส่งช่วงเวลาไหน,ไม่ใส่น้ำตาล,ไม่รับถุงพลาสติก" class="required-field"></textarea>
+							</span>
+						</div>
+					</div>
+				
 					<div>
 						<input class="radio-inline" style="margin:0;" type="radio" name="payment" id="" required checked>
 						<span>ชำระเงินปลายทาง</span>

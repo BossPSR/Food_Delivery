@@ -202,10 +202,24 @@
                                                                                <?php foreach ($order_type as $key => $order_type) { 
                                                                                     $key += 1;   
                                                                                 ?>
-                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?></div>
+                                                                                   <div class="form-control" style="margin-bottom:5px;"><?php echo $key.'.'; ?> <?php echo $order_type['name_item']; ?> <?php echo $order_type['price_item']; ?> จำนวน <?php echo $order_type['qty']; ?> ราคารวม <?php echo $order_type['sumtotal']; ?></div>
                                                                                <?php
 
                                                                                 } ?>
+                                                                           </div>
+                                                                       </div>
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">รายละเอียดเพิ่มเติม</label>
+                                                                               <textarea class="form-control" cols="30" rows="10" aria-invalid="false" readonly><?php echo $orderDetail['detail']; ?></textarea>
+                                                                           </div>
+                                                                       </div>  
+
+                                                                       <div class="form-group">
+                                                                           <div class="controls">
+                                                                               <label for="data-name">ค่าจัดส่ง</label>
+                                                                                <div class="form-control"><?php echo $orderDetail['zip_price']; ?></div>
                                                                            </div>
                                                                        </div>
 

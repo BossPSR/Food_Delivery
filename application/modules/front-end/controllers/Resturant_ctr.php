@@ -77,6 +77,7 @@ class Resturant_ctr extends CI_Controller {
 				'zip_price' 	=> $this->input->post('zip_priceValue'),
 				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
+				'detail'        => $this->input->post('detail'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')
@@ -94,6 +95,7 @@ class Resturant_ctr extends CI_Controller {
 				'zip_price' 	=> $this->input->post('zip_priceValue'),
 				'total' 		=> $this->cart->total(),
 				'coupon' 		=> $this->input->post('coupon'),
+				'detail'        => $this->input->post('detail'),
 				'lat' 		    => $this->input->post('lat'),
 				'lng' 		    => $this->input->post('lng'),
 				'created_at' 	=> date('Y-m-d H:i:s')

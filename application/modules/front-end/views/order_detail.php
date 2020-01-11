@@ -116,9 +116,19 @@
                     </tr>                    
                 </tbody>
             </table>
+
+            <div class="orderData">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 form-group">
+                   
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 form-group">
+                    <div style="font-size:17px;">**รายละเอียดเพิ่มเติม <?php echo $orderAll['detail']; ?>**</div>
+                </div>
+            </div>
             
             <div class="orderData">
-                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div>รหัสสั่งซื้อ <?php echo $orderAll['code']; ?></div>
                     <div>วันที่สั่งซื้อ <?php echo $orderAll['created_at']." น."; ?></div>
                     <div>ชื่อผู้สั่ง <?php echo $user['first_name']." ".$user['last_name']; ?></div>
@@ -126,15 +136,15 @@
                     <div>สถานที่จัดส่ง <?php echo $orderAll['address']." ".$orderAll['district']." ".$orderAll['amphur']." ".$orderAll['province']." ".$orderAll['zipcode']; ?></div>
                 </div>
 
-                <div class="col-xs-12 col-sm-12 col-md-1 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div>ชื่อร้าน <?php echo  $restaurant[0];?></div>
                     <div>เบอร์ติดต่อ <?php echo $addressRestaurant[0]; ?></div>
                     <div>ที่อยู่ร้าน <?php echo $telRestaurant[0]; ?></div>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-12">
-                 <div><button onclick="PrintPanel('tablePrint');" class="btn btn-success waves-effect waves-light" id="buttonPrint"><i class="fa fa-print"></i></button></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:15px;">
+                 <div><button onclick="PrintPanel('tablePrint');" class="btn btn-success waves-effect waves-light" id="buttonPrint"><i class="fa fa-print"></i> ใบเสร็จรับเงิน</button></div>
             </div>
            
         </div>
