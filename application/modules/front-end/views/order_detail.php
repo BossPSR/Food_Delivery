@@ -79,7 +79,7 @@
                         <td><?php 
                                 if (!empty($orderAll['vat'])) {
                                     $totalPrice = $orderAll['total'] + $orderAll['vat'];
-                                    $totalPrice += $orderDetail['zip_price'];
+                                    $totalPrice += $orderAll['zip_price'];
                                     if (!empty($orderAll['coupon'])) {
                                         $totalPrice -= $orderAll['coupon'];
                                     }
